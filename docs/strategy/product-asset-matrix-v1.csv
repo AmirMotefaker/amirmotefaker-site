@@ -1,4 +1,4 @@
-﻿Brand/Product,Type,Priority,Current status,Logo action,Required assets,Source of truth,Publication note
+Brand/Product,Type,Priority,Current status,Logo action,Required assets,Source of truth,Publication note
 Amir Motefaker,Personal Brand,Launch,Existing logo + portrait,REFINE,"Wordmark SVG, AM monogram, dark/light/mono, favicon, 4:5 portrait, 1:1 crop",Owner-provided files,No face replacement
 LinkResan,Product,1,Production · Active,AUDIT OFFICIAL ASSETS,"Logo SVG, hero 16:10, dashboard, analytics, mobile, case-study visuals",Official product site/repo,Remove sensitive data
 Farsi Smart,Product Family,2,Brand,AUDIT / DESIGN IF MISSING,"Brand logo, family lockup, dark/light marks",Official brand source,Must visually relate to Assistant and Ava
