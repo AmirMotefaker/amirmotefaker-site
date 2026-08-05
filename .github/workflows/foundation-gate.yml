@@ -1,0 +1,21 @@
+name: Foundation Gate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  product-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Foundation Product Test
+        shell: pwsh
+        run: ./scripts/Test-Product.ps1
