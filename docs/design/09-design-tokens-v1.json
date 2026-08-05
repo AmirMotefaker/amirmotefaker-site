@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "direction": "Editorial Technology Minimalism",
+  "color": {
+    "light": {
+      "canvas": "#F5F4EF",
+      "surface": "#FFFFFF",
+      "ink": "#171918",
+      "muted": "#606864",
+      "border": "#D8DDD9",
+      "accent": "#0B6B58",
+      "accentStrong": "#075344",
+      "accentSoft": "#DCEFE9"
+    },
+    "dark": {
+      "canvas": "#0E1211",
+      "surface": "#151B19",
+      "ink": "#F4F7F5",
+      "muted": "#A8B3AE",
+      "border": "#2A3531",
+      "accent": "#65D6B4",
+      "accentStrong": "#8BE4C8",
+      "accentSoft": "#193B31"
+    }
+  },
+  "radius": {
+    "small": "10px",
+    "medium": "18px",
+    "large": "28px",
+    "pill": "999px"
+  },
+  "space": {
+    "section": "clamp(5rem, 11vw, 10rem)",
+    "gutter": "clamp(1rem, 4vw, 4rem)",
+    "contentMax": "1280px"
+  },
+  "motion": {
+    "fast": "160ms",
+    "normal": "220ms",
+    "reducedMotion": true
+  },
+  "typography": {
+    "persian": "Vazirmatn, IRANSansX, Tahoma, system-ui, sans-serif",
+    "latin": "Inter, Segoe UI, system-ui, sans-serif"
+  }
+}

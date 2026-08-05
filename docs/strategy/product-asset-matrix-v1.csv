@@ -1,0 +1,11 @@
+Brand/Product,Type,Priority,Current status,Logo action,Required assets,Source of truth,Publication note
+Amir Motefaker,Personal Brand,Launch,Existing logo + portrait,REFINE,"Wordmark SVG, AM monogram, dark/light/mono, favicon, 4:5 portrait, 1:1 crop",Owner-provided files,No face replacement
+LinkResan,Product,1,Production · Active,AUDIT OFFICIAL ASSETS,"Logo SVG, hero 16:10, dashboard, analytics, mobile, case-study visuals",Official product site/repo,Remove sensitive data
+Farsi Smart,Product Family,2,Brand,AUDIT / DESIGN IF MISSING,"Brand logo, family lockup, dark/light marks",Official brand source,Must visually relate to Assistant and Ava
+Farsi Smart Assistant,Product,2A,Build & Validate,AUDIT / DESIGN IF MISSING,"Extension icon, UI screenshots, before-after, settings, hero",Official extension/source,No unapproved store claim
+Ava — FarsiSmart Listen,Product,3,Discovery / Pre-MVP,DESIGN REQUIRED OR AUDIT,"Logo, concept UI, waveform, transcript, mobile/desktop concept",Prototype evidence,All mockups labeled Concept
+PrimeSYS,Portfolio candidate,Tier 2,Resume evidence only,EVIDENCE REQUIRED,"Logo, product definition, screenshots, status",Owner evidence,Do not publish as product until approved
+LernZI,Historical product,Tier 2,Historical 1401–1404,AUDIT,"Logo, archived screenshots, founder role, outcome",Owner archive,Historical status visible
+FilmTrack,Portfolio backlog,Tier 2,Evidence outside this bundle,AUDIT,"Logo, web/mobile screenshots, product status",Project repo/site,Owner approval required
+Football Product,Portfolio backlog,Tier 2,Evidence outside this bundle,DESIGN/AUDIT,"Logo, leaderboard, profile, share card",Project repo/site,Owner approval required
+ShiftPay,Portfolio backlog,Tier 2,Evidence outside this bundle,DESIGN/AUDIT,"Logo, ledger/product UI, status",Project repo/site,Legal/publication review required

@@ -1,0 +1,17 @@
+/*
+Theme Name: AmirMotefaker V1
+Theme URI: https://amirmotefaker.ir/
+Author: Amir Motefaker
+Description: Private source foundation for the AmirMotefaker.ir WordPress Block Theme.
+Version: 0.1.0
+Requires at least: 6.6
+Requires PHP: 8.1
+Text Domain: amirmotefaker-v1
+*/
+
+:root {
+    --am-canvas: #f5f4ef;
+    --am-surface: #ffffff;
+    --am-ink: #171918;
+    --am-accent: #0b6b58;
+}
