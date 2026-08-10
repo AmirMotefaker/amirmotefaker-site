@@ -1,0 +1,76 @@
+{
+  "About": {
+    "Pass": true,
+    "OutputCount": 1,
+    "CandidateCount": 1,
+    "NoiseCount": 0,
+    "OutputTypes": [
+      "System.Management.Automation.PSCustomObject"
+    ],
+    "NoiseDetails": [],
+    "NoiseDetailsWasPresent": true,
+    "RawResolutionOutputCount": 1,
+    "ProfileProperties": [
+      "Id",
+      "Slug",
+      "Status",
+      "Link",
+      "Date",
+      "Modified",
+      "Template",
+      "Parent",
+      "MenuOrder",
+      "Title",
+      "Excerpt",
+      "ContentText",
+      "ContentWordCount",
+      "ContentCharacterCount",
+      "HeadingCount",
+      "Headings",
+      "PublicPageH1Count",
+      "ImagesCount",
+      "ImagesMissingAltCount",
+      "Images",
+      "LinkCount",
+      "ExternalLinkCount",
+      "ExternalLinks"
+    ]
+  },
+  "Resume": {
+    "Pass": true,
+    "OutputCount": 1,
+    "CandidateCount": 1,
+    "NoiseCount": 0,
+    "OutputTypes": [
+      "System.Management.Automation.PSCustomObject"
+    ],
+    "NoiseDetails": [],
+    "NoiseDetailsWasPresent": true,
+    "RawResolutionOutputCount": 1,
+    "ProfileProperties": [
+      "Id",
+      "Slug",
+      "Status",
+      "Link",
+      "Date",
+      "Modified",
+      "Template",
+      "Parent",
+      "MenuOrder",
+      "Title",
+      "Excerpt",
+      "ContentText",
+      "ContentWordCount",
+      "ContentCharacterCount",
+      "HeadingCount",
+      "Headings",
+      "PublicPageH1Count",
+      "ImagesCount",
+      "ImagesMissingAltCount",
+      "Images",
+      "LinkCount",
+      "ExternalLinkCount",
+      "ExternalLinks"
+    ]
+  }
+}

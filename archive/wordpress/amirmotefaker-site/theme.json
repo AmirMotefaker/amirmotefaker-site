@@ -1,0 +1,201 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "760px",
+      "wideSize": "1180px"
+    },
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        {
+          "slug": "canvas-dark",
+          "color": "#05070D",
+          "name": "Canvas Dark"
+        },
+        {
+          "slug": "surface-dark",
+          "color": "#0B1220",
+          "name": "Surface Dark"
+        },
+        {
+          "slug": "surface-strong",
+          "color": "#111A2E",
+          "name": "Surface Strong"
+        },
+        {
+          "slug": "text-primary",
+          "color": "#F8FAFC",
+          "name": "Text Primary"
+        },
+        {
+          "slug": "text-secondary",
+          "color": "#CBD5E1",
+          "name": "Text Secondary"
+        },
+        {
+          "slug": "accent-green",
+          "color": "#22C55E",
+          "name": "Accent Green"
+        },
+        {
+          "slug": "accent-purple",
+          "color": "#8B5CF6",
+          "name": "Accent Purple"
+        },
+        {
+          "slug": "canvas-light",
+          "color": "#F8FAFC",
+          "name": "Canvas Light"
+        },
+        {
+          "slug": "surface-light",
+          "color": "#FFFFFF",
+          "name": "Surface Light"
+        },
+        {
+          "slug": "text-dark",
+          "color": "#0F172A",
+          "name": "Text Dark"
+        }
+      ]
+    },
+    "spacing": {
+      "units": [
+        "px",
+        "rem",
+        "vw",
+        "%"
+      ],
+      "spacingSizes": [
+        {
+          "slug": "20",
+          "size": "0.5rem",
+          "name": "2XS"
+        },
+        {
+          "slug": "30",
+          "size": "0.75rem",
+          "name": "XS"
+        },
+        {
+          "slug": "40",
+          "size": "1rem",
+          "name": "S"
+        },
+        {
+          "slug": "50",
+          "size": "1.5rem",
+          "name": "M"
+        },
+        {
+          "slug": "60",
+          "size": "2rem",
+          "name": "L"
+        },
+        {
+          "slug": "70",
+          "size": "3rem",
+          "name": "XL"
+        },
+        {
+          "slug": "80",
+          "size": "5rem",
+          "name": "2XL"
+        }
+      ]
+    },
+    "typography": {
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "slug": "system-persian",
+          "name": "System Persian",
+          "fontFamily": "Tahoma, Arial, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "0.875rem",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "size": "1rem",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "1.5rem",
+          "name": "Large"
+        },
+        {
+          "slug": "x-large",
+          "size": "clamp(2rem, 5vw, 4.5rem)",
+          "name": "Extra Large"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var:preset|color|canvas-dark",
+      "text": "var:preset|color|text-primary"
+    },
+    "spacing": {
+      "blockGap": "var:preset|spacing|50"
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|system-persian",
+      "lineHeight": "1.85"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var:preset|color|accent-green"
+        },
+        "typography": {
+          "textDecoration": "none"
+        }
+      },
+      "button": {
+        "border": {
+          "radius": "999px"
+        },
+        "color": {
+          "background": "var:preset|color|accent-green",
+          "text": "var:preset|color|canvas-dark"
+        },
+        "typography": {
+          "fontWeight": "700"
+        }
+      },
+      "heading": {
+        "typography": {
+          "fontWeight": "800",
+          "lineHeight": "1.3"
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    },
+    {
+      "name": "sidebar",
+      "title": "Sidebar",
+      "area": "uncategorized"
+    }
+  ]
+}

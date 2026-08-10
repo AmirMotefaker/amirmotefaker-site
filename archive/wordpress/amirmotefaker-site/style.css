@@ -1,0 +1,21 @@
+/*
+Theme Name: AmirMotefaker.ir Foundation
+Description: Native Persian RTL block theme foundation for AmirMotefaker.ir.
+Version: 0.1.0
+Requires at least: 6.6
+Requires PHP: 8.1
+Text Domain: amirmotefaker
+License: GPL-2.0-or-later
+*/
+
+:root {
+    color-scheme: dark light;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}

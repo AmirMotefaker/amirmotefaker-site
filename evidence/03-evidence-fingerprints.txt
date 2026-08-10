@@ -1,0 +1,7 @@
+SHA256=F924359F9A4E7FFD929AEAFB93FC3A351FB859DDC4EEF82E0FB08388BEB4CCE6 | Bytes=39349 | Path=C:\Projects\AmirMotefaker-Audits\master-specification\2026-08-05-v2\specification\00-AmirMotefaker-IR-Master-Specification-V2.md
+SHA256=10406794792C68F55B90E02A7AFBC6A821E202BF07760BD5E740D8AEFE1847FB | Bytes=7765 | Path=C:\Projects\AmirMotefaker-Audits\master-specification\2026-08-05-v2\specification\01-AmirMotefaker-IR-Daily-Tech-News-Workflow-V1.md
+SHA256=73E50FE00844839925B7EB53EC0F89B46E6F7727B4E8D14CBBEF8BD942C8A34F | Bytes=2435 | Path=C:\Projects\AmirMotefaker-Audits\master-specification\2026-08-05-v2\specification\02-AmirMotefaker-IR-Decision-Register-V1.md
+SHA256=C2A67FDE55D639739DCEC8C95F590613EF972B29F28B190312894146E2A55E9F | Bytes=1867 | Path=C:\Projects\AmirMotefaker-Audits\master-specification\2026-08-05-v2\specification\03-AmirMotefaker-IR-Product-Asset-Matrix-V1.csv
+SHA256=91B06F1D357F2CB67220388D7D441A5D2649240D7D4A2682FA17256C66BB96AC | Bytes=3471 | Path=C:\Projects\AmirMotefaker-Audits\master-specification\2026-08-05-v2\owner-review\01-owner-decision-response-template.md
+SHA256=73E2D272D5146E366C2E76FFF649E9724C690B15A301F6F6C1ECFBDB0870BB4F | Bytes=1764 | Path=C:\Projects\AmirMotefaker-Audits\master-specification\2026-08-05-v2\owner-review\02-owner-review-checklist.md
+SHA256=5820F7B58AC795D74051F262F3E8CC401BD471223F5C1291005DA60F5C1FE349 | Bytes=843 | Path=C:\Projects\AmirMotefaker-Audits\master-specification\2026-08-05-v2\01-bundle-verification.txt

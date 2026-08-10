@@ -1,0 +1,104 @@
+Finalization started:
+2026-08-05T13:45:19.8010750+03:30
+
+Finalization completed:
+2026-08-05T13:45:20.6191343+03:30
+
+Homepage HTTP:
+200
+
+About HTTP:
+200
+
+Resume HTTP:
+200
+
+Public pages:
+14
+
+Public categories:
+207
+
+Latest public posts sampled:
+100
+
+Navigation links:
+5
+
+About page resolution:
+True
+
+About selected page ID:
+122
+
+About selected score:
+695
+
+Resume page resolution:
+True
+
+Resume selected page ID:
+622
+
+Resume selected score:
+695
+
+About profile output count:
+1
+
+About profile candidate count:
+1
+
+About profile noise count:
+0
+
+About raw resolution output count:
+1
+
+About NoiseDetails property present:
+True
+
+Resume profile output count:
+1
+
+Resume profile candidate count:
+1
+
+Resume profile noise count:
+0
+
+Resume raw resolution output count:
+1
+
+Resume NoiseDetails property present:
+True
+
+News navigation candidates:
+1
+
+News taxonomy candidates:
+9
+
+News-like post candidates:
+100
+
+About content words:
+793
+
+Resume content words:
+2876
+
+Navigation nested arrays:
+0
+
+Network request performed:
+False
+
+Login performed:
+False
+
+Credential access:
+False
+
+Mutation performed:
+False

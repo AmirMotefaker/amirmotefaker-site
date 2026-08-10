@@ -1,0 +1,12 @@
+html[data-theme="light"] {
+    --am-canvas: #f8fafc;
+    --am-surface: #ffffff;
+    --am-surface-strong: #eef2ff;
+    --am-text: #0f172a;
+    --am-text-muted: #475569;
+}
+
+html[data-theme="light"] .am-surface {
+    border-color: rgba(15, 23, 42, 0.12);
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}

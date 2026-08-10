@@ -1,0 +1,25 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
+<main class="wp-block-group">
+    <!-- wp:pattern {"slug":"amirmotefaker/hero"} /-->
+    <!-- wp:pattern {"slug":"amirmotefaker/products"} /-->
+    <!-- wp:pattern {"slug":"amirmotefaker/about-summary"} /-->
+    <!-- wp:pattern {"slug":"amirmotefaker/technology-news"} /-->
+    <!-- wp:group {"className":"am-section","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group am-section">
+        <!-- wp:heading -->
+        <h2 class="wp-block-heading">دیدگاه‌های امیر</h2>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"className":"am-muted"} -->
+        <p class="am-muted">تحلیل‌ها و تجربه‌های شخصی من از ساخت محصول، مهندسی نرم‌افزار، بازاریابی و فروش.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:query {"query":{"perPage":3,"postType":"post","order":"desc","orderBy":"date","inherit":false}} -->
+        <div class="wp-block-query"><!-- wp:post-template --><!-- wp:post-title {"isLink":true} /--><!-- /wp:post-template --></div>
+        <!-- /wp:query -->
+    </div>
+    <!-- /wp:group -->
+    <!-- wp:pattern {"slug":"amirmotefaker/writing"} /-->
+    <!-- wp:pattern {"slug":"amirmotefaker/collaboration-cta"} /-->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
