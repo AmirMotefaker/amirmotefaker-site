@@ -1,0 +1,372 @@
+{
+  "About": {
+    "Pass": true,
+    "SelectedId": 122,
+    "SelectedTitle": "درباره من",
+    "SelectedSlug": "%d8%af%d8%b1%d8%a8%d8%a7%d8%b1%d9%87-%d9%85%d9%86",
+    "SelectedLink": "https://amirmotefaker.ir/%d8%af%d8%b1%d8%a8%d8%a7%d8%b1%d9%87-%d9%85%d9%86/",
+    "SelectedScore": 695,
+    "RunnerUpScore": 0,
+    "SelectedReasons": [
+      "EXACT_NORMALIZED_URL",
+      "EXACT_NORMALIZED_PATH",
+      "TITLE_CONTAINS:درباره",
+      "SLUG_CONTAINS:درباره",
+      "PATH_CONTAINS:درباره",
+      "EXACT_TITLE:درباره من",
+      "EXACT_SLUG:درباره من",
+      "PATH_CONTAINS:درباره من"
+    ],
+    "CandidateCount": 14,
+    "Candidates": [
+      {
+        "Id": 122,
+        "Title": "درباره من",
+        "Slug": "%d8%af%d8%b1%d8%a8%d8%a7%d8%b1%d9%87-%d9%85%d9%86",
+        "Link": "https://amirmotefaker.ir/%d8%af%d8%b1%d8%a8%d8%a7%d8%b1%d9%87-%d9%85%d9%86/",
+        "Score": 695,
+        "Reasons": [
+          "EXACT_NORMALIZED_URL",
+          "EXACT_NORMALIZED_PATH",
+          "TITLE_CONTAINS:درباره",
+          "SLUG_CONTAINS:درباره",
+          "PATH_CONTAINS:درباره",
+          "EXACT_TITLE:درباره من",
+          "EXACT_SLUG:درباره من",
+          "PATH_CONTAINS:درباره من"
+        ],
+        "TitleComparable": "درباره من",
+        "SlugComparable": "درباره من",
+        "LinkPathComparable": "درباره من"
+      },
+      {
+        "Id": 2,
+        "Title": "برگه نمونه",
+        "Slug": "برگه-نمونه",
+        "Link": "https://amirmotefaker.ir/برگه-نمونه/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "برگه نمونه",
+        "SlugComparable": "برگه نمونه",
+        "LinkPathComparable": "برگه نمونه"
+      },
+      {
+        "Id": 8,
+        "Title": "امیر متفکر",
+        "Slug": "%d8%a7%d9%85%db%8c%d8%b1-%d9%85%d8%aa%d9%81%da%a9%d8%b1",
+        "Link": "https://amirmotefaker.ir/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "امیر متفکر",
+        "SlugComparable": "امیر متفکر",
+        "LinkPathComparable": ""
+      },
+      {
+        "Id": 162,
+        "Title": "تماس با امیر",
+        "Slug": "%d8%aa%d9%85%d8%a7%d8%b3-%d8%a8%d8%a7-%d8%a7%d9%85%db%8c%d8%b1",
+        "Link": "https://amirmotefaker.ir/%d8%aa%d9%85%d8%a7%d8%b3-%d8%a8%d8%a7-%d8%a7%d9%85%db%8c%d8%b1/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "تماس با امیر",
+        "SlugComparable": "تماس با امیر",
+        "LinkPathComparable": "تماس با امیر"
+      },
+      {
+        "Id": 193,
+        "Title": "اخبار تکنولوژی",
+        "Slug": "%d8%a8%d9%84%d8%a7%da%af",
+        "Link": "https://amirmotefaker.ir/%d8%a8%d9%84%d8%a7%da%af/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "اخبار تکنولوژی",
+        "SlugComparable": "بلاگ",
+        "LinkPathComparable": "بلاگ"
+      },
+      {
+        "Id": 534,
+        "Title": "فروشگاه",
+        "Slug": "%d9%81%d8%b1%d9%88%d8%b4%da%af%d8%a7%d9%87",
+        "Link": "https://amirmotefaker.ir/%d9%81%d8%b1%d9%88%d8%b4%da%af%d8%a7%d9%87/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "فروشگاه",
+        "SlugComparable": "فروشگاه",
+        "LinkPathComparable": "فروشگاه"
+      },
+      {
+        "Id": 535,
+        "Title": "سبد خرید",
+        "Slug": "%d8%b3%d8%a8%d8%af-%d8%ae%d8%b1%db%8c%d8%af",
+        "Link": "https://amirmotefaker.ir/%d8%b3%d8%a8%d8%af-%d8%ae%d8%b1%db%8c%d8%af/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "سبد خرید",
+        "SlugComparable": "سبد خرید",
+        "LinkPathComparable": "سبد خرید"
+      },
+      {
+        "Id": 536,
+        "Title": "پرداخت",
+        "Slug": "%d8%aa%d8%b3%d9%88%db%8c%d9%87-%d8%ad%d8%b3%d8%a7%d8%a8",
+        "Link": "https://amirmotefaker.ir/%d8%aa%d8%b3%d9%88%db%8c%d9%87-%d8%ad%d8%b3%d8%a7%d8%a8/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "پرداخت",
+        "SlugComparable": "تسویه حساب",
+        "LinkPathComparable": "تسویه حساب"
+      },
+      {
+        "Id": 537,
+        "Title": "حساب کاربری من",
+        "Slug": "my-account",
+        "Link": "https://amirmotefaker.ir/my-account/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "حساب کاربری من",
+        "SlugComparable": "my account",
+        "LinkPathComparable": "my account"
+      },
+      {
+        "Id": 622,
+        "Title": "رزومه امیر",
+        "Slug": "%d8%b1%d8%b2%d9%88%d9%85%d9%87-%d8%a7%d9%85%db%8c%d8%b1",
+        "Link": "https://amirmotefaker.ir/%d8%b1%d8%b2%d9%88%d9%85%d9%87-%d8%a7%d9%85%db%8c%d8%b1/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "رزومه امیر",
+        "SlugComparable": "رزومه امیر",
+        "LinkPathComparable": "رزومه امیر"
+      },
+      {
+        "Id": 3643,
+        "Title": "بلاگ تست",
+        "Slug": "%d8%a8%d9%84%d8%a7%da%af-%d8%aa%d8%b3%d8%aa",
+        "Link": "https://amirmotefaker.ir/%d8%a8%d9%84%d8%a7%da%af-%d8%aa%d8%b3%d8%aa/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "بلاگ تست",
+        "SlugComparable": "بلاگ تست",
+        "LinkPathComparable": "بلاگ تست"
+      },
+      {
+        "Id": 9710,
+        "Title": "ورود / ثبت نام",
+        "Slug": "login-signup",
+        "Link": "https://amirmotefaker.ir/login-signup/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "ورود ثبت نام",
+        "SlugComparable": "login signup",
+        "LinkPathComparable": "login signup"
+      },
+      {
+        "Id": 9711,
+        "Title": "تغییر رمز عبور",
+        "Slug": "change-password",
+        "Link": "https://amirmotefaker.ir/change-password/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "تغییر رمز عبور",
+        "SlugComparable": "change password",
+        "LinkPathComparable": "change password"
+      },
+      {
+        "Id": 9712,
+        "Title": "تغییر شماره موبایل",
+        "Slug": "change-phone",
+        "Link": "https://amirmotefaker.ir/change-phone/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "تغییر شماره موبایل",
+        "SlugComparable": "change phone",
+        "LinkPathComparable": "change phone"
+      }
+    ]
+  },
+  "Resume": {
+    "Pass": true,
+    "SelectedId": 622,
+    "SelectedTitle": "رزومه امیر",
+    "SelectedSlug": "%d8%b1%d8%b2%d9%88%d9%85%d9%87-%d8%a7%d9%85%db%8c%d8%b1",
+    "SelectedLink": "https://amirmotefaker.ir/%d8%b1%d8%b2%d9%88%d9%85%d9%87-%d8%a7%d9%85%db%8c%d8%b1/",
+    "SelectedScore": 695,
+    "RunnerUpScore": 0,
+    "SelectedReasons": [
+      "EXACT_NORMALIZED_URL",
+      "EXACT_NORMALIZED_PATH",
+      "TITLE_CONTAINS:رزومه",
+      "SLUG_CONTAINS:رزومه",
+      "PATH_CONTAINS:رزومه",
+      "EXACT_TITLE:رزومه امیر",
+      "EXACT_SLUG:رزومه امیر",
+      "PATH_CONTAINS:رزومه امیر"
+    ],
+    "CandidateCount": 14,
+    "Candidates": [
+      {
+        "Id": 622,
+        "Title": "رزومه امیر",
+        "Slug": "%d8%b1%d8%b2%d9%88%d9%85%d9%87-%d8%a7%d9%85%db%8c%d8%b1",
+        "Link": "https://amirmotefaker.ir/%d8%b1%d8%b2%d9%88%d9%85%d9%87-%d8%a7%d9%85%db%8c%d8%b1/",
+        "Score": 695,
+        "Reasons": [
+          "EXACT_NORMALIZED_URL",
+          "EXACT_NORMALIZED_PATH",
+          "TITLE_CONTAINS:رزومه",
+          "SLUG_CONTAINS:رزومه",
+          "PATH_CONTAINS:رزومه",
+          "EXACT_TITLE:رزومه امیر",
+          "EXACT_SLUG:رزومه امیر",
+          "PATH_CONTAINS:رزومه امیر"
+        ],
+        "TitleComparable": "رزومه امیر",
+        "SlugComparable": "رزومه امیر",
+        "LinkPathComparable": "رزومه امیر"
+      },
+      {
+        "Id": 2,
+        "Title": "برگه نمونه",
+        "Slug": "برگه-نمونه",
+        "Link": "https://amirmotefaker.ir/برگه-نمونه/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "برگه نمونه",
+        "SlugComparable": "برگه نمونه",
+        "LinkPathComparable": "برگه نمونه"
+      },
+      {
+        "Id": 8,
+        "Title": "امیر متفکر",
+        "Slug": "%d8%a7%d9%85%db%8c%d8%b1-%d9%85%d8%aa%d9%81%da%a9%d8%b1",
+        "Link": "https://amirmotefaker.ir/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "امیر متفکر",
+        "SlugComparable": "امیر متفکر",
+        "LinkPathComparable": ""
+      },
+      {
+        "Id": 122,
+        "Title": "درباره من",
+        "Slug": "%d8%af%d8%b1%d8%a8%d8%a7%d8%b1%d9%87-%d9%85%d9%86",
+        "Link": "https://amirmotefaker.ir/%d8%af%d8%b1%d8%a8%d8%a7%d8%b1%d9%87-%d9%85%d9%86/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "درباره من",
+        "SlugComparable": "درباره من",
+        "LinkPathComparable": "درباره من"
+      },
+      {
+        "Id": 162,
+        "Title": "تماس با امیر",
+        "Slug": "%d8%aa%d9%85%d8%a7%d8%b3-%d8%a8%d8%a7-%d8%a7%d9%85%db%8c%d8%b1",
+        "Link": "https://amirmotefaker.ir/%d8%aa%d9%85%d8%a7%d8%b3-%d8%a8%d8%a7-%d8%a7%d9%85%db%8c%d8%b1/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "تماس با امیر",
+        "SlugComparable": "تماس با امیر",
+        "LinkPathComparable": "تماس با امیر"
+      },
+      {
+        "Id": 193,
+        "Title": "اخبار تکنولوژی",
+        "Slug": "%d8%a8%d9%84%d8%a7%da%af",
+        "Link": "https://amirmotefaker.ir/%d8%a8%d9%84%d8%a7%da%af/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "اخبار تکنولوژی",
+        "SlugComparable": "بلاگ",
+        "LinkPathComparable": "بلاگ"
+      },
+      {
+        "Id": 534,
+        "Title": "فروشگاه",
+        "Slug": "%d9%81%d8%b1%d9%88%d8%b4%da%af%d8%a7%d9%87",
+        "Link": "https://amirmotefaker.ir/%d9%81%d8%b1%d9%88%d8%b4%da%af%d8%a7%d9%87/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "فروشگاه",
+        "SlugComparable": "فروشگاه",
+        "LinkPathComparable": "فروشگاه"
+      },
+      {
+        "Id": 535,
+        "Title": "سبد خرید",
+        "Slug": "%d8%b3%d8%a8%d8%af-%d8%ae%d8%b1%db%8c%d8%af",
+        "Link": "https://amirmotefaker.ir/%d8%b3%d8%a8%d8%af-%d8%ae%d8%b1%db%8c%d8%af/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "سبد خرید",
+        "SlugComparable": "سبد خرید",
+        "LinkPathComparable": "سبد خرید"
+      },
+      {
+        "Id": 536,
+        "Title": "پرداخت",
+        "Slug": "%d8%aa%d8%b3%d9%88%db%8c%d9%87-%d8%ad%d8%b3%d8%a7%d8%a8",
+        "Link": "https://amirmotefaker.ir/%d8%aa%d8%b3%d9%88%db%8c%d9%87-%d8%ad%d8%b3%d8%a7%d8%a8/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "پرداخت",
+        "SlugComparable": "تسویه حساب",
+        "LinkPathComparable": "تسویه حساب"
+      },
+      {
+        "Id": 537,
+        "Title": "حساب کاربری من",
+        "Slug": "my-account",
+        "Link": "https://amirmotefaker.ir/my-account/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "حساب کاربری من",
+        "SlugComparable": "my account",
+        "LinkPathComparable": "my account"
+      },
+      {
+        "Id": 3643,
+        "Title": "بلاگ تست",
+        "Slug": "%d8%a8%d9%84%d8%a7%da%af-%d8%aa%d8%b3%d8%aa",
+        "Link": "https://amirmotefaker.ir/%d8%a8%d9%84%d8%a7%da%af-%d8%aa%d8%b3%d8%aa/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "بلاگ تست",
+        "SlugComparable": "بلاگ تست",
+        "LinkPathComparable": "بلاگ تست"
+      },
+      {
+        "Id": 9710,
+        "Title": "ورود / ثبت نام",
+        "Slug": "login-signup",
+        "Link": "https://amirmotefaker.ir/login-signup/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "ورود ثبت نام",
+        "SlugComparable": "login signup",
+        "LinkPathComparable": "login signup"
+      },
+      {
+        "Id": 9711,
+        "Title": "تغییر رمز عبور",
+        "Slug": "change-password",
+        "Link": "https://amirmotefaker.ir/change-password/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "تغییر رمز عبور",
+        "SlugComparable": "change password",
+        "LinkPathComparable": "change password"
+      },
+      {
+        "Id": 9712,
+        "Title": "تغییر شماره موبایل",
+        "Slug": "change-phone",
+        "Link": "https://amirmotefaker.ir/change-phone/",
+        "Score": 0,
+        "Reasons": [],
+        "TitleComparable": "تغییر شماره موبایل",
+        "SlugComparable": "change phone",
+        "LinkPathComparable": "change phone"
+      }
+    ]
+  }
+}

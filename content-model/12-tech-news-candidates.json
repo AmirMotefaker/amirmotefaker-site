@@ -1,0 +1,882 @@
+{
+  "NavigationMatches": [
+    {
+      "Text": "اخبار فناوری",
+      "Href": "https://amirmotefaker.ir/%d8%a8%d9%84%d8%a7%da%af/"
+    }
+  ],
+  "CategoryMatches": [
+    {
+      "Id": 6,
+      "Name": "هوش مصنوعی",
+      "Slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c",
+      "Count": 860,
+      "Link": "https://amirmotefaker.ir/category/%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c/",
+      "Description": ""
+    },
+    {
+      "Id": 93,
+      "Name": "فناوری",
+      "Slug": "%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c",
+      "Count": 139,
+      "Link": "https://amirmotefaker.ir/category/%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c/",
+      "Description": ""
+    },
+    {
+      "Id": 5,
+      "Name": "تکنولوژی",
+      "Slug": "%d8%aa%da%a9%d9%86%d9%88%d9%84%d9%88%da%98%db%8c",
+      "Count": 100,
+      "Link": "https://amirmotefaker.ir/category/%d8%aa%da%a9%d9%86%d9%88%d9%84%d9%88%da%98%db%8c/",
+      "Description": ""
+    },
+    {
+      "Id": 2051,
+      "Name": "هوش مصنوعی مولد",
+      "Slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c-%d9%85%d9%88%d9%84%d8%af",
+      "Count": 8,
+      "Link": "https://amirmotefaker.ir/category/%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c-%d9%85%d9%88%d9%84%d8%af/",
+      "Description": ""
+    },
+    {
+      "Id": 1458,
+      "Name": "فناوری مالی(فین‌تک)",
+      "Slug": "%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c-%d9%85%d8%a7%d9%84%db%8c%d9%81%db%8c%d9%86%d8%aa%da%a9",
+      "Count": 5,
+      "Link": "https://amirmotefaker.ir/category/%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c-%d9%85%d8%a7%d9%84%db%8c%d9%81%db%8c%d9%86%d8%aa%da%a9/",
+      "Description": ""
+    },
+    {
+      "Id": 1910,
+      "Name": "عامل‌های مستقل هوش مصنوعی",
+      "Slug": "%d8%b9%d8%a7%d9%85%d9%84%d9%87%d8%a7%db%8c-%d9%85%d8%b3%d8%aa%d9%82%d9%84-%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c",
+      "Count": 4,
+      "Link": "https://amirmotefaker.ir/category/%d8%b9%d8%a7%d9%85%d9%84%d9%87%d8%a7%db%8c-%d9%85%d8%b3%d8%aa%d9%82%d9%84-%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c/",
+      "Description": ""
+    },
+    {
+      "Id": 2057,
+      "Name": "اخبار",
+      "Slug": "%d8%a7%d8%ae%d8%a8%d8%a7%d8%b1",
+      "Count": 2,
+      "Link": "https://amirmotefaker.ir/category/%d8%a7%d8%ae%d8%a8%d8%a7%d8%b1/",
+      "Description": ""
+    },
+    {
+      "Id": 1417,
+      "Name": "هوش مصنوعی عمومی",
+      "Slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c-%d8%b9%d9%85%d9%88%d9%85%db%8c",
+      "Count": 1,
+      "Link": "https://amirmotefaker.ir/category/%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c-%d8%b9%d9%85%d9%88%d9%85%db%8c/",
+      "Description": ""
+    },
+    {
+      "Id": 2072,
+      "Name": "حباب هوش مصنوعی",
+      "Slug": "%d8%ad%d8%a8%d8%a7%d8%a8-%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c",
+      "Count": 1,
+      "Link": "https://amirmotefaker.ir/category/%d8%ad%d8%a8%d8%a7%d8%a8-%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c/",
+      "Description": ""
+    }
+  ],
+  "LatestPostsAnalyzed": 100,
+  "NewsLikePostCandidateCount": 100,
+  "LatestNewsLikePosts": [
+    {
+      "Id": 12836,
+      "Date": "01/11/2026 08:29:06",
+      "Modified": "01/08/2026 09:58:48",
+      "Title": "بوم هوش مصنوعی در مرحله اولیه حباب است",
+      "Slug": "%d8%a8%d9%88%d9%85-%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c-%d8%af%d8%b1-%d9%85%d8%b1%d8%ad%d9%84%d9%87-%d8%a7%d9%88%d9%84%db%8c%d9%87-%d8%ad%d8%a8%d8%a7%d8%a8-%d8%a7%d8%b3%d8%aa",
+      "Link": "https://amirmotefaker.ir/%d8%a8%d9%88%d9%85-%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c-%d8%af%d8%b1-%d9%85%d8%b1%d8%ad%d9%84%d9%87-%d8%a7%d9%88%d9%84%db%8c%d9%87-%d8%ad%d8%a8%d8%a7%d8%a8-%d8%a7%d8%b3%d8%aa/",
+      "CategoryIds": [
+        436,
+        1884,
+        267,
+        1896,
+        2303,
+        6
+      ],
+      "CategoryNames": [
+        "سرمایه‌گذاری",
+        "استراتژیک",
+        "اقتصاد",
+        "اقتصاد دیجیتال",
+        "بنیانگذار",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12837,
+      "Excerpt": "سرمایه‌گذاری AI را محتاط‌تر می‌کند، ممکن است ۲۰٪ اصلاح سهام AI رخ دهد."
+    },
+    {
+      "Id": 12829,
+      "Date": "01/11/2026 08:23:25",
+      "Modified": "01/08/2026 09:38:29",
+      "Title": "رشد سهام رهبر چیپ‌های AI محاسباتی چین",
+      "Slug": "%d8%b1%d8%b4%d8%af-%d8%b3%d9%87%d8%a7%d9%85-%d8%b1%d9%87%d8%a8%d8%b1-%da%86%db%8c%d9%be%d9%87%d8%a7%db%8c-ai-%d9%85%d8%ad%d8%a7%d8%b3%d8%a8%d8%a7%d8%aa%db%8c-%da%86%db%8c%d9%86",
+      "Link": "https://amirmotefaker.ir/%d8%b1%d8%b4%d8%af-%d8%b3%d9%87%d8%a7%d9%85-%d8%b1%d9%87%d8%a8%d8%b1-%da%86%db%8c%d9%be%d9%87%d8%a7%db%8c-ai-%d9%85%d8%ad%d8%a7%d8%b3%d8%a8%d8%a7%d8%aa%db%8c-%da%86%db%8c%d9%86/",
+      "CategoryIds": [
+        356,
+        857,
+        5,
+        1597,
+        6
+      ],
+      "CategoryNames": [
+        "بورس",
+        "تراشه",
+        "تکنولوژی",
+        "سهام",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12831,
+      "Excerpt": "بازار چیپ AI را داغ می‌کند، ممکن است ۲۰٪ سرمایه‌گذاری در چیپ‌های محلی افزایش یابد."
+    },
+    {
+      "Id": 12823,
+      "Date": "01/11/2026 08:16:23",
+      "Modified": "01/27/2026 13:13:53",
+      "Title": "AI هنوز در وظایف انسانی ساده ضعیف است",
+      "Slug": "ai-%d9%87%d9%86%d9%88%d8%b2-%d8%af%d8%b1-%d9%88%d8%b8%d8%a7%db%8c%d9%81-%d8%a7%d9%86%d8%b3%d8%a7%d9%86%db%8c-%d8%b3%d8%a7%d8%af%d9%87-%d8%b6%d8%b9%db%8c%d9%81-%d8%a7%d8%b3%d8%aa",
+      "Link": "https://amirmotefaker.ir/ai-%d9%87%d9%86%d9%88%d8%b2-%d8%af%d8%b1-%d9%88%d8%b8%d8%a7%db%8c%d9%81-%d8%a7%d9%86%d8%b3%d8%a7%d9%86%db%8c-%d8%b3%d8%a7%d8%af%d9%87-%d8%b6%d8%b9%db%8c%d9%81-%d8%a7%d8%b3%d8%aa/",
+      "CategoryIds": [
+        2298,
+        2053,
+        6
+      ],
+      "CategoryNames": [
+        "انسان",
+        "نوآوری",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12824,
+      "Excerpt": "نوآوری AI را محتاط‌تر می‌کند، ممکن است ۲۵٪ تمرکز روی ایمنی افزایش یابد."
+    },
+    {
+      "Id": 12817,
+      "Date": "01/11/2026 08:08:58",
+      "Modified": "01/08/2026 08:57:04",
+      "Title": "آیا AI می‌تواند ۱۰۰ هزار دلار را به ۱ میلیون دلار تبدیل کند؟",
+      "Slug": "%d8%a2%db%8c%d8%a7-ai-%d9%85%db%8c%d8%aa%d9%88%d8%a7%d9%86%d8%af-%db%b1%db%b0%db%b0-%d9%87%d8%b2%d8%a7%d8%b1-%d8%af%d9%84%d8%a7%d8%b1-%d8%b1%d8%a7-%d8%a8%d9%87-%db%b1-%d9%85%db%8c%d9%84%db%8c",
+      "Link": "https://amirmotefaker.ir/%d8%a2%db%8c%d8%a7-ai-%d9%85%db%8c%d8%aa%d9%88%d8%a7%d9%86%d8%af-%db%b1%db%b0%db%b0-%d9%87%d8%b2%d8%a7%d8%b1-%d8%af%d9%84%d8%a7%d8%b1-%d8%b1%d8%a7-%d8%a8%d9%87-%db%b1-%d9%85%db%8c%d9%84%db%8c/",
+      "CategoryIds": [
+        6,
+        1816,
+        1884,
+        267,
+        436,
+        507
+      ],
+      "CategoryNames": [
+        "هوش مصنوعی",
+        "اخلاق",
+        "استراتژیک",
+        "اقتصاد",
+        "سرمایه‌گذاری",
+        "مالی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12818,
+      "Excerpt": "بحث سرمایه‌گذاری AI را داغ می‌کند، ممکن است ۲۰٪ تمرکز روی AI مالی افزایش یابد."
+    },
+    {
+      "Id": 12808,
+      "Date": "01/11/2026 08:00:01",
+      "Modified": "01/08/2026 08:38:07",
+      "Title": "شرکت‌های فناوری چینی به رهبری Zhipu AI در بورس هنگ‌کنگ رشد کردند",
+      "Slug": "%d8%b4%d8%b1%da%a9%d8%aa%d9%87%d8%a7%db%8c-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c-%da%86%db%8c%d9%86%db%8c-%d8%a8%d9%87-%d8%b1%d9%87%d8%a8%d8%b1%db%8c-zhipu-ai-%d8%af%d8%b1-%d8%a8%d9%88%d8%b1",
+      "Link": "https://amirmotefaker.ir/%d8%b4%d8%b1%da%a9%d8%aa%d9%87%d8%a7%db%8c-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c-%da%86%db%8c%d9%86%db%8c-%d8%a8%d9%87-%d8%b1%d9%87%d8%a8%d8%b1%db%8c-zhipu-ai-%d8%af%d8%b1-%d8%a8%d9%88%d8%b1/",
+      "CategoryIds": [
+        356,
+        436,
+        1597,
+        6
+      ],
+      "CategoryNames": [
+        "بورس",
+        "سرمایه‌گذاری",
+        "سهام",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12809,
+      "Excerpt": "بازار AI آسیا را تقویت می‌کند، ممکن است ۲۵٪ سرمایه‌گذاری در AI چینی افزایش یابد."
+    },
+    {
+      "Id": 12802,
+      "Date": "01/10/2026 08:30:03",
+      "Modified": "01/07/2026 11:24:29",
+      "Title": "Lenovo Yoga AI PC با Intel Core Ultra Series 3 آمد",
+      "Slug": "lenovo-yoga-ai-pc-%d8%a8%d8%a7-intel-core-ultra-series-3-%d8%a2%d9%85%d8%af",
+      "Link": "https://amirmotefaker.ir/lenovo-yoga-ai-pc-%d8%a8%d8%a7-intel-core-ultra-series-3-%d8%a2%d9%85%d8%af/",
+      "CategoryIds": [
+        2268,
+        857,
+        5,
+        1160,
+        93,
+        2291,
+        2200
+      ],
+      "CategoryNames": [
+        "CES",
+        "تراشه",
+        "تکنولوژی",
+        "سخت افزار",
+        "فناوری",
+        "گیمینگ(Gaming)",
+        "لپ‌تاپ(NoteBook)"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12803,
+      "Excerpt": "لپ‌تاپ‌های hybrid را AI-محور می‌کند، ممکن است ۲۰٪ فروش Lenovo افزایش یابد."
+    },
+    {
+      "Id": 12796,
+      "Date": "01/10/2026 08:24:16",
+      "Modified": "01/07/2026 11:15:42",
+      "Title": "Dell Alienware m18 با RTX 50 series رونمایی شد",
+      "Slug": "dell-alienware-m18-%d8%a8%d8%a7-rtx-50-series-%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c%db%8c-%d8%b4%d8%af",
+      "Link": "https://amirmotefaker.ir/dell-alienware-m18-%d8%a8%d8%a7-rtx-50-series-%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c%db%8c-%d8%b4%d8%af/",
+      "CategoryIds": [
+        2268,
+        857,
+        5,
+        288,
+        1160,
+        318,
+        2291,
+        2200
+      ],
+      "CategoryNames": [
+        "CES",
+        "تراشه",
+        "تکنولوژی",
+        "رسانه و سرگرمی",
+        "سخت افزار",
+        "صنعت بازی",
+        "گیمینگ(Gaming)",
+        "لپ‌تاپ(NoteBook)"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": false,
+      "FeaturedMedia": 12797,
+      "Excerpt": "گیمینگ لپ‌تاپ را تحول می‌بخشد، ممکن است ۲۵٪ عملکرد گیمینگ افزایش یابد."
+    },
+    {
+      "Id": 12790,
+      "Date": "01/10/2026 08:14:07",
+      "Modified": "01/07/2026 09:30:59",
+      "Title": "Qualcomm Snapdragon XR2+ Gen 3 برای هدست‌های AR/VR معرفی شد",
+      "Slug": "qualcomm-snapdragon-xr2-gen-3-%d8%a8%d8%b1%d8%a7%db%8c-%d9%87%d8%af%d8%b3%d8%aa%d9%87%d8%a7%db%8c-ar-vr-%d9%85%d8%b9%d8%b1%d9%81%db%8c-%d8%b4%d8%af",
+      "Link": "https://amirmotefaker.ir/qualcomm-snapdragon-xr2-gen-3-%d8%a8%d8%b1%d8%a7%db%8c-%d9%87%d8%af%d8%b3%d8%aa%d9%87%d8%a7%db%8c-ar-vr-%d9%85%d8%b9%d8%b1%d9%81%db%8c-%d8%b4%d8%af/",
+      "CategoryIds": [
+        2268,
+        857,
+        1160,
+        109,
+        6
+      ],
+      "CategoryNames": [
+        "CES",
+        "تراشه",
+        "سخت افزار",
+        "صنعت",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": false,
+      "FeaturedMedia": 12791,
+      "Excerpt": "AR/VR را فراگیرتر می‌کند، ممکن است ۲۵٪ بازار هدست افزایش یابد."
+    },
+    {
+      "Id": 12784,
+      "Date": "01/10/2026 08:09:29",
+      "Modified": "01/07/2026 09:12:03",
+      "Title": "لنوو AI Cloud Gigafactory با انویدیا اعلام کرد",
+      "Slug": "%d9%84%d9%86%d9%88%d9%88-ai-cloud-gigafactory-%d8%a8%d8%a7-%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-%d8%a7%d8%b9%d9%84%d8%a7%d9%85-%da%a9%d8%b1%d8%af",
+      "Link": "https://amirmotefaker.ir/%d9%84%d9%86%d9%88%d9%88-ai-cloud-gigafactory-%d8%a8%d8%a7-%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-%d8%a7%d8%b9%d9%84%d8%a7%d9%85-%da%a9%d8%b1%d8%af/",
+      "CategoryIds": [
+        857,
+        5,
+        1160,
+        93,
+        780,
+        6
+      ],
+      "CategoryNames": [
+        "تراشه",
+        "تکنولوژی",
+        "سخت افزار",
+        "فناوری",
+        "مراکز داده",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12785,
+      "Excerpt": "cloud AI را دموکراتیک می‌کند، ممکن است ۳۰٪ دسترسی enterprise افزایش یابد."
+    },
+    {
+      "Id": 12778,
+      "Date": "01/10/2026 08:00:10",
+      "Modified": "01/07/2026 08:42:40",
+      "Title": "انویدیا پلتفرم Rubin را برای AI نسل بعدی معرفی کرد",
+      "Slug": "%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-%d9%be%d9%84%d8%aa%d9%81%d8%b1%d9%85-rubin-%d8%b1%d8%a7-%d8%a8%d8%b1%d8%a7%db%8c-ai-%d9%86%d8%b3%d9%84-%d8%a8%d8%b9%d8%af%db%8c-%d9%85%d8%b9%d8%b1%d9%81",
+      "Link": "https://amirmotefaker.ir/%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-%d9%be%d9%84%d8%aa%d9%81%d8%b1%d9%85-rubin-%d8%b1%d8%a7-%d8%a8%d8%b1%d8%a7%db%8c-ai-%d9%86%d8%b3%d9%84-%d8%a8%d8%b9%d8%af%db%8c-%d9%85%d8%b9%d8%b1%d9%81/",
+      "CategoryIds": [
+        857,
+        5,
+        1526,
+        1160,
+        6
+      ],
+      "CategoryNames": [
+        "تراشه",
+        "تکنولوژی",
+        "سازمان",
+        "سخت افزار",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12779,
+      "Excerpt": "AI enterprise را تحول می‌بخشد، ممکن است ۳۰٪ سرعت training افزایش یابد."
+    },
+    {
+      "Id": 12772,
+      "Date": "01/09/2026 08:29:04",
+      "Modified": "01/06/2026 15:43:15",
+      "Title": "Dell XPS AI با Intel Lunar Lake 2 رونمایی شد",
+      "Slug": "dell-xps-ai-%d8%a8%d8%a7-intel-lunar-lake-2-%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c%db%8c-%d8%b4%d8%af",
+      "Link": "https://amirmotefaker.ir/dell-xps-ai-%d8%a8%d8%a7-intel-lunar-lake-2-%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c%db%8c-%d8%b4%d8%af/",
+      "CategoryIds": [
+        2268,
+        5,
+        2200,
+        6
+      ],
+      "CategoryNames": [
+        "CES",
+        "تکنولوژی",
+        "لپ‌تاپ(NoteBook)",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12773,
+      "Excerpt": "لپ‌تاپ‌های premium را AI-محور می‌کند، ممکن است ۲۵٪ فروش Dell افزایش یابد."
+    },
+    {
+      "Id": 12766,
+      "Date": "01/09/2026 08:20:48",
+      "Modified": "01/06/2026 15:31:46",
+      "Title": "Sony Afeela EV با AI autonomy پیشرفته آمد",
+      "Slug": "sony-afeela-ev-%d8%a8%d8%a7-ai-autonomy-%d9%be%db%8c%d8%b4%d8%b1%d9%81%d8%aa%d9%87-%d8%a2%d9%85%d8%af",
+      "Link": "https://amirmotefaker.ir/sony-afeela-ev-%d8%a8%d8%a7-ai-autonomy-%d9%be%db%8c%d8%b4%d8%b1%d9%81%d8%aa%d9%87-%d8%a2%d9%85%d8%af/",
+      "CategoryIds": [
+        202,
+        5,
+        983,
+        1969,
+        93,
+        6
+      ],
+      "CategoryNames": [
+        "خودرو",
+        "تکنولوژی",
+        "حمل و نقل",
+        "خودرو هوشمند",
+        "فناوری",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12767,
+      "Excerpt": "خودروهای الکتریکی را هوشمندتر می‌کند، ممکن است ۲۰٪ فروش EV AI رشد کند."
+    },
+    {
+      "Id": 12760,
+      "Date": "01/09/2026 08:18:24",
+      "Modified": "01/06/2026 15:08:06",
+      "Title": "انویدیا RTX 50 series را با AI Boost رونمایی کرد",
+      "Slug": "%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-rtx-50-series-%d8%b1%d8%a7-%d8%a8%d8%a7-ai-boost-%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c%db%8c-%da%a9%d8%b1%d8%af",
+      "Link": "https://amirmotefaker.ir/%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-rtx-50-series-%d8%b1%d8%a7-%d8%a8%d8%a7-ai-boost-%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c%db%8c-%da%a9%d8%b1%d8%af/",
+      "CategoryIds": [
+        2125,
+        857,
+        1160,
+        318,
+        93,
+        6
+      ],
+      "CategoryNames": [
+        "بازی‌های ویدئویی",
+        "تراشه",
+        "سخت افزار",
+        "صنعت بازی",
+        "فناوری",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12761,
+      "Excerpt": "گیمینگ را تحول می‌بخشد، ممکن است ۳۰٪ عملکرد کارت گرافیک افزایش یابد."
+    },
+    {
+      "Id": 12754,
+      "Date": "01/09/2026 08:09:47",
+      "Modified": "01/06/2026 14:39:34",
+      "Title": "CES ۲۰۲۶: هوش مصنوعی در همه چیز غالب است",
+      "Slug": "ces-%db%b2%db%b0%db%b2%db%b6-%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c-%d8%af%d8%b1-%d9%87%d9%85%d9%87-%da%86%db%8c%d8%b2-%d8%ba%d8%a7%d9%84%d8%a8-%d8%a7%d8%b3%d8%aa",
+      "Link": "https://amirmotefaker.ir/ces-%db%b2%db%b0%db%b2%db%b6-%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c-%d8%af%d8%b1-%d9%87%d9%85%d9%87-%da%86%db%8c%d8%b2-%d8%ba%d8%a7%d9%84%d8%a8-%d8%a7%d8%b3%d8%aa/",
+      "CategoryIds": [
+        2268,
+        202,
+        1969,
+        1404,
+        349,
+        6
+      ],
+      "CategoryNames": [
+        "CES",
+        "خودرو",
+        "خودرو هوشمند",
+        "ربات",
+        "رباتیک",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12755,
+      "Excerpt": "روندهای سال را شکل می‌دهد، ممکن است ۳۰٪ نوآوری مصرفی افزایش یابد."
+    },
+    {
+      "Id": 12748,
+      "Date": "01/09/2026 08:00:09",
+      "Modified": "01/06/2026 14:26:10",
+      "Title": "انویدیا در keynote CES ۲۰۲۶ آینده AI فیزیکی را ترسیم کرد",
+      "Slug": "%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-%d8%af%d8%b1-keynote-ces-%db%b2%db%b0%db%b2%db%b6-%d8%a2%db%8c%d9%86%d8%af%d9%87-ai-%d9%81%db%8c%d8%b2%db%8c%da%a9%db%8c-%d8%b1%d8%a7-%d8%aa%d8%b1%d8%b3",
+      "Link": "https://amirmotefaker.ir/%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-%d8%af%d8%b1-keynote-ces-%db%b2%db%b0%db%b2%db%b6-%d8%a2%db%8c%d9%86%d8%af%d9%87-ai-%d9%81%db%8c%d8%b2%db%8c%da%a9%db%8c-%d8%b1%d8%a7-%d8%aa%d8%b1%d8%b3/",
+      "CategoryIds": [
+        2266,
+        857,
+        1404,
+        349,
+        1160,
+        6
+      ],
+      "CategoryNames": [
+        "فیزیک",
+        "تراشه",
+        "ربات",
+        "رباتیک",
+        "سخت افزار",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12749,
+      "Excerpt": "رباتیک را تحول می‌بخشد، ممکن است ۳۰٪ سرمایه‌گذاری در Physical AI افزایش یابد."
+    },
+    {
+      "Id": 12742,
+      "Date": "01/08/2026 08:29:57",
+      "Modified": "01/06/2026 11:05:28",
+      "Title": "Intel Lunar Lake 2 برای AI PCها رونمایی شد",
+      "Slug": "intel-lunar-lake-2-%d8%a8%d8%b1%d8%a7%db%8c-ai-pc%d9%87%d8%a7-%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c%db%8c-%d8%b4%d8%af",
+      "Link": "https://amirmotefaker.ir/intel-lunar-lake-2-%d8%a8%d8%b1%d8%a7%db%8c-ai-pc%d9%87%d8%a7-%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c%db%8c-%d8%b4%d8%af/",
+      "CategoryIds": [
+        6,
+        2263,
+        857,
+        5,
+        1160
+      ],
+      "CategoryNames": [
+        "هوش مصنوعی",
+        "پردازنده",
+        "تراشه",
+        "تکنولوژی",
+        "سخت افزار"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12747,
+      "Excerpt": "AI PCها را ارزان‌تر می‌کند، ممکن است ۲۵٪ فروش لپ‌تاپ AI افزایش یابد."
+    },
+    {
+      "Id": 12736,
+      "Date": "01/08/2026 08:23:41",
+      "Modified": "01/06/2026 10:41:44",
+      "Title": "LG ربات Q9 را به عنوان همراه خانگی معرفی کرد",
+      "Slug": "lg-%d8%b1%d8%a8%d8%a7%d8%aa-q9-%d8%b1%d8%a7-%d8%a8%d9%87-%d8%b9%d9%86%d9%88%d8%a7%d9%86-%d9%87%d9%85%d8%b1%d8%a7%d9%87-%d8%ae%d8%a7%d9%86%da%af%db%8c-%d9%85%d8%b9%d8%b1%d9%81%db%8c-%da%a9%d8%b1%d8%af",
+      "Link": "https://amirmotefaker.ir/lg-%d8%b1%d8%a8%d8%a7%d8%aa-q9-%d8%b1%d8%a7-%d8%a8%d9%87-%d8%b9%d9%86%d9%88%d8%a7%d9%86-%d9%87%d9%85%d8%b1%d8%a7%d9%87-%d8%ae%d8%a7%d9%86%da%af%db%8c-%d9%85%d8%b9%d8%b1%d9%81%db%8c-%da%a9%d8%b1%d8%af/",
+      "CategoryIds": [
+        1404,
+        2221,
+        349,
+        6
+      ],
+      "CategoryNames": [
+        "ربات",
+        "خانه هوشمند",
+        "رباتیک",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": false,
+      "FeaturedMedia": 12741,
+      "Excerpt": "ربات‌های خانگی را فراگیرتر می‌کند، ممکن است ۳۰٪ پذیرش ربات افزایش یابد."
+    },
+    {
+      "Id": 12730,
+      "Date": "01/08/2026 08:15:16",
+      "Modified": "01/06/2026 09:19:30",
+      "Title": "AMD Ryzen AI Max Series برای لپ‌تاپ‌های AI معرفی شد",
+      "Slug": "amd-ryzen-ai-max-series-%d8%a8%d8%b1%d8%a7%db%8c-%d9%84%d9%be%d8%aa%d8%a7%d9%be%d9%87%d8%a7%db%8c-ai-%d9%85%d8%b9%d8%b1%d9%81%db%8c-%d8%b4%d8%af",
+      "Link": "https://amirmotefaker.ir/amd-ryzen-ai-max-series-%d8%a8%d8%b1%d8%a7%db%8c-%d9%84%d9%be%d8%aa%d8%a7%d9%be%d9%87%d8%a7%db%8c-ai-%d9%85%d8%b9%d8%b1%d9%81%db%8c-%d8%b4%d8%af/",
+      "CategoryIds": [
+        857,
+        1160,
+        93,
+        2200,
+        6
+      ],
+      "CategoryNames": [
+        "تراشه",
+        "سخت افزار",
+        "فناوری",
+        "لپ‌تاپ(NoteBook)",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12731,
+      "Excerpt": "رقابت لپ‌تاپ AI را شدیدتر می‌کند، ممکن است ۲۰٪ سهم بازار AMD افزایش یابد."
+    },
+    {
+      "Id": 12724,
+      "Date": "01/08/2026 08:07:14",
+      "Modified": "01/06/2026 08:58:10",
+      "Title": "سامسونگ Bespoke AI Laundry Combo با Vision AI را نشان داد",
+      "Slug": "%d8%b3%d8%a7%d9%85%d8%b3%d9%88%d9%86%da%af-bespoke-ai-laundry-combo-%d8%a8%d8%a7-vision-ai-%d8%b1%d8%a7-%d9%86%d8%b4%d8%a7%d9%86-%d8%af%d8%a7%d8%af",
+      "Link": "https://amirmotefaker.ir/%d8%b3%d8%a7%d9%85%d8%b3%d9%88%d9%86%da%af-bespoke-ai-laundry-combo-%d8%a8%d8%a7-vision-ai-%d8%b1%d8%a7-%d9%86%d8%b4%d8%a7%d9%86-%d8%af%d8%a7%d8%af/",
+      "CategoryIds": [
+        857,
+        5,
+        2221,
+        6
+      ],
+      "CategoryNames": [
+        "تراشه",
+        "تکنولوژی",
+        "خانه هوشمند",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12725,
+      "Excerpt": "لوازم خانگی را هوشمندتر می‌کند، ممکن است ۲۵٪ بازار AI خانگی افزایش یابد."
+    },
+    {
+      "Id": 12717,
+      "Date": "01/08/2026 08:00:02",
+      "Modified": "01/06/2026 08:41:57",
+      "Title": "انویدیا در CES ۲۰۲۶ چیپ‌های Blackwell Ultra را رونمایی کرد",
+      "Slug": "%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-%d8%af%d8%b1-ces-%db%b2%db%b0%db%b2%db%b6-%da%86%db%8c%d9%be%d9%87%d8%a7%db%8c-blackwell-ultra-%d8%b1%d8%a7-%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c",
+      "Link": "https://amirmotefaker.ir/%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-%d8%af%d8%b1-ces-%db%b2%db%b0%db%b2%db%b6-%da%86%db%8c%d9%be%d9%87%d8%a7%db%8c-blackwell-ultra-%d8%b1%d8%a7-%d8%b1%d9%88%d9%86%d9%85%d8%a7%db%8c/",
+      "CategoryIds": [
+        1884,
+        267,
+        857,
+        1160,
+        6
+      ],
+      "CategoryNames": [
+        "استراتژیک",
+        "اقتصاد",
+        "تراشه",
+        "سخت افزار",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12718,
+      "Excerpt": "بازار چیپ AI را داغ می‌کند، ممکن است ۳۰٪ عملکرد مدل‌های AI افزایش یابد."
+    },
+    {
+      "Id": 12705,
+      "Date": "01/07/2026 08:29:53",
+      "Modified": "01/05/2026 13:59:33",
+      "Title": "CES ۲۰۲۶ زنده: اخبار بزرگ‌ترین نمایشگاه Tech جهان",
+      "Slug": "ces-%db%b2%db%b0%db%b2%db%b6-%d8%b2%d9%86%d8%af%d9%87-%d8%a7%d8%ae%d8%a8%d8%a7%d8%b1-%d8%a8%d8%b2%d8%b1%da%af%d8%aa%d8%b1%db%8c%d9%86-%d9%86%d9%85%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-tech",
+      "Link": "https://amirmotefaker.ir/ces-%db%b2%db%b0%db%b2%db%b6-%d8%b2%d9%86%d8%af%d9%87-%d8%a7%d8%ae%d8%a8%d8%a7%d8%b1-%d8%a8%d8%b2%d8%b1%da%af%d8%aa%d8%b1%db%8c%d9%86-%d9%86%d9%85%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-tech/",
+      "CategoryIds": [
+        857,
+        5,
+        109,
+        83,
+        511,
+        6
+      ],
+      "CategoryNames": [
+        "تراشه",
+        "تکنولوژی",
+        "صنعت",
+        "کسب‌و‌کار",
+        "نمایشگاه",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12706,
+      "Excerpt": "بازار tech را داغ می‌کند، ممکن است ۲۰٪ سهام فناوری رشد کند."
+    },
+    {
+      "Id": 12699,
+      "Date": "01/07/2026 08:22:34",
+      "Modified": "01/05/2026 13:44:40",
+      "Title": "چه چیزی در CES ۲۰۲۶ از دست ندهید",
+      "Slug": "%da%86%d9%87-%da%86%db%8c%d8%b2%db%8c-%d8%af%d8%b1-ces-%db%b2%db%b0%db%b2%db%b6-%d8%a7%d8%b2-%d8%af%d8%b3%d8%aa-%d9%86%d8%af%d9%87%db%8c%d8%af",
+      "Link": "https://amirmotefaker.ir/%da%86%d9%87-%da%86%db%8c%d8%b2%db%8c-%d8%af%d8%b1-ces-%db%b2%db%b0%db%b2%db%b6-%d8%a7%d8%b2-%d8%af%d8%b3%d8%aa-%d9%86%d8%af%d9%87%db%8c%d8%af/",
+      "CategoryIds": [
+        511,
+        267,
+        1896,
+        1404,
+        349,
+        1160,
+        6
+      ],
+      "CategoryNames": [
+        "نمایشگاه",
+        "اقتصاد",
+        "اقتصاد دیجیتال",
+        "ربات",
+        "رباتیک",
+        "سخت افزار",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12700,
+      "Excerpt": "صنایع را با AI فیزیکی تغییر می‌دهد، ممکن است ۳۰٪ ربات‌های کاربردی افزایش یابد."
+    },
+    {
+      "Id": 12692,
+      "Date": "01/07/2026 08:15:22",
+      "Modified": "01/05/2026 12:07:00",
+      "Title": "CES ۲۰۲۶: همه اخبار بزرگ Tech و Gadgetها",
+      "Slug": "ces-%db%b2%db%b0%db%b2%db%b6-%d9%87%d9%85%d9%87-%d8%a7%d8%ae%d8%a8%d8%a7%d8%b1-%d8%a8%d8%b2%d8%b1%da%af-tech-%d9%88-gadget%d9%87%d8%a7",
+      "Link": "https://amirmotefaker.ir/ces-%db%b2%db%b0%db%b2%db%b6-%d9%87%d9%85%d9%87-%d8%a7%d8%ae%d8%a8%d8%a7%d8%b1-%d8%a8%d8%b2%d8%b1%da%af-tech-%d9%88-gadget%d9%87%d8%a7/",
+      "CategoryIds": [
+        1404,
+        2251,
+        2053,
+        6
+      ],
+      "CategoryNames": [
+        "ربات",
+        "گجت‌های هوشمند",
+        "نوآوری",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12693,
+      "Excerpt": "این رویداد روندهای ۲۰۲۶ را شکل می‌دهد، ممکن است ۲۵٪ نوآوری مصرفی افزایش یابد."
+    },
+    {
+      "Id": 12686,
+      "Date": "01/07/2026 08:07:00",
+      "Modified": "01/05/2026 11:20:22",
+      "Title": "انویدیا در CES ۲۰۲۶ نوآوری‌های AI را برجسته می‌کند",
+      "Slug": "%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-%d8%af%d8%b1-ces-%db%b2%db%b0%db%b2%db%b6-%d9%86%d9%88%d8%a2%d9%88%d8%b1%db%8c%d9%87%d8%a7%db%8c-ai-%d8%b1%d8%a7-%d8%a8%d8%b1%d8%ac%d8%b3%d8%aa",
+      "Link": "https://amirmotefaker.ir/%d8%a7%d9%86%d9%88%db%8c%d8%af%db%8c%d8%a7-%d8%af%d8%b1-ces-%db%b2%db%b0%db%b2%db%b6-%d9%86%d9%88%d8%a2%d9%88%d8%b1%db%8c%d9%87%d8%a7%db%8c-ai-%d8%b1%d8%a7-%d8%a8%d8%b1%d8%ac%d8%b3%d8%aa/",
+      "CategoryIds": [
+        6,
+        2248,
+        109,
+        2053
+      ],
+      "CategoryNames": [
+        "هوش مصنوعی",
+        "بهره‌وری",
+        "صنعت",
+        "نوآوری"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12687,
+      "Excerpt": "صنایع را AI-محور می‌کند، ممکن است ۳۰٪ کاربردهای enterprise افزایش یابد."
+    },
+    {
+      "Id": 12680,
+      "Date": "01/07/2026 08:00:50",
+      "Modified": "01/05/2026 11:08:33",
+      "Title": "سامسونگ در CES ۲۰۲۶ “همراه AI زندگی” را معرفی کرد",
+      "Slug": "%d8%b3%d8%a7%d9%85%d8%b3%d9%88%d9%86%da%af-%d8%af%d8%b1-ces-%db%b2%db%b0%db%b2%db%b6-%d9%87%d9%85%d8%b1%d8%a7%d9%87-ai-%d8%b2%d9%86%d8%af%da%af%db%8c-%d8%b1%d8%a7-%d9%85%d8%b9%d8%b1%d9%81%db%8c",
+      "Link": "https://amirmotefaker.ir/%d8%b3%d8%a7%d9%85%d8%b3%d9%88%d9%86%da%af-%d8%af%d8%b1-ces-%db%b2%db%b0%db%b2%db%b6-%d9%87%d9%85%d8%b1%d8%a7%d9%87-ai-%d8%b2%d9%86%d8%af%da%af%db%8c-%d8%b1%d8%a7-%d9%85%d8%b9%d8%b1%d9%81%db%8c/",
+      "CategoryIds": [
+        2221,
+        109,
+        6
+      ],
+      "CategoryNames": [
+        "خانه هوشمند",
+        "صنعت",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12681,
+      "Excerpt": "خانه‌های هوشمند را تحول می‌بخشد، ممکن است ۲۵٪ بازار دستگاه‌های AI خانگی افزایش یابد."
+    },
+    {
+      "Id": 12674,
+      "Date": "01/06/2026 08:30:38",
+      "Modified": "01/04/2026 16:26:14",
+      "Title": "چین توانمندی‌های AI خود را در چشم‌انداز ۲۰۲۶ بازتعریف می‌کند",
+      "Slug": "%da%86%db%8c%d9%86-%d8%aa%d9%88%d8%a7%d9%86%d9%85%d9%86%d8%af%db%8c%d9%87%d8%a7%db%8c-ai-%d8%ae%d9%88%d8%af-%d8%b1%d8%a7-%d8%af%d8%b1-%da%86%d8%b4%d9%85%d8%a7%d9%86%d8%af%d8%a7%d8%b2",
+      "Link": "https://amirmotefaker.ir/%da%86%db%8c%d9%86-%d8%aa%d9%88%d8%a7%d9%86%d9%85%d9%86%d8%af%db%8c%d9%87%d8%a7%db%8c-ai-%d8%ae%d9%88%d8%af-%d8%b1%d8%a7-%d8%af%d8%b1-%da%86%d8%b4%d9%85%d8%a7%d9%86%d8%af%d8%a7%d8%b2/",
+      "CategoryIds": [
+        6,
+        267,
+        1597,
+        93,
+        1065,
+        2053
+      ],
+      "CategoryNames": [
+        "هوش مصنوعی",
+        "اقتصاد",
+        "سهام",
+        "فناوری",
+        "محاسبات کوانتومی",
+        "نوآوری"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12675,
+      "Excerpt": "این خبر نشانه‌ی ادامه رقابت جهانی AI است؛ مخصوصاً تلاش‌های چین برای توسعه مدل‌های پایه و زیرساخت‌های محاسباتی پیشرفته."
+    },
+    {
+      "Id": 12668,
+      "Date": "01/06/2026 08:21:10",
+      "Modified": "01/04/2026 16:13:21",
+      "Title": "AI در سال ۲۰۲۶ وارد مرحله عملیاتی و اجرایی می‌شود",
+      "Slug": "ai-%d8%af%d8%b1-%d8%b3%d8%a7%d9%84-%db%b2%db%b0%db%b2%db%b6-%d9%88%d8%a7%d8%b1%d8%af-%d9%85%d8%b1%d8%ad%d9%84%d9%87-%d8%b9%d9%85%d9%84%db%8c%d8%a7%d8%aa%db%8c-%d9%88-%d8%a7%d8%ac%d8%b1%d8%a7%db%8c",
+      "Link": "https://amirmotefaker.ir/ai-%d8%af%d8%b1-%d8%b3%d8%a7%d9%84-%db%b2%db%b0%db%b2%db%b6-%d9%88%d8%a7%d8%b1%d8%af-%d9%85%d8%b1%d8%ad%d9%84%d9%87-%d8%b9%d9%85%d9%84%db%8c%d8%a7%d8%aa%db%8c-%d9%88-%d8%a7%d8%ac%d8%b1%d8%a7%db%8c/",
+      "CategoryIds": [
+        93,
+        1526,
+        436,
+        6
+      ],
+      "CategoryNames": [
+        "فناوری",
+        "سازمان",
+        "سرمایه‌گذاری",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12669,
+      "Excerpt": "این تغییر فاز برای کسب‌وکارها بسیار مهم است، زیرا AI دیگر صرفاً ابزار آزمایشی محسوب نمی‌شود؛ بلکه بخشی از عملیات اصلی شرکت‌ها خواهد بود."
+    },
+    {
+      "Id": 12659,
+      "Date": "01/06/2026 08:17:56",
+      "Modified": "01/04/2026 16:00:12",
+      "Title": "هشدار در مورد خلاصه‌های AI گوگل که اطلاعات پزشکی غلط ارائه می‌دهند",
+      "Slug": "%d9%87%d8%b4%d8%af%d8%a7%d8%b1-%d8%af%d8%b1-%d9%85%d9%88%d8%b1%d8%af-%d8%ae%d9%84%d8%a7%d8%b5%d9%87%d9%87%d8%a7%db%8c-ai-%da%af%d9%88%da%af%d9%84-%da%a9%d9%87-%d8%a7%d8%b7%d9%84%d8%a7%d8%b9",
+      "Link": "https://amirmotefaker.ir/%d9%87%d8%b4%d8%af%d8%a7%d8%b1-%d8%af%d8%b1-%d9%85%d9%88%d8%b1%d8%af-%d8%ae%d9%84%d8%a7%d8%b5%d9%87%d9%87%d8%a7%db%8c-ai-%da%af%d9%88%da%af%d9%84-%da%a9%d9%87-%d8%a7%d8%b7%d9%84%d8%a7%d8%b9/",
+      "CategoryIds": [
+        159,
+        1884,
+        1822,
+        779,
+        6
+      ],
+      "CategoryNames": [
+        "پزشکی",
+        "استراتژیک",
+        "تحقیقات",
+        "سلامت",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12660,
+      "Excerpt": "این موضوع یکی از مهم‌ترین چالش‌های AI در دنیای واقعی است، چرا که استفاده‌ی گسترده از خلاصه‌های خودکار می‌تواند باعث انتشار اطلاعات غلط به کاربران عادی شود."
+    },
+    {
+      "Id": 12653,
+      "Date": "01/06/2026 08:07:56",
+      "Modified": "01/04/2026 15:48:04",
+      "Title": "افتتاح نمایشگاه فناوری CES 2026 با محوریت هوش مصنوعی",
+      "Slug": "%d8%a7%d9%81%d8%aa%d8%aa%d8%a7%d8%ad-%d9%86%d9%85%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c-ces-2026-%d8%a8%d8%a7-%d9%85%d8%ad%d9%88%d8%b1%db%8c%d8%aa-%d9%87%d9%88%d8%b4",
+      "Link": "https://amirmotefaker.ir/%d8%a7%d9%81%d8%aa%d8%aa%d8%a7%d8%ad-%d9%86%d9%85%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c-ces-2026-%d8%a8%d8%a7-%d9%85%d8%ad%d9%88%d8%b1%db%8c%d8%aa-%d9%87%d9%88%d8%b4/",
+      "CategoryIds": [
+        6,
+        2221,
+        1969,
+        796,
+        1880,
+        93,
+        511
+      ],
+      "CategoryNames": [
+        "هوش مصنوعی",
+        "خانه هوشمند",
+        "خودرو هوشمند",
+        "دستگاه پوشیدنی",
+        "سیستم‌های خودران",
+        "فناوری",
+        "نمایشگاه"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12654,
+      "Excerpt": "نمایشگاه CES معمولاً روندهای فناوری سال آینده را مشخص می‌کند و تمرکز این دوره روی AI نشان می‌دهد که این فناوری همچنان نقش محوری در توسعه‌ی محصول، خدمات مصرفی و اینترنت اشیا خواهد داشت."
+    },
+    {
+      "Id": 12645,
+      "Date": "01/06/2026 08:00:28",
+      "Modified": "01/04/2026 15:28:09",
+      "Title": "نگرانی از جایگزینی روابط انسانی با هوش مصنوعی",
+      "Slug": "%d9%86%da%af%d8%b1%d8%a7%d9%86%db%8c-%d8%a7%d8%b2-%d8%ac%d8%a7%db%8c%da%af%d8%b2%db%8c%d9%86%db%8c-%d8%b1%d9%88%d8%a7%d8%a8%d8%b7-%d8%a7%d9%86%d8%b3%d8%a7%d9%86%db%8c-%d8%a8%d8%a7-%d9%87%d9%88%d8%b4",
+      "Link": "https://amirmotefaker.ir/%d9%86%da%af%d8%b1%d8%a7%d9%86%db%8c-%d8%a7%d8%b2-%d8%ac%d8%a7%db%8c%da%af%d8%b2%db%8c%d9%86%db%8c-%d8%b1%d9%88%d8%a7%d8%a8%d8%b7-%d8%a7%d9%86%d8%b3%d8%a7%d9%86%db%8c-%d8%a8%d8%a7-%d9%87%d9%88%d8%b4/",
+      "CategoryIds": [
+        1816,
+        1875,
+        1995,
+        503,
+        83,
+        6
+      ],
+      "CategoryNames": [
+        "اخلاق",
+        "اجتماعی",
+        "اشتغال",
+        "سیاست",
+        "کسب‌و‌کار",
+        "هوش مصنوعی"
+      ],
+      "CategoryMatch": true,
+      "KeywordMatch": true,
+      "FeaturedMedia": 12648,
+      "Excerpt": "بحث‌های اجتماعی را داغ می‌کند، ممکن است ۲۰٪ سیاست‌های حمایتی افزایش یابد."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+.am-section {
+    padding-block: clamp(3rem, 8vw, 7rem);
+}
+
+.am-surface {
+    background: var(--am-surface);
+    border: 1px solid rgba(203, 213, 225, 0.14);
+    border-radius: var(--am-radius);
+    box-shadow: var(--am-shadow);
+}
+
+.am-eyebrow {
+    color: var(--am-green);
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.am-product-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.am-product-card {
+    min-height: 100%;
+    padding: 1.5rem;
+}
+
+.am-muted {
+    color: var(--am-text-muted);
+}
+
+@media (max-width: 800px) {
+    .am-product-grid {
+        grid-template-columns: 1fr;
+    }
+}

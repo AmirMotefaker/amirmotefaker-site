@@ -1,0 +1,129 @@
+AMIRMOTEFAKER.IR PERSONAL PROFILE AND TECH-NEWS BASELINE V5
+
+Domain:
+https://amirmotefaker.ir
+
+Homepage:
+HTTP 200
+
+About page:
+HTTP 200
+ID 122
+Title درباره من
+Words 793
+Headings 15
+Images 0
+Images missing alt 0
+
+Resume page:
+HTTP 200
+ID 622
+Title رزومه امیر
+Words 2876
+Headings 76
+Images 0
+Images missing alt 0
+
+WordPress page resolution:
+About Pass True
+About ID 122
+About Score 695
+About Reasons EXACT_NORMALIZED_URL,EXACT_NORMALIZED_PATH,TITLE_CONTAINS:درباره,SLUG_CONTAINS:درباره,PATH_CONTAINS:درباره,EXACT_TITLE:درباره من,EXACT_SLUG:درباره من,PATH_CONTAINS:درباره من
+
+Resume Pass True
+Resume ID 622
+Resume Score 695
+Resume Reasons EXACT_NORMALIZED_URL,EXACT_NORMALIZED_PATH,TITLE_CONTAINS:رزومه,SLUG_CONTAINS:رزومه,PATH_CONTAINS:رزومه,EXACT_TITLE:رزومه امیر,EXACT_SLUG:رزومه امیر,PATH_CONTAINS:رزومه امیر
+
+Profile object validation:
+About Pass True
+About Outputs 1
+About Candidates 1
+About Noise 0
+About Raw Resolution Outputs 1
+About NoiseDetails Present True
+
+Resume Pass True
+Resume Outputs 1
+Resume Candidates 1
+Resume Noise 0
+Resume Raw Resolution Outputs 1
+Resume NoiseDetails Present True
+
+Public WordPress inventory:
+Pages 14
+Categories 207
+Latest posts sampled 100
+
+Navigation links captured:
+5
+
+Tech-news navigation candidates:
+1
+
+Tech-news taxonomy candidates:
+9
+
+News-like post candidates in latest sample:
+100
+
+Prior failures resolved:
+- Nested navigation array flattened before Text/Href access
+- Percent-encoded and Unicode Persian WordPress URLs, slugs and titles normalized
+- About and Resume pages selected by deterministic scoring with ambiguity rejection
+- About and Resume profile outputs validated against a required property schema
+- Resolution pipeline outputs filtered to exactly one required-schema object
+- Optional NoiseDetails diagnostics normalized to an empty array when absent
+- ExternalLinks, Headings and Images properties always materialized as arrays
+
+Network request performed by V5:
+False
+
+Preferred اخبار فناوری menu:
+اخبار فناوری | https://amirmotefaker.ir/%d8%a8%d9%84%d8%a7%da%af/
+
+Preferred اخبار فناوری category:
+NOT_CONCLUSIVELY_IDENTIFIED
+
+Final classification:
+PASS_ARCHIVED_PUBLIC_PROFILE_AND_NEWS_BASELINE_FINALIZED
+
+Ready for Master Specification V2:
+True
+
+Operations performed:
+- Verified and read the archived public homepage HTML from V1
+- Verified and read the archived public About page from V1
+- Verified and read the archived public Resume page from V1
+- Verified and read the archived public WordPress page inventory from V1
+- Verified and read the archived public WordPress category inventory from V1
+- Verified and read the archived latest 100 public posts from V1
+- Extracted current navigation links
+- Normalized percent-encoded and Unicode Persian page identifiers
+- Resolved About and Resume pages with deterministic scoring and ambiguity rejection
+- Archived the complete page-match candidate table
+- Built schema-stable About and Resume profile objects
+- Normalized the profile-resolution object before reading optional diagnostics
+- Validated each profile output and archived its property shape
+- Materialized empty and non-empty ExternalLinks, Headings and Images collections consistently
+- Extracted About and Resume content, headings, images and external links
+- Identified current اخبار فناوری navigation and taxonomy candidates
+- Built the initial daily news workflow input register
+- Fingerprinted the evidence
+- Archived the executed script
+
+Operations not performed:
+- No WordPress or hosting login
+- No LinkedIn login or automated LinkedIn extraction
+- No credential, secret or private-content access
+- No WordPress, content, theme, plugin or database change
+- No DNS, SSL, registrar or nameserver change
+- No deployment or rollback
+- No scheduled automation creation
+- No tag or GitHub Release
+
+Production change authorized:
+False
+
+Decision:
+AMIRMOTEFAKER-IR-PERSONAL-PROFILE-NEWS-BASELINE-V5-PASS-READY-FOR-MASTER-SPECIFICATION-V2

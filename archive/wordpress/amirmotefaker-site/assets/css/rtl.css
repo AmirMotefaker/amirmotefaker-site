@@ -1,0 +1,15 @@
+html[dir="rtl"],
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.wp-block-navigation__responsive-container {
+    direction: rtl;
+}
+
+.wp-block-post-content ul,
+.wp-block-post-content ol {
+    padding-right: 1.5rem;
+    padding-left: 0;
+}

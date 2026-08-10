@@ -1,0 +1,51 @@
+:root {
+    --am-canvas: #05070d;
+    --am-surface: #0b1220;
+    --am-surface-strong: #111a2e;
+    --am-text: #f8fafc;
+    --am-text-muted: #cbd5e1;
+    --am-green: #22c55e;
+    --am-purple: #8b5cf6;
+    --am-radius: 1.5rem;
+    --am-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    direction: rtl;
+}
+
+body {
+    background: var(--am-canvas);
+    color: var(--am-text);
+    font-family: Tahoma, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+a,
+button {
+    transition: opacity 160ms ease, transform 160ms ease, border-color 160ms ease;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--am-purple);
+    outline-offset: 4px;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,7 @@
+html[data-theme="dark"] {
+    --am-canvas: #05070d;
+    --am-surface: #0b1220;
+    --am-surface-strong: #111a2e;
+    --am-text: #f8fafc;
+    --am-text-muted: #cbd5e1;
+}
