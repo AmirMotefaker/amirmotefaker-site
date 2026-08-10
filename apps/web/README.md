@@ -1,10 +1,9 @@
-# AmirMotefaker.ir Web Application
+# AmirMotefaker.ir Web
 
-Modern bilingual AI Founder Platform.
+Next.js application foundation.
 
-Stack target:
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Modern UI/UX architecture
+Features planned:
+- Persian RTL
+- English LTR
+- AI Founder branding
+- Modern UI/UX 2026
