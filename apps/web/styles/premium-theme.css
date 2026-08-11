@@ -1,0 +1,77 @@
+:root {
+
+--brand-primary:#2563eb;
+--brand-secondary:#7c3aed;
+
+--background:#ffffff;
+--foreground:#111827;
+
+--container-width:1280px;
+
+--radius-xl:32px;
+
+--shadow-premium:
+0 25px 80px rgba(0,0,0,.08);
+
+}
+
+
+* {
+box-sizing:border-box;
+}
+
+
+body {
+
+margin:0;
+
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#f8fafc
+);
+
+color:var(--foreground);
+
+}
+
+
+
+.container {
+
+width:min(
+calc(100% - 48px),
+var(--container-width)
+);
+
+margin:auto;
+
+}
+
+
+
+.section {
+
+padding:
+80px 0;
+
+}
+
+
+
+.card {
+
+background:white;
+
+border-radius:
+var(--radius-xl);
+
+box-shadow:
+var(--shadow-premium);
+
+padding:32px;
+
+}
+
+
