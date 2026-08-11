@@ -1,47 +1,35 @@
 import { products } from "@/content/products";
+import ProductPageLayout from "@/components/products/ProductPageLayout";
 
-export default function ProductsPage() {
-  return (
-    <main>
-      <section>
-        <h1>Products</h1>
 
-        <div>
-          {products.map((product) => {
-            const website =
-              "website" in product &&
-              typeof product.website === "string"
-                ? product.website
-                : undefined;
+export default function ProductsPage(){
 
-            return (
-              <article key={product.slug}>
-                <h2>{product.name}</h2>
+return (
 
-                <p>{product.description}</p>
+<main>
 
-                <p>
-                  Category: {product.category}
-                </p>
+<section>
 
-                <p>
-                  Status: {product.status}
-                </p>
+<h1>
+Products
+</h1>
 
-                {website && (
-                  <a
-                    href={website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visit Website
-                  </a>
-                )}
-              </article>
-            );
-          })}
-        </div>
-      </section>
-    </main>
-  );
+
+{
+products.map((product)=>(
+<ProductPageLayout
+key={product.slug}
+product={product}
+/>
+))
+}
+
+
+</section>
+
+
+</main>
+
+)
+
 }
