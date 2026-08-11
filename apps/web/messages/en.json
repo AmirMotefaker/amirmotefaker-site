@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Building the Future with Artificial Intelligence",
+    "subtitle": "Amir Motefaker is an AI founder building intelligent products",
+    "description": "Building AI platforms, digital products and technology ecosystems"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "cta": {
+    "products": "Explore Products",
+    "contact": "Contact"
+  },
+  "vision": {
+    "title": "Technology Vision",
+    "text": "Artificial Intelligence, Software Engineering and Digital Innovation"
+  }
+}
