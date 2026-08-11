@@ -1,0 +1,18 @@
+:root {
+
+--background:#050816;
+--surface:#0B1220;
+--text:#F8FAFC;
+--primary:#3B82F6;
+--accent:#8B5CF6;
+
+}
+
+
+.light {
+
+--background:#ffffff;
+--surface:#f8fafc;
+--text:#111827;
+
+}
