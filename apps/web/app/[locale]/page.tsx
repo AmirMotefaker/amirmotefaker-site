@@ -5,24 +5,24 @@ import TechnologyVision from "@/components/home/TechnologyVision";
 import FounderCTA from "@/components/home/FounderCTA";
 
 
-export default function HomePage() {
+export default function HomePage(){
 
-  return (
+return (
 
-    <main>
+<main>
 
-      <FounderHero />
+<FounderHero />
 
-      <PlatformVision />
+<PlatformVision />
 
-      <FeaturedProducts />
+<FeaturedProducts />
 
-      <TechnologyVision />
+<TechnologyVision />
 
-      <FounderCTA />
+<FounderCTA />
 
-    </main>
+</main>
 
-  );
+)
 
 }
