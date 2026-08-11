@@ -1,0 +1,9 @@
+:root {
+  --am-primary: #111827;
+  --am-accent: #2563eb;
+  --am-radius-md: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
