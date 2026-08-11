@@ -1,38 +1,65 @@
-import { products } from "../../data/products";
+import Section from "@/components/ui/Section";
 
 export default function ProductShowcase(){
 
+const products=[
+"LinkResan",
+"Farsio",
+"Zobdino",
+"FilmTrack",
+"ShiftPay",
+"PrimeSYS"
+];
+
+
 return (
 
-<section>
+<Section title="Featured Products">
 
-<h2>
-Products
-</h2>
 
-<div>
+<div className="
+grid
+md:grid-cols-3
+gap-8
+">
 
 {
-products.map((product)=>(
-<div key={product.slug}>
+products.map(product=>(
 
-<h3>
-{product.name}
+<div
+key={product}
+className="
+rounded-3xl
+border
+p-8
+hover:-translate-y-2
+transition
+">
+
+<h3 className="text-2xl font-bold">
+
+{product}
+
 </h3>
 
-<p>
-{product.category}
+
+<p className="mt-4 text-neutral-600">
+
+AI powered digital platform
+
 </p>
 
-</div>
-))
 
+</div>
+
+))
 }
 
 </div>
 
-</section>
 
-);
+</Section>
+
+)
 
 }
