@@ -1,31 +1,47 @@
-import {products} from "@/content/products";
+import { products } from "@/content/products";
 
-export default function ProductsPage(){
+export default function ProductsPage() {
+  return (
+    <main>
+      <section>
+        <h1>Products</h1>
 
-return (
+        <div>
+          {products.map((product) => {
+            const website =
+              "website" in product &&
+              typeof product.website === "string"
+                ? product.website
+                : undefined;
 
-<section>
+            return (
+              <article key={product.slug}>
+                <h2>{product.name}</h2>
 
-<h1>Products</h1>
+                <p>{product.description}</p>
 
-{products.map((product)=>(
+                <p>
+                  Category: {product.category}
+                </p>
 
-<div key={product.slug}>
+                <p>
+                  Status: {product.status}
+                </p>
 
-<h2>
-{product.title}
-</h2>
-
-<p>
-{product.description}
-</p>
-
-</div>
-
-))}
-
-</section>
-
-);
-
+                {website && (
+                  <a
+                    href={website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit Website
+                  </a>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    </main>
+  );
 }
