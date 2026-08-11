@@ -34,3 +34,28 @@ body {
   box-sizing:border-box;
 }
 
+
+/* AmirMotefaker Premium RTL */
+
+html[dir="rtl"] {
+    direction: rtl;
+}
+
+html[dir="rtl"] body {
+    text-align: right;
+}
+
+.premium-gradient-text {
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #9333ea
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.premium-section {
+    padding:120px 0;
+}
+
