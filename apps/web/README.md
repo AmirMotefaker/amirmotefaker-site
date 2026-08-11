@@ -1,9 +1,15 @@
-# AmirMotefaker.ir Web
+# AmirMotefaker.ir NextJS Application
 
-Next.js application foundation.
+## Preview Deployment
 
-Features planned:
-- Persian RTL
-- English LTR
-- AI Founder branding
-- Modern UI/UX 2026
+This application is prepared for Vercel Preview deployments.
+
+## Local Development
+
+npm install
+
+npm run dev
+
+## Build Validation
+
+npm run build
