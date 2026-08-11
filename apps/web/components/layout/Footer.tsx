@@ -2,14 +2,12 @@ export default function Footer(){
 
 return (
 
-<footer>
+<footer className="border-t mt-20 py-10 text-center">
 
-<p>
 © Amir Motefaker
-</p>
 
 </footer>
 
-);
+)
 
 }
