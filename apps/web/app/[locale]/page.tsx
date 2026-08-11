@@ -1,8 +1,34 @@
-export default function LocaleHomePage() {
-  return (
-    <main>
-      <h1>AmirMotefaker.ir</h1>
-      <p>AI Founder Platform</p>
-    </main>
-  );
+import HeroSection from "@/components/home/HeroSection";
+import ProductShowcase from "@/components/home/ProductShowcase";
+import TechnologySection from "@/components/home/TechnologySection";
+import BlogPreview from "@/components/home/BlogPreview";
+
+
+export const metadata = {
+title:
+"Amir Motefaker | Technology Enthusiast",
+
+description:
+"Technology enthusiast passionate about AI, software development and digital products."
+};
+
+
+export default function Page(){
+
+return (
+
+<main>
+
+<HeroSection />
+
+<ProductShowcase />
+
+<TechnologySection />
+
+<BlogPreview />
+
+</main>
+
+);
+
 }
