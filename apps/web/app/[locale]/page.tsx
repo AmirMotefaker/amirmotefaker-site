@@ -1,34 +1,28 @@
-import HeroSection from "@/components/home/HeroSection";
-import ProductShowcase from "@/components/home/ProductShowcase";
-import TechnologySection from "@/components/home/TechnologySection";
-import BlogPreview from "@/components/home/BlogPreview";
+import FounderHero from "@/components/home/FounderHero";
+import PlatformVision from "@/components/home/PlatformVision";
+import FeaturedProducts from "@/components/home/FeaturedProducts";
+import TechnologyVision from "@/components/home/TechnologyVision";
+import FounderCTA from "@/components/home/FounderCTA";
 
 
-export const metadata = {
-title:
-"Amir Motefaker | Technology Enthusiast",
+export default function HomePage() {
 
-description:
-"Technology enthusiast passionate about AI, software development and digital products."
-};
+  return (
 
+    <main>
 
-export default function Page(){
+      <FounderHero />
 
-return (
+      <PlatformVision />
 
-<main>
+      <FeaturedProducts />
 
-<HeroSection />
+      <TechnologyVision />
 
-<ProductShowcase />
+      <FounderCTA />
 
-<TechnologySection />
+    </main>
 
-<BlogPreview />
-
-</main>
-
-);
+  );
 
 }
