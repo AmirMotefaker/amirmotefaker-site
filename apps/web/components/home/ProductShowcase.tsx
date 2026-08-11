@@ -1,5 +1,4 @@
-import {products} from "@/data/products";
-
+import { products } from "../../data/products";
 
 export default function ProductShowcase(){
 
@@ -10,7 +9,6 @@ return (
 <h2>
 Products
 </h2>
-
 
 <div>
 
@@ -32,7 +30,6 @@ products.map((product)=>(
 }
 
 </div>
-
 
 </section>
 
