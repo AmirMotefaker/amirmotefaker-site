@@ -1,3 +1,5 @@
+@import '../styles/premium-theme.css';
+
 :root {
   direction: rtl;
 }
@@ -11,4 +13,5 @@ body {
   font-family: system-ui, sans-serif;
 }
 
-@import '../styles/premium-theme.css';
+
+
