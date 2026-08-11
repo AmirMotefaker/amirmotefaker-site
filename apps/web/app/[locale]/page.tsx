@@ -1,31 +1,38 @@
-import PremiumHero from "@/components/home/PremiumHero";
-import ProductShowcase from "@/components/home/ProductShowcase";
+import HeroVisual from "@/components/home/HeroVisual";
+import FounderProfile from "@/components/home/FounderProfile";
+import StatsSection from "@/components/home/StatsSection";
+import PremiumProductCards from "@/components/home/PremiumProductCards";
+import VisionSection from "@/components/home/VisionSection";
+import PremiumCTA from "@/components/home/PremiumCTA";
+import PremiumNavbar from "@/components/layout/PremiumNavbar";
+import PremiumFooter from "@/components/layout/PremiumFooter";
 
 
 export default function Home(){
 
-return (
+return(
+<div>
 
-<main>
+<PremiumNavbar />
 
-<PremiumHero/>
+<main className="mx-auto max-w-7xl px-8">
 
-<ProductShowcase/>
+<section className="grid min-h-screen items-center gap-12 md:grid-cols-2">
 
-<section className="py-24">
+<HeroVisual />
 
-<div className="max-w-7xl mx-auto px-6">
+<div>
 
-<h2 className="text-5xl font-bold">
+<h1 className="text-6xl font-black leading-tight">
+Building the Future with
+<span className="block bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+Artificial Intelligence
+</span>
+</h1>
 
-Technology Vision
-
-</h2>
-
-<p className="mt-6 text-xl">
-
-AI, software engineering and digital innovation.
-
+<p className="mt-8 text-xl text-gray-600">
+Amir Motefaker is an AI founder building intelligent products,
+platforms and digital ecosystems.
 </p>
 
 </div>
@@ -33,8 +40,22 @@ AI, software engineering and digital innovation.
 </section>
 
 
+<FounderProfile />
+
+<StatsSection />
+
+<PremiumProductCards />
+
+<VisionSection />
+
+<PremiumCTA />
+
 </main>
 
+
+<PremiumFooter />
+
+</div>
 )
 
 }
