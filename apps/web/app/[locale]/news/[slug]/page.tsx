@@ -12,43 +12,51 @@ export default async function Page({
 }) {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
+  const fa = locale === "fa";
   const post = getLegacyPostBySlug(decodeURIComponent(slug));
 
   if (!post) notFound();
 
   return (
     <FounderShell locale={locale}>
-      <main className="inner-page">
-        <article className="wrap article-wrap">
-          <header className="article-head">
-            <span className="sec-tag">
-              {locale === "fa" ? "اخبار فناوری" : "TECHNOLOGY NEWS"}
-            </span>
-            <h1>{post.title}</h1>
-            <div className="article-meta">
-              <time dateTime={post.date}>{formatSiteDate(post.date, locale)}</time>
-              {post.categories.map((category) => (
-                <span key={category.id}>{category.name}</span>
-              ))}
+      <main className="mv-inner">
+        <article className="mv-article-page">
+          <section className="mv-article-hero">
+            <div className="mv-container">
+              <span className="mv-section-index">01 / {fa ? "مقاله" : "Article"}</span>
+              <h1>{post.title}</h1>
+              <div className="mv-article-meta-line">
+                <time dateTime={post.date}>{formatSiteDate(post.date, locale)}</time>
+                <div>
+                  {post.categories.map((category) => (
+                    <span key={category.id}>{category.name}</span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </header>
+          </section>
 
           {post.featured_image ? (
-            <Image
-              className="article-featured"
-              src={post.featured_image}
-              alt={post.title}
-              width={1400}
-              height={788}
-              unoptimized
-              priority
-            />
+            <div className="mv-article-feature-wrap">
+              <div className="mv-container">
+                <Image
+                  className="mv-article-featured"
+                  src={post.featured_image}
+                  alt={post.title}
+                  width={1500}
+                  height={860}
+                  unoptimized
+                  priority
+                />
+              </div>
+            </div>
           ) : null}
 
-          <div
-            className="wp-content"
-            dangerouslySetInnerHTML={{ __html: post.content_html }}
-          />
+          <section className="mv-article-body-wrap">
+            <div className="mv-container">
+              <div className="wp-content" dangerouslySetInnerHTML={{ __html: post.content_html }} />
+            </div>
+          </section>
         </article>
       </main>
     </FounderShell>

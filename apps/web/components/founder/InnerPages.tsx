@@ -8,51 +8,91 @@ export function AboutPageView({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
   const story = fa ? storyFa : storyEn;
 
+  const cards = fa
+    ? [
+        ["AI", "هوش مصنوعی", "تمرکز بر ساخت ابزارها و تجربه‌هایی که برای فارسی‌زبانان هم معنا و کاربرد واقعی داشته باشند."],
+        ["DATA", "داده و تحلیل", "استفاده از داده برای تصمیم‌گیری، گزارش‌گیری و شکل‌دادن به مسیر رشد."],
+        ["PRODUCT", "محصول و تجربه", "اتصال ایده، نیاز کاربر و فناوری به یک محصول قابل استفاده و مقیاس‌پذیر."],
+      ]
+    : [
+        ["AI", "Artificial Intelligence", "Designing tools and experiences with practical value and real-world usability."],
+        ["DATA", "Data & Insight", "Using data to support reporting, decisions and growth direction."],
+        ["PRODUCT", "Product & Experience", "Connecting idea, user need and technology into a usable, scalable product."],
+      ];
+
   return (
     <FounderShell locale={locale}>
-      <main className="inner-page">
-        <section className="wrap story-hero">
-          <div className="story-hero-copy">
-            <span className="sec-tag">{fa ? "داستان من" : "MY STORY"}</span>
-            <h1>{fa ? "داستان امیر؛ از فناوری تا ساخت اکوسیستم" : "Amir's story: from technology to building ecosystems"}</h1>
-            <p>{fa ? "یک روایت تصویری از مسیر من در فناوری، محصول، داده و رشد؛ با تمرکز بر ساخت چیزهایی که واقعاً ارزش می‌آفرینند." : "A visual story of my journey across technology, product, data and growth — focused on building things that truly create value."}</p>
-            <div className="hero-actions">
-              <Link href={`/${locale}/resume`} className="btn btn-primary">{fa ? "مشاهده رزومه" : "View resume"}</Link>
-              <Link href={`/${locale}/contact`} className="btn btn-ghost">{fa ? "همکاری کنیم" : "Let's work together"}</Link>
+      <main className="mv-inner">
+        <section className="mv-inner-hero mv-inner-hero-balanced">
+          <div className="mv-container">
+            <span className="mv-section-index">01 / {fa ? "درباره من" : "About me"}</span>
+            <h1>
+              {fa ? (
+                <>
+                  مسیر من در فناوری،
+                  <br />
+                  <em>از زیرساخت تا محصول.</em>
+                </>
+              ) : (
+                <>
+                  My path in technology,
+                  <br />
+                  <em>from systems to product.</em>
+                </>
+              )}
+            </h1>
+            <p>
+              {fa
+                ? "ترکیبی از تجربه‌های فنی، داده، محصول، فروش و رشد که امروز به ساخت اکوسیستم‌های دیجیتال و محصولات هوشمند رسیده است."
+                : "A blend of technical, data, product, sales and growth experience that now shapes digital ecosystems and intelligent products."}
+            </p>
+          </div>
+        </section>
+
+        <section className="mv-about-storyboard">
+          <div className="mv-container mv-about-storyboard-grid">
+            <div className="mv-about-canvas">
+              <div className="mv-about-canvas-copy">
+                <span>{fa ? "امیر متفکر / فناوری / محصول / داده" : "Amir Motefaker / Technology / Product / Data"}</span>
+                <strong>AM</strong>
+              </div>
+              <Image
+                src="/assets/profile/amir-motefaker.png"
+                alt={fa ? founder.nameFa : founder.nameEn}
+                width={900}
+                height={900}
+                priority
+              />
+            </div>
+
+            <div className="mv-about-metrics">
+              {cards.map(([tag, title, desc]) => (
+                <article className="mv-about-stat" key={tag}>
+                  <span>{tag}</span>
+                  <h2>{title}</h2>
+                  <p>{desc}</p>
+                </article>
+              ))}
             </div>
           </div>
-          <div className="story-hero-visual">
-            <div className="story-image-card">
-              <Image src="/assets/profile/amir-motefaker.png" alt={fa ? founder.nameFa : founder.nameEn} width={540} height={540} priority />
-            </div>
+        </section>
+
+        <section className="mv-story-cards-wrap">
+          <div className="mv-container mv-story-cards-grid">
+            {story.map((paragraph, index) => (
+              <article className="mv-story-card" key={index}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{paragraph}</p>
+              </article>
+            ))}
           </div>
         </section>
 
-        <section className="wrap story-card-grid">
-          {story.map((paragraph, index) => (
-            <article className="story-card" key={index}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <p>{paragraph}</p>
-            </article>
-          ))}
+        <section className="mv-legacy-wrap">
+          <div className="mv-container">
+            <LegacyPageContent locale={locale} pageId={122} />
+          </div>
         </section>
-
-        <section className="wrap vision-strip">
-          <article>
-            <strong>{fa ? "فناوری" : "Technology"}</strong>
-            <p>{fa ? "زیرساخت، سیستم، نرم‌افزار و معماری." : "Infrastructure, systems, software and architecture."}</p>
-          </article>
-          <article>
-            <strong>{fa ? "محصول" : "Product"}</strong>
-            <p>{fa ? "طراحی، تجربه، ارزش و مقیاس‌پذیری." : "Design, experience, value and scalability."}</p>
-          </article>
-          <article>
-            <strong>{fa ? "رشد" : "Growth"}</strong>
-            <p>{fa ? "داده، فروش، بازار و اکوسیستم." : "Data, sales, market and ecosystems."}</p>
-          </article>
-        </section>
-
-        <LegacyPageContent locale={locale} pageId={122} />
       </main>
     </FounderShell>
   );
@@ -60,26 +100,42 @@ export function AboutPageView({ locale }: { locale: Locale }) {
 
 export function ResumePageView({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
+
   return (
     <FounderShell locale={locale}>
-      <main className="inner-page">
-        <section className="wrap inner-hero rich-hero">
-          <span className="sec-tag">{fa ? "رزومه" : "RESUME"}</span>
-          <h1>{fa ? "مسیر حرفه‌ای و نقاط عطف" : "Professional journey & milestones"}</h1>
-          <p>{fa ? "مروری بر تجربه‌های کلیدی، تحصیلات، داده، زیرساخت، فروش، محصول و فناوری." : "A curated view of education, infrastructure, data, sales, product and technology milestones."}</p>
+      <main className="mv-inner">
+        <section className="mv-inner-hero mv-inner-hero-balanced">
+          <div className="mv-container">
+            <span className="mv-section-index">01 / {fa ? "رزومه" : "Resume"}</span>
+            <h1>{fa ? "نقاط عطف مسیر حرفه‌ای." : "Milestones of the journey."}</h1>
+            <p>
+              {fa
+                ? "مروری ساختاریافته بر تجربه‌ها، مسئولیت‌ها و نقاط عطف کلیدی در زیرساخت، محصول، کسب‌وکار و فناوری."
+                : "A structured look at the milestones and responsibilities across infrastructure, product, business and technology."}
+            </p>
+          </div>
         </section>
 
-        <section className="wrap timeline-grid">
-          {timeline.map((item) => (
-            <article className="timeline-card" key={item[3]}>
-              <span className="timeline-year">{fa ? item[0] : item[1]}</span>
-              <h3>{fa ? item[2] : item[3]}</h3>
-              <p>{fa ? item[4] : item[5]}</p>
-            </article>
-          ))}
+        <section className="mv-resume-list">
+          <div className="mv-container">
+            {timeline.map((item, index) => (
+              <article className="mv-resume-row" key={item[3]}>
+                <span className="mv-resume-index">{String(index + 1).padStart(2, "0")}</span>
+                <span className="mv-resume-year">{fa ? item[0] : item[1]}</span>
+                <div>
+                  <h2>{fa ? item[2] : item[3]}</h2>
+                  <p>{fa ? item[4] : item[5]}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
-        <LegacyPageContent locale={locale} pageId={622} />
+        <section className="mv-legacy-wrap">
+          <div className="mv-container">
+            <LegacyPageContent locale={locale} pageId={622} />
+          </div>
+        </section>
       </main>
     </FounderShell>
   );
@@ -87,35 +143,74 @@ export function ResumePageView({ locale }: { locale: Locale }) {
 
 export function ProductsPageView({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
+  const featured = products.slice(0, 3);
+  const compact = products.slice(3);
+
   return (
     <FounderShell locale={locale}>
-      <main className="inner-page">
-        <section className="wrap inner-hero rich-hero">
-          <span className="sec-tag">{fa ? "اکوسیستم محصولات" : "PRODUCT ECOSYSTEM"}</span>
-          <h1>{fa ? "محصولات من با طراحی جذاب‌تر" : "Products with a richer visual design"}</h1>
-          <p>{fa ? "هر محصول با یک هویت بصری پویا و یک توضیح روشن معرفی شده تا تجربه مرور محصولات حرفه‌ای‌تر و جذاب‌تر باشد." : "Each product is presented with a dynamic visual identity and a clearer presentation."}</p>
+      <main className="mv-inner">
+        <section className="mv-inner-hero mv-inner-hero-balanced">
+          <div className="mv-container">
+            <span className="mv-section-index">01 / {fa ? "محصولات" : "Products"}</span>
+            <h1>{fa ? "محصولات با هویت بصری روشن." : "Products with a clearer visual identity."}</h1>
+            <p>
+              {fa
+                ? "هر محصول باید هم از نظر ارائه و هم از نظر کاربرد، هویت مستقل و حرفه‌ای داشته باشد. اینجا مجموعه‌ای از پروژه‌ها و پلتفرم‌های من را می‌بینید."
+                : "Each product should feel distinct, useful and professionally presented. Here is a curated collection of my platforms and projects."}
+            </p>
+          </div>
         </section>
 
-        <section className="wrap products-showcase-grid">
-          {products.map((product, index) => (
-            <Link href={`/${locale}/products/${product.slug}`} className="product-spotlight-card" key={product.slug}>
-              <div className={`product-visual pv-${(index % 4) + 1}`}>
-                <span className="pulse-ring ring-1" />
-                <span className="pulse-ring ring-2" />
-                <span className="product-badge">{fa ? product.categoryFa : product.categoryEn}</span>
-                <strong>{product.name}</strong>
-              </div>
-              <div className="product-spotlight-body">
-                <h3>{product.name}</h3>
-                <p>{fa ? product.descriptionFa : product.descriptionEn}</p>
-                <div className="chip-row">
-                  {product.technologies.slice(0, 4).map((tech) => (
-                    <span key={tech}>{tech}</span>
-                  ))}
+        <section className="mv-product-feature-stack-wrap">
+          <div className="mv-container mv-product-feature-stack">
+            {featured.map((product, index) => (
+              <Link
+                href={`/${locale}/products/${product.slug}`}
+                className={`mv-product-feature-card mv-feature-tone-${(index % 3) + 1}`}
+                key={product.slug}
+              >
+                <div className="mv-product-feature-copy">
+                  <span>{fa ? product.categoryFa : product.categoryEn}</span>
+                  <h2>{product.name}</h2>
+                  <p>{fa ? product.descriptionFa : product.descriptionEn}</p>
+                  <div className="mv-product-feature-tech">
+                    {product.technologies.slice(0, 4).map((tech) => (
+                      <b key={tech}>{tech}</b>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+                <div className="mv-product-feature-art">
+                  <strong>{product.name}</strong>
+                  <i className="orb orb-a" />
+                  <i className="orb orb-b" />
+                  <i className="gridline" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mv-product-compact-wrap">
+          <div className="mv-container">
+            <div className="mv-product-compact-grid">
+              {compact.map((product, index) => (
+                <Link
+                  href={`/${locale}/products/${product.slug}`}
+                  className={`mv-product-compact-card mv-compact-tone-${(index % 4) + 1}`}
+                  key={product.slug}
+                >
+                  <span>{fa ? product.categoryFa : product.categoryEn}</span>
+                  <h3>{product.name}</h3>
+                  <p>{fa ? product.descriptionFa : product.descriptionEn}</p>
+                  <div className="mv-product-compact-tech">
+                    {product.technologies.slice(0, 3).map((tech) => (
+                      <b key={tech}>{tech}</b>
+                    ))}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </section>
       </main>
     </FounderShell>
@@ -130,33 +225,40 @@ export function ProductPageView({ locale, slug }: { locale: Locale; slug: string
 
   return (
     <FounderShell locale={locale}>
-      <main className="inner-page">
-        <section className="wrap product-detail-shell">
-          <div className="product-detail-copy">
-            <span className="sec-tag">{fa ? product.categoryFa : product.categoryEn}</span>
-            <h1 className="ltr">{product.name}</h1>
-            <p>{fa ? product.descriptionFa : product.descriptionEn}</p>
-            <div className="chip-row big-chips">
-              {product.technologies.map((tech) => <span key={tech}>{tech}</span>)}
+      <main className="mv-inner">
+        <section className="mv-product-detail">
+          <div className="mv-container">
+            <div className="mv-product-detail-head">
+              <span>{fa ? product.categoryFa : product.categoryEn}</span>
+              <h1 className="ltr">{product.name}</h1>
             </div>
-            <div className="hero-actions">
-              {productWebsite ? (
-                <a className="btn btn-primary" href={productWebsite} target="_blank" rel="noopener noreferrer">
-                  {fa ? "مشاهده وب‌سایت محصول" : "Visit product website"}
-                </a>
-              ) : null}
-              <Link className="btn btn-ghost" href={`/${locale}/contact`}>
-                {fa ? "درخواست همکاری" : "Start a conversation"}
-              </Link>
-            </div>
-          </div>
-          <div className="product-detail-visual">
-            <div className="product-hero-orbit">
-              <span className="core">{product.name}</span>
-              <span className="node n1" />
-              <span className="node n2" />
-              <span className="node n3" />
-              <span className="node n4" />
+
+            <div className="mv-product-detail-grid">
+              <div className="mv-product-detail-art">
+                <span className="mv-detail-gridline" />
+                <span className="mv-detail-orb mv-detail-orb-a" />
+                <span className="mv-detail-orb mv-detail-orb-b" />
+                <strong>{product.name}</strong>
+              </div>
+
+              <div className="mv-product-detail-copy">
+                <p>{fa ? product.descriptionFa : product.descriptionEn}</p>
+                <div className="mv-detail-tech">
+                  {product.technologies.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+                <div className="mv-detail-actions">
+                  {productWebsite ? (
+                    <a href={productWebsite} target="_blank" rel="noopener noreferrer" className="mv-pill mv-pill-solid">
+                      {fa ? "مشاهده محصول" : "Visit product"} <b>↗</b>
+                    </a>
+                  ) : null}
+                  <Link href={`/${locale}/contact`} className="mv-text-link">
+                    {fa ? "گفتگو درباره همکاری" : "Talk collaboration"} <b>→</b>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -167,41 +269,50 @@ export function ProductPageView({ locale, slug }: { locale: Locale; slug: string
 
 export function ContactPageView({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
+
   return (
     <FounderShell locale={locale}>
-      <main className="inner-page">
-        <section className="wrap contact-shell">
-          <div className="contact-main-card">
-            <span className="sec-tag">{fa ? "تماس" : "CONTACT"}</span>
-            <h1>{fa ? "بیایید درباره آینده صحبت کنیم" : "Let's talk about the future"}</h1>
-            <p>{fa ? "اگر درباره محصول، هوش مصنوعی، همکاری، توسعه کسب‌وکار یا ساخت یک تجربه دیجیتال جدید ایده‌ای دارید، خوشحال می‌شوم در ارتباط باشیم." : "If you want to discuss product, AI, collaboration, business development or a new digital experience, let's connect."}</p>
-            <div className="hero-actions">
-              <a href={`mailto:${founder.email}`} className="btn btn-primary">{fa ? "ارسال ایمیل" : "Send email"}</a>
-              <a href={`tel:${founder.phoneHref}`} className="btn btn-ghost">{fa ? "تماس تلفنی" : "Call now"}</a>
-            </div>
-          </div>
+      <main className="mv-inner">
+        <section className="mv-contact">
+          <div className="mv-container">
+            <span className="mv-section-index">01 / {fa ? "تماس" : "Contact"}</span>
+            <h1>{fa ? "بیایید چیزی بسازیم." : "Let's build something."}</h1>
 
-          <div className="contact-side-grid">
-            <article className="contact-info-card">
-              <strong>{fa ? "ایمیل" : "Email"}</strong>
-              <a href={`mailto:${founder.email}`}>{founder.email}</a>
-            </article>
-            <article className="contact-info-card">
-              <strong>{fa ? "تلفن" : "Phone"}</strong>
-              <a href={`tel:${founder.phoneHref}`}>{founder.phone}</a>
-            </article>
-            <article className="contact-info-card">
-              <strong>{fa ? "موقعیت" : "Location"}</strong>
-              <span>{fa ? founder.cityFa : founder.cityEn}</span>
-            </article>
-            <article className="contact-info-card">
-              <strong>{fa ? "شبکه‌ها" : "Networks"}</strong>
-              <div className="social-links">
-                <a href={founder.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href={founder.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href={founder.x} target="_blank" rel="noopener noreferrer">X</a>
+            <div className="mv-contact-grid">
+              <div className="mv-contact-intro">
+                <p>
+                  {fa
+                    ? "اگر درباره محصول، هوش مصنوعی، داده، توسعه کسب‌وکار یا یک تجربه دیجیتال جدید فکر می‌کنید، گفتگو را شروع کنیم."
+                    : "If you're thinking about product, AI, data, business development or a new digital experience, let's start a conversation."}
+                </p>
+                <a href={`mailto:${founder.email}`} className="mv-contact-mail">
+                  {founder.email}
+                  <b>↗</b>
+                </a>
               </div>
-            </article>
+
+              <div className="mv-contact-list">
+                <a href={`tel:${founder.phoneHref}`}>
+                  <span>{fa ? "تلفن" : "Phone"}</span>
+                  <strong>{founder.phone}</strong>
+                  <b>↗</b>
+                </a>
+                <div>
+                  <span>{fa ? "موقعیت" : "Location"}</span>
+                  <strong>{fa ? founder.cityFa : founder.cityEn}</strong>
+                </div>
+                <a href={founder.linkedin} target="_blank" rel="noopener noreferrer">
+                  <span>LinkedIn</span>
+                  <strong>{fa ? "ارتباط حرفه‌ای" : "Professional network"}</strong>
+                  <b>↗</b>
+                </a>
+                <a href={founder.github} target="_blank" rel="noopener noreferrer">
+                  <span>GitHub</span>
+                  <strong>{fa ? "پروژه‌ها و کد" : "Projects & code"}</strong>
+                  <b>↗</b>
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>

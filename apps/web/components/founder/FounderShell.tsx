@@ -1,43 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
-import { founder, products, type Locale } from "@/content/founder-site";
 import LocaleDigits from "@/components/founder/LocaleDigits";
 import ThemeToggle from "@/components/founder/ThemeToggle";
+import { founder, products, type Locale } from "@/content/founder-site";
 
 const labels = {
   fa: {
     about: "درباره من",
     products: "محصولات",
-    expertise: "تخصص",
-    timeline: "مسیر حرفه‌ای",
+    resume: "مسیر حرفه‌ای",
     news: "اخبار فناوری",
     contact: "تماس",
-    seeProducts: "مشاهده محصولات",
-    sitemap: "نقشه سایت",
+    menu: "منو",
     interest: "علاقه‌مند به فناوری",
-    footerText:
-      "ساخت محصولات هوشمند، اکوسیستم‌های دیجیتال و تجربه‌های داده‌محور برای آینده کسب‌وکار.",
-    quickLinks: "دسترسی سریع",
-    productLinks: "محصولات منتخب",
-    contactBlock: "ارتباط",
-    rights: "تمام حقوق محفوظ است.",
+    talk: "شروع گفتگو",
+    build: "چیز بعدی را بسازیم.",
+    footerText: "هوش مصنوعی، محصول، داده و سیستم‌های دیجیتال.",
+    explore: "کاوش",
   },
   en: {
     about: "About",
-    products: "Products",
-    expertise: "Expertise",
-    timeline: "Journey",
-    news: "Technology News",
+    products: "Work",
+    resume: "Journey",
+    news: "Insights",
     contact: "Contact",
-    seeProducts: "View Products",
-    sitemap: "Sitemap",
+    menu: "Menu",
     interest: "Technology Enthusiast",
-    footerText:
-      "Building intelligent products, digital ecosystems and data-driven experiences for the future.",
-    quickLinks: "Quick Links",
-    productLinks: "Featured Products",
-    contactBlock: "Contact",
-    rights: "All rights reserved.",
+    talk: "Start a conversation",
+    build: "Let's build what's next.",
+    footerText: "AI, product, data and digital systems.",
+    explore: "Explore",
   },
 };
 
@@ -50,109 +42,128 @@ export default function FounderShell({
 }) {
   const l = labels[locale];
   const other = locale === "fa" ? "en" : "fa";
+  const fa = locale === "fa";
+
+  const primaryLinks = [
+    [`/${locale}/products`, l.products],
+    [`/${locale}/about`, l.about],
+    [`/${locale}/resume`, l.resume],
+    [`/${locale}/news`, l.news],
+  ] as const;
 
   return (
-    <div className="founder-site" lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
+    <div className="mv-site" lang={locale} dir={fa ? "rtl" : "ltr"}>
       <LocaleDigits locale={locale} />
-      <div className="bg-glow" />
-      <div className="noise" />
 
-      <header className="site-header">
-        <nav className="wrap header-shell">
-          <Link href={`/${locale}`} className="brand-block" aria-label="Amir Motefaker">
-            <span className="brand-avatar">
+      <header className="mv-header">
+        <div className="mv-header-inner">
+          <Link href={`/${locale}`} className="mv-brand" aria-label={fa ? founder.nameFa : founder.nameEn}>
+            <span className="mv-brand-avatar">
               <Image
                 src="/assets/profile/amir-motefaker.png"
-                alt={locale === "fa" ? founder.nameFa : founder.nameEn}
-                width={52}
-                height={52}
+                alt={fa ? founder.nameFa : founder.nameEn}
+                width={46}
+                height={46}
                 priority
               />
             </span>
-            <span className="brand-copy">
-              <strong>{locale === "fa" ? founder.nameFa : founder.nameEn}</strong>
+            <span className="mv-brand-copy">
+              <strong>{fa ? founder.nameFa : founder.nameEn}</strong>
               <small>{l.interest}</small>
             </span>
           </Link>
 
-          <div className="nav-links">
-            <Link href={`/${locale}/about`}>{l.about}</Link>
-            <Link href={`/${locale}/products`}>{l.products}</Link>
-            <Link href={`/${locale}#expertise`}>{l.expertise}</Link>
-            <Link href={`/${locale}/resume`}>{l.timeline}</Link>
-            <Link href={`/${locale}/news`}>{l.news}</Link>
-            <Link href={`/${locale}/contact`}>{l.contact}</Link>
-          </div>
+          <nav className="mv-nav" aria-label={fa ? "ناوبری اصلی" : "Primary navigation"}>
+            {primaryLinks.map(([href, label]) => (
+              <Link key={href} href={href}>
+                {label}
+              </Link>
+            ))}
+          </nav>
 
-          <div className="nav-cta">
+          <div className="mv-header-actions">
             <ThemeToggle />
-            <Link href={`/${other}`} className="locale-switch">{other.toUpperCase()}</Link>
-            <Link href={`/${locale}/products`} className="btn btn-ghost desktop-only">{l.seeProducts}</Link>
-            <Link href={`/${locale}/contact`} className="btn btn-primary">{l.contact}</Link>
+            <Link href={`/${other}`} className="mv-lang" aria-label={fa ? "English" : "فارسی"}>
+              {other.toUpperCase()}
+            </Link>
+            <Link href={`/${locale}/contact`} className="mv-talk">
+              <span>{l.talk}</span>
+              <b aria-hidden="true">↗</b>
+            </Link>
+
+            <details className="mv-mobile-menu">
+              <summary aria-label={l.menu}>
+                <span />
+                <span />
+              </summary>
+              <div className="mv-mobile-panel">
+                {primaryLinks.map(([href, label]) => (
+                  <Link key={href} href={href}>
+                    {label}
+                  </Link>
+                ))}
+                <Link href={`/${locale}/contact`}>{l.contact}</Link>
+                <Link href={`/${other}`}>{other.toUpperCase()}</Link>
+              </div>
+            </details>
           </div>
-        </nav>
+        </div>
       </header>
 
       {children}
 
-      <footer className="site-footer">
-        <div className="wrap footer-grid">
-          <div className="footer-brand">
-            <div className="footer-brand-top">
-              <span className="brand-avatar brand-avatar-sm">
-                <Image src="/assets/profile/amir-motefaker.png" alt="Amir Motefaker" width={44} height={44} />
-              </span>
-              <div className="brand-copy">
-                <strong>{locale === "fa" ? founder.nameFa : founder.nameEn}</strong>
-                <small>{l.interest}</small>
-              </div>
-            </div>
-            <p>{l.footerText}</p>
+      <footer className="mv-footer">
+        <div className="mv-container">
+          <div className="mv-footer-top">
+            <span className="mv-kicker">AM / 2026</span>
+            <h2>{l.build}</h2>
+            <Link href={`/${locale}/contact`} className="mv-round-link" aria-label={l.talk}>
+              ↗
+            </Link>
           </div>
 
-          <div className="footer-links-block">
-            <h3>{l.quickLinks}</h3>
-            <div className="footer-links">
-              <Link href={`/${locale}`}>Home</Link>
+          <div className="mv-footer-grid">
+            <div>
+              <strong>{fa ? founder.nameFa : founder.nameEn}</strong>
+              <p>{l.footerText}</p>
+            </div>
+
+            <div className="mv-footer-links">
+              <span>{l.explore}</span>
               <Link href={`/${locale}/about`}>{l.about}</Link>
               <Link href={`/${locale}/products`}>{l.products}</Link>
-              <Link href={`/${locale}/resume`}>{l.timeline}</Link>
+              <Link href={`/${locale}/resume`}>{l.resume}</Link>
               <Link href={`/${locale}/news`}>{l.news}</Link>
-              <Link href={`/${locale}/contact`}>{l.contact}</Link>
-              <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">{l.sitemap}</a>
             </div>
-          </div>
 
-          <div className="footer-links-block">
-            <h3>{l.productLinks}</h3>
-            <div className="footer-links">
-              {products.slice(0, 5).map((product) => (
+            <div className="mv-footer-links">
+              <span>{fa ? "منتخب" : "Selected"}</span>
+              {products.slice(0, 4).map((product) => (
                 <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>
                   {product.name}
                 </Link>
               ))}
             </div>
-          </div>
 
-          <div className="footer-links-block">
-            <h3>{l.contactBlock}</h3>
-            <div className="footer-links footer-links-compact">
+            <div className="mv-footer-links">
+              <span>{l.contact}</span>
               <a href={`mailto:${founder.email}`}>{founder.email}</a>
-              <a href={`tel:${founder.phoneHref}`}>{founder.phone}</a>
-              <span>{locale === "fa" ? founder.cityFa : founder.cityEn}</span>
-              <div className="social-links">
-                <a href={founder.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href={founder.kaggle} target="_blank" rel="noopener noreferrer">Kaggle</a>
-                <a href={founder.x} target="_blank" rel="noopener noreferrer">X</a>
-                <a href={founder.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              </div>
+              <a href={founder.linkedin} target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+              <a href={founder.github} target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+              <a href={founder.x} target="_blank" rel="noopener noreferrer">
+                X
+              </a>
             </div>
           </div>
-        </div>
 
-        <div className="wrap footer-bottom">
-          <span>© 2026 {locale === "fa" ? founder.nameFa : founder.nameEn}. {l.rights}</span>
-          <span>{locale === "fa" ? "طراحی و توسعه محلی" : "Local design & development build"}</span>
+          <div className="mv-footer-bottom">
+            <span>© 2026 {fa ? founder.nameFa : founder.nameEn}</span>
+            <a href="/sitemap.xml">{fa ? "نقشه سایت" : "Sitemap"}</a>
+          </div>
         </div>
       </footer>
     </div>

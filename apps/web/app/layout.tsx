@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@fontsource-variable/estedad/wght.css";
+import "@fontsource-variable/vazirmatn/wght.css";
 import "@fontsource-variable/space-grotesk/wght.css";
 import "@fontsource-variable/jetbrains-mono/wght.css";
 import "./globals.css";

@@ -5,7 +5,7 @@ import { getLegacyPosts } from "@/lib/legacy-wordpress";
 import { formatSiteDate, formatSiteNumber } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
 
-const PAGE_SIZE = 12;
+const PAGE_SIZE = 10;
 
 export default async function Page({
   params,
@@ -29,79 +29,119 @@ export default async function Page({
   const start = (currentPage - 1) * PAGE_SIZE;
   const visible = posts.slice(start, start + PAGE_SIZE);
 
+  const lead = visible[0];
+  const highlights = visible.slice(1, 5);
+  const archive = visible.slice(5);
+
   return (
     <FounderShell locale={locale}>
-      <main className="inner-page">
-        <section className="wrap inner-hero">
-          <span className="sec-tag">{fa ? "اخبار فناوری" : "TECHNOLOGY NEWS"}</span>
-          <h1>{fa ? "اخبار فناوری و هوش مصنوعی" : "Technology & AI News"}</h1>
-          <p>
-            {fa
-              ? "آرشیو واقعی مطالب سایت قبلی؛ اکنون روی طراحی جدید و به‌صورت Local."
-              : "The legacy technology archive, now rendered inside the new local design."}
-          </p>
+      <main className="mv-inner">
+        <section className="mv-inner-hero mv-inner-hero-balanced">
+          <div className="mv-container">
+            <span className="mv-section-index">01 / {fa ? "اخبار فناوری" : "Technology news"}</span>
+            <h1>{fa ? "مطالب فناوری، با ارائه حرفه‌ای‌تر." : "Technology stories, better presented."}</h1>
+            <p>
+              {fa
+                ? "آرشیو واقعی نوشته‌های سایت قبلی، حالا با یک چیدمان editorial و خواناتر برای نمایش بهتر مطالب."
+                : "The real archive from the previous website, now presented with a cleaner editorial layout."}
+            </p>
+          </div>
         </section>
 
-        <section className="wrap">
-          <div className="legacy-news-toolbar">
-            <span>
-              {fa ? "تعداد مطالب:" : "Articles:"} {formatSiteNumber(posts.length, locale)}
-            </span>
-            <span>
-              {fa ? "صفحه" : "Page"} {formatSiteNumber(currentPage, locale)} / {formatSiteNumber(totalPages, locale)}
-            </span>
-          </div>
+        <section className="mv-news-editorial-wrap">
+          <div className="mv-container">
+            <div className="mv-news-editorial-toolbar">
+              <span>{fa ? "تعداد مطالب" : "Stories"}: {formatSiteNumber(posts.length, locale)}</span>
+              <span>{fa ? "صفحه" : "Page"}: {formatSiteNumber(currentPage, locale)} / {formatSiteNumber(totalPages, locale)}</span>
+            </div>
 
-          <div className="legacy-news-grid">
-            {visible.map((post) => (
-              <Link
-                key={post.id}
-                href={`/${locale}/news/${encodeURIComponent(post.slug)}`}
-                className="news-card"
-              >
-                <div className="news-cover">
-                  {post.featured_image ? (
+            {lead ? (
+              <Link href={`/${locale}/news/${encodeURIComponent(lead.slug)}`} className="mv-news-lead">
+                <div className="mv-news-lead-visual">
+                  {lead.featured_image ? (
                     <Image
-                      src={post.featured_image}
-                      alt={post.title}
-                      width={960}
-                      height={540}
+                      src={lead.featured_image}
+                      alt={lead.title}
+                      width={1400}
+                      height={900}
                       unoptimized
+                      priority
                     />
-                  ) : null}
+                  ) : (
+                    <span>AM / NEWS</span>
+                  )}
                 </div>
-
-                <div className="news-card-body">
-                  <time className="news-date" dateTime={post.date}>
-                    {formatSiteDate(post.date, locale)}
-                  </time>
-                  <h2>{post.title}</h2>
-                  <p>{post.excerpt_text}</p>
-                  <div className="news-taxonomies">
-                    {post.categories.slice(0, 3).map((category) => (
-                      <span key={category.id}>{category.name}</span>
-                    ))}
-                  </div>
+                <div className="mv-news-lead-copy">
+                  <time dateTime={lead.date}>{formatSiteDate(lead.date, locale)}</time>
+                  <h2>{lead.title}</h2>
+                  <p>{lead.excerpt_text}</p>
+                  <b>↗</b>
                 </div>
               </Link>
-            ))}
-          </div>
+            ) : null}
 
-          {totalPages > 1 ? (
-            <nav className="news-pagination" aria-label="Pagination">
-              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) =>
-                page === currentPage ? (
-                  <span key={page} className="active">
-                    {formatSiteNumber(page, locale)}
-                  </span>
-                ) : (
-                  <Link key={page} href={`/${locale}/news?page=${page}`}>
-                    {formatSiteNumber(page, locale)}
+            {highlights.length ? (
+              <div className="mv-news-secondary-grid">
+                {highlights.map((post) => (
+                  <Link
+                    key={post.id}
+                    href={`/${locale}/news/${encodeURIComponent(post.slug)}`}
+                    className="mv-news-mini-card"
+                  >
+                    <div className="mv-news-mini-image">
+                      {post.featured_image ? (
+                        <Image src={post.featured_image} alt={post.title} width={900} height={560} unoptimized />
+                      ) : (
+                        <span>AM</span>
+                      )}
+                    </div>
+                    <div className="mv-news-mini-copy">
+                      <time dateTime={post.date}>{formatSiteDate(post.date, locale)}</time>
+                      <h3>{post.title}</h3>
+                      <p>{post.excerpt_text}</p>
+                    </div>
                   </Link>
-                ),
-              )}
-            </nav>
-          ) : null}
+                ))}
+              </div>
+            ) : null}
+
+            {archive.length ? (
+              <div className="mv-news-archive-grid">
+                {archive.map((post) => (
+                  <Link
+                    key={post.id}
+                    href={`/${locale}/news/${encodeURIComponent(post.slug)}`}
+                    className="mv-news-archive-card"
+                  >
+                    <time dateTime={post.date}>{formatSiteDate(post.date, locale)}</time>
+                    <h3>{post.title}</h3>
+                    <p>{post.excerpt_text}</p>
+                    <div className="mv-news-taxonomies-lite">
+                      {post.categories.slice(0, 3).map((category) => (
+                        <span key={category.id}>{category.name}</span>
+                      ))}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            ) : null}
+
+            {totalPages > 1 ? (
+              <nav className="news-pagination" aria-label="Pagination">
+                {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) =>
+                  page === currentPage ? (
+                    <span key={page} className="active">
+                      {formatSiteNumber(page, locale)}
+                    </span>
+                  ) : (
+                    <Link key={page} href={`/${locale}/news?page=${page}`}>
+                      {formatSiteNumber(page, locale)}
+                    </Link>
+                  ),
+                )}
+              </nav>
+            ) : null}
+          </div>
         </section>
       </main>
     </FounderShell>
