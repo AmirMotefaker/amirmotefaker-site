@@ -62,7 +62,7 @@ const rawProductPortfolio: PortfolioProduct[] = [
     name: "PrimeSYS",
     domain: "PrimeSYS.ir",
     industry: "Enterprise Technology",
-    category: "Technology Company / Solutions Provider",
+    category: "Technology Company / Solutions",
     positioning: "Enterprise Technology, AI, Hardware & Software",
     filterGroup: "Enterprise Technology",
     shortDescriptionFa:
@@ -389,7 +389,7 @@ const rawProductPortfolio: PortfolioProduct[] = [
     name: "FilmTrack",
     domain: "FilmTrack.ir",
     industry: "EntertainmentTech / MediaTech",
-    category: "Movie & TV Discovery Platform",
+    category: "Movie & TV Platform",
     positioning: "Movie & TV Discovery Platform",
     filterGroup: "EntertainmentTech",
     shortDescriptionFa:
@@ -436,7 +436,7 @@ const rawProductPortfolio: PortfolioProduct[] = [
     name: "LinkResan",
     domain: "LinkResan.ir",
     industry: "SaaS / MarTech / Digital Utility",
-    category: "Link Management & Intelligence",
+    category: "Link Management",
     positioning: "Link Management & Intelligence Platform",
     filterGroup: "Digital Platforms",
     shortDescriptionFa:

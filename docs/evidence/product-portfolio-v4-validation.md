@@ -34,6 +34,7 @@ Pre-v4 local work was preserved on GitHub before this implementation:
 - TypeScript validation: passed
 - Static page generation: passed
 - Canonical product routes generated for FA and EN
+- Canonical portfolio table category labels verified and aligned for PrimeSYS, FilmTrack and LinkResan
 - git diff --check: passed
 - Canonical specification preserved byte-for-byte; intentional Markdown hard-break trailing spaces are exempted from Git whitespace diagnostics via .gitattributes
 
