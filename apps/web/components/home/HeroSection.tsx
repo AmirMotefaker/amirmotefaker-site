@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- Legacy prototype component retained pending retirement review. */
 export default function HeroSection(){
 
 return (

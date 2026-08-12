@@ -1108,3 +1108,18 @@ body,button,input,textarea,select{
   .footer-bottom{flex-direction:column;align-items:flex-start}
   .desktop-only{display:none}
 }
+/* Foundation accessibility baseline */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{
+  outline:2px solid var(--cyan);
+  outline-offset:3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
