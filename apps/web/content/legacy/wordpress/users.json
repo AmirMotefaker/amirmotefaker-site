@@ -1,0 +1,57 @@
+{
+  "id": 1,
+  "name": "امیر متفکر",
+  "url": "https://amirmotefaker.ir",
+  "description": "",
+  "link": "https://amirmotefaker.ir/author/admin/",
+  "slug": "admin",
+  "meta": [],
+  "is_super_admin": true,
+  "woocommerce_meta": {
+    "variable_product_tour_shown": "",
+    "activity_panel_inbox_last_read": "",
+    "activity_panel_reviews_last_read": "",
+    "categories_report_columns": "",
+    "coupons_report_columns": "",
+    "customers_report_columns": "",
+    "orders_report_columns": "",
+    "products_report_columns": "",
+    "revenue_report_columns": "",
+    "taxes_report_columns": "",
+    "variations_report_columns": "",
+    "dashboard_sections": "",
+    "dashboard_chart_type": "",
+    "dashboard_chart_interval": "",
+    "dashboard_leaderboard_rows": "",
+    "order_attribution_install_banner_dismissed": "",
+    "homepage_layout": "",
+    "homepage_stats": "",
+    "task_list_tracked_started_tasks": "{\"products\":1,\"marketing\":1}",
+    "android_app_banner_dismissed": "",
+    "launch_your_store_tour_hidden": "",
+    "coming_soon_banner_dismissed": ""
+  },
+  "elementor_introduction": {
+    "ai-get-started-announcement": true,
+    "ai_get_started_introduction_site_logo_with_ai_site-settings": true,
+    "globals_introduction": true,
+    "yoast-introduction-editor-v2": true
+  },
+  "_links": {
+    "self": [
+      {
+        "href": "https://amirmotefaker.ir/wp-json/wp/v2/users/1",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://amirmotefaker.ir/wp-json/wp/v2/users"
+      }
+    ]
+  }
+}

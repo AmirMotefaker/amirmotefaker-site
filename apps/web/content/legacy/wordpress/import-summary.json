@@ -1,0 +1,17 @@
+{
+  "origin": "https://amirmotefaker.ir",
+  "captured_at": "2026-08-11T21:22:48.6382968+03:30",
+  "pages": 14,
+  "posts": 895,
+  "categories": 207,
+  "tags": 2072,
+  "media_records": 283,
+  "discovered_upload_urls": 1498,
+  "media_local_or_downloaded": 1237,
+  "media_failed": 261,
+  "comments": 8,
+  "users": 1,
+  "production_mutated": false,
+  "github_mutated": false,
+  "vercel_mutated": false
+}

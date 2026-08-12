@@ -1,0 +1,73 @@
+{
+  "id": 12309,
+  "slug": "%d8%a7%d8%ae%d8%a8%d8%a7%d8%b1-%d8%b3%d8%a7%db%8c%d8%a8%d8%b1%db%8c-%d8%af%d8%b3%d8%a7%d9%85%d8%a8%d8%b1-%db%b2%db%b0%db%b2%db%b5-%d8%ad%d9%85%d9%84%d8%a7%d8%aa-%d9%be%db%8c%d8%b4%d8%b1%d9%81%d8%aa",
+  "source_url": "https://amirmotefaker.ir/%d8%a7%d8%ae%d8%a8%d8%a7%d8%b1-%d8%b3%d8%a7%db%8c%d8%a8%d8%b1%db%8c-%d8%af%d8%b3%d8%a7%d9%85%d8%a8%d8%b1-%db%b2%db%b0%db%b2%db%b5-%d8%ad%d9%85%d9%84%d8%a7%d8%aa-%d9%be%db%8c%d8%b4%d8%b1%d9%81%d8%aa/",
+  "date": "12/26/2025 08:48:30",
+  "modified": "12/25/2025 12:43:57",
+  "title": "اخبار سایبری دسامبر ۲۰۲۵: حملات پیشرفته و هشدارها",
+  "excerpt_html": "<p>امنیت سایبری را اولویت می‌کند، ممکن است ۲۰٪ بودجه‌های امنیتی شرکت‌ها را افزایش دهد.</p>\n",
+  "excerpt_text": "امنیت سایبری را اولویت می‌کند، ممکن است ۲۰٪ بودجه‌های امنیتی شرکت‌ها را افزایش دهد.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"12309\" class=\"elementor elementor-12309\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-7fb921c9 e-flex e-con-boxed e-con e-parent\" data-id=\"7fb921c9\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-5693b8ca elementor-widget elementor-widget-text-editor\" data-id=\"5693b8ca\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<p class=\"wp-block-paragraph\">خلاصه اخبار سایبر مانند حملات state-sponsored،<a href=\"https://cimetrics.com/december-2025-cybersecurity-news/\" target=\"_blank\" rel=\"noopener\"> نقض API و آسیب‌پذیری‌های جدید</a> در دسامبر ۲۰۲۵، با تمرکز روی افزایش تهدیدها در پایان سال. <strong>تأثیر</strong>: امنیت سایبری را اولویت می‌کند – ممکن است ۲۰٪ بودجه‌های امنیتی شرکت‌ها را افزایش دهد.</p>\n\n<p class=\"wp-block-paragraph\">گزارش امنیت سایبری دسامبر ۲۰۲۵، تصویر نگران‌کننده‌ای از یک میدان نبرد دیجیتال پیچیده را ترسیم می‌کند. در حالی که دنیا برای تعطیلات آماده می‌شد، مهاجمان سایبری از پیچیده‌ترین ابزارهای خود برای نفوذ به زیرساخت‌های حیاتی و سرقت داده‌های کلان استفاده کردند.</p>\n\n<p class=\"wp-block-paragraph\">تحلیل جزئیات این خبر بر اساس گزارش مرجع <strong>Cimetrics</strong> و سایر منابع معتبر امنیتی به شرح زیر است:</p>\n\n<h3 class=\"wp-block-heading\">۱. آسیب‌پذیری بحرانی React2Shell: زلزله در دنیای وب</h3>\n\n<p class=\"wp-block-paragraph\">در اوایل دسامبر ۲۰۲۵، کشف آسیب‌پذیری <strong>React2Shell</strong> (با کد CVE-2025-55182) دنیای فناوری را تکان داد.</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>جزئیات فنی:</strong> این حفره امنیتی در فریم‌ورک‌های محبوب React 19 و Next.js 15 کشف شد که اجازه اجرای کد از راه دور (RCE) را به صورت احراز هویت نشده می‌داد.</li>\n\n<li><strong>سرعت حمله:</strong> گروه‌های هکری وابسته به دولت‌ها (مانند Earth Lamia) تنها <strong>چند ساعت</strong> پس از افشای این باگ، حملات خود را آغاز کردند. این نشان‌دهنده کاهش چشمگیر فاصله بین «کشف باگ» و «بهره‌برداری عملیاتی» در سال ۲۰۲۵ است.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">۲. نشت API و هدف قرار گرفتن داده‌های کلان</h3>\n\n<p class=\"wp-block-paragraph\">در دسامبر ۲۰۲۵، مفهوم «امنیت API» به بزرگترین کابوس مدیران IT تبدیل شد.</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>پرونده ۷۰۰Credit:</strong> نفوذ به این ارائه‌دهنده اعتباری باعث افشای اطلاعات حساس بیش از <strong>۵.۶ میلیون نفر</strong> شد. هکرها با سوءاستفاده از یک API ناامن که مالکیت حساب را بررسی نمی‌کرد، به داده‌ها دسترسی پیدا کردند.</li>\n\n<li><strong>آمارهای تکان‌دهنده:</strong> طبق گزارش‌های دسامبر، حدود <strong>۵۷٪ از سازمان‌ها</strong> در سال ۲۰۲۵ حداقل یک نشت داده مرتبط با API را تجربه کرده‌اند. APIها اکنون به «درهای پشتی» (Backdoors) اصلی برای ورود به ابرهای سازمانی تبدیل شده‌اند.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">۳. حملات دولتی (State-Sponsored) و اهداف سیاسی</h3>\n\n<p class=\"wp-block-paragraph\">در دسامبر ۲۰۲۵، حملات سایبری بیش از هر زمان دیگری ابزاری برای فشار ژئوپلیتیک بودند:</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>تمرکز بر زیرساخت‌ها:</strong> گروه‌های تحت حمایت روسیه و چین به شدت زنجیره‌های تأمین (Supply Chains) در اروپا و آمریکای شمالی را هدف قرار دادند.</li>\n\n<li><strong>بحران در خاورمیانه:</strong> هکرهای گروه «حنظله» با نفوذ به تلفن‌های مقامات ارشد (مانند نفتالی بنت) و انتشار اسناد حساس تا تاریخ ژوئیه ۲۰۲۵، ابعاد جدیدی از جنگ روانی-سایبری را به نمایش گذاشتند.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">۴. تحلیل تأثیرات اقتصادی و بودجه‌ای</h3>\n\n<ul class=\"wp-block-list\">\n<li><strong>هزینه ۱۰.۵ تریلیون دلاری:</strong> پیش‌بینی می‌شود خسارت جهانی جرایم سایبری در پایان سال ۲۰۲۵ به رقم خیره‌کننده ۱۰.۵ تریلیون دلار برسد.</li>\n\n<li><strong>تغییر در اولویت‌های بودجه:</strong> این حملات گسترده در ماه پایانی سال، شرکت‌ها را مجبور کرده است تا در بودجه‌بندی سال ۲۰۲۶ خود، <strong>۲۰٪ افزایش</strong> برای بخش امنیت سایبری در نظر بگیرند. تمرکز اصلی این بودجه‌ها از «پیشگیری ساده» به سمت «تاب‌آوری سایبری» (Cyber Resilience) و امنیت هوش مصنوعی (AI Security) تغییر یافته است.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">جمع‌بندی و توصیه‌ها</h3>\n\n<p class=\"wp-block-paragraph\">دسامبر ۲۰۲۵ نشان داد که حتی سیستم‌های کاملاً آفلاین نیز در امان نیستند (اشاره به هک ربات‌های انسان‌نما از طریق سیگنال‌های صوتی). برای سال ۲۰۲۶، استراتژی <strong>&#8220;Zero Trust&#8221;</strong> دیگر یک انتخاب نیست، بلکه یک ضرورت است.</p>\n\n<p class=\"wp-block-paragraph\">پرایم سیستم، رهبر فناوری اطلاعات در قزوین و زنجان، با افتخار نمایندگی رسمی معتبرترین برندهای ایران و جهان است:</p>\n\n<p class=\"wp-block-paragraph\"><strong>۱- تخت جمشید:<br />پرایم سیستم، پیشگام سخت‌افزار، گیمینگ، رندرینگ و لوازم جانبی کامپیوتر</strong></p>\n\n<p class=\"wp-block-paragraph\"><strong>۲- سیناپ:<br />پرایم سیستم، سیستم‌های AIDC<br /></strong>پیشرو در شناسایی خودکار و جمع‌آوری داده، نرم‌افزارهای انبار و لجستیک و تجهیزات بارکد/RFID برای صنایع تولیدی، خرده‌فروشی و راه‌حل‌های دقیق برای زنجیره تأمین.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۳- ماپرا:<br />پرایم سیستم، تحول دیجیتال صنعت F&amp;B<br /></strong>نرم‌افزار یکپارچه مدیریت فروش، انبارداری، باشگاه مشتریان و رزرو آنلاین بر پایه فناوری ابری و داده‌محور، همراه هزاران رستوران، کافه و فست‌فود برای مدیریت بدون محدودیت مکان/زمان، افزایش کارایی و هوشمندسازی عملیات.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۴- سخت‌افزار:<br />پرایم سیستم، پیشتاز قطعات دیجیتال<br /></strong>فروش آنلاین/آفلاین قطعات کامپیوتر و دیجیتال و نمایندگی برندهای ایرانی/خارجی، ارسال به تمام ایران، سیستم‌های گیمینگ/رندرینگ/ماینینگ و تیم اورکلاکر حرفه‌ای. تولید محتوای تخصصی، برترین فروشگاه سخت افزار و نرم افزار قزوین/زنجان.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۵- نیلپر:<br />پرایم سیستم، تولیدکننده محصولات ارگونومیک، کوله و کیف</strong><br />تمرکز بر کیفیت، طراحی دانش‌محور و بازارهای اداری/آموزشی/رستورانی. مدیریت استراتژیک برای رضایت مشتری.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۶- زبرآسیا:<br />پرایم سیستم، فناوری AIDC و بارکد<br /></strong>تسهیل در جمع‌آوری داده بدون خطا با تمرکز بر بارکد و AID، راه‌حل‌های اطلاعاتی برای صنایع، افزایش سرعت/دقت و برنامه‌ریزی منابع. تکیه بر متخصصان داخلی و دانش جهانی، جلب اعتماد مشتریان.</p>\n\n<p class=\"wp-block-paragraph\">۷-فاطر:<br /><strong>پرایم سیستم، طراحی و تولید سخت افزار کامپیوتر</strong><br />انتقال و توسعه تکنولوژی های بروز در جهت تولید داخلی، محصولات باکیفیت قابل رقابت برند های مطرح خارجی باقیمت‌منصفانه، خدمات پس از فروش متفاوت و گارانتی تعویض بی‌قید و شرط</p>\n\n<p class=\"wp-block-paragraph\"><span style=\"color: #ff0000;\"><a style=\"color: #ff0000;\" href=\"https://primesys.ir/\" target=\"_blank\" rel=\"noreferrer noopener\">پرایم سیستم | پلتفرم ابری حسابداری و مالی، سخت افزار و لوازم جانبی</a></span></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 12310,
+  "featured_image": "/legacy/wp-content/uploads/2025/12/cyber.webp",
+  "categories": [
+    {
+      "id": 374,
+      "name": "امنیت و هک",
+      "slug": "%d8%a7%d9%85%d9%86%db%8c%d8%aa-%d9%88-%d9%87%da%a9"
+    },
+    {
+      "id": 496,
+      "name": "سایبری",
+      "slug": "%d8%b3%d8%a7%db%8c%d8%a8%d8%b1%db%8c"
+    },
+    {
+      "id": 93,
+      "name": "فناوری",
+      "slug": "%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 2133,
+      "name": "AI Security",
+      "slug": "ai-security"
+    },
+    {
+      "id": 905,
+      "name": "Backdoors",
+      "slug": "backdoors"
+    },
+    {
+      "id": 388,
+      "name": "Cybersecurity",
+      "slug": "cybersecurity"
+    },
+    {
+      "id": 2131,
+      "name": "React2Shell",
+      "slug": "react2shell"
+    },
+    {
+      "id": 2132,
+      "name": "State-Sponsored",
+      "slug": "state-sponsored"
+    },
+    {
+      "id": 1052,
+      "name": "پرایم سیستم",
+      "slug": "%d9%be%d8%b1%d8%a7%db%8c%d9%85-%d8%b3%db%8c%d8%b3%d8%aa%d9%85"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

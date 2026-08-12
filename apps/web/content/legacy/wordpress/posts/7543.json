@@ -1,0 +1,103 @@
+{
+  "id": 7543,
+  "slug": "%d9%81%d9%88%d8%ac%db%8c%d8%aa%d8%b3%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c-%d9%86%d9%88%db%8c%d9%86%db%8c-%d8%a8%d8%b1%d8%a7%db%8c-%da%a9%d9%88%da%86%da%a9%d8%b3%d8%a7%d8%b2%db%8c-%d9%88",
+  "source_url": "https://amirmotefaker.ir/%d9%81%d9%88%d8%ac%db%8c%d8%aa%d8%b3%d9%88-%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c-%d9%86%d9%88%db%8c%d9%86%db%8c-%d8%a8%d8%b1%d8%a7%db%8c-%da%a9%d9%88%da%86%da%a9%d8%b3%d8%a7%d8%b2%db%8c-%d9%88/",
+  "date": "09/08/2025 09:40:08",
+  "modified": "09/08/2025 10:14:11",
+  "title": "فوجیتسو فناوری نوینی برای کوچک‌سازی و بهینه‌سازی LLMها معرفی کرد",
+  "excerpt_html": "<p>فوجیتسو فناوری بازسازی (reconstruction) مبتنی بر ۱-bit quantization و distillation را برای مدل LLM خود با نام “Takane” توسعه داده است. این پیشرفت باعث کاهش ۹۴٪ مصرف حافظه و افزایش سرعت اجرای مدل تا سه برابر شده، در حالی که دقت مدل تا ۸۹٪ حفظ می‌شود.</p>\n",
+  "excerpt_text": "فوجیتسو فناوری بازسازی (reconstruction) مبتنی بر ۱-bit quantization و distillation را برای مدل LLM خود با نام “Takane” توسعه داده است. این پیشرفت باعث کاهش ۹۴٪ مصرف حافظه و افزایش سرعت اجرای مدل تا سه برابر شده، در حالی که دقت مدل تا ۸۹٪ حفظ می‌شود.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"7543\" class=\"elementor elementor-7543\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-5accfdd9 e-flex e-con-boxed e-con e-parent\" data-id=\"5accfdd9\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-7bf9756 elementor-widget elementor-widget-text-editor\" data-id=\"7bf9756\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<p class=\"wp-block-paragraph\">فوجیتسو فناوری بازسازی (reconstruction) مبتنی بر ۱-bit quantization و distillation را برای مدل LLM خود با نام <a href=\"https://global.fujitsu/-/media/Project/Fujitsu/Fujitsu-HQ/pr/news/2025/09/08-01-en.pdf?rev=c37f7a5fcc5d40d7b66b3e9adac98826\" target=\"_blank\" rel=\"noopener\">“Takane”</a> توسعه داده است. این پیشرفت باعث کاهش ۹۴٪ مصرف حافظه و افزایش سرعت اجرای مدل تا سه برابر شده، در حالی که دقت مدل تا ۸۹٪ حفظ می‌شود—رقمی بسیار بالاتر از روش‌های رایج quantization (&lt;۲۰٪). این فناوری امکان اجرای مدل‌های بزرگ generative AI را روی یک GPU ارزان قیمت فراهم کرده است.</p>\n\n<p class=\"wp-block-paragraph\"><strong>تحلیل:</strong> این فناوری، نقطه‌عطفی در کاهش نیاز به منابع سخت‌افزاری بزرگ برای مدل‌های AI محسوب می‌شود. امکان اجرای LLMهای پیشرفته روی لبه (edge) مثل گوشی یا دستگاه‌های صنعتی با مصرف انرژی پایین، کاربردهای فوری در IoT، موبایل و محیط‌های کم‌منابع را باز می‌کند و به توسعه AI سبز و قابل‌دسترس کمک می‌نماید.</p>\n\n<h3 id=\"h-جزئیات-اصلی-خبر\" class=\"wp-block-heading\">جزئیات اصلی خبر</h3>\n\n<ul class=\"wp-block-list\">\n<li>فوجیتسو فناوری <strong>بازسازی (reconstruction)</strong> مبتنی بر ترکیب <strong>۱-bit quantization</strong> و <strong>distillation</strong> معرفی کرده است.</li>\n\n<li>مدل <strong>Takane LLM</strong> با این روش:\n<ul class=\"wp-block-list\">\n<li><strong>۹۴٪ کاهش مصرف حافظه</strong></li>\n\n<li><strong>۳ برابر افزایش سرعت اجرا</strong></li>\n\n<li><strong>حفظ ۸۹٪ دقت</strong> (در حالی که روش‌های متداول زیر ۲۰٪ دقت دارند)</li>\n</ul>\n</li>\n\n<li>این نوآوری اجرای مدل‌های مولد بزرگ (Generative AI) را روی یک <strong>GPU ارزان‌قیمت</strong> ممکن کرده است.</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-تحلیل-و-پیامدها\" class=\"wp-block-heading\">تحلیل و پیامدها</h3>\n\n<h4 id=\"h-۱-تحول-در-هزینه-و-دسترسی\" class=\"wp-block-heading\">۱. <strong>تحول در هزینه و دسترسی</strong></h4>\n\n<ul class=\"wp-block-list\">\n<li>پیش از این، اجرای LLMهای بزرگ نیازمند دیتاسنترهای عظیم و کارت‌های گرافیک پرقدرت مثل NVIDIA H100 بود.</li>\n\n<li>فناوری فوجیتسو باعث می‌شود شرکت‌های کوچک و حتی توسعه‌دهندگان مستقل بتوانند LLMها را روی سخت‌افزارهای <strong>ارزان و عمومی</strong> اجرا کنند.</li>\n\n<li>این موضوع فشار هزینه را به شدت کاهش داده و می‌تواند رقابت در بازار AI را دموکراتیک کند.</li>\n</ul>\n\n<h4 id=\"h-۲-پیشرفت-در-ai-لبه-edge-ai\" class=\"wp-block-heading\">۲. <strong>پیشرفت در AI لبه (Edge AI)</strong></h4>\n\n<ul class=\"wp-block-list\">\n<li>امکان اجرای مدل‌های زبانی روی دستگاه‌هایی مانند:\n<ul class=\"wp-block-list\">\n<li><strong>گوشی‌های هوشمند</strong></li>\n\n<li><strong>دستگاه‌های IoT</strong></li>\n\n<li><strong>ربات‌های صنعتی کوچک</strong></li>\n</ul>\n</li>\n\n<li>این تغییر به معنی آن است که پردازش‌های هوش مصنوعی دیگر محدود به فضای ابری نیستند و می‌توانند <strong>به صورت محلی</strong> انجام شوند، با تأخیر کمتر و امنیت بالاتر.</li>\n</ul>\n\n<h4 id=\"h-۳-توسعه-ai-سبز-و-پایدار\" class=\"wp-block-heading\">۳. <strong>توسعه AI سبز و پایدار</strong></h4>\n\n<ul class=\"wp-block-list\">\n<li>کاهش مصرف انرژی و حافظه، به کاهش ردپای کربنی هوش مصنوعی کمک می‌کند.</li>\n\n<li>شرکت‌ها و دولت‌ها که به دنبال <strong>سیاست‌های ESG و پایداری</strong> هستند، این فناوری را به‌عنوان راهی برای <strong>AI دوستدار محیط زیست</strong> خواهند دید.</li>\n</ul>\n\n<h4 id=\"h-۴-رقابت-فناورانه-با-nvidia-meta-و-google\" class=\"wp-block-heading\">۴. <strong>رقابت فناورانه با NVIDIA، Meta و Google</strong></h4>\n\n<ul class=\"wp-block-list\">\n<li>تا پیش از این، بیشتر بهینه‌سازی‌ها روی <strong>۸-bit یا ۴-bit quantization</strong> متمرکز بودند.</li>\n\n<li>فناوری <strong>۱-bit quantization فوجیتسو</strong> یک جهش کیفی محسوب می‌شود و می‌تواند در آینده به یک <strong>استاندارد صنعتی</strong> تبدیل شود.</li>\n\n<li>این حرکت فشار مستقیمی به بازیگران بزرگ مثل NVIDIA وارد می‌کند تا فراتر از سخت‌افزار به <strong>بهینه‌سازی الگوریتمی</strong> توجه کنند.</li>\n</ul>\n\n<h4 id=\"h-۵-کاربردهای-فوری\" class=\"wp-block-heading\">۵. <strong>کاربردهای فوری</strong></h4>\n\n<ul class=\"wp-block-list\">\n<li><strong>سلامت دیجیتال:</strong> اجرای LLMها روی ابزارهای پزشکی قابل‌حمل بدون نیاز به اتصال به دیتاسنتر.</li>\n\n<li><strong>امنیت و حریم خصوصی:</strong> پردازش داده‌های حساس کاربر (مثل صدا و متن) روی خود دستگاه به جای ارسال به سرور.</li>\n\n<li><strong>صنعتی:</strong> به‌کارگیری در خطوط تولید هوشمند که به AI در لحظه و بدون اینترنت متکی هستند.</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<p class=\"wp-block-paragraph\"><strong>جمع‌بندی:</strong><br />نوآوری فوجیتسو با مدل <strong>Takane</strong> نه‌تنها هزینه اجرای LLMها را به‌شدت کاهش می‌دهد، بلکه مسیر را برای <strong>گسترش AI به دستگاه‌های روزمره</strong> و <strong>کاهش اثرات زیست‌محیطی</strong> هموار می‌کند. این فناوری می‌تواند رقابت جهانی در حوزه <strong>AI کم‌منبع (Resource-Efficient AI)</strong> را وارد مرحله‌ای تازه کند.</p>\n\n<h3 class=\"wp-block-heading\">ماتریس SWOT: فناوری فوجیتسو Takane LLM</h3>\n\n<figure class=\"wp-block-table\">\n<table class=\"has-fixed-layout\">\n<thead>\n<tr>\n<th> </th>\n<th><strong>فرصت‌ها (Opportunities)</strong></th>\n<th><strong>تهدیدها (Threats)</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>نقاط قوت (Strengths)</strong></td>\n<td><strong>(SO) استراتژی تهاجمی</strong><br />• عرضه LLMهای کوچک روی موبایل، IoT و ربات‌ها.<br />• ورود به بازار AI سبز (کاهش مصرف انرژی).<br />• توسعه سرویس‌های ابری ارزان‌قیمت برای SMEها.<br />• همکاری با تولیدکنندگان گوشی/تراشه برای نصب Takane روی دستگاه‌ها.</td>\n<td><strong>(ST) استراتژی دفاعی</strong><br />• حفاظت از مزیت فنی در برابر رقبا (NVIDIA, Google, Meta).<br />• ثبت پتنت و استانداردسازی ۱-bit quantization.<br />• ایجاد اکوسیستم نرم‌افزاری برای جلوگیری از قفل‌شدن بازار توسط رقبا.<br />• تمرکز بر امنیت مدل‌های کوچک‌شده (جلوگیری از نشت داده).</td>\n</tr>\n<tr>\n<td><strong>نقاط ضعف (Weaknesses)</strong></td>\n<td><strong>(WO) استراتژی بهبود</strong><br />• جذب سرمایه‌گذاری مشترک برای ارتقای دقت مدل از ۸۹٪ به بالاتر.<br />• توسعه ابزارهای متن‌باز برای جلب جامعه توسعه‌دهندگان.<br />• ایجاد مراکز تست برای کاربردهای حساس (پزشکی، خودرو).</td>\n<td><strong>(WT) استراتژی بقا</strong><br />• اجتناب از ورود سریع به حوزه‌هایی با ریسک بالا (مثلاً امنیت ملی).<br />• مدیریت انتظارات مشتریان تا زمانی که دقت مدل‌ها به سطح صنعتی برسد.<br />• سرمایه‌گذاری روی قابلیت‌های Explainability و ایمنی مدل‌های کوچک‌شده.</td>\n</tr>\n</tbody>\n</table>\n</figure>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 class=\"wp-block-heading\">جمع‌بندی کاربردی</h3>\n\n<ol class=\"wp-block-list\">\n<li><strong>کجا می‌شه سرمایه‌گذاری کرد؟</strong>\n<ul class=\"wp-block-list\">\n<li>موبایل و IoT → اجرای LLMهای سبک روی گوشی‌ها و دستگاه‌های صنعتی.</li>\n\n<li>AI سبز → راهکارهای کم‌مصرف برای شرکت‌هایی که دغدغه پایداری دارند.</li>\n\n<li>SMEها → سرویس‌های ابری با هزینه پایین برای کسب‌وکارهای کوچک.</li>\n</ul>\n</li>\n\n<li><strong>کجا باید احتیاط کرد؟</strong>\n<ul class=\"wp-block-list\">\n<li>حوزه‌های امنیتی یا پزشکی حساس (تا زمانی که دقت مدل بالاتر از ۹۰–۹۵٪ بشود).</li>\n\n<li>رقابت با غول‌ها (NVIDIA/Google/Meta) که می‌توانند با منابع عظیم، جایگزین‌های سریع بسازند.</li>\n</ul>\n</li>\n</ol>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 697,
+      "name": "اینترنت اشیا",
+      "slug": "%d8%a7%db%8c%d9%86%d8%aa%d8%b1%d9%86%d8%aa-%d8%a7%d8%b4%db%8c%d8%a7"
+    },
+    {
+      "id": 5,
+      "name": "تکنولوژی",
+      "slug": "%d8%aa%da%a9%d9%86%d9%88%d9%84%d9%88%da%98%db%8c"
+    },
+    {
+      "id": 93,
+      "name": "فناوری",
+      "slug": "%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 696,
+      "name": "ESG",
+      "slug": "esg"
+    },
+    {
+      "id": 694,
+      "name": "Fujitsu",
+      "slug": "fujitsu"
+    },
+    {
+      "id": 14,
+      "name": "Generative AI",
+      "slug": "generative-ai"
+    },
+    {
+      "id": 62,
+      "name": "Google",
+      "slug": "google"
+    },
+    {
+      "id": 115,
+      "name": "GPU",
+      "slug": "gpu"
+    },
+    {
+      "id": 156,
+      "name": "IoT",
+      "slug": "iot"
+    },
+    {
+      "id": 237,
+      "name": "LLM",
+      "slug": "llm"
+    },
+    {
+      "id": 40,
+      "name": "Meta",
+      "slug": "meta"
+    },
+    {
+      "id": 21,
+      "name": "Nvidia",
+      "slug": "nvidia"
+    },
+    {
+      "id": 698,
+      "name": "SWOT",
+      "slug": "swot"
+    },
+    {
+      "id": 695,
+      "name": "Takane",
+      "slug": "takane"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

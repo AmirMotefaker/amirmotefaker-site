@@ -1,27 +1,8 @@
-import PremiumHero from "@/components/home/PremiumHero";
-import PremiumProductCards from "@/components/home/PremiumProductCards";
-import VisionSection from "@/components/home/VisionSection";
-import FounderProfile from "@/components/home/FounderProfile";
-import PremiumCTA from "@/components/home/PremiumCTA";
+import FounderHome from "@/components/founder/FounderHome";
+import type { Locale } from "@/content/founder-site";
 
-export default function LocaleHomePage() {
-
-return (
-
-<main>
-
-<PremiumHero />
-
-<FounderProfile />
-
-<PremiumProductCards />
-
-<VisionSection />
-
-<PremiumCTA />
-
-</main>
-
-);
-
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale: raw } = await params;
+  const locale: Locale = raw === "en" ? "en" : "fa";
+  return <FounderHome locale={locale} />;
 }

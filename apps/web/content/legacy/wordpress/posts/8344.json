@@ -1,0 +1,93 @@
+{
+  "id": 8344,
+  "slug": "cluade-%d8%b7%d8%b1%d8%ad%d9%87%d8%a7%db%8c-figma-%d8%b1%d8%a7-%d8%a8%d9%87-%da%a9%d8%af-%d8%a2%d9%85%d8%a7%d8%af%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d8%a7%d8%b3%d8%aa%d9%81%d8%a7%d8%af%d9%87",
+  "source_url": "https://amirmotefaker.ir/cluade-%d8%b7%d8%b1%d8%ad%d9%87%d8%a7%db%8c-figma-%d8%b1%d8%a7-%d8%a8%d9%87-%da%a9%d8%af-%d8%a2%d9%85%d8%a7%d8%af%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d8%a7%d8%b3%d8%aa%d9%81%d8%a7%d8%af%d9%87/",
+  "date": "09/25/2025 08:28:45",
+  "modified": "09/25/2025 08:32:57",
+  "title": "Cluade طرح‌های Figma را به کد آماده برای استفاده تبدیل می‌کند",
+  "excerpt_html": "<p>پلاگین Figma به نام &#8220;Figma to AI Code by DesignCode&#8221; هست که از مدل هوش مصنوعی Claude (از Anthropic) برای تبدیل مستقیم طراحی‌های بصری در Figma به کدهای قابل استفاده (مثل HTML، CSS، React و غیره) استفاده می‌کنه. </p>\n",
+  "excerpt_text": "پلاگین Figma به نام “Figma to AI Code by DesignCode” هست که از مدل هوش مصنوعی Claude (از Anthropic) برای تبدیل مستقیم طراحی‌های بصری در Figma به کدهای قابل استفاده (مثل HTML، CSS، React و غیره) استفاده می‌کنه.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"8344\" class=\"elementor elementor-8344\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-4b3c8055 e-flex e-con-boxed e-con e-parent\" data-id=\"4b3c8055\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-2d6867f5 elementor-widget elementor-widget-text-editor\" data-id=\"2d6867f5\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t<p>این پلاگین، که اخیرا لانچ شده، به طراحان اجازه می‌ده تا لایه‌های طراحی در <a href=\"https://www.figma.com/community/plugin/1443774571835235184/figma-to-ai-code-by-designcode\" target=\"_blank\" rel=\"noopener\">Figma</a> رو انتخاب کنن و با یک کلیک، کدهای تمیز و آماده برای وب/اپ تولید کنن. Claude (مدل AI Anthropic) مغز متفکر پشت این کاره و از قابلیت‌های &#8220;reasoning&#8221; (استدلال) خودش برای درک ساختار طراحی (مثل layout، رنگ‌ها، فونت‌ها) استفاده می‌کنه تا کدی بسازه که نه تنها شبیه طراحی باشه، بلکه responsive و قابل توسعه هم باشه. خبر اصلی: این ابزار &#8220;hand-off&#8221; (تحویل به توسعه‌دهنده) رو تسریع می‌کنه و زمان تبدیل طراحی به کد رو از ساعت‌ها به دقیقه‌ها کاهش می‌ده. توسعه‌دهنده: DesignCode (یک استودیوی طراحی/توسعه)، و پلاگین در Figma Community با ID 1443774571835235184 در دسترسه. تا حالا بیش از ۱۰,۰۰۰ نصب داشته و امتیاز ۴.۸/۵ از کاربران.</p>\n<!-- /wp:paragraph --><!-- wp:heading {\"level\":4} -->\n<h4 id=\"h-۲-زمینه-و-پیشینه\" class=\"wp-block-heading\">زمینه و پیشینه</h4>\n<!-- /wp:heading --><!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li><strong>ادغام Figma و AI</strong>: Figma از ۲۰۲۳ شروع به ادغام AI کرد (مثل Figma AI با ابزارهای auto-layout و naming)، اما این پلاگین خاص، همکاری مستقیم با Claude رو برجسته می‌کنه. Anthropic در مارس ۲۰۲۵ APIهای جدیدی برای &#8220;visual understanding&#8221; (درک بصری) منتشر کرد که اجازه می‌ده Claude تصاویر/طراحی‌ها رو تحلیل کنه – این پلاگین از همون API استفاده می‌کنه. خبر &#8220;Claude turns Figma designs into code&#8221; احتمالاً به اعلامیه Anthropic در کنفرانس DevCon 2025 اشاره داره، جایی که نشون دادن چطور Claude می‌تونه فایل‌های Figma رو به کد React تبدیل کنه.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li><strong>چرا حالا؟</strong>: با رشد ابزارهایی مثل Framer X و Adobe XD&#8217;s AI export، طراحان/توسعه‌دهندگان نیاز به bridge (پل) بین طراحی و کد دارن. Claude با تمرکز روی &#8220;safety&#8221; و دقت بالا (کمتر hallucination نسبت به GPT-4)، گزینه ایدئالی برای تولید کد هست. DesignCode، که قبلاً ابزارهای آموزشی کدینگ می‌ساخت، این پلاگین رو به عنوان extension بازار آموزشی‌شون لانچ کرد.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li><strong>زمان‌بندی</strong>: با تاریخ فعلی (۲۵ سپتامبر ۲۰۲۵)، این خبر تازه‌ست و با موج AI در طراحی (مثل FigJam&#8217;s AI brainstorming) همخوانی داره.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list --><!-- wp:heading {\"level\":4} -->\n<h4 id=\"h-۳-ویژگی-های-کلیدی-پلاگین\" class=\"wp-block-heading\">ویژگی‌های کلیدی پلاگین</h4>\n<!-- /wp:heading --><!-- wp:paragraph -->\n<p>پلاگین ساده و یکپارچه‌ست: نصب از Figma Community، انتخاب لایه‌ها، و تولید کد. ویژگی‌ها رو در جدول زیر خلاصه کردم (بر اساس توصیفات کاربران و دموها):</p>\n<!-- /wp:paragraph --><!-- wp:table -->\n<figure class=\"wp-block-table\">\n<table class=\"has-fixed-layout\">\n<thead>\n<tr>\n<th>ویژگی</th>\n<th>توضیح</th>\n<th>مثال کاربرد</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>تبدیل خودکار طراحی به کد</strong></td>\n<td>لایه‌های Figma (wireframes یا mockups) رو به کد تبدیل می‌کنه. از Claude برای تحلیل عناصر بصری (رنگ، spacing، typography) استفاده می‌کنه.</td>\n<td>یک landing page در Figma → خروجی: HTML/CSS کامل با Tailwind یا vanilla.</td>\n</tr>\n<tr>\n<td><strong>پشتیبانی از فریم‌ورک‌ها</strong></td>\n<td>خروجی در فرمت‌های HTML/CSS، React, Vue, SwiftUI (iOS), Flutter (cross-platform).</td>\n<td>طراح موبایل: طراحی اپ → کد Flutter آماده برای تست.</td>\n</tr>\n<tr>\n<td><strong>ویرایش و سفارشی‌سازی</strong></td>\n<td>بعد از تولید، می‌تونی promptهای اضافی بدی (مثل &#8220;add dark mode&#8221;) و Claude کد رو iterate کنه.</td>\n<td>&#8220;این کد رو responsive کن&#8221; → نسخه به‌روز شده در ۳۰ ثانیه.</td>\n</tr>\n<tr>\n<td><strong>پیش‌نمایش و export</strong></td>\n<td>پیش‌نمایش زنده در Figma، و export مستقیم به GitHub یا ZIP.</td>\n<td>توسعه‌دهنده: کد رو مستقیم به repo push کن بدون کپی-پیست.</td>\n</tr>\n<tr>\n<td><strong>ادغام با Claude</strong></td>\n<td>از API Claude 3.5 Sonnet استفاده می‌کنه برای reasoning دقیق؛ نیاز به کلید API Anthropic داری.</td>\n<td>prompt داخلی: &#8220;Convert this Figma frame to clean React components.&#8221;</td>\n</tr>\n</tbody>\n</table>\n</figure>\n<!-- /wp:table --><!-- wp:paragraph -->\n<p>نصب: از لینک پلاگین در Figma، &#8220;Install&#8221; بزن، کلید API Claude رو وارد کن، و از منوی Plugins فعال کن. دمو: ویدیوهای یوتیوب DesignCode نشون می‌دن چطور یک dashboard کامل در ۲ دقیقه به React تبدیل می‌شه.</p>\n<!-- /wp:paragraph --><!-- wp:heading {\"level\":4} -->\n<h4 id=\"h-۴-تمایزها-رقابت-و-بازار\" class=\"wp-block-heading\">تمایزها، رقابت و بازار</h4>\n<!-- /wp:heading --><!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li><strong>تفاوت با رقبا</strong>:</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li><strong>Figma&#8217;s Dev Mode</strong>: فقط inspect می‌کنه، کد تولید نمی‌کنه – این پلاگین generativeه.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li><strong>Anima یا Builder.io</strong>: مشابه، اما از GPT استفاده می‌کنن و گاهی کد کثیف تولید می‌کنن. Claude دقت بالاتری داره (طبق بنچمارک‌های Anthropic، ۲۰% کمتر error در کد UI).</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li><strong>TeleportHQ</strong>: رایگان اما محدود به HTML؛ این پلاگین فریم‌ورک‌های مدرن رو پشتیبانی می‌کنه.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li><strong>رقبا اصلی</strong>: Adobe Firefly (برای Photoshop به کد)، Relume (برای Webflow)، و پلاگین‌های Figma مثل &#8220;html.to.design&#8221; (برعکس). Huxe (از تحلیل قبلی) در صوتیه، اما این یکی در visual code-gen.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li><strong>بازار</strong>: بازار UI/UX tools تا ۲۰۲۵ بیش از ۱۵ میلیارد دلاره، با AI segment که ۳۰% رشد سالانه داره. کاربران هدف: طراحان freelance، تیم‌های کوچک dev، و شرکت‌هایی مثل startups که budget محدودی دارن. امتیاز کاربران: &#8220;عالی برای prototyping سریع&#8221; اما &#8220;گاهی spacingها offه&#8221;.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list --><!-- wp:heading {\"level\":4} -->\n<h4 id=\"h-۵-چالش-ها-و-محدودیت-ها\" class=\"wp-block-heading\">چالش‌ها و محدودیت‌ها</h4>\n<!-- /wp:heading --><!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li><strong>وابستگی به API</strong>: نیاز به اشتراک Claude (از ۲۰$/ماه) داری، و quota محدود می‌تونه هزینه‌بر باشه.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li><strong>دقت</strong>: Claude عالیه، اما برای طراحی‌های پیچیده (مثل animations پیشرفته) ممکنه نیاز به manual tweak داشته باشه. کاربران گزارش دادن که ۸۰% کد آماده‌ست، ۲۰% نیاز به edit.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li><strong>حریم خصوصی</strong>: فایل‌های Figma به سرورهای Anthropic ارسال می‌شن – برای تیم‌های enterprise، compliance issue.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li><strong>پشتیبانی</strong>: فقط desktop Figma (نه web version کامل)، و OS: macOS/Windows.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list --><!-- wp:heading {\"level\":4} -->\n<h4 id=\"h-۶-تحلیل-کلی-و-چشم-انداز-آینده\" class=\"wp-block-heading\">تحلیل کلی و چشم‌انداز آینده</h4>\n<!-- /wp:heading --><!-- wp:paragraph -->\n<p>این پلاگین یک گام بزرگ در &#8220;no-code to low-code&#8221; transitionه و نشون می‌ده چطور Claude (با تمرکز روی ethical AI) داره از GPT جلو می‌زنه در ابزارهای حرفه‌ای. DesignCode با این لانچ، خودش رو به عنوان leader در AI-design tools تثبیت کرد و می‌تونه به درآمدزایی از طریق premium features برسه. چالش اصلی: رقابت با غول‌هایی مثل Figma AI native (که ممکنه مشابهی بسازه). آینده: انتظار بروزرسانی برای پشتیبانی از 3D designs یا AR/VR code تا ۲۰۲۶.</p>\n<!-- /wp:paragraph --><!-- wp:paragraph --><!-- /wp:paragraph -->\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 534,
+      "name": "برنامه نویسی",
+      "slug": "%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d9%87-%d9%86%d9%88%db%8c%d8%b3%db%8c"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 53,
+      "name": "Anthropic",
+      "slug": "anthropic"
+    },
+    {
+      "id": 862,
+      "name": "API",
+      "slug": "api"
+    },
+    {
+      "id": 54,
+      "name": "Claude",
+      "slug": "claude"
+    },
+    {
+      "id": 931,
+      "name": "CSS",
+      "slug": "css"
+    },
+    {
+      "id": 930,
+      "name": "DesignCode",
+      "slug": "designcode"
+    },
+    {
+      "id": 926,
+      "name": "Figma",
+      "slug": "figma"
+    },
+    {
+      "id": 927,
+      "name": "Flutter",
+      "slug": "flutter"
+    },
+    {
+      "id": 907,
+      "name": "GPT",
+      "slug": "gpt"
+    },
+    {
+      "id": 929,
+      "name": "HTML",
+      "slug": "html"
+    },
+    {
+      "id": 932,
+      "name": "React",
+      "slug": "react"
+    },
+    {
+      "id": 928,
+      "name": "SwiftUI",
+      "slug": "swiftui"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

@@ -1,0 +1,98 @@
+{
+  "id": 11239,
+  "slug": "meta-platforms-%d8%af%d8%b1-%d8%ad%d8%a7%d9%84-%d9%85%d8%b0%d8%a7%da%a9%d8%b1%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d8%a7%d8%b3%d8%aa%d9%81%d8%a7%d8%af%d9%87-%d8%a7%d8%b2-%da%86%db%8c%d9%be%d9%87",
+  "source_url": "https://amirmotefaker.ir/meta-platforms-%d8%af%d8%b1-%d8%ad%d8%a7%d9%84-%d9%85%d8%b0%d8%a7%da%a9%d8%b1%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d8%a7%d8%b3%d8%aa%d9%81%d8%a7%d8%af%d9%87-%d8%a7%d8%b2-%da%86%db%8c%d9%be%d9%87/",
+  "date": "11/28/2025 14:57:56",
+  "modified": "11/28/2025 14:59:11",
+  "title": "Meta Platforms در حال مذاکره برای استفاده از چیپ‌های AI شرکت Google",
+  "excerpt_html": "<p>این خبر می‌تواند نقطه عطفی در بازار سخت‌افزار AI باشد. اگر پروژه به ثمر برسد، قدرتِ بازار چیپ AI ممکن است از تمرکز روی چند تأمین‌کننده (مثلاً NVIDIA) خارج شود.</p>\n",
+  "excerpt_text": "این خبر می‌تواند نقطه عطفی در بازار سخت‌افزار AI باشد. اگر پروژه به ثمر برسد، قدرتِ بازار چیپ AI ممکن است از تمرکز روی چند تأمین‌کننده (مثلاً NVIDIA) خارج شود.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"11239\" class=\"elementor elementor-11239\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-dd3002b e-flex e-con-boxed e-con e-parent\" data-id=\"dd3002b\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-5798bdec elementor-widget elementor-widget-text-editor\" data-id=\"5798bdec\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<p class=\"wp-block-paragraph\">بر اساس گزارش منتشرشده، متا با گوگل در حال مذاکره است تا از <a href=\"https://www.reuters.com/business/meta-talks-spend-billions-googles-chips-information-reports-2025-11-25\" target=\"_blank\" rel=\"noopener\">چیپ‌های TPU گوگل</a> برای مراکز داده خود استفاده کند؛ انتقالی جدی از تکیه بر چیپ‌های رایج مثل آن‌که شرکت NVIDIA ارائه می‌دهد. اگر توافق نهایی شود، استفاده آغاز می‌شود از ۲۰۲۷ و امکان اجاره TPU از طریق Google Cloud نیز سال آینده وجود دارد.</p>\n\n<p class=\"wp-block-paragraph\"><strong>تحلیل:</strong> این خبر می‌تواند نقطه عطفی در بازار سخت‌افزار AI باشد. اگر پروژه به ثمر برسد، قدرتِ بازار چیپ AI ممکن است از تمرکز روی چند تأمین‌کننده (مثلاً NVIDIA) خارج شود. شرکت‌ها و توسعه‌دهندگان AI باید گزینه‌های جایگزین را جدی بگیرند. برای توسعه‌دهندگان منطقه‌ای و کشورهایی با منابع محدود، این می‌تواند به معنای کاهش هزینه و افزایش انعطاف‌پذیری باشد. ولی یک چالش بزرگ است: اکوسیستم نرم‌افزاری و سازگاری مدل‌ها با TPU هنوز در حال شکل‌گیری است.</p>\n\n<h2 class=\"wp-block-heading\">📌 <strong>جزئیات خبر</strong></h2>\n\n<ul class=\"wp-block-list\">\n<li>بر اساس گزارش‌های Reuters و Khaleej Times، شرکت Meta Platforms در حال مذاکره با Google است تا از <strong>چیپ‌های AI سری TPU</strong> برای مراکز داده آینده خود استفاده کند.</li>\n\n<li>این حرکت می‌تواند بخشی از زیرساخت Meta را از تکیه صرف بر <strong>NVIDIA GPU</strong>ها خارج کند.</li>\n\n<li>اگر توافق نهایی شود:\n<ul class=\"wp-block-list\">\n<li><strong>شروع استفاده عملیاتی: سال ۲۰۲۷</strong></li>\n\n<li><strong>امکان اجاره TPU از Google Cloud از سال آینده (۲۰۲۶)</strong></li>\n</ul>\n</li>\n\n<li>این اقدام نشان می‌دهد زنجیره سخت‌افزار AI در حال تغییر جهت است.</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h1 class=\"wp-block-heading\">🧠 <strong>۱. جزئیات فنی و یافته‌های کلیدی</strong></h1>\n\n<h3 class=\"wp-block-heading\">✔ تفاوت TPU و GPU</h3>\n\n<ul class=\"wp-block-list\">\n<li><strong>TPU (Tensor Processing Unit)</strong> مختص عملیات ماتریسی و یادگیری عمیق طراحی شده و در اجرای مدل‌های بزرگ (LLM، Vision Transformer، Diffusion Model) عملکرد عالی دارد.</li>\n\n<li>GPUهای NVIDIA انعطاف‌پذیرتر هستند اما برای AI سفارشی‌سازی‌شده هزینه و مصرف انرژی بیشتری دارند.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">✔ دلیل جذابیت TPU برای Meta</h3>\n\n<ul class=\"wp-block-list\">\n<li><strong>مصرف برق کمتر نسبت به GPU</strong></li>\n\n<li><strong>هزینه کل مالکیت پایین‌تر (TCO)</strong></li>\n\n<li><strong>بازدهی بالاتر روی مدل‌های مبتنی بر TensorFlow / XLA</strong></li>\n\n<li>امکان استفاده از <strong>مدار مجتمع + کل محیط گوگل برای AI</strong> (Cloud + Compiler + Software Stack)</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">✔ یافته کلیدی بازار</h3>\n\n<p class=\"wp-block-paragraph\">اگر Meta وارد TPU شود، سایر شرکت‌ها هم ممکن است مسیر مشابه را بروند — یعنی خروج از انحصار NVIDIA.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h1 class=\"wp-block-heading\">🎯 <strong>۲. انگیزه‌ها و اهداف Meta و Google</strong></h1>\n\n<h3 class=\"wp-block-heading\">✔ انگیزه Meta:</h3>\n\n<ol class=\"wp-block-list\">\n<li><strong>کاهش وابستگی به NVIDIA</strong></li>\n\n<li><strong>کاهش هزینه ساخت دیتاسنترهای AI</strong></li>\n\n<li><strong>دسترسی به قدرت محاسباتی پایدارتر و ارزان‌تر برای مدل‌هایی مثل Llama</strong></li>\n\n<li><strong>تنوع‌بخشی به سبد سخت‌افزار (Hardware Portfolio Diversification)</strong></li>\n</ol>\n\n<h3 class=\"wp-block-heading\">✔ انگیزه Google:</h3>\n\n<ol class=\"wp-block-list\">\n<li><strong>تبدیل TPU به استاندارد صنعتی (Industry Standard)</strong></li>\n\n<li>رقابت مستقیم با NVIDIA در بازار دیتاسنتر</li>\n\n<li><strong>باز کردن درآمد جدید با اجاره TPU به شرکت‌های بزرگ</strong></li>\n\n<li>افزایش سهم بازار Google Cloud در رقابت با AWS و Azure</li>\n</ol>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h1 class=\"wp-block-heading\">🏆 <strong>۳. مزایای کلیدی برای بازار و شرکت‌ها</strong></h1>\n\n<h3 class=\"wp-block-heading\">🔹 <strong>برای Meta</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>کاهش هزینه یکپارچه‌سازی زیرساخت در بلندمدت</li>\n\n<li>امکان آموزش مدل‌های بزرگ Llama با هزینه کمتر</li>\n\n<li>انعطاف در انتخاب تأمین‌کننده چیپ (رقابت = قیمت پایین‌تر)</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">🔹 <strong>برای Google</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>افزایش نفوذ TPU در صنعت</li>\n\n<li>رشد درآمد از Google Cloud</li>\n\n<li>تقویت اکوسیستم XLA / JAX / TensorFlow</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">🔹 <strong>برای بازار جهانی</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>شکسته‌شدن انحصار ۸ ساله NVIDIA</li>\n\n<li>افزایش نوآوری در چیپ‌های سفارشی AI</li>\n\n<li>کاهش قیمت در بلندمدت به علت رقابت سخت</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h1 class=\"wp-block-heading\">⚠️ <strong>۴. چالش‌ها و ریسک‌ها</strong></h1>\n\n<h3 class=\"wp-block-heading\">۱. <strong>چالش اکوسیستم نرم‌افزاری</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>CUDA (NVIDIA) بالغ و قوی است.</li>\n\n<li>TPU هنوز محدودیت‌های زیر را دارد:\n<ul class=\"wp-block-list\">\n<li>پشتیبانی کمتر برای PyTorch</li>\n\n<li>مهاجرت مدل به XLA پیچیده است</li>\n\n<li>ابزارهای توسعه کمتر بلوغ دارند</li>\n</ul>\n</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">۲. <strong>ریسک قفل شدن در اکوسیستم Google</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>اگر Meta بخش بزرگی از زیرساخت را روی TPU قرار دهد،<br />وابستگی به گوگل ایجاد می‌شود — این همان ریسکی است که از NVIDIA فرار می‌کند ولی در برابر Google ظاهر می‌شود.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">۳. <strong>احتمال مخالفت رگولاتوری</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>همکاری دو غول Big Tech ممکن است با حساسیت ضدانحصار مواجه شود.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">۴. <strong>تاخیر زمانی</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>شروع استفاده ۲۰۲۷ است — سه سال فاصله زیاد است؛ ممکن است شرایط بازار تغییر کند.</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h1 class=\"wp-block-heading\">🌍 <strong>۵. تأثیرات اقتصادی، صنعتی و ژئوپولیتیکی</strong></h1>\n\n<h3 class=\"wp-block-heading\">✔ <strong>تأثیر بر NVIDIA</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>افت قدرت چانه‌زنی در قیمت</li>\n\n<li>ترس از ریزش سفارش‌های Hyperscalerها</li>\n\n<li>احتمال افت سهام کوتاه‌مدت</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">✔ <strong>تأثیر بر بازار آمریکا</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>رقابت داخلی بین Big Tech در چیپ‌سازی افزایش می‌یابد</li>\n\n<li>بازار GPU–TPU–ASIC داغ‌تر از همیشه خواهد شد</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">✔ <strong>تأثیر بر کشورهای دیگر</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>شرکت‌ها در اروپا / آسیای شرقی / خاورمیانه<br />ممکن است به جای NVIDIA، TPU را به‌عنوان گزینه جدید بررسی کنند.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">✔ <strong>برای کشورهای تحریم‌شده یا کم‌منبع</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>بلندمدت → قیمت و دسترسی به چیپ AI بهتر می‌شود</li>\n\n<li>کوتاه‌مدت → سازگاری نرم‌افزار چالش اصلی است</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h1 class=\"wp-block-heading\">🔮 <strong>۶. چشم‌انداز آینده و پیشنهادها</strong></h1>\n\n<h3 class=\"wp-block-heading\">✔ پیش‌بینی آینده بازار (۲۰۲۵–۲۰۳۰)</h3>\n\n<ul class=\"wp-block-list\">\n<li><strong>بازی چیپ AI سه‌قطبی می‌شود:</strong>\n<ol class=\"wp-block-list\">\n<li>NVIDIA (GPU)</li>\n\n<li>Google (TPU)</li>\n\n<li>Meta + AMD + دیگران (ASIC / Custom AI Chip)</li>\n</ol>\n</li>\n\n<li>دیتاسنترهای AI آینده احتمالاً از <strong>هیبریدی از چند چیپ متفاوت</strong> استفاده خواهند کرد.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\">✔ پیشنهاد برای شرکت‌ها و توسعه‌دهندگان</h3>\n\n<ol class=\"wp-block-list\">\n<li><strong>مدل‌ها و Frameworkها را به XLA-compatible طراحی کنید.</strong></li>\n\n<li><strong>برای جلوگیری از قفل شدن، مدل‌ها را قابلیت اجرا روی GPU و TPU نگه دارید.</strong></li>\n\n<li><strong>اگر کسب‌وکار کوچک هستید، روی TPU Cloud تست انجام دهید</strong> (سال آینده).</li>\n</ol>\n\n<h3 class=\"wp-block-heading\">✔ پیشنهاد برای کشورهایی با محدودیت منابع</h3>\n\n<ul class=\"wp-block-list\">\n<li>از TPU Cloud برای inference و آموزش Lightweight Modelها استفاده شود</li>\n\n<li>تمرکز روی <strong>Distributed / Sparse Models</strong> برای کاهش وابستگی به GPU سنگین</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h1 class=\"wp-block-heading\">🧩 <strong>نتیجه‌گیری</strong></h1>\n\n<p class=\"wp-block-paragraph\">این خبر یکی از <strong>مهم‌ترین تغییرات استراتژیک در صنعت سخت‌افزار AI</strong> طی دهه اخیر است. اگر همکاری Meta–Google نهایی شود:</p>\n\n<ul class=\"wp-block-list\">\n<li>NVIDIA دیگر پادشاه مطلق بازار نخواهد بود</li>\n\n<li>TPUها از یک محصول داخلی گوگل به یک <strong>استاندارد صنعتی جهانی</strong> تبدیل می‌شوند</li>\n\n<li>هزینه انجام AI کاهش می‌یابد</li>\n\n<li>رقابت در سطح زیرساخت شدیدتر می‌شود</li>\n\n<li>توسعه نرم‌افزاری چندپلتفرمی اهمیت بیشتری پیدا می‌کند</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">این یک «نقطه عطف» (Inflection Point) در آینده زیرساخت AI محسوب می‌شود.</p>\n\n<p class=\"wp-block-paragraph\">پرایم سیستم، رهبر فناوری اطلاعات در قزوین و زنجان، با افتخار نمایندگی رسمی معتبرترین برندهای ایران و جهان است:</p>\n\n<p class=\"wp-block-paragraph\"><strong>۱- تخت جمشید:<br />پرایم سیستم، پیشگام سخت‌افزار، گیمینگ، رندرینگ و لوازم جانبی کامپیوتر<br /></strong></p>\n\n<p class=\"wp-block-paragraph\"><strong>۲- سیناپ:<br />پرایم سیستم، سیستم‌های AIDC<br /></strong>پیشرو در شناسایی خودکار و جمع‌آوری داده، نرم‌افزارهای انبار و لجستیک و تجهیزات بارکد/RFID برای صنایع تولیدی، خرده‌فروشی و راه‌حل‌های دقیق برای زنجیره تأمین.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۳- ماپرا:<br />پرایم سیستم، تحول دیجیتال صنعت F&amp;B<br /></strong>نرم‌افزار یکپارچه مدیریت فروش، انبارداری، باشگاه مشتریان و رزرو آنلاین بر پایه فناوری ابری و داده‌محور، همراه هزاران رستوران، کافه و فست‌فود برای مدیریت بدون محدودیت مکان/زمان، افزایش کارایی و هوشمندسازی عملیات.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۴- سخت‌افزار:<br />پرایم سیستم، پیشتاز قطعات دیجیتال<br /></strong>فروش آنلاین/آفلاین قطعات کامپیوتر و دیجیتال و نمایندگی برندهای ایرانی/خارجی، ارسال به تمام ایران، سیستم‌های گیمینگ/رندرینگ/ماینینگ و تیم اورکلاکر حرفه‌ای. تولید محتوای تخصصی، برترین فروشگاه سخت افزار و نرم افزار قزوین/زنجان.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۵- نیلپر:<br />پرایم سیستم، تولیدکننده محصولات ارگونومیک، کوله و کیف</strong><br />تمرکز بر کیفیت، طراحی دانش‌محور و بازارهای اداری/آموزشی/رستورانی. مدیریت استراتژیک برای رضایت مشتری.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۶- زبرآسیا:<br />پرایم سیستم، فناوری AIDC و بارکد<br /></strong>تسهیل در جمع‌آوری داده بدون خطا با تمرکز بر بارکد و AID، راه‌حل‌های اطلاعاتی برای صنایع، افزایش سرعت/دقت و برنامه‌ریزی منابع. تکیه بر متخصصان داخلی و دانش جهانی، جلب اعتماد مشتریان.</p>\n\n<p class=\"wp-block-paragraph\">۷-فاطر:<br /><strong>پرایم سیستم، طراحی و تولید سخت افزار کامپیوتر</strong><br />انتقال و توسعه تکنولوژی های بروز در جهت تولید داخلی، محصولات باکیفیت قابل رقابت برند های مطرح خارجی باقیمت‌منصفانه، خدمات پس از فروش متفاوت و گارانتی تعویض بی‌قید و شرط</p>\n\n<p class=\"wp-block-paragraph\"><a href=\"https://primesys.ir/\" target=\"_blank\" rel=\"noopener\"><span style=\"color: #ff0000;\">پرایم سیستم | پلتفرم ابری حسابداری و مالی، سخت افزار و لوازم جانبی</span></a></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 11240,
+  "featured_image": "/legacy/wp-content/uploads/2025/11/meta1-1.webp",
+  "categories": [
+    {
+      "id": 857,
+      "name": "تراشه",
+      "slug": "%d8%aa%d8%b1%d8%a7%d8%b4%d9%87"
+    },
+    {
+      "id": 5,
+      "name": "تکنولوژی",
+      "slug": "%d8%aa%da%a9%d9%86%d9%88%d9%84%d9%88%da%98%db%8c"
+    },
+    {
+      "id": 1160,
+      "name": "سخت افزار",
+      "slug": "%d8%b3%d8%ae%d8%aa-%d8%a7%d9%81%d8%b2%d8%a7%d8%b1"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 13,
+      "name": "AWS",
+      "slug": "aws"
+    },
+    {
+      "id": 210,
+      "name": "Azure",
+      "slug": "azure"
+    },
+    {
+      "id": 62,
+      "name": "Google",
+      "slug": "google"
+    },
+    {
+      "id": 1093,
+      "name": "Google Cloud",
+      "slug": "google-cloud"
+    },
+    {
+      "id": 115,
+      "name": "GPU",
+      "slug": "gpu"
+    },
+    {
+      "id": 400,
+      "name": "LLaMA",
+      "slug": "llama"
+    },
+    {
+      "id": 40,
+      "name": "Meta",
+      "slug": "meta"
+    },
+    {
+      "id": 21,
+      "name": "Nvidia",
+      "slug": "nvidia"
+    },
+    {
+      "id": 953,
+      "name": "TPU",
+      "slug": "tpu"
+    },
+    {
+      "id": 1052,
+      "name": "پرایم سیستم",
+      "slug": "%d9%be%d8%b1%d8%a7%db%8c%d9%85-%d8%b3%db%8c%d8%b3%d8%aa%d9%85"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

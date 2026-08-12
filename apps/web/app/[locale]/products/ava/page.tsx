@@ -1,19 +1,13 @@
-export default function ProductPage(){
+import { redirect } from "next/navigation";
+import type { Locale } from "@/content/founder-site";
 
-return (
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: raw } = await params;
+  const locale: Locale = raw === "en" ? "en" : "fa";
 
-<section>
-
-<h1>
-ava
-</h1>
-
-<p>
-Premium digital product experience.
-</p>
-
-</section>
-
-);
-
+  redirect(`/${locale}/products/farsio`);
 }

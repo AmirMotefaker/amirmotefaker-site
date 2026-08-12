@@ -1,0 +1,15 @@
+{
+  "id": 537,
+  "slug": "my-account",
+  "source_url": "https://amirmotefaker.ir/my-account/",
+  "date": "07/01/2025 16:23:51",
+  "modified": "10/04/2025 12:09:15",
+  "title": "حساب کاربری من",
+  "excerpt_html": "",
+  "excerpt_text": "",
+  "content_html": "\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"537\" class=\"elementor elementor-537\" data-elementor-post-type=\"page\">\n\t\t\t\t<div class=\"elementor-element elementor-element-bc7881b e-flex e-con-boxed e-con e-parent\" data-id=\"bc7881b\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-4762d05 elementor-widget elementor-widget-wc-elements\" data-id=\"4762d05\" data-element_type=\"widget\" data-widget_type=\"wc-elements.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"woocommerce\"></div>\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "parent": 0,
+  "menu_order": 0
+}

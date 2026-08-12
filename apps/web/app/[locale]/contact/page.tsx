@@ -1,17 +1,6 @@
-export default function ContactPage(){
-
-return (
-
-<section>
-
-<h1>Contact Amir</h1>
-
-<p>
-Connect for technology and digital product discussions.
-</p>
-
-</section>
-
-);
-
+import { ContactPageView } from "@/components/founder/InnerPages";
+import type { Locale } from "@/content/founder-site";
+export default async function Page({params}:{params:Promise<{locale:string}>}) {
+  const {locale:raw}=await params; const locale:Locale=raw==="en"?"en":"fa";
+  return <ContactPageView locale={locale}/>;
 }

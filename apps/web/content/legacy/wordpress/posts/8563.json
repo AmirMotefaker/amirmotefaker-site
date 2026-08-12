@@ -1,0 +1,73 @@
+{
+  "id": 8563,
+  "slug": "openai-%d8%a7%d9%86%d8%af%d8%a7%d8%b2%d9%87%da%af%db%8c%d8%b1%db%8c-%d8%b9%d9%85%d9%84%da%a9%d8%b1%d8%af-%d9%85%d8%af%d9%84%d9%87%d8%a7%db%8c-%d9%85%d8%a7-%d8%af%d8%b1-%d9%88%d8%b8",
+  "source_url": "https://amirmotefaker.ir/openai-%d8%a7%d9%86%d8%af%d8%a7%d8%b2%d9%87%da%af%db%8c%d8%b1%db%8c-%d8%b9%d9%85%d9%84%da%a9%d8%b1%d8%af-%d9%85%d8%af%d9%84%d9%87%d8%a7%db%8c-%d9%85%d8%a7-%d8%af%d8%b1-%d9%88%d8%b8/",
+  "date": "09/29/2025 09:35:18",
+  "modified": "09/30/2025 18:55:38",
+  "title": "OpenAI: اندازه‌گیری عملکرد مدل‌های ما در وظایف دنیای واقعی",
+  "excerpt_html": "<p>GDPval یک ارزیابی جدید (اولین نسخه) هست که عملکرد مدل‌های AI رو روی ۱,۳۲۰ وظیفه تخصصی (۲۲۰ مورد golden open-sourced) از ۴۴ شغل در ۹ صنعت اصلی آمریکا اندازه می‌گیره. این ارزیابی، بخشی از مأموریت OpenAI برای &#8220;فایده AGI برای همه انسانیت&#8221; هست و پیشرفت مدل‌ها رو شفاف نشون می‌ده.</p>\n",
+  "excerpt_text": "GDPval یک ارزیابی جدید (اولین نسخه) هست که عملکرد مدل‌های AI رو روی ۱,۳۲۰ وظیفه تخصصی (۲۲۰ مورد golden open-sourced) از ۴۴ شغل در ۹ صنعت اصلی آمریکا اندازه می‌گیره. این ارزیابی، بخشی از مأموریت OpenAI برای “فایده AGI برای همه انسانیت” هست و پیشرفت مدل‌ها رو شفاف نشون می‌ده.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"8563\" class=\"elementor elementor-8563\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-2fb48509 e-flex e-con-boxed e-con e-parent\" data-id=\"2fb48509\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-3677bf88 elementor-widget elementor-widget-text-editor\" data-id=\"3677bf88\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<h4 id=\"h-۱-معرفی-و-هدف-اصلی\" class=\"wp-block-heading\">۱. معرفی و هدف اصلی</h4>\n\n<p class=\"wp-block-paragraph\"><a href=\"https://openai.com/index/gdpval/\" target=\"_blank\" rel=\"noopener\">GDPval</a> یک ارزیابی جدید (اولین نسخه) هست که عملکرد مدل‌های AI رو روی ۱,۳۲۰ وظیفه تخصصی (۲۲۰ مورد golden open-sourced) از ۴۴ شغل در ۹ صنعت اصلی آمریکا اندازه می‌گیره. این ارزیابی، بخشی از مأموریت OpenAI برای &#8220;فایده AGI برای همه انسانیت&#8221; هست و پیشرفت مدل‌ها رو شفاف نشون می‌ده.</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>هدف</strong>: اندازه‌گیری اینکه مدل‌ها چقدر می‌تونن وظایف اقتصادی-ارزشمند رو انجام بدن، نه فقط تست‌های آکادمیک. OpenAI می‌گه این کمک می‌کنه بحث‌ها رو از &#8220;حدس&#8221; به &#8220;شواهد&#8221; ببره، و پیشرفت رو پیگیری کنه. مثلاً، از MMLU (تست‌های دانشگاهی) به SWE-Lancer (پروژه‌های freelance واقعی) پیشرفت کرده، و GDPval گام بعدیه.</li>\n\n<li><strong>زمان‌بندی</strong>: نسخه اول منتشر شده، با gold set عمومی و سرویس grading در evals.openai.com. آینده: گسترش به شغل‌های بیشتر و تعاملات پیچیده‌تر.</li>\n\n<li><strong>تفاوت با قبل</strong>: برخلاف بنچمارک‌های سنتی (مثل MMLU یا SWE-Bench)، GDPval روی deliverables واقعی (با فایل‌های مرجع) تمرکز داره، و مدل‌ها رو ۱۰۰ برابر سریع‌تر و ارزان‌تر نشون می‌ده.</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">از منبع OpenAI: این ارزیابی &#8220;تصویر واضح‌تری از حمایت AI از کار روزانه&#8221; می‌ده.</p>\n\n<h4 id=\"h-۲-ویژگی-های-کلیدی\" class=\"wp-block-heading\">۲. ویژگی‌های کلیدی</h4>\n\n<p class=\"wp-block-paragraph\">GDPval بر پایه وظایف واقعی از متخصصان با متوسط ۱۴ سال تجربه ساخته شده. بیاید جزئیات رو در یک جدول خلاصه کنیم:</p>\n\n<figure class=\"wp-block-table\">\n<table class=\"has-fixed-layout\">\n<thead>\n<tr>\n<th>ویژگی</th>\n<th>توضیح</th>\n<th>مثال از منبع</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>پوشش شغلی</strong></td>\n<td>۴۴ شغل از ۹ صنعت (بالای ۵% GDP آمریکا)، انتخاب‌شده بر اساس wages و knowledge work (حداقل ۶۰% وظایف غیرفیزیکی از O*NET).</td>\n<td>وکلا، مهندسان مکانیکی، پرستاران، مدیران مالی، خبرنگاران.</td>\n</tr>\n<tr>\n<td><strong>وظایف</strong></td>\n<td>۱,۳۲۰ وظیفه واقعی (با prompts، فایل‌ها و deliverables مثل documents، slides، spreadsheets).</td>\n<td>طراحی jig برای cable reel (با PDF requirements).</td>\n</tr>\n<tr>\n<td><strong>grading</strong></td>\n<td>متخصصان blind compare می‌کنن (AI vs. human)؛ rubrics شغلی و automated grader (AI-trained برای پیش‌بینی).</td>\n<td>مدل‌ها رو &#8220;بهتر&#8221;، &#8220;مساوی&#8221; یا &#8220;بدتر&#8221; رتبه‌بندی می‌کنن.</td>\n</tr>\n<tr>\n<td><strong>نتایج اولیه</strong></td>\n<td>مدل‌های frontier مثل Claude Opus 4.1 (بهتر/مساوی در &gt;۵۰% وظایف)؛ پیشرفت ۳ برابری از GPT-4o به GPT-5.</td>\n<td>مدل‌ها ۱۰۰x سریع‌تر/ارزان‌تر؛ آموزش اضافی عملکرد رو بهبود می‌ده.</td>\n</tr>\n<tr>\n<td><strong>open-source</strong></td>\n<td>gold set ۲۲۰ وظیفه عمومی؛ سرویس grading آزمایشی.</td>\n<td>محققان می‌تونن بسازن.</td>\n</tr>\n</tbody>\n</table>\n</figure>\n\n<p class=\"wp-block-paragraph\">این ویژگی‌ها GDPval رو &#8220;واقعی و متنوع&#8221; می‌کنن.</p>\n\n<h4 id=\"h-۳-مثال-های-عملی-و-استفاده-real-world\" class=\"wp-block-heading\">۳. مثال‌های عملی و استفاده real-world</h4>\n\n<ul class=\"wp-block-list\">\n<li><strong>از OpenAI</strong>: وظیفه نمونه: طراحی jig برای reel/unreel cable spool در عملیات معدنی (از شغل مهندسان صنعتی). prompt واقعی، با PDF requirements، و deliverable: PDF خلاصه با snapshots 3D (نه فایل 3D). human deliverable: exploded view طراحی.</li>\n\n<li><strong>نتایج مدل‌ها</strong>: Claude Opus 4.1 در aesthetics (فرمتینگ) برتر؛ GPT-5 در accuracy (دانش تخصصی). مثلاً، مدل‌ها می‌تونن brief حقوقی بنویسن یا care plan پرستاری بسازم.</li>\n\n<li><strong>real-world</strong>: در blind tests، مدل‌ها در ۵۰%+ وظایف با متخصصان رقابت می‌کنن؛ زیرمجموعه‌هایی که مدل‌ها قوی‌ترن، زمان/هزینه رو صرفه‌جویی می‌کنن.</li>\n</ul>\n\n<h4 id=\"h-۴-محدودیت-ها-و-چالش-ها\" class=\"wp-block-heading\">۴. محدودیت‌ها و چالش‌ها</h4>\n\n<p class=\"wp-block-paragraph\">OpenAI خودش محدودیت‌ها رو اذعان می‌کنه:</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>one-shot</strong>: ارزیابی تک‌مرحله‌ای، بدون iteration (مثل بازبینی پس از feedback) یا context-building.</li>\n\n<li><strong>پوشش محدود</strong>: فقط ۴۴ شغل (تمرکز روی knowledge work آمریکا)؛ بدون ambiguity (مثل تصمیم‌گیری اولیه در کار وکالت).</li>\n\n<li><strong>grading</strong>: automated grader آزمایشی و کمتر reliable؛ هزینه/زمان مدل‌ها بدون oversight انسانی حساب نشده.</li>\n\n<li><strong>عمومی</strong>: تمرکز روی GDP آمریکا، ممکنه bias فرهنگی/اقتصادی داشته باشه.</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">آینده: گسترش به interactivity، ambiguity و شغل‌های بیشتر.</p>\n\n<h4 id=\"h-۵-استراتژی-openai-و-زمینه-بزرگ-تر\" class=\"wp-block-heading\">۵. استراتژی OpenAI و زمینه بزرگ‌تر</h4>\n\n<ul class=\"wp-block-list\">\n<li><strong>تغییر پارادایم</strong>: از بنچمارک‌های lab به real-world (مثل Paper-Bench به GDPval)؛ هدف: democratize AI و &#8220;up elevator&#8221; برای همه (کمک به خلاقیت انسانی).</li>\n\n<li><strong>رقابت</strong>: مقایسه با مدل‌هایی مثل Claude Opus 4.1، Gemini 2.5 Pro، Grok 4؛ OpenAI پیشرفت خطی (دوبل از GPT-4o به GPT-5) رو نشون می‌ده.</li>\n\n<li><strong>همکاری</strong>: دعوت از experts و customers برای کمک؛ open-source gold set برای researchers.</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">این بخشی از شفافیت OpenAI پس از انتشار GPT-5 (تابستان ۲۰۲۵) هست.</p>\n\n<h4 id=\"h-۶-واکنش-های-عمومی-تا-۲۹-سپتامبر-۲۰۲۵\" class=\"wp-block-heading\">۶. واکنش‌های عمومی (تا ۲۹ سپتامبر ۲۰۲۵)</h4>\n\n<p class=\"wp-block-paragraph\">واکنش‌ها عمدتاً مثبت و بحث‌برانگیز هستن، با تمرکز روی پیشرفت AI و تأثیر اقتصادی. از جستجوهای وب و X:</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>مثبت</strong>: در Hacker News ، کاربران GDPval رو &#8220;grounded in evidence&#8221; می‌دونن و پیشرفت مدل‌ها رو ستایش می‌کنن. در Reddit r/singularity ، بحث روی پوشش ۴۴ شغل و پتانسیل اقتصادی. در X، پست ITmedia [post:2] (۲۰۵ لایک) Claude رو به عنوان top performer برجسته کرده، و GIGAZINE [post:0] (۱۶ لایک) GDPval رو برای اندازه‌گیری شغل‌هایی مثل وکلا/کارگردانان مفید می‌دونه.</li>\n\n<li><strong>منفی/انتقادی</strong>: در HN ، برخی محدودیت‌ها (عدم iteration) رو &#8220;underestimating complexity&#8221; می‌دونن. در X، null-sensei [post:1] (۶ لایک) به Claude به عنوان برتر اشاره کرده، اما بحث‌هایی در مورد &#8220;overhype&#8221; پیشرفت وجود داره.</li>\n\n<li><strong>عمومی</strong>: بیش از ۱۰ نتیجه وب (مثل TechCrunch قدیمی‌تر اما مرتبط با evaluations) و ۱۵ پست X در ۴ روز، بیشتر خبری/تحلیلی. هیچ backlash بزرگی نیست، اما در Reddit، نگرانی از &#8220;تغییرات شغلی&#8221; زیاده.</li>\n</ul>\n\n<h4 id=\"h-۷-تأثیرات-آینده-و-نظر-من\" class=\"wp-block-heading\">۷. تأثیرات آینده و نظر من</h4>\n\n<p class=\"wp-block-paragraph\">GDPval می‌تونه بحث‌های AI رو واقعی‌تر کنه، با نشان دادن اینکه مدل‌ها می‌تونن routine tasks رو بگیرن و انسان‌ها رو به judgment/creativity آزاد کنن – منجر به رشد اقتصادی. اما اگر iteration/ambiguity اضافه نشه، ممکنه overoptimistic باشه. تصور کنید: ارزیابی‌های آینده که AGI رو روی jobs جهانی اندازه می‌گیرن، کمک به سیاست‌گذاری. در کل، قدم مثبتیه برای شفافیت، اما نیاز به گسترش داره.<br /><br /></p>\n<p class=\"LC20lb MBeuO Z3xoIb\"><a href=\"https://primesys.ir/\" target=\"_blank\" rel=\"noopener\"><span style=\"color: #ff0000;\"><strong><span dir=\"rtl\">پرایم سیستم | پلتفرم ابری ماپرا، سخت افزار و لوازم جانبی</span></strong></span></a></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 103,
+      "name": "AGI",
+      "slug": "agi"
+    },
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 92,
+      "name": "ChatGPT",
+      "slug": "chatgpt"
+    },
+    {
+      "id": 54,
+      "name": "Claude",
+      "slug": "claude"
+    },
+    {
+      "id": 218,
+      "name": "GDP",
+      "slug": "gdp"
+    },
+    {
+      "id": 973,
+      "name": "GDPval",
+      "slug": "gdpval"
+    },
+    {
+      "id": 100,
+      "name": "Gemini",
+      "slug": "gemini"
+    },
+    {
+      "id": 867,
+      "name": "MMLU",
+      "slug": "mmlu"
+    },
+    {
+      "id": 20,
+      "name": "OpenAI",
+      "slug": "openai"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

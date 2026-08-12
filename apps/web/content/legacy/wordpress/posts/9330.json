@@ -1,0 +1,73 @@
+{
+  "id": 9330,
+  "slug": "openai-%da%a9%db%8c%d8%aa-%d8%b9%d8%a7%d9%85%d9%84-agentkit-%d8%b1%d8%a7-%d8%a8%d8%b1%d8%a7%db%8c-%da%a9%d9%85%da%a9-%d8%a8%d9%87-%d8%aa%d9%88%d8%b3%d8%b9%d9%87%d8%af%d9%87%d9%86%d8%af",
+  "source_url": "https://amirmotefaker.ir/openai-%da%a9%db%8c%d8%aa-%d8%b9%d8%a7%d9%85%d9%84-agentkit-%d8%b1%d8%a7-%d8%a8%d8%b1%d8%a7%db%8c-%da%a9%d9%85%da%a9-%d8%a8%d9%87-%d8%aa%d9%88%d8%b3%d8%b9%d9%87%d8%af%d9%87%d9%86%d8%af/",
+  "date": "10/08/2025 08:30:04",
+  "modified": "10/08/2025 08:33:04",
+  "title": "OpenAI کیت عامل (AgentKit) را برای کمک به توسعه‌دهندگان در ساخت و عرضه عامل‌های هوش مصنوعی عرضه کرد.",
+  "excerpt_html": "<p>سم آلتمن، مدیرعامل OpenAI، روز دوشنبه در رویداد Dev Day این شرکت، از عرضه AgentKit، ابزاری برای ساخت و استقرار عامل‌های هوش مصنوعی، خبر داد.</p>\n",
+  "excerpt_text": "سم آلتمن، مدیرعامل OpenAI، روز دوشنبه در رویداد Dev Day این شرکت، از عرضه AgentKit، ابزاری برای ساخت و استقرار عامل‌های هوش مصنوعی، خبر داد.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"9330\" class=\"elementor elementor-9330\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-cd3962f e-flex e-con-boxed e-con e-parent\" data-id=\"cd3962f\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-108f8b37 elementor-widget elementor-widget-text-editor\" data-id=\"108f8b37\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<h2 id=\"h-آنچه-agentkit-هست-ویژگی-ها-و-اجزا\" class=\"wp-block-heading\">آنچه AgentKit هست — ویژگی‌ها و اجزا</h2>\n\n<p class=\"wp-block-paragraph\">بر اساس توضیح وب‌سایت <a href=\"https://openai.com/index/introducing-agentkit/\" target=\"_blank\" rel=\"noopener\">OpenAI: AgentKit</a> مجموعه‌ای از ابزارهاست برای توسعه، استقرار و بهینه‌سازی عامل‌ها (<a href=\"https://techcrunch.com/2025/10/06/openai-launches-agentkit-to-help-developers-build-and-ship-ai-agents/\" target=\"_blank\" rel=\"noopener\">Agents</a>).<br />برخی اجزای کلیدی شامل:</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>Agent Builder:</strong> یک بوم بصری (visual canvas) برای طراحی جریان‌های کار (workflows) چندعامله (multi-agent workflows) با نسخه‌بندی، پیش‌نمایش و تنظیم گاردریل‌ها (guardrails).</li>\n\n<li><strong>Connector Registry:</strong> مرکزی برای مدیریت برقراری ارتباط بین داده‌ها و ابزارها در محصولات مختلف و سازمان‌ها.</li>\n\n<li><strong>ChatKit:</strong> ابزاری برای جاسازی (embed) تجربه چت عامل‌ها داخل محصول، وبسایت یا اپ.</li>\n\n<li><strong>افزایش امکانات ارزیابی (Evals):</strong> اضافه‌شدن امکاناتی مثل مجموعه‌داده (datasets)، ردیابی (trace grading)، بهینه‌سازی خودکار پرامپت (automated prompt optimization) و پشتیبانی از مدل‌های شخص ثالث.</li>\n\n<li><strong>Reinforcement Fine-Tuning (RFT):</strong> امکان تنظیم دقیق‌تر عامل‌ها با استفاده از بازخورد و معیارهای سفارشی (و همچنین انتخاب ابزار مناسب در زمان مناسب)</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">همچنین نکته قابل توجه است که برخی مؤلفه‌ها در وضعیت <strong>بتا</strong> هستند (مثل Agent Builder و Connector Registry) و اینکه ابزارهایی مانند ChatKit و امکانات جدید Evals از همین الان برای همه توسعه‌دهندگان در دسترس‌اند.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h2 id=\"h-تحلیل-استراتژیک-و-پیامدها\" class=\"wp-block-heading\">تحلیل استراتژیک و پیامدها</h2>\n\n<h3 id=\"h-۱-تسهیل-ورود-سریع-به-فضای-عامل-ها\" class=\"wp-block-heading\">۱. تسهیل ورود سریع به فضای عامل‌ها</h3>\n\n<p class=\"wp-block-paragraph\">پیش از این برای ساخت یک عامل هوش مصنوعی قدرتمند، باید چند ابزار پراکنده را جمع می‌کردی: اورکستریشن دستی، اتصال به APIها، ارزیابی و پرامپت‌تغییر، و ساخت رابط کاربری.<br />AgentKit این فرآیند را <strong>یکپارچه می‌کند</strong> و زمان لازم برای طراحی، تست و عرضه یک عامل را بسیار کاهش می‌دهد.</p>\n\n<p class=\"wp-block-paragraph\">مثلاً در متن OpenAI آمده است که با Agent Builder تیم Ramp توانست از بوم خالی تا agent خریدار (buyer agent) را در <strong>چند ساعت</strong> بسازد، که قبلاً ممکن بود <strong>چند ماه</strong> طول بکشد.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۲-رقابت-در-سطح-بالاتر-نه-فقط-مدل-بلکه-عامل-تجربه-کاربری\" class=\"wp-block-heading\">۲. رقابت در سطح بالاتر: نه فقط مدل، بلکه عامل + تجربه کاربری</h3>\n\n<p class=\"wp-block-paragraph\">مدل‌های هوش مصنوعی خوب دیگر کافی نیستند؛ عامل‌ها نیاز دارند که:</p>\n\n<ul class=\"wp-block-list\">\n<li>بتوانند ابزارهای خارجی را فراخوانی کنند (مثلاً جستجو، ارسال ایمیل، آپدیت دیتابیس)</li>\n\n<li>پرامپت و تعامل‌شان قابل تنظیم باشد</li>\n\n<li>رفتارشان قابل کنترل و ایمن باشد</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">AgentKit تلاش می‌کند که این تجربه «عامل کاربردی» را فراهم کند و به توسعه‌دهندگان اجازه دهد به جای صرفاً کار با مدل، روی <strong>تعامل هوشمند و سازنده</strong> تمرکز کنند.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۳-فرصت-برای-شرکت-ها-و-توسعه-دهندگان-کوچک\" class=\"wp-block-heading\">۳. فرصت برای شرکت‌ها و توسعه‌دهندگان کوچک</h3>\n\n<p class=\"wp-block-paragraph\">با AgentKit، شرکت‌های کوچک‌تر می‌توانند بدون داشتن زیرساخت بزرگ، عامل‌های کاربردی بسازند و رقابت کنند با شرکت‌های بزرگ.<br />این موضوع می‌تواند موج جدیدی از استارتاپ‌های <strong>Agent-as-a-Service</strong> (عامل به‌عنوان سرویس) ایجاد کند.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-چالش-ها-و-ملاحظات-مهم\" class=\"wp-block-heading\">چالش‌ها و ملاحظات مهم</h3>\n\n<ul class=\"wp-block-list\">\n<li><strong>امنیت و اجرای گاردریل‌ها (Guardrails):</strong><br />وقتی عامل‌ها بتوانند ابزارها را فراخوانی کنند، خطر سوءاستفاده یا اشتباه جدی است. OpenAI این را در طراحی AgentKit مدنظر قرار داده است (با گاردریل‌هایی برای جلوگیری از رفتار ناامن یا دسترسی به داده حساس)</li>\n\n<li><strong>پایداری و مقیاس‌پذیری:</strong><br />عامل‌ها وقتی در محیط عملیاتی وارد می‌شوند، نیاز دارند که تحمل خطاها، مقیاس‌پذیری بالا و تعامل با سیستم‌های مختلف را مدیریت کنند.</li>\n\n<li><strong>سازگاری با مدل‌های شخص ثالث:</strong><br />امکان ارزیابی عامل‌ها بر اساس مدل‌های غیر از OpenAI (Third-party model support) یکی از ویژگی‌های جدید است، اما چگونگی عملکرد در شرایط واقعی باید دیده شود.</li>\n\n<li><strong>هزینه و مصرف منابع:</strong><br />عامل‌ها ممکن است نیاز به منابع زیاد (GPU، حافظه، I/O) داشته باشند. اگر ابزارها یا کانکتورها بهینه نباشند، هزینه عملیاتی بالا خواهد رفت.</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-تأثیر-بر-اکوسیستم-هوش-مصنوعی\" class=\"wp-block-heading\">تأثیر بر اکوسیستم هوش مصنوعی</h3>\n\n<ul class=\"wp-block-list\">\n<li>AgentKit می‌تواند سرعت تولید عامل‌های کاربردی را به‌شدت افزایش دهد، که این یعنی <strong>رقابت عملیاتی بیشتر</strong> بین شرکت‌ها.</li>\n\n<li>شرکت‌هایی که بتوانند تجربه عامل یکپارچه، امن و اثربخش ارائه کنند، پیشرو خواهند شد.</li>\n\n<li>ممکن است شاهد <strong>نسل جدید UX — عامل محور</strong> در محصولات دیجیتال باشیم، نه فقط رابط کاربری سنتی.</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<p class=\"wp-block-paragraph\"><strong>جمع‌بندی:</strong><br />AgentKit گامی بزرگ از جانب OpenAI است به سمت تسهیل مسیر تولید عامل‌های هوش مصنوعی با کیفیت بالا، سریع‌تر و قابل اطمینان‌تر. اگر چالش‌های امنیت و هزینه را مدیریت کند، می‌تواند تبدیل به استانداردی شود که سایر پلتفرم‌ها ناچار به پیروی از آن شوند.</p>\n\n<p class=\"wp-block-paragraph\">پرایم سیستم، رهبر فناوری اطلاعات در قزوین و زنجان، با افتخار نمایندگی رسمی معتبرترین برندهای ایران و جهان است:</p>\n\n<p class=\"wp-block-paragraph\"><strong>۱- تخت جمشید:<br />پرایم سیستم، پیشگام سخت‌افزار، گیمینگ، رندرینگ و لوازم جانبی کامپیوتر</strong></p>\n\n<p class=\"wp-block-paragraph\"><strong>۲- سیناپ:<br />پرایم سیستم، سیستم‌های AIDC<br /></strong>پیشرو در شناسایی خودکار و جمع‌آوری داده، نرم‌افزارهای انبار و لجستیک و تجهیزات بارکد/RFID برای صنایع تولیدی، خرده‌فروشی و راه‌حل‌های دقیق برای زنجیره تأمین.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۳- ماپرا:<br />پرایم سیستم، تحول دیجیتال صنعت F&amp;B<br /></strong>نرم‌افزار یکپارچه مدیریت فروش، انبارداری، باشگاه مشتریان و رزرو آنلاین بر پایه فناوری ابری و داده‌محور، همراه هزاران رستوران، کافه و فست‌فود برای مدیریت بدون محدودیت مکان/زمان، افزایش کارایی و هوشمندسازی عملیات.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۴- سخت‌افزار:<br />پرایم سیستم، پیشتاز قطعات دیجیتال<br /></strong>فروش آنلاین/آفلاین قطعات کامپیوتر و دیجیتال و نمایندگی برندهای ایرانی/خارجی، ارسال به تمام ایران، سیستم‌های گیمینگ/رندرینگ/ماینینگ و تیم اورکلاکر حرفه‌ای. تولید محتوای تخصصی، برترین فروشگاه سخت افزار و نرم افزار قزوین/زنجان.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۵- نیلپر:<br />پرایم سیستم، تولیدکننده محصولات ارگونومیک، کوله و کیف</strong><br />تمرکز بر کیفیت، طراحی دانش‌محور و بازارهای اداری/آموزشی/رستورانی. مدیریت استراتژیک برای رضایت مشتری.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۶- زبرآسیا:<br />پرایم سیستم، فناوری AIDC و بارکد<br /></strong>تسهیل در جمع‌آوری داده بدون خطا با تمرکز بر بارکد و AID، راه‌حل‌های اطلاعاتی برای صنایع، افزایش سرعت/دقت و برنامه‌ریزی منابع. تکیه بر متخصصان داخلی و دانش جهانی، جلب اعتماد مشتریان.</p>\n\n<p class=\"wp-block-paragraph\"><span style=\"color: #ff0000;\"><strong><a style=\"color: #ff0000;\" href=\"https://primesys.ir/\" target=\"_blank\" rel=\"noreferrer noopener\">پرایم سیستم | پلتفرم ابری ماپرا، سخت افزار و لوازم جانبی</a></strong></span></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 1027,
+      "name": "عامل‌های هوشمند",
+      "slug": "%d8%b9%d8%a7%d9%85%d9%84%d9%87%d8%a7%db%8c-%d9%87%d9%88%d8%b4%d9%85%d9%86%d8%af"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1154,
+      "name": "Agent Builder",
+      "slug": "agent-builder"
+    },
+    {
+      "id": 1155,
+      "name": "Agent-as-a-Service",
+      "slug": "agent-as-a-service"
+    },
+    {
+      "id": 1153,
+      "name": "AgentKit",
+      "slug": "agentkit"
+    },
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 115,
+      "name": "GPU",
+      "slug": "gpu"
+    },
+    {
+      "id": 20,
+      "name": "OpenAI",
+      "slug": "openai"
+    },
+    {
+      "id": 348,
+      "name": "Sam Altman",
+      "slug": "sam-altman"
+    },
+    {
+      "id": 1052,
+      "name": "پرایم سیستم",
+      "slug": "%d9%be%d8%b1%d8%a7%db%8c%d9%85-%d8%b3%db%8c%d8%b3%d8%aa%d9%85"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}
