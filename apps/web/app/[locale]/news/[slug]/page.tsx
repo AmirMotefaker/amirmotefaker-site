@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import FounderShell from "@/components/founder/FounderShell";
 import { getLegacyPostBySlug } from "@/lib/legacy-wordpress";
 import { formatSiteDate } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
@@ -17,7 +16,7 @@ export default async function Page({
   if (!post) notFound();
 
   return (
-    <FounderShell locale={locale}>
+    <>
       <main className="inner-page">
         <article className="wrap article-wrap">
           <header className="article-head">
@@ -51,6 +50,6 @@ export default async function Page({
           />
         </article>
       </main>
-    </FounderShell>
+    </>
   );
 }

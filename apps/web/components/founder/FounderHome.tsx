@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element -- Legacy WordPress media can originate from arbitrary external hosts. */
 import Image from "next/image";
 import Link from "next/link";
-import FounderShell from "@/components/founder/FounderShell";
 import { founder, type Locale } from "@/content/founder-site";
 import { productPortfolio as products } from "@/content/product-portfolio";
 import { getLegacyPages, getLegacyPosts } from "@/lib/legacy-wordpress";
@@ -28,7 +27,7 @@ export default function FounderHome({ locale }: { locale: Locale }) {
   const totalPages = getLegacyPages().length;
 
   return (
-    <FounderShell locale={locale}>
+    <>
       <main>
         <section className="hero-section">
           <div className="wrap hero-grid">
@@ -169,6 +168,6 @@ export default function FounderHome({ locale }: { locale: Locale }) {
           </div>
         </section>
       </main>
-    </FounderShell>
+    </>
   );
 }

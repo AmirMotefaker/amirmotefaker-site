@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import FounderShell from "@/components/founder/FounderShell";
 import { getLegacyPageBySlug } from "@/lib/legacy-wordpress";
 import { formatSiteDate } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
@@ -16,7 +15,7 @@ export default async function Page({
   if (!page) notFound();
 
   return (
-    <FounderShell locale={locale}>
+    <>
       <main className="inner-page">
         <article className="wrap article-wrap">
           <header className="article-head">
@@ -37,6 +36,6 @@ export default async function Page({
           />
         </article>
       </main>
-    </FounderShell>
+    </>
   );
 }
