@@ -307,12 +307,57 @@ export const primaryExperience: CareerExperience[] = [
 
 export const historicalResumeExperience: CareerExperience[] = [
   {
+    id: "resume-imenplus-sales-manager-1401",
+    company: { fa: "شرکت ایمن پلاس", en: "ImenPlus" },
+    role: { fa: "مدیر فروش", en: "Sales Manager" },
+    period: {
+      fa: "دی ۱۴۰۱ – زمان ثبت رزومه مهر ۱۴۰۲",
+      en: "Dey 1401 – current at the time of the Mehr 1402 resume",
+    },
+    location: { fa: "دورکاری", en: "Remote" },
+    summary: {
+      fa: "رکورد متعارض تاریخی که عیناً از رزومه مهر ۱۴۰۲ حفظ شده و با بازه زمانی LinkedIn ادغام نشده است.",
+      en: "A conflicting historical record preserved from the Mehr 1402 resume and intentionally not reconciled with the LinkedIn timeline.",
+    },
+    source: "resume-1402",
+  },
+  {
+    id: "resume-ashena-hesab-sales-manager-1402",
+    company: { fa: "شرکت آشناحساب", en: "AshenaHesab" },
+    role: { fa: "مدیر فروش", en: "Sales Manager" },
+    period: {
+      fa: "فروردین ۱۴۰۲ – مهر ۱۴۰۲",
+      en: "Farvardin 1402 – Mehr 1402 (as recorded in the Mehr 1402 resume)",
+    },
+    location: { fa: "ثبت‌شده در رزومه مهر ۱۴۰۲", en: "Recorded in the Mehr 1402 resume" },
+    summary: {
+      fa: "رکورد متعارض تاریخی که جدا از تاریخ ثبت‌شده در LinkedIn نگهداری می‌شود.",
+      en: "A conflicting historical record preserved separately from the LinkedIn dates.",
+    },
+    source: "resume-1402",
+  },
+  {
     id: "resume-yegane-ertebatat",
     company: { fa: "شرکت یگانه ارتباطات پیشرو", en: "Yegane Ertebatat Pishro" },
     role: { fa: "مدیر فروش", en: "Sales Manager" },
     period: { fa: "آذر ۱۴۰۰ – دی ۱۴۰۱", en: "Azar 1400 – Dey 1401 (as recorded in the 1402 resume)" },
     location: { fa: "ثبت‌شده در رزومه مهر ۱۴۰۲", en: "Recorded in the Mehr 1402 resume" },
     summary: { fa: "سابقه تاریخی ثبت‌شده در رزومه مهر ۱۴۰۲؛ بدون همسان‌سازی تاریخ با LinkedIn.", en: "Historical record preserved from the Mehr 1402 resume without reconciling dates against LinkedIn." },
+    source: "resume-1402",
+  },
+  {
+    id: "resume-nikstarter-sales-manager-1399",
+    company: { fa: "شرکت نیک استارتر", en: "Nikstarter" },
+    role: { fa: "مدیر فروش", en: "Sales Manager" },
+    period: {
+      fa: "فروردین ۱۳۹۹ – مهر ۱۴۰۰",
+      en: "Farvardin 1399 – Mehr 1400 (as recorded in the Mehr 1402 resume)",
+    },
+    location: { fa: "ثبت‌شده در رزومه مهر ۱۴۰۲", en: "Recorded in the Mehr 1402 resume" },
+    summary: {
+      fa: "رکورد متعارض تاریخی که جدا از بازه زمانی LinkedIn حفظ شده است.",
+      en: "A conflicting historical record preserved separately from the LinkedIn timeline.",
+    },
     source: "resume-1402",
   },
   {
@@ -331,6 +376,21 @@ export const historicalResumeExperience: CareerExperience[] = [
     period: { fa: "۱۳۹۷ – ۱۳۹۸", en: "1397 – 1398 (as recorded in the 1402 resume)" },
     location: { fa: "قزوین", en: "Qazvin" },
     summary: { fa: "سابقه تاریخی پشتیبانی فناوری اطلاعات.", en: "Historical IT support record." },
+    source: "resume-1402",
+  },
+  {
+    id: "resume-damavand-qazvin-sales-manager",
+    company: { fa: "شرکت تهویه دماوند", en: "Damavand HVAC" },
+    role: { fa: "مدیر فروش استان قزوین", en: "Qazvin Provincial Sales Manager" },
+    period: {
+      fa: "۱۳۹۵ – ۱۳۹۹",
+      en: "1395 – 1399 (as recorded in the Mehr 1402 resume)",
+    },
+    location: { fa: "قزوین", en: "Qazvin" },
+    summary: {
+      fa: "رکورد متعارض تاریخی که همان‌طور که در رزومه مهر ۱۴۰۲ ثبت شده، جدا از رکورد LinkedIn نگهداری می‌شود.",
+      en: "A conflicting historical record preserved as recorded in the Mehr 1402 resume and kept separate from the LinkedIn entry.",
+    },
     source: "resume-1402",
   },
   {

@@ -50,3 +50,15 @@ No production deployment or DNS change is included.
 - The original validated Career content head `12f4617e4d7173d7cb5e6fa49288f28ea99623b1` remains in branch history.
 - A fresh GitHub Actions validation is required on the final `main` base before merge.
 - Production deployment remains out of scope.
+## Final content review correction
+
+A source review against the Mehr 1402 resume identified four overlapping/conflicting historical employment records that were missing from the separate historical archive:
+
+- ImenPlus — Sales Manager — Dey 1401 to the date of the Mehr 1402 resume — Remote
+- AshenaHesab — Sales Manager — Farvardin 1402 to Mehr 1402
+- Nikstarter — Sales Manager — Farvardin 1399 to Mehr 1400
+- Damavand HVAC — Qazvin Provincial Sales Manager — 1395 to 1399
+
+These records are now preserved as `resume-1402` entries and remain explicitly separate from the LinkedIn-based primary timeline. No automatic date reconciliation was performed.
+
+Sensitive personal details and raw resume PDFs remain excluded from the public repository.
