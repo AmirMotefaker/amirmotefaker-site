@@ -35,6 +35,7 @@ Pre-v4 local work was preserved on GitHub before this implementation:
 - Static page generation: passed
 - Canonical product routes generated for FA and EN
 - git diff --check: passed
+- Canonical specification preserved byte-for-byte; intentional Markdown hard-break trailing spaces are exempted from Git whitespace diagnostics via .gitattributes
 
 ## Route migration
 
