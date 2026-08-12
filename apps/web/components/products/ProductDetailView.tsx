@@ -7,12 +7,12 @@ import {
 import type { Locale } from "@/content/founder-site";
 import styles from "./ProductPortfolio.module.css";
 
-const confirm = "CONTENT TO CONFIRM";
+const sourceGap = "Not specified in the current source.";
 
 function TextBlock({
   fa,
   locale,
-  fallback = confirm,
+  fallback = sourceGap,
 }: {
   fa: string;
   locale: Locale;
@@ -92,14 +92,14 @@ export default function ProductDetailView({
         </article>
         <article>
           <span>{fa ? "کاربران هدف" : "Target users"}</span>
-          <strong>CONTENT TO CONFIRM</strong>
+          <strong>{fa ? "در منبع فعلی مشخص نشده است." : sourceGap}</strong>
         </article>
       </section>
 
       {product.criticalPositioningFa && (
         <section className={`wrap ${styles.notice}`}>
           <span className="sec-tag">POSITIONING RULE</span>
-          <p>{fa ? product.criticalPositioningFa : confirm}</p>
+          <p>{fa ? product.criticalPositioningFa : sourceGap}</p>
           {product.doNotPositionAs?.length ? (
             <div className={styles.tags}>
               {product.doNotPositionAs.map((item) => <span key={item}>NOT: {item}</span>)}
@@ -134,7 +134,7 @@ export default function ProductDetailView({
             <article key={capability}>
               <span>0{index + 1}</span>
               <h3>{capability}</h3>
-              <p>CONTENT TO CONFIRM</p>
+
             </article>
           ))}
         </div>
@@ -144,12 +144,12 @@ export default function ProductDetailView({
         <div>
           <span className="sec-tag">{fa ? "تجربه محصول" : "PRODUCT EXPERIENCE"}</span>
           <h2>{fa ? "زبان بصری و تجربه محصول" : "Product experience & visual language"}</h2>
-          <p>{fa ? product.visualDirectionFa : confirm}</p>
+          <p>{fa ? product.visualDirectionFa : sourceGap}</p>
           {product.currentProductFa ? (
-            <p><strong>{fa ? "محصول فعلی: " : "Current product: "}</strong>{fa ? product.currentProductFa : confirm}</p>
+            <p><strong>{fa ? "محصول فعلی: " : "Current product: "}</strong>{fa ? product.currentProductFa : sourceGap}</p>
           ) : null}
           {product.productPromiseFa ? (
-            <blockquote>{fa ? product.productPromiseFa : confirm}</blockquote>
+            <blockquote>{fa ? product.productPromiseFa : sourceGap}</blockquote>
           ) : null}
         </div>
         <div className={styles.experienceVisual}>
