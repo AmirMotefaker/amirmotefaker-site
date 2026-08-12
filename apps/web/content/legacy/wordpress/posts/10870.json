@@ -1,0 +1,68 @@
+{
+  "id": 10870,
+  "slug": "grok-4-%d8%a7%d8%b2-xai-%d8%af%d8%b1-%d8%a8%d9%86%da%86%d9%85%d8%a7%d8%b1%da%a9%d9%87%d8%a7%db%8c-realtime-%d9%be%db%8c%d8%b4%d8%aa%d8%a7%d8%b2-%d8%b4%d8%af",
+  "source_url": "https://amirmotefaker.ir/grok-4-%d8%a7%d8%b2-xai-%d8%af%d8%b1-%d8%a8%d9%86%da%86%d9%85%d8%a7%d8%b1%da%a9%d9%87%d8%a7%db%8c-realtime-%d9%be%db%8c%d8%b4%d8%aa%d8%a7%d8%b2-%d8%b4%d8%af/",
+  "date": "11/19/2025 10:04:52",
+  "modified": "11/19/2025 10:06:08",
+  "title": "Grok 4 از xAI در بنچمارک‌های realtime پیشتاز شد",
+  "excerpt_html": "<p>اولین بار یک مدل غیر OpenAI/Google/Anthropic در صدر بنچمارک عمومی قرار گرفت؛ رقابت AI بازتر می‌شود.</p>\n",
+  "excerpt_text": "اولین بار یک مدل غیر OpenAI/Google/Anthropic در صدر بنچمارک عمومی قرار گرفت؛ رقابت AI بازتر می‌شود.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"10870\" class=\"elementor elementor-10870\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-7329b556 e-flex e-con-boxed e-con e-parent\" data-id=\"7329b556\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-65327042 elementor-widget elementor-widget-text-editor\" data-id=\"65327042\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<ul class=\"wp-block-list\">\n<li>xAI مدل <a href=\"https://x.ai/news/grok-4\" target=\"_blank\" rel=\"noopener\">Grok 4</a> را (فقط برای subscribers) منتشر کرد که در LMSYS Arena برای اولین بار رتبه ۱ را گرفت (بالاتر از o3 و Claude 3.5). ویژگی جدید: realtime web browsing + image analysis داخلی. <strong>تأثیر</strong>: اولین بار یک مدل غیر OpenAI/Google/Anthropic در صدر بنچمارک عمومی قرار گرفت؛ رقابت AI بازتر می‌شود.</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">امروز ۱۹ نوامبر ۲۰۲۵، xAI بدون هیچ پیش‌آگهی رسمی، <strong>Grok 4</strong> را مستقیماً در پلتفرم grok.com و اپلیکیشن‌های iOS/Android برای مشترکین SuperGrok و Premium+ فعال کرد. این اولین بار در تاریخ است که یک مدل <strong>غیر از سه غول OpenAI/Google/Anthropic</strong> در صدر جدول زنده LMSYS Chatbot Arena قرار می‌گیرد – و این اتفاق فقط چند ساعت بعد از انتشار o3 OpenAI افتاد!</p>\n\n<h4 id=\"h-۱-عملکرد-بنچمارک-های-زنده-تا-لحظه-نوشتن-این-تحلیل\" class=\"wp-block-heading\">۱. عملکرد بنچمارک‌های زنده (تا لحظه نوشتن این تحلیل)</h4>\n\n<figure class=\"wp-block-table\">\n<table class=\"has-fixed-layout\">\n<thead>\n<tr>\n<th>رتبه</th>\n<th>مدل</th>\n<th>Elo Score (LMSYS Arena)</th>\n<th>تفاوت با رتبه دوم</th>\n<th>تاریخ آخرین آپدیت</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>۱</td>\n<td>Grok 4 (xAI)</td>\n<td>۱۳۴۴</td>\n<td>+۱۲</td>\n<td>۱۹ نوامبر ۲۰۲۵</td>\n</tr>\n<tr>\n<td>۲</td>\n<td>o3 (OpenAI)</td>\n<td>۱۳۳۲</td>\n<td>&#8211;</td>\n<td>۱۹ نوامبر ۲۰۲۵</td>\n</tr>\n<tr>\n<td>۳</td>\n<td>Claude 3.5 Sonnet New</td>\n<td>۱۳۲۸</td>\n<td>&#8211;</td>\n<td>۱۸ نوامبر</td>\n</tr>\n<tr>\n<td>۴</td>\n<td>Gemini 2.0 Flash Thinking</td>\n<td>۱۳۲۱</td>\n<td>&#8211;</td>\n<td>۱۷ نوامبر</td>\n</tr>\n<tr>\n<td>۵</td>\n<td>Llama-3.1-405B</td>\n<td>۱۳۱۵</td>\n<td>&#8211;</td>\n<td>&#8211;</td>\n</tr>\n</tbody>\n</table>\n</figure>\n\n<ul class=\"wp-block-list\">\n<li>Grok 4 در دسته‌بندی‌های <strong>Hard Prompts</strong>, <strong>Coding</strong>, <strong>Math</strong> و <strong>Creative Writing</strong> به طور متوسط ۸-۱۵٪ بهتر از o3 عمل کرد.</li>\n\n<li>در تست‌های blind انسانی (بیش از ۵۰,۰۰۰ رأی در ۲۴ ساعت اول) کاربران Grok 4 را &#8220;طبیعی‌تر، شوخ‌طبع‌تر و کمتر سانسور شده&#8221; توصیف کردند.</li>\n</ul>\n\n<h4 id=\"h-۲-ویژگی-های-جدید-و-کلیدی-grok-4-که-رقبا-هنوز-ندارند-یا-ضعیف-تر-دارند\" class=\"wp-block-heading\">۲. ویژگی‌های جدید و کلیدی Grok 4 (که رقبا هنوز ندارند یا ضعیف‌تر دارند)</h4>\n\n<figure class=\"wp-block-table\">\n<table class=\"has-fixed-layout\">\n<thead>\n<tr>\n<th>ویژگی</th>\n<th>Grok 4</th>\n<th>مقایسه با رقبا</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Realtime Web Browsing</td>\n<td>داخلی و بدون محدودیت (مانند Perplexity)</td>\n<td>o3 و Claude هنوز tool-use جداگانه نیاز دارند</td>\n</tr>\n<tr>\n<td>Native Image Analysis</td>\n<td>درک + تولید + ویرایش تصویر در یک مدل</td>\n<td>Gemini بهترین است، اما Grok 4 در تست‌های blind بهتر عمل کرد</td>\n</tr>\n<tr>\n<td>Context Window</td>\n<td>۲۵۶K توکن (۲ برابر o3)</td>\n<td>o3: ۱۲۸K, Claude 3.5: ۲۰۰K</td>\n</tr>\n<tr>\n<td>Uncensored Mode</td>\n<td>کاملاً بدون سانسور (فقط قوانین قانونی)</td>\n<td>OpenAI/Google/Anthropic هنوز heavy censorship دارند</td>\n</tr>\n<tr>\n<td>Speed</td>\n<td>۲ برابر سریع‌تر از Grok 3 در inference</td>\n<td>تقریباً هم‌سطح o4-mini</td>\n</tr>\n<tr>\n<td>Multimodal Native</td>\n<td>متن + تصویر + صدا (voice mode در اپ)</td>\n<td>فقط در اپ iOS/Android، اما کاملاً یکپارچه</td>\n</tr>\n</tbody>\n</table>\n</figure>\n\n<h4 id=\"h-۳-جزئیات-دسترسی-و-قیمت\" class=\"wp-block-heading\">۳. جزئیات دسترسی و قیمت</h4>\n\n<ul class=\"wp-block-list\">\n<li>فقط برای مشترکین <strong>SuperGrok</strong> (بالاترین پلن grok.com) و <strong>Premium+</strong> در X.</li>\n\n<li>هیچ نسخه API عمومی هنوز منتشر نشده (برخلاف o3 که همزمان API داد).</li>\n\n<li>xAI گفت: «Grok 4 فقط برای کسانی که واقعاً می‌خواهند حقیقت را بدون فیلتر بشنوند».</li>\n</ul>\n\n<h4 id=\"h-۴-واکنش-های-فوری-در-۶-ساعت-اول\" class=\"wp-block-heading\">۴. واکنش‌های فوری (در ۶ ساعت اول)</h4>\n\n<ul class=\"wp-block-list\">\n<li>ایلان ماسک: «Grok 4 اولین مدلی است که واقعاً &#8220;حداکثر حقیقت‌جو&#8221; است. دیگر هیچ سانسوری وجود ندارد.» (بیش از ۲ میلیون لایک در ۳ ساعت)</li>\n\n<li>Sam Altman: تبریک گفت اما با ایموجی 😏</li>\n\n<li>Dario Amodei (Anthropic): «تبریک، اما ایمنی مهم‌تر از رتبه است» (کنایه به uncensored بودن Grok)</li>\n\n<li>LMSYS Team: «ما هم شوکه شدیم! این سریع‌ترین صعود تاریخ Arena بود»</li>\n</ul>\n\n<h4 id=\"h-۵-تأثیرات-کوتاه-مدت-و-بلندمدت\" class=\"wp-block-heading\">۵. تأثیرات کوتاه‌مدت و بلندمدت</h4>\n\n<ul class=\"wp-block-list\">\n<li>کوتاه‌مدت:\n<ul class=\"wp-block-list\">\n<li>هزاران کاربر Premium+ گزارش دادند که از o3 به Grok 4 مهاجرت کرده‌اند.</li>\n\n<li>فشار شدید روی OpenAI و Google برای حذف سانسور یا انتشار مدل uncensored.</li>\n</ul>\n</li>\n\n<li>بلندمدت:\n<ul class=\"wp-block-list\">\n<li>شکستن انحصار سه‌گانه (OpenAI/Google/Anthropic) در frontier models.</li>\n\n<li>شروع عصر &#8220;AI انتخاب ایدئولوژیک&#8221;: کاربران می‌توانند مدل censored (Claude/o3) یا uncensored (Grok) انتخاب کنند.</li>\n\n<li>احتمال جنگ قیمتی: xAI می‌تواند با هزینه کمتر (به خاطر کلاستری که خودش می‌سازد) قیمت SuperGrok را کاهش دهد.</li>\n</ul>\n</li>\n</ul>\n\n<h4 id=\"h-نتیجه-گیری\" class=\"wp-block-heading\">نتیجه‌گیری</h4>\n\n<p class=\"wp-block-paragraph\">Grok 4 نه فقط یک مدل بهتر، بلکه یک <strong>بیانیه سیاسی و فنی</strong> از xAI است: «ما AI را بدون سانسور و با حداکثر حقیقت می‌سازیم». برای اولین بار از زمان شروع مسابقه frontier models در ۲۰۲۲، یک شرکت چهارم (و مستقل) صدر جدول عمومی را گرفت – و این دقیقاً روزی اتفاق افتاد که OpenAI o3 منتشر کرد! سال ۲۰۲۶ احتمالاً سال &#8220;جنگ ایدئولوژیک AI&#8221; خواهد بود: censored vs uncensored, closed vs open-ish, American Big Tech vs xAI.</p>\n\n<p class=\"wp-block-paragraph\">پرایم سیستم، رهبر فناوری اطلاعات در قزوین و زنجان، با افتخار نمایندگی رسمی معتبرترین برندهای ایران و جهان است:</p>\n\n<p class=\"wp-block-paragraph\"><strong>۱- تخت جمشید:<br />پرایم سیستم، پیشگام سخت‌افزار، گیمینگ، رندرینگ و لوازم جانبی کامپیوتر</strong></p>\n\n<p class=\"wp-block-paragraph\"><strong>۲- سیناپ:<br />پرایم سیستم، سیستم‌های AIDC<br /></strong>پیشرو در شناسایی خودکار و جمع‌آوری داده، نرم‌افزارهای انبار و لجستیک و تجهیزات بارکد/RFID برای صنایع تولیدی، خرده‌فروشی و راه‌حل‌های دقیق برای زنجیره تأمین.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۳- ماپرا:<br />پرایم سیستم، تحول دیجیتال صنعت F&amp;B<br /></strong>نرم‌افزار یکپارچه مدیریت فروش، انبارداری، باشگاه مشتریان و رزرو آنلاین بر پایه فناوری ابری و داده‌محور، همراه هزاران رستوران، کافه و فست‌فود برای مدیریت بدون محدودیت مکان/زمان، افزایش کارایی و هوشمندسازی عملیات.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۴- سخت‌افزار:<br />پرایم سیستم، پیشتاز قطعات دیجیتال<br /></strong>فروش آنلاین/آفلاین قطعات کامپیوتر و دیجیتال و نمایندگی برندهای ایرانی/خارجی، ارسال به تمام ایران، سیستم‌های گیمینگ/رندرینگ/ماینینگ و تیم اورکلاکر حرفه‌ای. تولید محتوای تخصصی، برترین فروشگاه سخت افزار و نرم افزار قزوین/زنجان.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۵- نیلپر:<br />پرایم سیستم، تولیدکننده محصولات ارگونومیک، کوله و کیف</strong><br />تمرکز بر کیفیت، طراحی دانش‌محور و بازارهای اداری/آموزشی/رستورانی. مدیریت استراتژیک برای رضایت مشتری.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۶- زبرآسیا:<br />پرایم سیستم، فناوری AIDC و بارکد<br /></strong>تسهیل در جمع‌آوری داده بدون خطا با تمرکز بر بارکد و AID، راه‌حل‌های اطلاعاتی برای صنایع، افزایش سرعت/دقت و برنامه‌ریزی منابع. تکیه بر متخصصان داخلی و دانش جهانی، جلب اعتماد مشتریان.</p>\n\n<p class=\"wp-block-paragraph\">۷-فاطر:<br /><strong>پرایم سیستم، طراحی و تولید سخت افزار کامپیوتر</strong><br />انتقال و توسعه تکنولوژی های بروز در جهت تولید داخلی، محصولات باکیفیت قابل رقابت برند های مطرح خارجی باقیمت‌منصفانه، خدمات پس از فروش متفاوت و گارانتی تعویض بی‌قید و شرط</p>\n\n<p class=\"wp-block-paragraph\"><span style=\"color: #ff0000;\">پرایم سیستم | پلتفرم ابری حسابداری و مالی، سخت افزار و لوازم جانبی</span></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 1027,
+      "name": "عامل‌های هوشمند",
+      "slug": "%d8%b9%d8%a7%d9%85%d9%84%d9%87%d8%a7%db%8c-%d9%87%d9%88%d8%b4%d9%85%d9%86%d8%af"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 53,
+      "name": "Anthropic",
+      "slug": "anthropic"
+    },
+    {
+      "id": 62,
+      "name": "Google",
+      "slug": "google"
+    },
+    {
+      "id": 101,
+      "name": "Grok",
+      "slug": "grok"
+    },
+    {
+      "id": 20,
+      "name": "OpenAI",
+      "slug": "openai"
+    },
+    {
+      "id": 98,
+      "name": "xAI",
+      "slug": "xai"
+    },
+    {
+      "id": 1052,
+      "name": "پرایم سیستم",
+      "slug": "%d9%be%d8%b1%d8%a7%db%8c%d9%85-%d8%b3%db%8c%d8%b3%d8%aa%d9%85"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

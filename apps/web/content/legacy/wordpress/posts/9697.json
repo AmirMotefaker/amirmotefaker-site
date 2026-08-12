@@ -1,0 +1,78 @@
+{
+  "id": 9697,
+  "slug": "%d9%be%d8%b1%d9%88%da%98%d9%87-%d8%a7%d9%85%d9%86%db%8c%d8%aa%db%8c-atlantis-%db%8c%da%a9-%d8%b3%db%8c%d8%b3%d8%aa%d9%85-%d8%aa%d8%b1%da%a9%db%8c%d8%a8%db%8c-%d8%a8%d8%b1%d8%a7%db%8c-%da%a9%d8%b4",
+  "source_url": "https://amirmotefaker.ir/%d9%be%d8%b1%d9%88%da%98%d9%87-%d8%a7%d9%85%d9%86%db%8c%d8%aa%db%8c-atlantis-%db%8c%da%a9-%d8%b3%db%8c%d8%b3%d8%aa%d9%85-%d8%aa%d8%b1%da%a9%db%8c%d8%a8%db%8c-%d8%a8%d8%b1%d8%a7%db%8c-%da%a9%d8%b4/",
+  "date": "10/18/2025 09:12:43",
+  "modified": "10/18/2025 09:16:28",
+  "title": "پروژه امنیتی ATLANTIS: یک سیستم ترکیبی برای کشف و تعمیر خودکار آسیب‌پذیری‌های نرم‌افزاری",
+  "excerpt_html": "<p>مقاله جدید در arXiv معرفی می‌کند که گروهی از دانشگاه‌ها و مؤسسات تحقیقاتی پروژه‌ای به نام ATLANTIS را توسعه داده‌اند، سیستمی که با ترکیب مدل زبانی بزرگ (LLM) و تحلیل برنامه (symbolic execution, fuzzing) می‌تواند آسیب‌پذیری‌های نرم‌افزاری را شناسایی و تعمیر کند. </p>\n",
+  "excerpt_text": "مقاله جدید در arXiv معرفی می‌کند که گروهی از دانشگاه‌ها و مؤسسات تحقیقاتی پروژه‌ای به نام ATLANTIS را توسعه داده‌اند، سیستمی که با ترکیب مدل زبانی بزرگ (LLM) و تحلیل برنامه (symbolic execution, fuzzing) می‌تواند آسیب‌پذیری‌های نرم‌افزاری را شناسایی و تعمیر کند.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"9697\" class=\"elementor elementor-9697\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-e3d370 e-flex e-con-boxed e-con e-parent\" data-id=\"e3d370\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-13c5a5b6 elementor-widget elementor-widget-text-editor\" data-id=\"13c5a5b6\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<p class=\"wp-block-paragraph\">مقاله جدید در arXiv معرفی می‌کند که گروهی از دانشگاه‌ها و مؤسسات تحقیقاتی پروژه‌ای به نام <a href=\"https://arxiv.org/abs/2509.14589\" target=\"_blank\" rel=\"noopener\"><strong>ATLANTIS</strong> </a>را توسعه داده‌اند، سیستمی که با ترکیب مدل زبانی بزرگ (LLM) و تحلیل برنامه (symbolic execution, fuzzing) می‌تواند آسیب‌پذیری‌های نرم‌افزاری را شناسایی و تعمیر کند.</p>\n\n<p class=\"wp-block-paragraph\"><strong>تحلیل:</strong></p>\n\n<ul class=\"wp-block-list\">\n<li>این پروژه نشان‌دهنده همگرایی AI و تحلیل برنامه‌نویسی کلاسیک است، یعنی استفاده همزمان از هوش مصنوعی و روش‌های سنتی برای امنیت خودکار.</li>\n\n<li>در آینده، می‌توان از چنین سیستم‌هایی در <strong>پلتفرم‌های SaaS، سیستم‌های عامل و نرم‌افزارهای زیرساختی</strong> برای بهبود خودکار امنیت استفاده کرد.</li>\n\n<li>چالش: تضمین اینکه تعمیر خودکار باعث شکسته شدن عملکرد نرم‌افزار نشود و قواعد منطقی حفظ شوند.</li>\n\n<li>اگر موفق شود، ATLANTIS می‌تواند نقطه عطفی در امنیت نرم‌افزار باشد، جایی که آسیب‌پذیری‌ها پیش از بهره‌برداری واقعی رفع می‌شوند.</li>\n</ul>\n\n<h3 id=\"h-۱-همگرایی-بی-سابقه-بین-دو-دنیای-متفاوت-ai-و-تحلیل-سمبلیک\" class=\"wp-block-heading\">۱. همگرایی بی‌سابقه بین دو دنیای متفاوت: AI و تحلیل سمبلیک</h3>\n\n<p class=\"wp-block-paragraph\">تحلیل برنامه‌نویسی سنتی، مانند <strong>symbolic execution</strong> و <strong>fuzzing</strong>، سال‌ها ابزار اصلی امنیت‌کاران برای یافتن باگ‌ها بود. اما این روش‌ها محدودیت دارند — معمولاً کندند و به فهم عمیق از منطق برنامه نیاز دارند.</p>\n\n<p class=\"wp-block-paragraph\">در پروژه ATLANTIS، مدل زبانی بزرگ (LLM) مانند GPT یا CodeLlama نقش «تحلیلگر زبانی و منطقی» را بازی می‌کند و <strong>با درک معنایی از کد</strong>، به سیستم کمک می‌کند تا مسیرهای بحرانی را سریع‌تر تشخیص دهد. در مقابل، ابزارهای سنتی دقت عددی و منطقی را فراهم می‌کنند.<br />نتیجه؟ ترکیب سرعت و دقت در سطحی که پیش‌تر ممکن نبود.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۲-گذار-از-کشف-باگ-به-خودترمیمی-نرم-افزار\" class=\"wp-block-heading\">۲. گذار از «کشف باگ» به «خودترمیمی نرم‌افزار»</h3>\n\n<p class=\"wp-block-paragraph\">بزرگ‌ترین نوآوری ATLANTIS در این است که نه‌تنها آسیب‌پذیری‌ها را <strong>پیدا</strong> می‌کند، بلکه می‌تواند <strong>پیشنهاد اصلاح منطقی</strong> هم بدهد.<br />این یعنی نرم‌افزار می‌تواند به نوعی خودش را «وصله کند» — بدون نیاز به دخالت انسانی در هر مرحله.<br />در سناریوهای واقعی (مثلاً سرورهای ابری یا برنامه‌های SaaS)، این قابلیت می‌تواند از حملات زنجیره‌ای و exploitهای صفرروزه پیشگیری کند.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۳-چالش-ها-و-ریسک-های-فنی\" class=\"wp-block-heading\">۳. چالش‌ها و ریسک‌های فنی</h3>\n\n<p class=\"wp-block-paragraph\">اما این ایده هنوز در مرحله آزمایشگاهی است و چند چالش حیاتی دارد:</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>تعمیرات نادرست (False Fixes):</strong> گاهی LLM ممکن است باگ را رفع کند ولی رفتار منطقی سیستم را بشکند.</li>\n\n<li><strong>هزینه محاسباتی:</strong> ترکیب fuzzing با مدل زبانی نیازمند منابع سنگین GPU و پردازش است.</li>\n\n<li><strong>امنیت خود مدل:</strong> اگر مدل زبانی آلوده یا دستکاری شود، می‌تواند خود منبع آسیب‌پذیری شود.</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">به همین دلیل، آزمایش گسترده و sandboxing امن برای پیاده‌سازی در محیط‌های واقعی حیاتی است.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۴-پیامدهای-راهبردی-برای-صنعت\" class=\"wp-block-heading\">۴. پیامدهای راهبردی برای صنعت</h3>\n\n<p class=\"wp-block-paragraph\">اگر ATLANTIS موفق شود، می‌تواند پایه‌گذار <strong>“AI DevSecOps” نسل جدید</strong> شود — یعنی فرآیند توسعه‌ای که در آن کد نه‌تنها تست، بلکه خود را بازبینی و اصلاح می‌کند.<br />این تحول می‌تواند:</p>\n\n<ul class=\"wp-block-list\">\n<li>زمان بین کشف و رفع آسیب‌پذیری را از هفته‌ها به ساعت‌ها کاهش دهد</li>\n\n<li>نیاز به تیم‌های گسترده تست امنیتی را کم کند</li>\n\n<li>در سطح زیرساختی (مثلاً کرنل لینوکس یا مرورگرها) امنیت را به شکل خودکار ارتقا دهد</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-جمع-بندی\" class=\"wp-block-heading\">⚙️ جمع‌بندی</h3>\n\n<p class=\"wp-block-paragraph\">پروژه ATLANTIS تنها یک ابزار تحقیقاتی نیست؛ بلکه پیش‌نمایشی از آینده‌ای است که در آن <strong>نرم‌افزارها “خودآگاه امنیتی” دارند.</strong><br />در چنین جهانی، امنیت دیگر تابع نظارت انسانی نخواهد بود، بلکه بخشی از رفتار ذاتی سیستم است — همان‌طور که بدن انسان به‌طور خودکار زخم‌های سطحی را ترمیم می‌کند.</p>\n\n<p class=\"wp-block-paragraph\">اگر این مسیر با موفقیت طی شود، ATLANTIS می‌تواند یکی از مهم‌ترین نقاط عطف در تاریخ امنیت سایبری باشد.</p>\n\n<p class=\"wp-block-paragraph\">پرایم سیستم، رهبر فناوری اطلاعات در قزوین و زنجان، با افتخار نمایندگی رسمی معتبرترین برندهای ایران و جهان است:</p>\n\n<p class=\"wp-block-paragraph\"><strong>۱- تخت جمشید:<br />پرایم سیستم، پیشگام سخت‌افزار، گیمینگ، رندرینگ و لوازم جانبی کامپیوتر</strong></p>\n\n<p class=\"wp-block-paragraph\"><strong>۲- سیناپ:<br />پرایم سیستم، سیستم‌های AIDC<br /></strong>پیشرو در شناسایی خودکار و جمع‌آوری داده، نرم‌افزارهای انبار و لجستیک و تجهیزات بارکد/RFID برای صنایع تولیدی، خرده‌فروشی و راه‌حل‌های دقیق برای زنجیره تأمین.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۳- ماپرا:<br />پرایم سیستم، تحول دیجیتال صنعت F&amp;B<br /></strong>نرم‌افزار یکپارچه مدیریت فروش، انبارداری، باشگاه مشتریان و رزرو آنلاین بر پایه فناوری ابری و داده‌محور، همراه هزاران رستوران، کافه و فست‌فود برای مدیریت بدون محدودیت مکان/زمان، افزایش کارایی و هوشمندسازی عملیات.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۴- سخت‌افزار:<br />پرایم سیستم، پیشتاز قطعات دیجیتال<br /></strong>فروش آنلاین/آفلاین قطعات کامپیوتر و دیجیتال و نمایندگی برندهای ایرانی/خارجی، ارسال به تمام ایران، سیستم‌های گیمینگ/رندرینگ/ماینینگ و تیم اورکلاکر حرفه‌ای. تولید محتوای تخصصی، برترین فروشگاه سخت افزار و نرم افزار قزوین/زنجان.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۵- نیلپر:<br />پرایم سیستم، تولیدکننده محصولات ارگونومیک، کوله و کیف</strong><br />تمرکز بر کیفیت، طراحی دانش‌محور و بازارهای اداری/آموزشی/رستورانی. مدیریت استراتژیک برای رضایت مشتری.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۶- زبرآسیا:<br />پرایم سیستم، فناوری AIDC و بارکد<br /></strong>تسهیل در جمع‌آوری داده بدون خطا با تمرکز بر بارکد و AID، راه‌حل‌های اطلاعاتی برای صنایع، افزایش سرعت/دقت و برنامه‌ریزی منابع. تکیه بر متخصصان داخلی و دانش جهانی، جلب اعتماد مشتریان.</p>\n\n<p class=\"wp-block-paragraph\"><span style=\"color: #ff0000;\"><strong><a style=\"color: #ff0000;\" href=\"https://primesys.ir/\" target=\"_blank\" rel=\"noreferrer noopener\">پرایم سیستم | پلتفرم ابری ماپرا، سخت افزار و لوازم جانبی</a></strong></span></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 374,
+      "name": "امنیت و هک",
+      "slug": "%d8%a7%d9%85%d9%86%db%8c%d8%aa-%d9%88-%d9%87%da%a9"
+    },
+    {
+      "id": 593,
+      "name": "نرم‌افزار",
+      "slug": "%d9%86%d8%b1%d9%85%d8%a7%d9%81%d8%b2%d8%a7%d8%b1"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 1337,
+      "name": "AI DevSecOps",
+      "slug": "ai-devsecops"
+    },
+    {
+      "id": 1336,
+      "name": "ATLANTIS",
+      "slug": "atlantis"
+    },
+    {
+      "id": 388,
+      "name": "Cybersecurity",
+      "slug": "cybersecurity"
+    },
+    {
+      "id": 115,
+      "name": "GPU",
+      "slug": "gpu"
+    },
+    {
+      "id": 237,
+      "name": "LLM",
+      "slug": "llm"
+    },
+    {
+      "id": 595,
+      "name": "SaaS",
+      "slug": "saas"
+    },
+    {
+      "id": 1052,
+      "name": "پرایم سیستم",
+      "slug": "%d9%be%d8%b1%d8%a7%db%8c%d9%85-%d8%b3%db%8c%d8%b3%d8%aa%d9%85"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

@@ -1,23 +1,6 @@
-import {founderFa} from "@/content/founder/fa";
-
-export default function AboutPage(){
-
-return (
-
-<section>
-
-<h1>{founderFa.name}</h1>
-
-<p>
-{founderFa.role}
-</p>
-
-<p>
-{founderFa.description}
-</p>
-
-</section>
-
-);
-
+import { AboutPageView } from "@/components/founder/InnerPages";
+import type { Locale } from "@/content/founder-site";
+export default async function Page({params}:{params:Promise<{locale:string}>}) {
+  const {locale:raw}=await params; const locale:Locale=raw==="en"?"en":"fa";
+  return <AboutPageView locale={locale}/>;
 }

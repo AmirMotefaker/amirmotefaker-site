@@ -1,35 +1,6 @@
-import { products } from "@/content/products";
-import ProductPageLayout from "@/components/products/ProductPageLayout";
-
-
-export default function ProductsPage(){
-
-return (
-
-<main>
-
-<section>
-
-<h1>
-Products
-</h1>
-
-
-{
-products.map((product)=>(
-<ProductPageLayout
-key={product.slug}
-product={product}
-/>
-))
-}
-
-
-</section>
-
-
-</main>
-
-)
-
+import { ProductsPageView } from "@/components/founder/InnerPages";
+import type { Locale } from "@/content/founder-site";
+export default async function Page({params}:{params:Promise<{locale:string}>}) {
+  const {locale:raw}=await params; const locale:Locale=raw==="en"?"en":"fa";
+  return <ProductsPageView locale={locale}/>;
 }

@@ -1,0 +1,93 @@
+{
+  "id": 10862,
+  "slug": "nvidia-blackwell-ultra-b300-%d8%a8%d8%a7-%db%b3%db%b0%d9%aa-%d8%b9%d9%85%d9%84%da%a9%d8%b1%d8%af-%d8%a8%db%8c%d8%b4%d8%aa%d8%b1-%d8%af%d8%b1-%d8%b1%d8%a7%d9%87-%d8%a7%d8%b3%d8%aa",
+  "source_url": "https://amirmotefaker.ir/nvidia-blackwell-ultra-b300-%d8%a8%d8%a7-%db%b3%db%b0%d9%aa-%d8%b9%d9%85%d9%84%da%a9%d8%b1%d8%af-%d8%a8%db%8c%d8%b4%d8%aa%d8%b1-%d8%af%d8%b1-%d8%b1%d8%a7%d9%87-%d8%a7%d8%b3%d8%aa/",
+  "date": "11/19/2025 09:57:35",
+  "modified": "11/19/2025 09:58:52",
+  "title": "Nvidia Blackwell Ultra (B300) با ۳۰٪ عملکرد بیشتر در راه است",
+  "excerpt_html": "<p>کمبود GPU ادامه دارد اما قیمت inference را تا ۲۵٪ کاهش خواهد داد؛ رقابت با چیپ‌های چینی (Huawei Ascend) شدیدتر می‌شود.</p>\n",
+  "excerpt_text": "کمبود GPU ادامه دارد اما قیمت inference را تا ۲۵٪ کاهش خواهد داد؛ رقابت با چیپ‌های چینی (Huawei Ascend) شدیدتر می‌شود.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"10862\" class=\"elementor elementor-10862\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-ac402b6 e-flex e-con-boxed e-con e-parent\" data-id=\"ac402b6\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-6247b87b elementor-widget elementor-widget-text-editor\" data-id=\"6247b87b\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<p class=\"wp-block-paragraph\">Jensen Huang در کنفرانس GTC Asia اعلام کرد سری <a href=\"https://nvidianews.nvidia.com/news/nvidia-blackwell-ultra\" target=\"_blank\" rel=\"noopener\">Blackwell Ultra (B300)</a> با ۳۰٪ عملکرد بالاتر و مصرف انرژی ۱۵٪ کمتر نسبت به B200 در Q2 2026 عرضه می‌شود. اولین مشتری: xAI برای آموزش Grok 4. <strong>تأثیر</strong>: کمبود GPU ادامه دارد اما قیمت inference را تا ۲۵٪ کاهش خواهد داد؛ رقابت با چیپ‌های چینی (Huawei Ascend) شدیدتر می‌شود.<br />تحلیل جامع خبر: رونمایی Nvidia از Blackwell Ultra (B300) – ۳۰٪ عملکرد بیشتر، ۱۵٪ مصرف کمتر (۱۹ نوامبر ۲۰۲۵)</p>\n\n<p class=\"wp-block-paragraph\">جنسن هوانگ (Jensen Huang) امروز در keynote افتتاحیه <strong>GTC Asia 2025</strong> (سنگاپور) به صورت زنده سری <strong>Blackwell Ultra</strong> یا <strong>B300</strong> را معرفی کرد. این بزرگ‌ترین آپدیت خانواده Blackwell بعد از B200 (مارس ۲۰۲۵) است و مستقیماً برای رقابت با نسل بعدی چیپ‌های چینی (Huawei Ascend 910C) و AMD MI400 طراحی شده. اولین مشتری بزرگ: <strong>xAI ایلان ماسک</strong> که تمام B300های اولیه را برای آموزش Grok 4 و Grok 5 پیش‌خرید کرده.</p>\n\n<h4 id=\"h-۱-مشخصات-فنی-b300-در-مقایسه-با-b200\" class=\"wp-block-heading\">۱. مشخصات فنی B300 در مقایسه با B200</h4>\n\n<figure class=\"wp-block-table\">\n<table class=\"has-fixed-layout\">\n<thead>\n<tr>\n<th>مشخصه</th>\n<th>B200 (حالا)</th>\n<th>B300 (Q2 2026)</th>\n<th>بهبود</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>فرآیند تولید</td>\n<td>TSMC 4NP</td>\n<td>TSMC 3nm (بهینه‌شده)</td>\n<td>+۱۸٪ تراکم ترانزیستور</td>\n</tr>\n<tr>\n<td>تعداد ترانزیستور</td>\n<td>۲۰۸ میلیارد</td>\n<td>۲۶۰+ میلیارد</td>\n<td>+۲۵٪</td>\n</tr>\n<tr>\n<td>FP4 Performance (AI)</td>\n<td>۴۰ پتافلاپس</td>\n<td>۵۲-۵۵ پتافلاپس</td>\n<td>+۳۰٪</td>\n</tr>\n<tr>\n<td>FP8/FP16 Performance</td>\n<td>۲۰ پتافلاپس</td>\n<td>۲۶-۲۸ پتافلاپس</td>\n<td>+۳۰-۳۵٪</td>\n</tr>\n<tr>\n<td>حافظه HBM3e</td>\n<td>۱۹۲ گیگابایت</td>\n<td>۲۸۸ گیگابایت HBM4</td>\n<td>+۵۰٪ پهنای باند</td>\n</tr>\n<tr>\n<td>مصرف انرژی (TDP)</td>\n<td>۱۰۰۰-۱۲۰۰ وات</td>\n<td>۸۵۰-۱۰۰۰ وات</td>\n<td>-۱۵٪</td>\n</tr>\n<tr>\n<td>NVLink Bandwidth</td>\n<td>۱.۸ ترابایت/ثانیه</td>\n<td>۲.۶ ترابایت/ثانیه</td>\n<td>+۴۴٪</td>\n</tr>\n<tr>\n<td>قیمت تخمینی (هر چیپ)</td>\n<td>۳۰-۴۰ هزار دلار</td>\n<td>۳۵-۴۵ هزار دلار</td>\n<td>+۱۰-۱۵٪ (به خاطر حجم تولید)</td>\n</tr>\n</tbody>\n</table>\n</figure>\n\n<h4 id=\"h-۲-زمان-بندی-و-مشتریان-اولیه\" class=\"wp-block-heading\">۲. زمان‌بندی و مشتریان اولیه</h4>\n\n<ul class=\"wp-block-list\">\n<li>تولید انبوه: Q2 2026 (آوریل-ژوئن)</li>\n\n<li>اولین نمونه‌های مهندسی: Q1 2026 به xAI و احتمالاً Microsoft/Azure</li>\n\n<li>حجم تولید سال اول: فقط ۴۵۰,۰۰۰ واحد (کمتر از B200 به خاطر فرآیند 3nm گران‌تر)</li>\n\n<li>xAI: قرارداد ۱۰۰,۰۰۰+ چیپ B300 برای کلاستری که «بزرگ‌ترین ابررایانه AI جهان» نامیده شد (۱ میلیون چیپ ترکیبی B200+B300 تا پایان ۲۰۲۶)</li>\n</ul>\n\n<h4 id=\"h-۳-تأثیر-واقعی-روی-بازار\" class=\"wp-block-heading\">۳. تأثیر واقعی روی بازار</h4>\n\n<ul class=\"wp-block-list\">\n<li><strong>کاهش قیمت inference</strong>: تحلیل‌گران Goldman Sachs پیش‌بینی می‌کنند هزینه inference در ۲۰۲۷ حدود ۲۲-۲۸٪ کمتر از حالا شود → اپلیکیشن‌های AI ارزان‌تر برای همه.</li>\n\n<li><strong>کمبود همچنان ادامه دارد</strong>: جنسن گفت «تقاضا ۱۰ برابر ظرفیت تولید است» → تا نیمه ۲۰۲۷ کمبود شدید GPU ادامه خواهد داشت.</li>\n\n<li><strong>رقابت با چین</strong>: Huawei Ascend 910C (که ادعا می‌کند ۲۰٪ بهتر از B200 است) حالا رقیب مستقیم دارد. آمریکا احتمالاً صادرات B300 به چین را کاملاً ممنوع می‌کند.</li>\n\n<li><strong>سهام Nvidia</strong>: بعد از keynote حدود ۴.۸٪ بالا رفت و ارزش بازار به ۴.۱ تریلیون دلار رسید.</li>\n</ul>\n\n<h4 id=\"h-۴-واکنش-های-فوری-در-۳-ساعت-اول\" class=\"wp-block-heading\">۴. واکنش‌های فوری (در ۳ ساعت اول)</h4>\n\n<ul class=\"wp-block-list\">\n<li>ایلان ماسک: «Grok 4 با B300 خواهد بود بهترین مدل جهان تا آن زمان»</li>\n\n<li>Sam Altman: «عالیه، ولی ما هنوز با o3 روی H100های قدیمی بهتر عمل می‌کنیم »</li>\n\n<li>Huang: «Blackwell Ultra آخرین نسل قبل از Rubin (R100) در ۲۰۲۷ است»</li>\n</ul>\n\n<h4 id=\"h-۵-محدودیت-ها-و-ریسک-ها\" class=\"wp-block-heading\">۵. محدودیت‌ها و ریسک‌ها</h4>\n\n<ul class=\"wp-block-list\">\n<li>فرآیند 3nm هنوز yield پایینی دارد (طبق شایعات &lt;۶۰٪) → قیمت اولیه ممکن است بالاتر از پیش‌بینی باشد.</li>\n\n<li>مصرف انرژی همچنان بالاست (۸۵۰ وات!) → مراکز داده نیاز به زیرساخت جدید دارند.</li>\n\n<li>ریسک ژئوپلیتیک: اگر آمریکا تحریم‌های بیشتری اعمال کند، چین ممکن است Huawei Cloud را با قیمت خیلی پایین‌تر عرضه کند.</li>\n</ul>\n\n<h4 id=\"h-نتیجه-گیری\" class=\"wp-block-heading\">نتیجه‌گیری</h4>\n\n<p class=\"wp-block-paragraph\">B300 نه فقط یک آپدیت، بلکه <strong>آخرین تیر Nvidia در مسابقه GPU قبل از معماری کاملاً جدید Rubin</strong> است. با ۳۰٪ عملکرد بیشتر و ۱۵٪ مصرف کمتر، فاصله Nvidia با رقبا را حداقل تا نیمه ۲۰۲۷ حفظ می‌کند، اما کمبود همچنان بزرگ‌ترین مشکل صنعت AI خواهد بود.<br />xAI ایلان ماسک با پیش‌خرید بزرگ‌ترین حجم، احتمالاً Grok 5 را تا پایان ۲۰۲۶ به سطحی می‌رساند که رقبا خوابشان را هم نمی‌دیدند.</p>\n\n<p class=\"wp-block-paragraph\">پرایم سیستم، رهبر فناوری اطلاعات در قزوین و زنجان، با افتخار نمایندگی رسمی معتبرترین برندهای ایران و جهان است:</p>\n\n<p class=\"wp-block-paragraph\"><strong>۱- تخت جمشید:<br />پرایم سیستم، پیشگام سخت‌افزار، گیمینگ، رندرینگ و لوازم جانبی کامپیوتر</strong></p>\n\n<p class=\"wp-block-paragraph\"><strong>۲- سیناپ:<br />پرایم سیستم، سیستم‌های AIDC<br /></strong>پیشرو در شناسایی خودکار و جمع‌آوری داده، نرم‌افزارهای انبار و لجستیک و تجهیزات بارکد/RFID برای صنایع تولیدی، خرده‌فروشی و راه‌حل‌های دقیق برای زنجیره تأمین.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۳- ماپرا:<br />پرایم سیستم، تحول دیجیتال صنعت F&amp;B<br /></strong>نرم‌افزار یکپارچه مدیریت فروش، انبارداری، باشگاه مشتریان و رزرو آنلاین بر پایه فناوری ابری و داده‌محور، همراه هزاران رستوران، کافه و فست‌فود برای مدیریت بدون محدودیت مکان/زمان، افزایش کارایی و هوشمندسازی عملیات.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۴- سخت‌افزار:<br />پرایم سیستم، پیشتاز قطعات دیجیتال<br /></strong>فروش آنلاین/آفلاین قطعات کامپیوتر و دیجیتال و نمایندگی برندهای ایرانی/خارجی، ارسال به تمام ایران، سیستم‌های گیمینگ/رندرینگ/ماینینگ و تیم اورکلاکر حرفه‌ای. تولید محتوای تخصصی، برترین فروشگاه سخت افزار و نرم افزار قزوین/زنجان.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۵- نیلپر:<br />پرایم سیستم، تولیدکننده محصولات ارگونومیک، کوله و کیف</strong><br />تمرکز بر کیفیت، طراحی دانش‌محور و بازارهای اداری/آموزشی/رستورانی. مدیریت استراتژیک برای رضایت مشتری.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۶- زبرآسیا:<br />پرایم سیستم، فناوری AIDC و بارکد<br /></strong>تسهیل در جمع‌آوری داده بدون خطا با تمرکز بر بارکد و AID، راه‌حل‌های اطلاعاتی برای صنایع، افزایش سرعت/دقت و برنامه‌ریزی منابع. تکیه بر متخصصان داخلی و دانش جهانی، جلب اعتماد مشتریان.</p>\n\n<p class=\"wp-block-paragraph\">۷-فاطر:<br /><strong>پرایم سیستم، طراحی و تولید سخت افزار کامپیوتر</strong><br />انتقال و توسعه تکنولوژی های بروز در جهت تولید داخلی، محصولات باکیفیت قابل رقابت برند های مطرح خارجی باقیمت‌منصفانه، خدمات پس از فروش متفاوت و گارانتی تعویض بی‌قید و شرط</p>\n\n<p class=\"wp-block-paragraph\"><span style=\"color: #ff0000;\">پرایم سیستم | پلتفرم ابری حسابداری و مالی، سخت افزار و لوازم جانبی</span></p>\n\n<p class=\"wp-block-paragraph\"> </p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 471,
+      "name": "انرژی",
+      "slug": "%d8%a7%d9%86%d8%b1%da%98%db%8c"
+    },
+    {
+      "id": 857,
+      "name": "تراشه",
+      "slug": "%d8%aa%d8%b1%d8%a7%d8%b4%d9%87"
+    },
+    {
+      "id": 1160,
+      "name": "سخت افزار",
+      "slug": "%d8%b3%d8%ae%d8%aa-%d8%a7%d9%81%d8%b2%d8%a7%d8%b1"
+    },
+    {
+      "id": 1027,
+      "name": "عامل‌های هوشمند",
+      "slug": "%d8%b9%d8%a7%d9%85%d9%84%d9%87%d8%a7%db%8c-%d9%87%d9%88%d8%b4%d9%85%d9%86%d8%af"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 210,
+      "name": "Azure",
+      "slug": "azure"
+    },
+    {
+      "id": 1841,
+      "name": "B300",
+      "slug": "b300"
+    },
+    {
+      "id": 434,
+      "name": "Chip",
+      "slug": "chip"
+    },
+    {
+      "id": 216,
+      "name": "H100",
+      "slug": "h100"
+    },
+    {
+      "id": 43,
+      "name": "Microsoft",
+      "slug": "microsoft"
+    },
+    {
+      "id": 21,
+      "name": "Nvidia",
+      "slug": "nvidia"
+    },
+    {
+      "id": 1842,
+      "name": "Nvidia Blackwell Ultra (B300)",
+      "slug": "nvidia-blackwell-ultra-b300"
+    },
+    {
+      "id": 1052,
+      "name": "پرایم سیستم",
+      "slug": "%d9%be%d8%b1%d8%a7%db%8c%d9%85-%d8%b3%db%8c%d8%b3%d8%aa%d9%85"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

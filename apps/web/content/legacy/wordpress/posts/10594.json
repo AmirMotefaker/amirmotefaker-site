@@ -1,0 +1,78 @@
+{
+  "id": 10594,
+  "slug": "ai-%d8%b9%d9%88%d8%a7%d9%85%d9%84-agents-%d8%af%d8%b1%d9%90-%d8%ad%d9%85%d9%84%d8%a7%d8%aa-%d8%b3%d8%a7%db%8c%d8%a8%d8%b1%db%8c-%d8%ac%d8%af%db%8c%d8%af-%d8%b1%d8%a7-%d8%a8%d8%a7%d8%b2-%d9%85%db%8c",
+  "source_url": "https://amirmotefaker.ir/ai-%d8%b9%d9%88%d8%a7%d9%85%d9%84-agents-%d8%af%d8%b1%d9%90-%d8%ad%d9%85%d9%84%d8%a7%d8%aa-%d8%b3%d8%a7%db%8c%d8%a8%d8%b1%db%8c-%d8%ac%d8%af%db%8c%d8%af-%d8%b1%d8%a7-%d8%a8%d8%a7%d8%b2-%d9%85%db%8c/",
+  "date": "11/11/2025 08:43:28",
+  "modified": "11/11/2025 11:40:50",
+  "title": "AI عوامل (Agents) درِ حملات سایبری جدید را باز می‌کنند",
+  "excerpt_html": "<p>این خبر نقطه‌ای مهم از تحول در امنیت سایبری را نشان می‌دهد: وقتی AI تبدیل به عامل فعال می‌شود، خطرات جدیدی ایجاد می‌کند، نه فقط از دید حمله به داده بلکه حمله به خود عامل‌ها.</p>\n",
+  "excerpt_text": "این خبر نقطه‌ای مهم از تحول در امنیت سایبری را نشان می‌دهد: وقتی AI تبدیل به عامل فعال می‌شود، خطرات جدیدی ایجاد می‌کند، نه فقط از دید حمله به داده بلکه حمله به خود عامل‌ها.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"10594\" class=\"elementor elementor-10594\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-2b2ad170 e-flex e-con-boxed e-con e-parent\" data-id=\"2b2ad170\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-4b13f55c elementor-widget elementor-widget-text-editor\" data-id=\"4b13f55c\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<ol class=\"wp-block-list\" start=\"2\">\n<li style=\"list-style-type: none;\">\n<ol class=\"wp-block-list\" start=\"2\"></ol>\n</li>\n</ol>\n<p>کارشناسان هشدار داده‌اند عامل‌های هوش مصنوعی (AI agents) که برای انجام وظایف آنلاین استفاده می‌شوند، ممکن است هدف حملات «injection prompt» قرار بگیرند—یعنی مهاجمان بتوانند از طریق ورودی‌های ناامن، عامل را برای اجرای عملیات مخرب هدایت کنند.<br data-start=\"1253\" data-end=\"1256\" /><strong data-start=\"1259\" data-end=\"1269\">تحلیل:</strong> این خبر نقطه‌ای مهم از تحول در امنیت سایبری را نشان می‌دهد: وقتی AI تبدیل به عامل فعال می‌شود، خطرات جدیدی ایجاد می‌کند—نه فقط از دید حمله به داده بلکه حمله به خود عامل‌ها. شرکت‌ها باید نه فقط مدل‌ها بلکه عامل‌ها را در طراحی امنیت لحاظ کنند و چارچوب‌های کنترل رفتار را جدی بگیرند.</p>\n<ol class=\"wp-block-list\" start=\"2\"></ol>\n\n<p class=\"wp-block-paragraph\">کارشناسان امنیت سایبری هشدار داده‌اند که <strong>عامل‌های هوش مصنوعی (AI Agents)</strong> — یعنی سیستم‌هایی که به‌صورت خودکار و هوشمند وظایف آنلاین مانند پاسخ‌دهی، خرید، برنامه‌ریزی یا تعامل با APIها را انجام می‌دهند — به هدف جدید حملات سایبری تبدیل شده‌اند.</p>\n\n<p class=\"wp-block-paragraph\">نوع جدیدی از حملات موسوم به <strong>Prompt Injection Attack</strong> می‌تواند از ورودی‌های ظاهراً بی‌خطر استفاده کند تا مسیر تصمیم‌گیری عامل را منحرف کرده و آن را به انجام اقدامات غیرمجاز (مثل افشای اطلاعات یا اجرای دستورات خرابکارانه) سوق دهد.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-تحلیل-فنی-و-امنیتی\" class=\"wp-block-heading\">تحلیل فنی و امنیتی</h3>\n\n<ol class=\"wp-block-list\">\n<li><strong>تغییر بنیادین در تهدیدات سایبری</strong>\n<ul class=\"wp-block-list\">\n<li>پیش از این، تهدیدها بیشتر روی سرقت داده یا نفوذ مستقیم به سرور متمرکز بود.</li>\n\n<li>اکنون با ظهور <strong>AI Agentها</strong>، خود «رفتار سیستم» هدف حمله است؛ یعنی مهاجم تلاش می‌کند با تزریق دستورات مخفی در ورودی‌های طبیعی (prompt)، رفتار عامل را کنترل کند.</li>\n\n<li>این یعنی <em>حمله به تصمیم‌گیری</em>، نه فقط به داده.</li>\n</ul>\n</li>\n\n<li><strong>ماهیت جدید آسیب‌پذیری: ذهن عامل</strong>\n<ul class=\"wp-block-list\">\n<li>چون عامل‌های AI تصمیم می‌گیرند و عمل می‌کنند، آسیب‌پذیری آن‌ها دیگر در «کد» نیست، بلکه در <em>منطق زبانی و مدل تصمیم‌گیری</em> است.</li>\n\n<li>یک پیام متنی ساده می‌تواند باعث شود عامل:\n<ul class=\"wp-block-list\">\n<li>به URLهای مخرب متصل شود،</li>\n\n<li>داده‌های خصوصی کاربر را فاش کند،</li>\n\n<li>یا حتی در سیستم‌های متصل، دستورات خطرناک اجرا کند.</li>\n</ul>\n</li>\n</ul>\n</li>\n\n<li><strong>چالش‌های امنیتی جدید برای شرکت‌ها</strong>\n<ul class=\"wp-block-list\">\n<li>بسیاری از شرکت‌ها از Agentهای تجاری (مثلاً در پشتیبانی مشتری یا مدیریت داده‌ها) استفاده می‌کنند، بدون آن‌که لایه دفاعی رفتاری برایشان طراحی کرده باشند.</li>\n\n<li><strong>امنیت زبانی (Prompt Security)</strong> اکنون به حوزه‌ای ضروری تبدیل شده است؛ چیزی بین امنیت سایبری، مهندسی اجتماعی و هوش مصنوعی.</li>\n</ul>\n</li>\n\n<li><strong>محدودیت‌های فعلی</strong>\n<ul class=\"wp-block-list\">\n<li>هیچ چارچوب امنیتی استانداردی برای کنترل رفتار عامل‌ها وجود ندارد.</li>\n\n<li>سیستم‌های تشخیص ناهنجاری (Anomaly Detection) هنوز نمی‌توانند حملات زبانی را به‌خوبی شناسایی کنند.</li>\n\n<li>در نتیجه، <strong>AI Agents عملاً در وضعیت “Zero-Day” دائمی هستند.</strong></li>\n</ul>\n</li>\n</ol>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-تحلیل-اقتصادی-و-استراتژیک\" class=\"wp-block-heading\">تحلیل اقتصادی و استراتژیک</h3>\n\n<ul class=\"wp-block-list\">\n<li>بازار امنیت سایبری هوش مصنوعی تا سال ۲۰۲۸ احتمالاً به بیش از <strong>۴۰ میلیارد دلار</strong> خواهد رسید، زیرا هر سازمانی که از Agentها در فرایندهای خودکار استفاده می‌کند، مجبور به افزودن لایه‌های دفاعی زبانی و رفتاری خواهد شد.</li>\n\n<li>شرکت‌های فعال در زمینه‌ی <strong>AI Red Teaming</strong> (تیم‌های تست حملات زبانی) یا <strong>AI Governance</strong> در موقعیت ممتاز رشد قرار دارند.</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-پیامدها-برای-ایران-و-منطقه\" class=\"wp-block-heading\">پیامدها برای ایران و منطقه</h3>\n\n<ol class=\"wp-block-list\">\n<li><strong>فرصت برای استارتاپ‌ها:</strong><br />طراحی ابزارهای امنیتی برای عامل‌های هوش مصنوعی (مثلاً ابزار ضد prompt injection یا مانیتور رفتار Agent) می‌تواند یک بازار نوظهور باشد.</li>\n\n<li><strong>تهدید برای سازمان‌ها:</strong><br />بانک‌ها، شرکت‌های بیمه و پشتیبانی‌های آنلاین که از AI برای تعامل با کاربران استفاده می‌کنند، باید امنیت زبانی را به بخشی از سیاست‌های IT خود اضافه کنند.</li>\n\n<li><strong>نیاز به آموزش تخصصی جدید:</strong><br />ترکیب مهارت‌های امنیت سایبری و زبان‌شناسی محاسباتی (Computational Linguistics) به شغلی کلیدی تبدیل خواهد شد.</li>\n</ol>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-جمع-بندی-تحلیلی\" class=\"wp-block-heading\">جمع‌بندی تحلیلی</h3>\n\n<blockquote class=\"wp-block-quote is-layout-flow wp-block-quote-is-layout-flow\">\n<p class=\"wp-block-paragraph\">این خبر نشان می‌دهد که با ورود به عصر <strong>AI Agentها</strong>، ما از امنیت شبکه به امنیت رفتار وارد شده‌ایم.<br />اگر قرن بیستم عصر &#8220;Firewalls&#8221; بود، قرن بیست‌ویکم عصر &#8220;Promptwalls&#8221; است.</p>\n</blockquote>\n\n<p class=\"wp-block-paragraph\">پرایم سیستم، رهبر فناوری اطلاعات در قزوین و زنجان، با افتخار نمایندگی رسمی معتبرترین برندهای ایران و جهان است:</p>\n\n<p class=\"wp-block-paragraph\"><strong>۱- تخت جمشید:<br />پرایم سیستم، پیشگام سخت‌افزار، گیمینگ، رندرینگ و لوازم جانبی کامپیوتر</strong></p>\n\n<p class=\"wp-block-paragraph\"><strong>۲- سیناپ:<br />پرایم سیستم، سیستم‌های AIDC<br /></strong>پیشرو در شناسایی خودکار و جمع‌آوری داده، نرم‌افزارهای انبار و لجستیک و تجهیزات بارکد/RFID برای صنایع تولیدی، خرده‌فروشی و راه‌حل‌های دقیق برای زنجیره تأمین.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۳- ماپرا:<br />پرایم سیستم، تحول دیجیتال صنعت F&amp;B<br /></strong>نرم‌افزار یکپارچه مدیریت فروش، انبارداری، باشگاه مشتریان و رزرو آنلاین بر پایه فناوری ابری و داده‌محور، همراه هزاران رستوران، کافه و فست‌فود برای مدیریت بدون محدودیت مکان/زمان، افزایش کارایی و هوشمندسازی عملیات.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۴- سخت‌افزار:<br />پرایم سیستم، پیشتاز قطعات دیجیتال<br /></strong>فروش آنلاین/آفلاین قطعات کامپیوتر و دیجیتال و نمایندگی برندهای ایرانی/خارجی، ارسال به تمام ایران، سیستم‌های گیمینگ/رندرینگ/ماینینگ و تیم اورکلاکر حرفه‌ای. تولید محتوای تخصصی، برترین فروشگاه سخت افزار و نرم افزار قزوین/زنجان.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۵- نیلپر:<br />پرایم سیستم، تولیدکننده محصولات ارگونومیک، کوله و کیف</strong><br />تمرکز بر کیفیت، طراحی دانش‌محور و بازارهای اداری/آموزشی/رستورانی. مدیریت استراتژیک برای رضایت مشتری.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۶- زبرآسیا:<br />پرایم سیستم، فناوری AIDC و بارکد<br /></strong>تسهیل در جمع‌آوری داده بدون خطا با تمرکز بر بارکد و AID، راه‌حل‌های اطلاعاتی برای صنایع، افزایش سرعت/دقت و برنامه‌ریزی منابع. تکیه بر متخصصان داخلی و دانش جهانی، جلب اعتماد مشتریان.</p>\n\n<p class=\"wp-block-paragraph\"><span style=\"color: #ff0000;\"><strong><a style=\"color: #ff0000;\" href=\"https://primesys.ir/\" target=\"_blank\" rel=\"noreferrer noopener\">پرایم سیستم | پلتفرم ابری ماپرا، سخت افزار و لوازم جانبی</a></strong></span></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 374,
+      "name": "امنیت و هک",
+      "slug": "%d8%a7%d9%85%d9%86%db%8c%d8%aa-%d9%88-%d9%87%da%a9"
+    },
+    {
+      "id": 1027,
+      "name": "عامل‌های هوشمند",
+      "slug": "%d8%b9%d8%a7%d9%85%d9%84%d9%87%d8%a7%db%8c-%d9%87%d9%88%d8%b4%d9%85%d9%86%d8%af"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 23,
+      "name": "Agentic AI",
+      "slug": "agentic-ai"
+    },
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 1743,
+      "name": "AI Agents",
+      "slug": "ai-agents"
+    },
+    {
+      "id": 1183,
+      "name": "AI Governance",
+      "slug": "ai-governance"
+    },
+    {
+      "id": 1745,
+      "name": "AI Red Teaming",
+      "slug": "ai-red-teaming"
+    },
+    {
+      "id": 388,
+      "name": "Cybersecurity",
+      "slug": "cybersecurity"
+    },
+    {
+      "id": 1744,
+      "name": "Prompt Security",
+      "slug": "prompt-security"
+    },
+    {
+      "id": 1052,
+      "name": "پرایم سیستم",
+      "slug": "%d9%be%d8%b1%d8%a7%db%8c%d9%85-%d8%b3%db%8c%d8%b3%d8%aa%d9%85"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

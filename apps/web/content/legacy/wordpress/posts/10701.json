@@ -1,0 +1,98 @@
+{
+  "id": 10701,
+  "slug": "%d8%b6%d8%b9%d9%81%d9%87%d8%a7%db%8c-%d8%a7%d9%85%d9%86%db%8c%d8%aa%db%8c-%d8%ac%d8%af%db%8c-%d8%af%d8%b1-%d9%81%d8%b1%db%8c%d9%85%d9%88%d8%b1%da%a9%d9%87%d8%a7%db%8c-%d8%a7",
+  "source_url": "https://amirmotefaker.ir/%d8%b6%d8%b9%d9%81%d9%87%d8%a7%db%8c-%d8%a7%d9%85%d9%86%db%8c%d8%aa%db%8c-%d8%ac%d8%af%db%8c-%d8%af%d8%b1-%d9%81%d8%b1%db%8c%d9%85%d9%88%d8%b1%da%a9%d9%87%d8%a7%db%8c-%d8%a7/",
+  "date": "11/14/2025 17:41:42",
+  "modified": "11/14/2025 17:44:30",
+  "title": "ضعف‌های امنیتی جدی در فریم‌ورک‌های استنتاج AI کشف شد",
+  "excerpt_html": "<p>پژوهشگران شرکت Oligo Security نقایص امنیتی «اجرای کد از راه دور» (RCE) را در فریم‌ورک‌های استنتاج AI مانند Meta’s Llama Stack، Nvidia’s TensorRT-LLM، vLLM و SGLang کشف کرده‌اند.</p>\n",
+  "excerpt_text": "پژوهشگران شرکت Oligo Security نقایص امنیتی «اجرای کد از راه دور» (RCE) را در فریم‌ورک‌های استنتاج AI مانند Meta’s Llama Stack، Nvidia’s TensorRT-LLM، vLLM و SGLang کشف کرده‌اند.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"10701\" class=\"elementor elementor-10701\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-1a42710c e-flex e-con-boxed e-con e-parent\" data-id=\"1a42710c\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-2cb45774 elementor-widget elementor-widget-text-editor\" data-id=\"2cb45774\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<p class=\"wp-block-paragraph\">پژوهشگران شرکت Oligo Security نقایص امنیتی <a href=\"https://www.csoonline.com/article/4090061/copy-paste-vulnerability-hit-ai-inference-frameworks-at-meta-nvidia-and-microsoft.html\" target=\"_blank\" rel=\"noopener\">«اجرای کد از راه دور» (RCE)</a> را در فریم‌ورک‌های استنتاج AI مانند Meta’s Llama Stack، Nvidia’s TensorRT-LLM، vLLM و SGLang کشف کرده‌اند.</p>\n\n<p class=\"wp-block-paragraph\">عامل اصلی: استفاده ناایمن از کتابخانه Python’s pickle همراه با کدهای کپی‌-پیست‌شده بین پروژه‌های متعدد.</p>\n\n<p class=\"wp-block-paragraph\">این آسیب‌پذیری در بسیاری از اکوسیستم‌های AI تکرار شده و به‌عنوان یک خطر سیستمیک برای سازمان‌ها شناخته شده است.<br /><strong>تحلیل:</strong><br />این خبر نشان‌دهنده یکی از بزرگ‌ترین چالش‌های فنی در موج فعلی AI است: <strong>امنیت عامل‌های هوش مصنوعی</strong>. وقتی سازمان‌ها مدل‌ها یا عامل‌ها را وارد سیستم‌های حیاتی می‌کنند، معماری امنیتی باید از ابتدا طراحی شود. در ایران و منطقه، شرکت‌هایی که بخشی از فرآیندهای حساس را به AI واگذار می‌کنند، باید حتماً ممیزی امنیتی، تست نفوذ و کنترل‌های شدت‌بخشی (hardening) را در نظر بگیرند.</p>\n\n<h3 id=\"h-جزئیات-کلیدی\" class=\"wp-block-heading\"><strong>جزئیات کلیدی</strong></h3>\n\n<ul class=\"wp-block-list\">\n<li>پژوهشگران Oligo Security متوجه شدند که چند فریم‌ورک اصلی AI، از جمله:\n<ul>\n<li><strong>Meta Llama Stack</strong></li>\n<li><strong>Nvidia TensorRT-LLM</strong></li>\n<li><strong>vLLM</strong></li>\n<li><strong>SGLang</strong></li>\n</ul>\nهمگی دارای <strong>آسیب‌پذیری اجرای کد از راه دور (RCE)</strong> هستند.</li>\n\n<li>علت:<br />استفاده از <strong>Python pickle</strong> در بخش‌هایی از کد که توسط توسعه‌دهندگان مختلف <em>کپی-پیست</em> شده و بدون اعتبارسنجی امنیتی استفاده شده است.</li>\n\n<li>این موضوع به‌عنوان یک <strong>ریسک سیستمیک</strong> شناخته شده:<br />یعنی مشکل فقط یک پروژه نیست، بلکه الگوی نادرست در سراسر اکوسیستم AI دیده می‌شود.</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-این-آسیب-پذیری-دقیقا-چیست-و-چرا-خطرناک-است\" class=\"wp-block-heading\"><strong>این آسیب‌پذیری دقیقاً چیست و چرا خطرناک است؟</strong></h3>\n\n<h3 id=\"h-۱-rce-یعنی-امکان-اجرای-هر-کدی-روی-سرور-ai\" class=\"wp-block-heading\"><strong>۱) RCE یعنی امکان اجرای هر کدی روی سرور AI</strong></h3>\n\n<p class=\"wp-block-paragraph\">اگر هکر بتواند ورودی یا مدل دستکاری‌شده به این فریم‌ورک‌ها بدهد، می‌تواند:</p>\n\n<ul class=\"wp-block-list\">\n<li>کنترل کامل سرور را در دست بگیرد</li>\n\n<li>داده‌های حساس را سرقت کند</li>\n\n<li>مدل را آلوده کند</li>\n\n<li>پاسخ‌ها را دستکاری کند</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">این دقیقاً <strong>بدترین نوع آسیب‌پذیری</strong> در زیرساخت‌های AI است.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۲-استفاده-از-pickle-یک-اشتباه-تاریخی-در-بسیاری-از-پروژه-های-python\" class=\"wp-block-heading\"><strong>۲) استفاده از pickle یک اشتباه تاریخی در بسیاری از پروژه‌های Python</strong></h3>\n\n<p class=\"wp-block-paragraph\">Pickle برای سریال‌سازی طراحی شده،<br />اما <em>هر وقت فایل pickle را لود کنید، می‌تواند هر کدی را اجرا کند.</em></p>\n\n<p class=\"wp-block-paragraph\">استفاده از آن برای:</p>\n\n<ul class=\"wp-block-list\">\n<li>بارگذاری مدل</li>\n\n<li>بارگذاری داده</li>\n\n<li>اشتراک‌گذاری artifact</li>\n\n<li>یا حافظه cache سیستم</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">در پروژه‌های AI = <strong>دعوت‌نامه به حمله RCE</strong>.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۳-کپی-پیست-بودن-کدها-یعنی-ریسک-تکرارشونده\" class=\"wp-block-heading\"><strong>۳) کپی‌-پیست بودن کدها یعنی «ریسک تکرارشونده»</strong></h3>\n\n<p class=\"wp-block-paragraph\">بزرگ‌ترین خطر این خبر:</p>\n\n<blockquote class=\"wp-block-quote is-layout-flow wp-block-quote-is-layout-flow\">\n<p class=\"wp-block-paragraph\">مشکل, در چند محصول مختلف و از چند شرکت مختلف تکرار شده.<br />یعنی AI امروز روی پایه‌ای ساخته شده که <em>امنیت محور</em> نبوده.</p>\n</blockquote>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-چرا-این-خبر-از-نظر-جهانی-مهم-است\" class=\"wp-block-heading\"><strong>چرا این خبر از نظر جهانی مهم است؟</strong></h3>\n\n<h3 id=\"h-۱-ai-اکنون-در-سیستم-های-حیاتی-استفاده-می-شود\" class=\"wp-block-heading\"><strong>۱) AI اکنون در سیستم‌های حیاتی استفاده می‌شود</strong></h3>\n\n<p class=\"wp-block-paragraph\">وقتی AI وارد موارد زیر شده:</p>\n\n<ul class=\"wp-block-list\">\n<li>مالیات</li>\n\n<li>بانکداری</li>\n\n<li>دولت</li>\n\n<li>پزشکی</li>\n\n<li>IoT و شبکه</li>\n\n<li>زیرساخت انرژی</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">یک ضعف RCE می‌تواند:</p>\n\n<ul class=\"wp-block-list\">\n<li>عملیات را مختل کند</li>\n\n<li>داده‌های حساس را افشا کند</li>\n\n<li>حتی خسارت‌های زنجیره‌ای ایجاد کند</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۲-نخستین-هشدار-جدی-درباره-ai-supply-chain-attack\" class=\"wp-block-heading\"><strong>۲) نخستین هشدار جدی درباره &#8220;AI Supply Chain Attack&#8221;</strong></h3>\n\n<p class=\"wp-block-paragraph\">AI یک زنجیره تأمین جدید دارد:</p>\n\n<ul class=\"wp-block-list\">\n<li>مدل‌ها</li>\n\n<li>tokenizer ها</li>\n\n<li>فریم‌ورک استنتاج</li>\n\n<li>دیتاست‌ها</li>\n\n<li>وزن‌ها</li>\n\n<li>Agentها</li>\n\n<li>ابزارهای متصل</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">ضعف در هر بخش → حمله به کل سیستم</p>\n\n<p class=\"wp-block-paragraph\">این مشابه حمله معروف SolarWinds است، ولی برای AI.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۳-نشان-می-دهد-ai-با-سرعت-زیاد-ساخته-شده-اما-امنیت-عقب-مانده\" class=\"wp-block-heading\"><strong>۳) نشان می‌دهد AI با سرعت زیاد ساخته شده اما امنیت عقب مانده</strong></h3>\n\n<p class=\"wp-block-paragraph\">موج رشد سریع AI باعث شد توسعه‌دهندگان:</p>\n\n<ul class=\"wp-block-list\">\n<li>از کدهای آماده استفاده کنند</li>\n\n<li>روی performance تمرکز کنند</li>\n\n<li>زمان برای امنیت نگذارند</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">اکنون نتیجه این عجله آشکار شده است.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-تحلیل-اثرات-استراتژیک\" class=\"wp-block-heading\"><strong>تحلیل اثرات استراتژیک</strong></h3>\n\n<h3 id=\"h-۱-به-زودی-استانداردهای-امنیتی-ai-اجباری-می-شوند\" class=\"wp-block-heading\"><strong>۱) به‌زودی استانداردهای امنیتی AI اجباری می‌شوند</strong></h3>\n\n<p class=\"wp-block-paragraph\">همان‌طور که:</p>\n\n<ul class=\"wp-block-list\">\n<li>DevSecOps</li>\n\n<li>Zero-Trust</li>\n\n<li>Secure-by-Design</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">برای توسعه نرم‌افزار ضروری شد،<br />در AI نیز شاهد خواهیم بود:</p>\n\n<ul class=\"wp-block-list\">\n<li>استاندارد «Secure AI Inference»</li>\n\n<li>استاندارد «Safe Model Loading»</li>\n\n<li>الزام «عدم استفاده از pickle»</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">کشورها مجبور به تدوین مقررات می‌شوند.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۲-شرکت-های-بزرگ-مجبور-به-بازنویسی-بخش-های-کلیدی-فریم-ورک-ها-خواهند-شد\" class=\"wp-block-heading\"><strong>۲) شرکت‌های بزرگ مجبور به بازنویسی بخش‌های کلیدی فریم‌ورک‌ها خواهند شد</strong></h3>\n\n<p class=\"wp-block-paragraph\">این هشدار احتمالاً باعث می‌شود:</p>\n\n<ul class=\"wp-block-list\">\n<li>Meta</li>\n\n<li>Nvidia</li>\n\n<li>Microsoft</li>\n\n<li>Hugging Face</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">بخش‌های مهم مانند:</p>\n\n<ul class=\"wp-block-list\">\n<li>serialization</li>\n\n<li>model loading pipelines</li>\n\n<li>runtime containers</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">را امنیت‌محور بازنویسی کنند.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-۳-مهاجمان-به-سمت-حمله-به-ai-می-روند\" class=\"wp-block-heading\"><strong>۳) مهاجمان به سمت حمله به AI می‌روند</strong></h3>\n\n<p class=\"wp-block-paragraph\">تا امروز بیشتر حملات سایبری کلاسیک بودند.</p>\n\n<p class=\"wp-block-paragraph\">از ۲۰۲۵ به بعد:</p>\n\n<ul class=\"wp-block-list\">\n<li>حمله به <em>وزن‌ها</em></li>\n\n<li>حمله به <em>Model Server</em></li>\n\n<li>حمله به <em>Agent Tooling</em></li>\n\n<li>حمله از طریق <em>prompt injection پیشرفته</em></li>\n</ul>\n\n<p class=\"wp-block-paragraph\">به جریان اصلی تبدیل می‌شود.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-پیام-این-خبر-برای-ایران-و-منطقه-چیست-بسیار-مهم\" class=\"wp-block-heading\"><strong>پیام این خبر برای ایران و منطقه چیست؟ (بسیار مهم)</strong></h3>\n\n<p class=\"wp-block-paragraph\">این قسمت با توجه به حوزه کاری شما در Smart Assistant، Enterprise Solutions و AI بسیار کاربردی است.</p>\n\n<h3 id=\"h-۱-هر-شرکت-ایرانی-که-از-مدل-یا-agent-ai-استفاده-می-کند-باید-ai-security-audit-داشته-باشد\" class=\"wp-block-heading\"><strong>۱) هر شرکت ایرانی که از مدل یا Agent AI استفاده می‌کند باید “AI Security Audit” داشته باشد</strong></h3>\n\n<p class=\"wp-block-paragraph\">حتی اگر:</p>\n\n<ul class=\"wp-block-list\">\n<li>مدل ایرانی باشد</li>\n\n<li>مدل چینی باشد</li>\n\n<li>مدل متن‌باز باشد</li>\n\n<li>مدل در سرور داخلی اجرا شود</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">باز هم خطر وجود دارد.</p>\n\n<h3 id=\"h-۲-استفاده-از-pickle-باید-ممنوع-شود\" class=\"wp-block-heading\"><strong>۲) استفاده از pickle باید «ممنوع» شود</strong></h3>\n\n<p class=\"wp-block-paragraph\">در محصولاتی مثل:</p>\n\n<ul class=\"wp-block-list\">\n<li>چت‌بات سازمانی</li>\n\n<li>موتورهای تشخیص چهره</li>\n\n<li>سیستم‌های پردازش تصویر</li>\n\n<li>OCR</li>\n\n<li>سیستم‌های هوش تجاری</li>\n\n<li>Smart Assistant</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">هرجا pickle وجود دارد → باید حذف یا ایزوله شود.</p>\n\n<h3 id=\"h-۳-datamoon-karjooplus-یا-هر-سازمانی-که-ai-در-محصولاتش-دارد-باید-۳-کار-فوری-انجام-دهد\" class=\"wp-block-heading\"><strong>۳) Datamoon، Karjooplus یا هر سازمانی که AI در محصولاتش دارد باید ۳ کار فوری انجام دهد:</strong></h3>\n\n<h4 id=\"h-ممیزی-امنیتی-کدهای-ai\" class=\"wp-block-heading\">✔ ممیزی امنیتی کدهای AI</h4>\n\n<p class=\"wp-block-paragraph\">(به‌خصوص pipeline بارگذاری مدل)</p>\n\n<h4 id=\"h-اجرای-container-isolation\" class=\"wp-block-heading\">✔ اجرای Container Isolation</h4>\n\n<p class=\"wp-block-paragraph\">برای inference serverها</p>\n\n<h4 id=\"h-ایجاد-ai-hardening-guidelines\" class=\"wp-block-heading\">✔ ایجاد “AI Hardening Guidelines”</h4>\n\n<p class=\"wp-block-paragraph\">برای deployment و محیط عملیاتی</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-جمع-بندی-نهایی\" class=\"wp-block-heading\"><strong>جمع‌بندی نهایی</strong></h3>\n\n<p class=\"wp-block-paragraph\">ضعف امنیتی کشف‌شده در فریم‌ورک‌های AI یک هشدار بسیار جدی است:</p>\n\n<blockquote class=\"wp-block-quote is-layout-flow wp-block-quote-is-layout-flow\">\n<p class=\"wp-block-paragraph\"><strong>AI بدون امنیت = تهدید سیستمیک برای سازمان‌ها و کشورها</strong></p>\n</blockquote>\n\n<p class=\"wp-block-paragraph\">این خبر نشان می‌دهد زیرساخت مدل‌های AI هنوز بالغ نیست، و امنیت باید به بخشی از طراحی مدل تبدیل شود.</p>\n\n<p class=\"wp-block-paragraph\">پرایم سیستم، رهبر فناوری اطلاعات در قزوین و زنجان، با افتخار نمایندگی رسمی معتبرترین برندهای ایران و جهان است:</p>\n\n<p class=\"wp-block-paragraph\"><strong>۱- تخت جمشید:<br />پرایم سیستم، پیشگام سخت‌افزار، گیمینگ، رندرینگ و لوازم جانبی کامپیوتر</strong></p>\n\n<p class=\"wp-block-paragraph\"><strong>۲- سیناپ:<br />پرایم سیستم، سیستم‌های AIDC<br /></strong>پیشرو در شناسایی خودکار و جمع‌آوری داده، نرم‌افزارهای انبار و لجستیک و تجهیزات بارکد/RFID برای صنایع تولیدی، خرده‌فروشی و راه‌حل‌های دقیق برای زنجیره تأمین.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۳- ماپرا:<br />پرایم سیستم، تحول دیجیتال صنعت F&amp;B<br /></strong>نرم‌افزار یکپارچه مدیریت فروش، انبارداری، باشگاه مشتریان و رزرو آنلاین بر پایه فناوری ابری و داده‌محور، همراه هزاران رستوران، کافه و فست‌فود برای مدیریت بدون محدودیت مکان/زمان، افزایش کارایی و هوشمندسازی عملیات.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۴- سخت‌افزار:<br />پرایم سیستم، پیشتاز قطعات دیجیتال<br /></strong>فروش آنلاین/آفلاین قطعات کامپیوتر و دیجیتال و نمایندگی برندهای ایرانی/خارجی، ارسال به تمام ایران، سیستم‌های گیمینگ/رندرینگ/ماینینگ و تیم اورکلاکر حرفه‌ای. تولید محتوای تخصصی، برترین فروشگاه سخت افزار و نرم افزار قزوین/زنجان.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۵- نیلپر:<br />پرایم سیستم، تولیدکننده محصولات ارگونومیک، کوله و کیف</strong><br />تمرکز بر کیفیت، طراحی دانش‌محور و بازارهای اداری/آموزشی/رستورانی. مدیریت استراتژیک برای رضایت مشتری.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۶- زبرآسیا:<br />پرایم سیستم، فناوری AIDC و بارکد<br /></strong>تسهیل در جمع‌آوری داده بدون خطا با تمرکز بر بارکد و AID، راه‌حل‌های اطلاعاتی برای صنایع، افزایش سرعت/دقت و برنامه‌ریزی منابع. تکیه بر متخصصان داخلی و دانش جهانی، جلب اعتماد مشتریان.</p>\n\n<p class=\"wp-block-paragraph\"><span style=\"color: #ff0000;\"><strong><a style=\"color: #ff0000;\" href=\"https://primesys.ir/\" target=\"_blank\" rel=\"noreferrer noopener\">پرایم سیستم | پلتفرم ابری ماپرا، سخت افزار و لوازم جانبی</a></strong></span></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 962,
+      "name": "اپلیکیشن",
+      "slug": "%d8%a7%d9%be%d9%84%db%8c%da%a9%db%8c%d8%b4%d9%86"
+    },
+    {
+      "id": 374,
+      "name": "امنیت و هک",
+      "slug": "%d8%a7%d9%85%d9%86%db%8c%d8%aa-%d9%88-%d9%87%da%a9"
+    },
+    {
+      "id": 534,
+      "name": "برنامه نویسی",
+      "slug": "%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d9%87-%d9%86%d9%88%db%8c%d8%b3%db%8c"
+    },
+    {
+      "id": 593,
+      "name": "نرم‌افزار",
+      "slug": "%d9%86%d8%b1%d9%85%d8%a7%d9%81%d8%b2%d8%a7%d8%b1"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 388,
+      "name": "Cybersecurity",
+      "slug": "cybersecurity"
+    },
+    {
+      "id": 40,
+      "name": "Meta",
+      "slug": "meta"
+    },
+    {
+      "id": 1794,
+      "name": "Meta Llama Stack",
+      "slug": "meta-llama-stack"
+    },
+    {
+      "id": 21,
+      "name": "Nvidia",
+      "slug": "nvidia"
+    },
+    {
+      "id": 1793,
+      "name": "Oligo Security",
+      "slug": "oligo-security"
+    },
+    {
+      "id": 536,
+      "name": "Python",
+      "slug": "python"
+    },
+    {
+      "id": 1797,
+      "name": "SGLang",
+      "slug": "sglang"
+    },
+    {
+      "id": 1796,
+      "name": "vLLM",
+      "slug": "vllm"
+    },
+    {
+      "id": 1052,
+      "name": "پرایم سیستم",
+      "slug": "%d9%be%d8%b1%d8%a7%db%8c%d9%85-%d8%b3%db%8c%d8%b3%d8%aa%d9%85"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

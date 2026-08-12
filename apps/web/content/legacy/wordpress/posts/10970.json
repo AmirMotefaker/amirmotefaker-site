@@ -1,0 +1,88 @@
+{
+  "id": 10970,
+  "slug": "%d8%b9%d8%b1%d8%b6%d9%87-grok-4-1-%d8%aa%d9%88%d8%b3%d8%b7-xai",
+  "source_url": "https://amirmotefaker.ir/%d8%b9%d8%b1%d8%b6%d9%87-grok-4-1-%d8%aa%d9%88%d8%b3%d8%b7-xai/",
+  "date": "11/22/2025 10:00:02",
+  "modified": "11/22/2025 10:02:21",
+  "title": "عرضه Grok 4.1 توسط xAI",
+  "excerpt_html": "<p>Grok 4.1‌ «هوش احساسی» بالاتری دارد: در ارزیابی «EQ-Bench3» نمره خوبی گرفته و نشان‌دهنده بهبود در مکالمات عاطفی است.</p>\n",
+  "excerpt_text": "Grok 4.1‌ «هوش احساسی» بالاتری دارد: در ارزیابی «EQ-Bench3» نمره خوبی گرفته و نشان‌دهنده بهبود در مکالمات عاطفی است.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"10970\" class=\"elementor elementor-10970\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-67e7fe37 e-flex e-con-boxed e-con e-parent\" data-id=\"67e7fe37\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-e06aa3d elementor-widget elementor-widget-text-editor\" data-id=\"e06aa3d\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<p class=\"wp-block-paragraph\">xAI مدل جدید <a href=\"https://x.ai/news/grok-4-1\" target=\"_blank\" rel=\"noopener\"><strong>Grok 4.1</strong></a> را منتشر کرده است که تغییرات مهمی نسبت به نسخه قبلی دارد.</p>\n\n<ul class=\"wp-block-list\">\n<li>این مدل از ۱ تا ۱۴ نوامبر به صورت “سایلنت رول‌آوت” (عرضه خاموش) اجرا شده و سپس به کاربران عمومی Grok.com، اپ موبایل و X ارائه شده است.</li>\n\n<li>Grok 4.1‌ «هوش احساسی» بالاتری دارد: در ارزیابی «EQ-Bench3» نمره خوبی گرفته و نشان‌دهنده بهبود در مکالمات عاطفی است.</li>\n\n<li>نرخ خطاهای واقعی (hallucination) در این مدل کاهش چشمگیری داشته است، به گفته xAI تا حد زیادی «واقع‌گراتر» شده است.</li>\n\n<li>نسخه “Grok 4.1 Fast” نیز معرفی شده که مخصوص تماس ابزار (tool-calling) است و پنجره‌ی کانتکست تا ۲ میلیون توکن دارد.</li>\n</ul>\n\n<p class=\"wp-block-paragraph\"><strong>چرا مهم است؟</strong> این مدل نشان می‌دهد که xAI می‌خواهد در سمت استفاده تولیدی (enterprise) و همچنین تعامل انسان-‌ربات پیشرفت کند: هم مکالمات طبیعی‌تر و هم استفاده در ابزارهای واقعی با agent عملی‌تر.</p>\n\n<p class=\"wp-block-paragraph\">Grok 4.1 فقط یک مدل زبانی جدید نیست؛ بلکه یک «جهش معماری» است که تمرکز آن بر <strong>واقع‌گرایی، کاهش هالوسینیشن، EQ بالا و کاربری سازمانی</strong> است.<br />بیایید مرحله‌به‌مرحله باز کنیم 👇</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-1-چرا-xai-grok-4-1-را-silent-rollout-کرد-نشانه-ای-از-معماری-جدید\" class=\"wp-block-heading\"><strong>1) چرا xAI Grok 4.1 را “Silent Rollout” کرد؟ | نشانه‌ای از معماری جدید</strong></h3>\n\n<p class=\"wp-block-paragraph\">از 1 تا 14 نوامبر مدل در سکوت کامل روی کاربران واقعی تست شد.</p>\n\n<p class=\"wp-block-paragraph\">این معمولاً زمانی انجام می‌شود که:</p>\n\n<h3 id=\"h-یک-تغییر-بنیادی-در-هسته-مدل-اعمال-شده-باشد\" class=\"wp-block-heading\">✔ یک تغییر بنیادی در هسته مدل اعمال شده باشد</h3>\n\n<p class=\"wp-block-paragraph\">(مثلاً ساختار token routing، attention بهینه‌سازی‌شده، یا روش آموزش کاملاً جدید)</p>\n\n<h3 id=\"h-xai-می-خواهد-قبل-از-اعلام-رسمی-داده-های-رفتاری-و-performance-production-level-جمع-کند\" class=\"wp-block-heading\">✔ xAI می‌خواهد قبل از اعلام رسمی، داده‌های رفتاری و performance production-level جمع کند</h3>\n\n<h3 id=\"h-احتمال-بروز-خطا-یا-ناپایداری-وجود-داشته\" class=\"wp-block-heading\">✔ احتمال بروز خطا یا ناپایداری وجود داشته</h3>\n\n<p class=\"wp-block-paragraph\">این رفتار دقیقاً مشابه روش OpenAI در زمان تست GPT-4 Turbo بود.</p>\n\n<p class=\"wp-block-paragraph\"><strong>نتیجه:</strong><br />Grok 4.1 یک «به‌روزرسانی سطحی» نیست؛ بلکه احتمالاً شامل یک <strong>معماری مشبک (Mixture-of-Experts) پایدارتر و هوشمندتر</strong> است.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-2-افزایش-هوش-احساسی-eq-از-نظر-علمی-یعنی-چه\" class=\"wp-block-heading\"><strong>2) افزایش “هوش احساسی” (EQ) — از نظر علمی یعنی چه؟</strong></h3>\n\n<p class=\"wp-block-paragraph\">طبق گزارش Times of India، Grok 4.1 در EQ-Bench3 عملکرد بهتری دارد.</p>\n\n<p class=\"wp-block-paragraph\">EQ در مدل‌ها به 4 عامل فنی وصل است:</p>\n\n<h3 id=\"h-1-emotional-classification-layer\" class=\"wp-block-heading\">1) <strong>Emotional Classification Layer</strong></h3>\n\n<p class=\"wp-block-paragraph\">مدل بهتر احساسات را در متن تشخیص می‌دهد<br />(anger, sadness, excitement, confusion)</p>\n\n<h3 id=\"h-2-sentiment-consistent-response-generation\" class=\"wp-block-heading\">2) <strong>Sentiment-Consistent Response Generation</strong></h3>\n\n<p class=\"wp-block-paragraph\">پاسخ‌های مدل با لحن و تنِ احساسی کاربر همسان می‌شود.</p>\n\n<h3 id=\"h-3-contextual-affect-memory\" class=\"wp-block-heading\">3) <strong>Contextual Affect Memory</strong></h3>\n\n<p class=\"wp-block-paragraph\">مدل احساسات کاربر در چند پیام قبل را نگه می‌دارد.<br />(مثل “memory of emotional tone”)</p>\n\n<h3 id=\"h-4-safety-filter-empathy-template-fusion\" class=\"wp-block-heading\">4) <strong>Safety Filter + Empathy Template Fusion</strong></h3>\n\n<p class=\"wp-block-paragraph\">سیستم پاسخ همدلانهٔ قابل‌کنترل<br />(مثلاً وقتی کاربر ناراحت است، به‌طور خودکار پاسخ همدلانه فعال می‌شود)</p>\n\n<p class=\"wp-block-paragraph\"><strong>این دقیقاً همان چیزیست که باعث می‌شود تعامل با مدل &#8220;انسانی‌تر&#8221; شود.</strong></p>\n\n<p class=\"wp-block-paragraph\">OpenAI این کار را از GPT-4o شروع کرد—xAI اکنون آن را تقویت کرده.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-3-کاهش-هالوسینیشن-مهم-ترین-پیشرفت-grok-4-1\" class=\"wp-block-heading\"><strong>3) کاهش هالوسینیشن — مهم‌ترین پیشرفت Grok 4.1</strong></h3>\n\n<p class=\"wp-block-paragraph\">طبق گزارش India Today:</p>\n\n<blockquote class=\"wp-block-quote is-layout-flow wp-block-quote-is-layout-flow\">\n<p class=\"wp-block-paragraph\">نرخ خطاهای factual hallucination در Grok 4.1 به‌طور قابل ملاحظه‌ای کاهش یافته.</p>\n</blockquote>\n\n<p class=\"wp-block-paragraph\">از نظر فنی یعنی:</p>\n\n<h3 id=\"h-regularization-قوی-تر-روی-factual-reasoning\" class=\"wp-block-heading\">✔ Regularization قوی‌تر روی factual reasoning</h3>\n\n<h3 id=\"h-ارتقای-datasets-پاک-سازی-شده\" class=\"wp-block-heading\">✔ ارتقای datasets پاک‌سازی‌شده</h3>\n\n<h3 id=\"h-آموزش-reinforcement-جدید-rlhf-rlaif\" class=\"wp-block-heading\">✔ آموزش reinforcement جدید (RLHF + RLAIF)</h3>\n\n<h3 id=\"h-استفاده-بهتر-از-tool-calling\" class=\"wp-block-heading\">✔ استفاده بهتر از Tool-Calling</h3>\n\n<p class=\"wp-block-paragraph\">کاهش هالوسینیشن برای مدل‌هایی که وارد <strong>enterprise / agentic AI</strong> می‌شوند، حیاتی است.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-4-معرفی-grok-4-1-fast-نسخه-مخصوص-agent-و-tool-calling\" class=\"wp-block-heading\"><strong>4) معرفی “Grok 4.1 Fast” — نسخه مخصوص Agent و Tool Calling</strong></h3>\n\n<p class=\"wp-block-paragraph\">این بخش مهم‌ترین بخش ماجراست.</p>\n\n<h3 id=\"h-ویژگی-های-کلیدی-نسخه-fast\" class=\"wp-block-heading\">ویژگی‌های کلیدی نسخه Fast:</h3>\n\n<h4 id=\"h-سرعت-بسیار-بالا\" class=\"wp-block-heading\">🔹 سرعت بسیار بالا</h4>\n\n<p class=\"wp-block-paragraph\">بهینه‌شده برای فراخوانی ابزارها، APIها و کارهای multi-step.</p>\n\n<h4 id=\"h-پنجره-کانتکست-۲-میلیون-توکن\" class=\"wp-block-heading\">🔹 پنجره کانتکست ۲ میلیون توکن</h4>\n\n<p class=\"wp-block-paragraph\">این رقم <strong>بسیار بزرگ</strong> است.</p>\n\n<p class=\"wp-block-paragraph\">این مقدار کانتکست یعنی:</p>\n\n<ul class=\"wp-block-list\">\n<li>امکان تحلیل دیتاست‌های بزرگ</li>\n\n<li>امکان اجرای پروژه‌های چندسندی (multi-doc)</li>\n\n<li>امکان ایجاد agentهای طولانی‌مدت (long-lived agents)</li>\n\n<li>کدنویسی با فایل‌های عظیم</li>\n\n<li>خواندن گزارش‌های شرکتی و قوانین داخلی بدون chunk کردن</li>\n</ul>\n\n<h3 id=\"h-چرا-این-مهم-است\" class=\"wp-block-heading\">🔥 چرا این مهم است؟</h3>\n\n<p class=\"wp-block-paragraph\">چون این دقیقاً همان چیزیست که گوگل در Gemini 1.5 و OpenAI در GPT-4.1 معرفی کرده بودند.</p>\n\n<p class=\"wp-block-paragraph\"><strong>xAI دارد وارد مسابقه &#8220;مدل‌های فوق‌بزرگ با حافظه بلند&#8221; می‌شود.</strong></p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-5-جهت-گیری-استراتژیک-xai-enterprise-agentic-ai\" class=\"wp-block-heading\"><strong>5) جهت‌گیری استراتژیک xAI: Enterprise + Agentic AI</strong></h3>\n\n<p class=\"wp-block-paragraph\">با Grok 4.1، xAI عملاً در سه جبهه حرکت می‌کند:</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h2 id=\"h-a-enterprise-ai-استفاده-در-شرکت-ها\" class=\"wp-block-heading\"><strong>A) Enterprise AI — استفاده در شرکت‌ها</strong></h2>\n\n<p class=\"wp-block-paragraph\">Grok 4.1 Fast به‌طور خاص برای:</p>\n\n<ul class=\"wp-block-list\">\n<li>ابزارهای سازمانی</li>\n\n<li>تحلیل اسناد بزرگ</li>\n\n<li>نوشتن اتوماتیک کد</li>\n\n<li>پایش مداوم سیستم‌ها</li>\n\n<li>گزارش‌گیری خودکار</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">طراحی شده.</p>\n\n<p class=\"wp-block-paragraph\">این یعنی xAI می‌خواهد وارد بازار <strong>Copilotهای شرکتی</strong> شود، همان بازاری که:</p>\n\n<ul class=\"wp-block-list\">\n<li>Microsoft Copilot</li>\n\n<li>GPT-4.1</li>\n\n<li>Gemini 2.0 Pro</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">در آن رقابت می‌کنند.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h2 id=\"h-b-agentic-ai-مدل-هایی-که-کار-انجام-می-دهند\" class=\"wp-block-heading\"><strong>B) Agentic AI — مدل‌هایی که “کار انجام می‌دهند”</strong></h2>\n\n<p class=\"wp-block-paragraph\">برای ساخت agentهایی که:</p>\n\n<ul class=\"wp-block-list\">\n<li>ابزار صدا می‌زنند</li>\n\n<li>چند مرحله فکر می‌کنند</li>\n\n<li>استدلال عملی دارند</li>\n\n<li>روی API و browser کار انجام می‌دهند</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">پنجره کانتکست 2M توکن یک مزیت فوق‌العاده است.</p>\n\n<p class=\"wp-block-paragraph\">این مدل می‌تواند:</p>\n\n<ul class=\"wp-block-list\">\n<li>کل یک وب‌سایت را بخواند</li>\n\n<li>صدها ایمیل را پردازش کند</li>\n\n<li>یک نقشه پروژه بزرگ را دنبال کند</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">این یک جهش بزرگ در رفتار agentهاست.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h2 id=\"h-c-human-like-interaction-تعامل-طبیعی-تر\" class=\"wp-block-heading\"><strong>C) Human-like Interaction — تعامل طبیعی‌تر</strong></h2>\n\n<p class=\"wp-block-paragraph\">بهبود EQ یعنی مدل می‌تواند:</p>\n\n<ul class=\"wp-block-list\">\n<li>حس شوخی داشته باشد</li>\n\n<li>هم‌دردی نشان دهد</li>\n\n<li>بهتر رهبری مکالمه را مدیریت کند</li>\n\n<li>برای فروش، پشتیبانی، HR استفاده شود</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">این بخش برای شرکت‌هایی که می‌خواهند از Grok برای <strong>Customer Service AI</strong> یا <strong>Human Interaction Bots</strong> استفاده کنند بسیار مهم است.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-6-چرا-این-خبر-مهم-است-جمع-بندی-کلیدی\" class=\"wp-block-heading\"><strong>6) چرا این خبر مهم است؟ (جمع‌بندی کلیدی)</strong></h3>\n\n<h3 id=\"h-xai-از-یک-مدل-رسانه-ای-تبدیل-به-یک-مدل-سازمانی-شده\" class=\"wp-block-heading\">✔ xAI از یک مدل رسانه‌ای تبدیل به یک مدل سازمانی شده</h3>\n\n<p class=\"wp-block-paragraph\">و حالا رقیب مستقیم:</p>\n\n<ul class=\"wp-block-list\">\n<li>GPT-4.1</li>\n\n<li>Gemini 2.0 Pro</li>\n\n<li>Claude 3.5</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">است.</p>\n\n<h3 id=\"h-grok-4-1-روی-تولید-انسانی-تر-تمرکز-دارد\" class=\"wp-block-heading\">✔ Grok 4.1 روی تولید انسانی‌تر تمرکز دارد</h3>\n\n<p class=\"wp-block-paragraph\">چیزی که در نسخه‌های قبلی نقطه‌ضعف محسوب می‌شد.</p>\n\n<h3 id=\"h-پنجره-۲-میلیون-توکن-یعنی-مناسب-ترین-گزینه-برای-پروژه-های-طولانی-مدت\" class=\"wp-block-heading\">✔ پنجره ۲ میلیون توکن یعنی مناسب‌ترین گزینه برای پروژه‌های طولانی‌مدت</h3>\n\n<p class=\"wp-block-paragraph\">(تحول برای Agentهای واقعی)</p>\n\n<h3 id=\"h-کاهش-هالوسینیشن-grok-را-قابل-استفاده-در-محیط-های-حساس-می-کند\" class=\"wp-block-heading\">✔ کاهش هالوسینیشن Grok را قابل استفاده در محیط‌های حساس می‌کند</h3>\n\n<p class=\"wp-block-paragraph\">مالی، حقوقی، درمانی، صنعتی.</p>\n\n<h3 id=\"h-نسخه-fast-نشان-می-دهد-xai-می-خواهد-در-ابزارهای-real-time-و-agentic-پیشرو-باشد\" class=\"wp-block-heading\">✔ نسخه Fast نشان می‌دهد xAI می‌خواهد در ابزارهای real-time و agentic پیشرو باشد.</h3>\n\n<h3 id=\"h-silent-rollout-نشان-دهنده-تغییر-معماری-مهم-است\" class=\"wp-block-heading\">✔ silent rollout نشان‌دهنده تغییر معماری مهم است.</h3>\n\n<p class=\"wp-block-paragraph\">پرایم سیستم، رهبر فناوری اطلاعات در قزوین و زنجان، با افتخار نمایندگی رسمی معتبرترین برندهای ایران و جهان است:</p>\n\n<p class=\"wp-block-paragraph\"><strong>۱- تخت جمشید:<br />پرایم سیستم، پیشگام سخت‌افزار، گیمینگ، رندرینگ و لوازم جانبی کامپیوتر</strong></p>\n\n<p class=\"wp-block-paragraph\"><strong>۲- سیناپ:<br />پرایم سیستم، سیستم‌های AIDC<br /></strong>پیشرو در شناسایی خودکار و جمع‌آوری داده، نرم‌افزارهای انبار و لجستیک و تجهیزات بارکد/RFID برای صنایع تولیدی، خرده‌فروشی و راه‌حل‌های دقیق برای زنجیره تأمین.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۳- ماپرا:<br />پرایم سیستم، تحول دیجیتال صنعت F&amp;B<br /></strong>نرم‌افزار یکپارچه مدیریت فروش، انبارداری، باشگاه مشتریان و رزرو آنلاین بر پایه فناوری ابری و داده‌محور، همراه هزاران رستوران، کافه و فست‌فود برای مدیریت بدون محدودیت مکان/زمان، افزایش کارایی و هوشمندسازی عملیات.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۴- سخت‌افزار:<br />پرایم سیستم، پیشتاز قطعات دیجیتال<br /></strong>فروش آنلاین/آفلاین قطعات کامپیوتر و دیجیتال و نمایندگی برندهای ایرانی/خارجی، ارسال به تمام ایران، سیستم‌های گیمینگ/رندرینگ/ماینینگ و تیم اورکلاکر حرفه‌ای. تولید محتوای تخصصی، برترین فروشگاه سخت افزار و نرم افزار قزوین/زنجان.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۵- نیلپر:<br />پرایم سیستم، تولیدکننده محصولات ارگونومیک، کوله و کیف</strong><br />تمرکز بر کیفیت، طراحی دانش‌محور و بازارهای اداری/آموزشی/رستورانی. مدیریت استراتژیک برای رضایت مشتری.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۶- زبرآسیا:<br />پرایم سیستم، فناوری AIDC و بارکد<br /></strong>تسهیل در جمع‌آوری داده بدون خطا با تمرکز بر بارکد و AID، راه‌حل‌های اطلاعاتی برای صنایع، افزایش سرعت/دقت و برنامه‌ریزی منابع. تکیه بر متخصصان داخلی و دانش جهانی، جلب اعتماد مشتریان.</p>\n\n<p class=\"wp-block-paragraph\">۷-فاطر:<br /><strong>پرایم سیستم، طراحی و تولید سخت افزار کامپیوتر</strong><br />انتقال و توسعه تکنولوژی های بروز در جهت تولید داخلی، محصولات باکیفیت قابل رقابت برند های مطرح خارجی باقیمت‌منصفانه، خدمات پس از فروش متفاوت و گارانتی تعویض بی‌قید و شرط</p>\n\n<p class=\"wp-block-paragraph\"><span style=\"color: #ff0000;\">پرایم سیستم | پلتفرم ابری حسابداری و مالی، سخت افزار و لوازم جانبی</span></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 962,
+      "name": "اپلیکیشن",
+      "slug": "%d8%a7%d9%be%d9%84%db%8c%da%a9%db%8c%d8%b4%d9%86"
+    },
+    {
+      "id": 1027,
+      "name": "عامل‌های هوشمند",
+      "slug": "%d8%b9%d8%a7%d9%85%d9%84%d9%87%d8%a7%db%8c-%d9%87%d9%88%d8%b4%d9%85%d9%86%d8%af"
+    },
+    {
+      "id": 93,
+      "name": "فناوری",
+      "slug": "%d9%81%d9%86%d8%a7%d9%88%d8%b1%db%8c"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 100,
+      "name": "Gemini",
+      "slug": "gemini"
+    },
+    {
+      "id": 907,
+      "name": "GPT",
+      "slug": "gpt"
+    },
+    {
+      "id": 101,
+      "name": "Grok",
+      "slug": "grok"
+    },
+    {
+      "id": 1857,
+      "name": "Grok 4.1",
+      "slug": "grok-4-1"
+    },
+    {
+      "id": 237,
+      "name": "LLM",
+      "slug": "llm"
+    },
+    {
+      "id": 20,
+      "name": "OpenAI",
+      "slug": "openai"
+    },
+    {
+      "id": 98,
+      "name": "xAI",
+      "slug": "xai"
+    },
+    {
+      "id": 1052,
+      "name": "پرایم سیستم",
+      "slug": "%d9%be%d8%b1%d8%a7%db%8c%d9%85-%d8%b3%db%8c%d8%b3%d8%aa%d9%85"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}

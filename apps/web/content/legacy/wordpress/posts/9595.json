@@ -1,0 +1,108 @@
+{
+  "id": 9595,
+  "slug": "intel-%d8%aa%d8%b1%d8%a7%d8%b4%d9%87-gpu-%d8%ac%d8%af%db%8c%d8%af-crescent-island-%d8%b1%d8%a7-%d8%a8%d8%b1%d8%a7%db%8c-%d8%b1%d9%82%d8%a7%d8%a8%d8%aa-ai-%d9%85%d8%b9%d8%b1%d9%81%db%8c",
+  "source_url": "https://amirmotefaker.ir/intel-%d8%aa%d8%b1%d8%a7%d8%b4%d9%87-gpu-%d8%ac%d8%af%db%8c%d8%af-crescent-island-%d8%b1%d8%a7-%d8%a8%d8%b1%d8%a7%db%8c-%d8%b1%d9%82%d8%a7%d8%a8%d8%aa-ai-%d9%85%d8%b9%d8%b1%d9%81%db%8c/",
+  "date": "10/15/2025 09:28:23",
+  "modified": "10/15/2025 09:30:08",
+  "title": "Intel تراشه GPU جدید «Crescent Island» را برای رقابت AI معرفی می‌کند",
+  "excerpt_html": "<p>طبق گزارش TrendForce، Intel در حال آماده‌سازی GPU جدیدی به نام Crescent Island است که نسخه‌ای بهینه‌شده برای استنتاج (inference) خواهد بود. نمونه‌برداری مشتریان از آن در نیمه دوم ۲۰۲۶ صورت خواهد گرفت. </p>\n",
+  "excerpt_text": "طبق گزارش TrendForce، Intel در حال آماده‌سازی GPU جدیدی به نام Crescent Island است که نسخه‌ای بهینه‌شده برای استنتاج (inference) خواهد بود. نمونه‌برداری مشتریان از آن در نیمه دوم ۲۰۲۶ صورت خواهد گرفت.",
+  "content_html": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"9595\" class=\"elementor elementor-9595\" data-elementor-post-type=\"post\">\n\t\t\t\t<div class=\"elementor-element elementor-element-4b01965b e-flex e-con-boxed e-con e-parent\" data-id=\"4b01965b\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-2f998e18 elementor-widget elementor-widget-text-editor\" data-id=\"2f998e18\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t\n<p class=\"wp-block-paragraph\">طبق گزارش TrendForce، Intel در حال آماده‌سازی GPU جدیدی به نام <a href=\"https://www.trendforce.com/news/2025/10/15/news-intel-renews-ai-chip-push-with-crescent-island-2h26-sampling-reportedly-targeting-annual-gpus\" target=\"_blank\" rel=\"noopener\"><strong>Crescent Island</strong></a> است که نسخه‌ای بهینه‌شده برای استنتاج (inference) خواهد بود. نمونه‌برداری مشتریان از آن در نیمه دوم ۲۰۲۶ صورت خواهد گرفت.</p>\n\n<p class=\"wp-block-paragraph\">مشخصات اولیه نشان می‌دهد که این تراشه ممکن است از حافظه‌ی <strong>LPDDR5X</strong> استفاده کند تا هزینه‌ها کمتر شود و برای مراکز داده با خنک‌کنندگی هوایی مناسب‌تر باشد؛ تغییری چشمگیر نسبت به گرایش فعلی به HBM در برخی تراشه‌ها.</p>\n\n<p class=\"wp-block-paragraph\"><strong>تحلیل:</strong><br />این اقدام جدی Intel را در بازار GPUهای AI نشان می‌دهد، بازگشتی بلندمدت پس از دوره‌هایی که بیشتر تمرکزش را بر CPU گذاشته بود. تمرکز روی inference به جای آموزش مدل، استراتژی منطقی است چون اپلیکیشن‌های عملیاتی AI نیازمند پاسخ سریع و انرژی بهینه هستند. اگر Crescent Island بتواند هزینه به کارایی مناسبی ارائه دهد، می‌تواند رقیبی جدی برای GPUهای مخصوص inference از انویدیا و AMD باشد. اما موفقیت آن به نرم‌افزار، اکوسیستم پشتیبان، پشتیبانی استقرار و توسعه در مقیاس بستگی دارد.</p>\n\n<h3 id=\"h-تحلیل-فنی\" class=\"wp-block-heading\">تحلیل فنی</h3>\n\n<p class=\"wp-block-paragraph\">تراشه جدید <strong>Crescent Island</strong> برخلاف GPUهای پرمصرف آموزش مدل (مثل NVIDIA H100 یا AMD MI300X)، برای <strong>مرحله inference</strong> طراحی شده است، یعنی مرحله‌ای که مدل‌های آموزش‌دیده به کار گرفته می‌شوند تا خروجی تولید کنند.<br />استفاده از <strong>LPDDR5X</strong> به‌جای <strong>HBM3</strong>، تصمیمی کاملاً هدفمند است:</p>\n\n<ul class=\"wp-block-list\">\n<li>کاهش هزینه تراشه تا حدود ۳۰٪؛</li>\n\n<li>مصرف انرژی کمتر (مناسب برای خنک‌کنندگی هوایی)؛</li>\n\n<li>طراحی ماژولارتر برای دیتاسنترهای عمومی.</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">این انتخاب نشان می‌دهد که Intel به جای رقابت مستقیم در «بالاترین رده قدرت»، به دنبال <strong>تسلط بر رده میان‌قیمت و مقیاس‌پذیرتر inference</strong> است؛ جایی که مشتریان سازمانی، استارتاپ‌ها و شرکت‌های ابری کوچک‌تر حضور دارند.</p>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-تحلیل-استراتژیک\" class=\"wp-block-heading\">تحلیل استراتژیک</h3>\n\n<p class=\"wp-block-paragraph\">پس از سال‌ها تمرکز سنگین بر CPU و از دست دادن سهم بازار GPU به NVIDIA، این تراشه نشان می‌دهد که Intel حالا در مسیر <strong>بازتعریف جایگاه خود در AI Compute Stack</strong> حرکت می‌کند.<br />چند نشانه کلیدی:</p>\n\n<ol class=\"wp-block-list\">\n<li><strong>تمرکز بر inference</strong> یعنی ورود به بازاری پایدارتر و حجیم‌تر از آموزش مدل.</li>\n\n<li>Intel می‌خواهد با ترکیب CPU + GPU + NPU در پلتفرم‌های آینده (مثل Xeon و Gaudi) اکوسیستم یکپارچه‌تری ارائه دهد.</li>\n\n<li>این GPU احتمالاً با نرم‌افزار <strong>OpenVINO</strong> و زیرساخت <strong>oneAPI</strong> هماهنگ می‌شود — یعنی تلاشی برای بستن شکاف نرم‌افزاری با NVIDIA CUDA.</li>\n</ol>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-تحلیل-بازار-و-رقابت\" class=\"wp-block-heading\">تحلیل بازار و رقابت</h3>\n\n<p class=\"wp-block-paragraph\">بازار inference AI تا سال ۲۰۲۷ بیش از <strong>۴۰٪ از کل هزینه محاسبات هوش مصنوعی</strong> را تشکیل خواهد داد.<br />در این فضا:</p>\n\n<ul class=\"wp-block-list\">\n<li>NVIDIA هنوز با کارت‌های L4 و L40S پیشتاز است،</li>\n\n<li>AMD روی MI325X تمرکز دارد،</li>\n\n<li>و حالا Intel می‌خواهد با هزینه کمتر و مصرف انرژی پایین‌تر وارد این رقابت شود.</li>\n</ul>\n\n<p class=\"wp-block-paragraph\">اما <strong>چالش‌های بزرگ</strong> پیش روی Intel:</p>\n\n<ul class=\"wp-block-list\">\n<li>نبود اکوسیستم نرم‌افزاری قوی برای GPUهای AI؛</li>\n\n<li>تأخیر در ارائه درایورهای پایدار؛</li>\n\n<li>و رقابت سنگین NVIDIA در سرویس‌های ابری (AWS، Azure، Google Cloud).</li>\n</ul>\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n<h3 id=\"h-جمع-بندی-تحلیلی\" class=\"wp-block-heading\">جمع‌بندی تحلیلی</h3>\n\n<p class=\"wp-block-paragraph\">اگر <strong>Crescent Island</strong> بتواند وعده «هزینه کمتر + عملکرد کافی برای inference» را محقق کند، می‌تواند به انتخاب منطقی برای دیتاسنترهای اقتصادی و پروژه‌های بومی AI در کشورهای در حال توسعه (از جمله هند، خاورمیانه و حتی ایران) تبدیل شود.<br />اما موفقیت آن وابسته به این است که <strong>Intel بتواند هم‌زمان سخت‌افزار، نرم‌افزار و پشتیبانی اکوسیستم را همزمان تقویت کند</strong> — چیزی که تا امروز نقطه‌ضعف تاریخی‌اش بوده است.</p>\n\n<p class=\"wp-block-paragraph\">پرایم سیستم، رهبر فناوری اطلاعات در قزوین و زنجان، با افتخار نمایندگی رسمی معتبرترین برندهای ایران و جهان است:</p>\n\n<p class=\"wp-block-paragraph\"><strong>۱- تخت جمشید:<br />پرایم سیستم، پیشگام سخت‌افزار، گیمینگ، رندرینگ و لوازم جانبی کامپیوتر</strong></p>\n\n<p class=\"wp-block-paragraph\"><strong>۲- سیناپ:<br />پرایم سیستم، سیستم‌های AIDC<br /></strong>پیشرو در شناسایی خودکار و جمع‌آوری داده، نرم‌افزارهای انبار و لجستیک و تجهیزات بارکد/RFID برای صنایع تولیدی، خرده‌فروشی و راه‌حل‌های دقیق برای زنجیره تأمین.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۳- ماپرا:<br />پرایم سیستم، تحول دیجیتال صنعت F&amp;B<br /></strong>نرم‌افزار یکپارچه مدیریت فروش، انبارداری، باشگاه مشتریان و رزرو آنلاین بر پایه فناوری ابری و داده‌محور، همراه هزاران رستوران، کافه و فست‌فود برای مدیریت بدون محدودیت مکان/زمان، افزایش کارایی و هوشمندسازی عملیات.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۴- سخت‌افزار:<br />پرایم سیستم، پیشتاز قطعات دیجیتال<br /></strong>فروش آنلاین/آفلاین قطعات کامپیوتر و دیجیتال و نمایندگی برندهای ایرانی/خارجی، ارسال به تمام ایران، سیستم‌های گیمینگ/رندرینگ/ماینینگ و تیم اورکلاکر حرفه‌ای. تولید محتوای تخصصی، برترین فروشگاه سخت افزار و نرم افزار قزوین/زنجان.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۵- نیلپر:<br />پرایم سیستم، تولیدکننده محصولات ارگونومیک، کوله و کیف</strong><br />تمرکز بر کیفیت، طراحی دانش‌محور و بازارهای اداری/آموزشی/رستورانی. مدیریت استراتژیک برای رضایت مشتری.</p>\n\n<p class=\"wp-block-paragraph\"><strong>۶- زبرآسیا:<br />پرایم سیستم، فناوری AIDC و بارکد<br /></strong>تسهیل در جمع‌آوری داده بدون خطا با تمرکز بر بارکد و AID، راه‌حل‌های اطلاعاتی برای صنایع، افزایش سرعت/دقت و برنامه‌ریزی منابع. تکیه بر متخصصان داخلی و دانش جهانی، جلب اعتماد مشتریان.</p>\n\n<p class=\"wp-block-paragraph\"><span style=\"color: #ff0000;\"><strong><a style=\"color: #ff0000;\" href=\"https://primesys.ir/\" target=\"_blank\" rel=\"noreferrer noopener\">پرایم سیستم | پلتفرم ابری ماپرا، سخت افزار و لوازم جانبی</a></strong></span></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+  "featured_media": 0,
+  "featured_image": "",
+  "categories": [
+    {
+      "id": 857,
+      "name": "تراشه",
+      "slug": "%d8%aa%d8%b1%d8%a7%d8%b4%d9%87"
+    },
+    {
+      "id": 1160,
+      "name": "سخت افزار",
+      "slug": "%d8%b3%d8%ae%d8%aa-%d8%a7%d9%81%d8%b2%d8%a7%d8%b1"
+    },
+    {
+      "id": 6,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "tags": [
+    {
+      "id": 11,
+      "name": "AI",
+      "slug": "ai"
+    },
+    {
+      "id": 41,
+      "name": "AMD",
+      "slug": "amd"
+    },
+    {
+      "id": 1275,
+      "name": "AMD MI300X",
+      "slug": "amd-mi300x"
+    },
+    {
+      "id": 1273,
+      "name": "Crescent Island",
+      "slug": "crescent-island"
+    },
+    {
+      "id": 115,
+      "name": "GPU",
+      "slug": "gpu"
+    },
+    {
+      "id": 216,
+      "name": "H100",
+      "slug": "h100"
+    },
+    {
+      "id": 367,
+      "name": "HBM",
+      "slug": "hbm"
+    },
+    {
+      "id": 136,
+      "name": "Intel",
+      "slug": "intel"
+    },
+    {
+      "id": 21,
+      "name": "Nvidia",
+      "slug": "nvidia"
+    },
+    {
+      "id": 1276,
+      "name": "NVIDIA CUDA",
+      "slug": "nvidia-cuda"
+    },
+    {
+      "id": 1277,
+      "name": "oneAPI",
+      "slug": "oneapi"
+    },
+    {
+      "id": 1278,
+      "name": "OpenVINO",
+      "slug": "openvino"
+    },
+    {
+      "id": 1274,
+      "name": "TrendForce",
+      "slug": "trendforce"
+    },
+    {
+      "id": 1052,
+      "name": "پرایم سیستم",
+      "slug": "%d9%be%d8%b1%d8%a7%db%8c%d9%85-%d8%b3%db%8c%d8%b3%d8%aa%d9%85"
+    },
+    {
+      "id": 15,
+      "name": "هوش مصنوعی",
+      "slug": "%d9%87%d9%88%d8%b4-%d9%85%d8%b5%d9%86%d9%88%d8%b9%db%8c"
+    }
+  ],
+  "author": 1
+}
