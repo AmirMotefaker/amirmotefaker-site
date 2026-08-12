@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import FounderShell from "@/components/founder/FounderShell";
 import LegacyPageContent from "@/components/founder/LegacyPageContent";
 import { founder, storyEn, storyFa, timeline, type Locale } from "@/content/founder-site";
 import { productPortfolio as products } from "@/content/product-portfolio";
@@ -10,7 +9,7 @@ export function AboutPageView({ locale }: { locale: Locale }) {
   const story = fa ? storyFa : storyEn;
 
   return (
-    <FounderShell locale={locale}>
+    <>
       <main className="inner-page">
         <section className="wrap story-hero">
           <div className="story-hero-copy">
@@ -55,14 +54,14 @@ export function AboutPageView({ locale }: { locale: Locale }) {
 
         <LegacyPageContent locale={locale} pageId={122} />
       </main>
-    </FounderShell>
+    </>
   );
 }
 
 export function ResumePageView({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
   return (
-    <FounderShell locale={locale}>
+    <>
       <main className="inner-page">
         <section className="wrap inner-hero rich-hero">
           <span className="sec-tag">{fa ? "رزومه" : "RESUME"}</span>
@@ -82,14 +81,14 @@ export function ResumePageView({ locale }: { locale: Locale }) {
 
         <LegacyPageContent locale={locale} pageId={622} />
       </main>
-    </FounderShell>
+    </>
   );
 }
 
 export function ProductsPageView({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
   return (
-    <FounderShell locale={locale}>
+    <>
       <main className="inner-page">
         <section className="wrap inner-hero rich-hero">
           <span className="sec-tag">{fa ? "اکوسیستم محصولات" : "PRODUCT ECOSYSTEM"}</span>
@@ -119,7 +118,7 @@ export function ProductsPageView({ locale }: { locale: Locale }) {
           ))}
         </section>
       </main>
-    </FounderShell>
+    </>
   );
 }
 
@@ -130,7 +129,7 @@ export function ProductPageView({ locale, slug }: { locale: Locale; slug: string
   const productWebsite = "website" in product ? product.website : "";
 
   return (
-    <FounderShell locale={locale}>
+    <>
       <main className="inner-page">
         <section className="wrap product-detail-shell">
           <div className="product-detail-copy">
@@ -162,14 +161,14 @@ export function ProductPageView({ locale, slug }: { locale: Locale; slug: string
           </div>
         </section>
       </main>
-    </FounderShell>
+    </>
   );
 }
 
 export function ContactPageView({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
   return (
-    <FounderShell locale={locale}>
+    <>
       <main className="inner-page">
         <section className="wrap contact-shell">
           <div className="contact-main-card">
@@ -206,6 +205,6 @@ export function ContactPageView({ locale }: { locale: Locale }) {
           </div>
         </section>
       </main>
-    </FounderShell>
+    </>
   );
 }

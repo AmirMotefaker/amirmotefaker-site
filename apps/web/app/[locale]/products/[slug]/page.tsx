@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import FounderShell from "@/components/founder/FounderShell";
 import ProductDetailView from "@/components/products/ProductDetailView";
 import { getProduct, productPortfolio } from "@/content/product-portfolio";
 import type { Locale } from "@/content/founder-site";
@@ -87,7 +86,7 @@ export default async function Page({
   };
 
   return (
-    <FounderShell locale={locale}>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(brandSchema) }}
@@ -97,6 +96,6 @@ export default async function Page({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <ProductDetailView locale={locale} product={product} />
-    </FounderShell>
+    </>
   );
 }

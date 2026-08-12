@@ -1,5 +1,4 @@
 import Link from "next/link";
-import FounderShell from "@/components/founder/FounderShell";
 import { getLegacyPages } from "@/lib/legacy-wordpress";
 import type { Locale } from "@/content/founder-site";
 
@@ -13,7 +12,7 @@ export default async function Page({
   const pages = getLegacyPages();
 
   return (
-    <FounderShell locale={locale}>
+    <>
       <main className="inner-page">
         <section className="wrap inner-hero">
           <span className="sec-tag">
@@ -37,6 +36,6 @@ export default async function Page({
           ))}
         </section>
       </main>
-    </FounderShell>
+    </>
   );
 }

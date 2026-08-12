@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import FounderShell from "@/components/founder/FounderShell";
 import ProductsIndexView from "@/components/products/ProductsIndexView";
 import type { Locale } from "@/content/founder-site";
 
@@ -37,10 +36,10 @@ export default async function Page({
   const locale: Locale = raw === "en" ? "en" : "fa";
 
   return (
-    <FounderShell locale={locale}>
+    <>
       <div id="top">
         <ProductsIndexView locale={locale} />
       </div>
-    </FounderShell>
+    </>
   );
 }

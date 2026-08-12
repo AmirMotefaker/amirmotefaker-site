@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import FounderShell from "@/components/founder/FounderShell";
 import { getLegacyPosts } from "@/lib/legacy-wordpress";
 import { formatSiteDate, formatSiteNumber } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
@@ -30,7 +29,7 @@ export default async function Page({
   const visible = posts.slice(start, start + PAGE_SIZE);
 
   return (
-    <FounderShell locale={locale}>
+    <>
       <main className="inner-page">
         <section className="wrap inner-hero">
           <span className="sec-tag">{fa ? "اخبار فناوری" : "TECHNOLOGY NEWS"}</span>
@@ -104,6 +103,6 @@ export default async function Page({
           ) : null}
         </section>
       </main>
-    </FounderShell>
+    </>
   );
 }

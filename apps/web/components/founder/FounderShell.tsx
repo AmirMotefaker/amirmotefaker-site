@@ -82,13 +82,11 @@ export default function FounderShell({
             <Link href={`/${locale}#expertise`}>{l.expertise}</Link>
             <Link href={`/${locale}/resume`}>{l.timeline}</Link>
             <Link href={`/${locale}/news`}>{l.news}</Link>
-            <Link href={`/${locale}/contact`}>{l.contact}</Link>
           </div>
 
           <div className="nav-cta">
             <ThemeToggle />
             <Link href={`/${other}`} className="locale-switch">{other.toUpperCase()}</Link>
-            <Link href={`/${locale}/products`} className="btn btn-ghost desktop-only">{l.seeProducts}</Link>
             <Link href={`/${locale}/contact`} className="btn btn-primary">{l.contact}</Link>
           </div>
         </nav>
@@ -119,8 +117,7 @@ export default function FounderShell({
               <Link href={`/${locale}/products`}>{l.products}</Link>
               <Link href={`/${locale}/resume`}>{l.timeline}</Link>
               <Link href={`/${locale}/news`}>{l.news}</Link>
-              <Link href={`/${locale}/contact`}>{l.contact}</Link>
-              <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">{l.sitemap}</a>
+                <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">{l.sitemap}</a>
             </div>
           </div>
 
