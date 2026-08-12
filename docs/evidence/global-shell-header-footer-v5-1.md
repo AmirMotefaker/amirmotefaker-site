@@ -43,3 +43,11 @@ Validated locally:
 - Production deployment: NOT performed.
 - DNS: NOT changed.
 - This branch is intended for local visual review before merge/release.
+## Final review correction
+
+Final PR diff review identified that the footer Quick Links Contact entry had been removed by the original header de-duplication replacement.
+
+Correction:
+- Header still contains exactly one Contact CTA.
+- Footer Quick Links Contact entry is restored.
+- No other approved header styling is changed.
