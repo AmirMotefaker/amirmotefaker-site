@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { products } from "@/content/founder-site";
+import { productPortfolio as products } from "@/content/product-portfolio";
 import { getLegacyPages, getLegacyPosts } from "@/lib/legacy-wordpress";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";

@@ -1,14 +1,102 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ProductPageView } from "@/components/founder/InnerPages";
-import { products, type Locale } from "@/content/founder-site";
+import FounderShell from "@/components/founder/FounderShell";
+import ProductDetailView from "@/components/products/ProductDetailView";
+import { getProduct, productPortfolio } from "@/content/product-portfolio";
+import type { Locale } from "@/content/founder-site";
 
-export function generateStaticParams(){
-  return products.flatMap((p)=>[{locale:"fa",slug:p.slug},{locale:"en",slug:p.slug}]);
+const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
+
+export function generateStaticParams() {
+  return productPortfolio.flatMap((product) => [
+    { locale: "fa", slug: product.slug },
+    { locale: "en", slug: product.slug },
+  ]);
 }
 
-export default async function Page({params}:{params:Promise<{locale:string;slug:string}>}) {
-  const {locale:raw,slug}=await params;
-  const locale:Locale=raw==="en"?"en":"fa";
-  if(!products.some((p)=>p.slug===slug)) notFound();
-  return <ProductPageView locale={locale} slug={slug}/>;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale: raw, slug } = await params;
+  const locale: Locale = raw === "en" ? "en" : "fa";
+  const product = getProduct(slug);
+  if (!product) return {};
+
+  const title = `${product.name} | Amir Motefaker`;
+  const description = locale === "fa" ? product.shortDescriptionFa : product.positioning;
+  const canonical = `${base}/${locale}/products/${product.slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale: raw, slug } = await params;
+  const locale: Locale = raw === "en" ? "en" : "fa";
+  const product = getProduct(slug);
+  if (!product) notFound();
+
+  const productUrl = `https://${product.domain.toLowerCase()}`;
+  const pageUrl = `${base}/${locale}/products/${product.slug}`;
+
+  const brandSchema = {
+    "@context": "https://schema.org",
+    "@type": "Brand",
+    name: product.name,
+    url: productUrl,
+    description: product.positioning,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: locale === "fa" ? "محصولات" : "Products",
+        item: `${base}/${locale}/products`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: product.name,
+        item: pageUrl,
+      },
+    ],
+  };
+
+  return (
+    <FounderShell locale={locale}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(brandSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <ProductDetailView locale={locale} product={product} />
+    </FounderShell>
+  );
 }

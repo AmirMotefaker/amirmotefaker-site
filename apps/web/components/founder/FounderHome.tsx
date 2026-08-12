@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import FounderShell from "@/components/founder/FounderShell";
-import { founder, products, type Locale } from "@/content/founder-site";
+import { founder, type Locale } from "@/content/founder-site";
+import { productPortfolio as products } from "@/content/product-portfolio";
 import { getLegacyPages, getLegacyPosts } from "@/lib/legacy-wordpress";
 import { formatSiteDate } from "@/lib/locale-format";
 
@@ -113,8 +114,8 @@ export default function FounderHome({ locale }: { locale: Locale }) {
             <div className="sec-head products-head">
               <div>
                 <span className="sec-tag">{fa ? "محصولات" : "PRODUCTS"}</span>
-                <h2 className="sec-title">{fa ? "محصولات و پلتفرم‌های من" : "My products & platforms"}</h2>
-                <p className="sec-sub">{fa ? "هر محصول یک هویت مستقل، یک نیاز مشخص و یک تجربه قابل رشد دارد." : "Each product has a clear identity, a defined need and a scalable experience."}</p>
+                <h2 className="sec-title">{fa ? "محصولاتی که ساخته‌ام و می‌سازم." : "My products & platforms"}</h2>
+                <p className="sec-sub">{fa ? "از ابزارهای هوش مصنوعی و فناوری زبان فارسی تا فین‌تک، فودتک و پلتفرم‌های دیجیتال؛ تمرکز من ساخت محصولاتی است که فناوری را به مسئله‌های واقعی کسب‌وکار و زندگی روزمره متصل می‌کنند." : "Each product has a clear identity, a defined need and a scalable experience."}</p>
               </div>
               <Link href={`/${locale}/products`} className="btn btn-ghost">{fa ? "مشاهده همه محصولات" : "See all products"}</Link>
             </div>

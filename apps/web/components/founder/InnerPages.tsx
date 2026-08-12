@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import FounderShell from "@/components/founder/FounderShell";
 import LegacyPageContent from "@/components/founder/LegacyPageContent";
-import { founder, products, storyEn, storyFa, timeline, type Locale } from "@/content/founder-site";
+import { founder, storyEn, storyFa, timeline, type Locale } from "@/content/founder-site";
+import { productPortfolio as products } from "@/content/product-portfolio";
 
 export function AboutPageView({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
