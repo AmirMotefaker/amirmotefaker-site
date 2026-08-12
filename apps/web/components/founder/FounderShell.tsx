@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { founder, type Locale } from "@/content/founder-site";
-import { productPortfolio as products } from "@/content/product-portfolio";
-import LocaleDigits from "@/components/founder/LocaleDigits";
+import { getProductDisplayName, productPortfolio as products } from "@/content/product-portfolio";
 import ThemeToggle from "@/components/founder/ThemeToggle";
 
 const labels = {
@@ -54,7 +53,6 @@ export default function FounderShell({
 
   return (
     <div className="founder-site" lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
-      <LocaleDigits locale={locale} />
       <div className="bg-glow" />
       <div className="noise" />
 
@@ -127,7 +125,7 @@ export default function FounderShell({
             <div className="footer-links">
               {products.slice(0, 5).map((product) => (
                 <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>
-                  {product.name}
+                  {getProductDisplayName(product, locale)}
                 </Link>
               ))}
             </div>

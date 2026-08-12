@@ -491,6 +491,51 @@ export const productPortfolio = rawProductPortfolio.map((product) => ({
   website: `https://${product.domain.toLowerCase()}`,
   technologies: product.technology,
 }));
+const preferredProductOrder = [
+  "restyar",
+  "primesys",
+  "linkresan",
+  "farsio",
+  "idehjo",
+  "fahmio",
+  "filmtrack",
+  "shiftpay",
+] as const;
+
+const preferredProductOrderMap = new Map<string, number>(
+  preferredProductOrder.map((slug, index) => [slug, index]),
+);
+
+function normalizeProductKey(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+productPortfolio.sort((a, b) => {
+  const aRank = preferredProductOrderMap.get(normalizeProductKey(a.slug)) ?? Number.MAX_SAFE_INTEGER;
+  const bRank = preferredProductOrderMap.get(normalizeProductKey(b.slug)) ?? Number.MAX_SAFE_INTEGER;
+  return aRank - bRank || a.name.localeCompare(b.name);
+});
+
+const localizedProductNames = {
+  restyar: { fa: "رستیار", en: "RestYar" },
+  primesys: { fa: "پرایم سیستم", en: "PrimeSYS" },
+  linkresan: { fa: "لینک رسان", en: "LinkResan" },
+  farsio: { fa: "فارسیو", en: "Farsio" },
+  idehjo: { fa: "ایده جو", en: "IdeaJoo" },
+  fahmio: { fa: "فهمیو", en: "Fahmio" },
+  filmtrack: { fa: "فیلم ترک", en: "FilmTark" },
+  shiftpay: { fa: "شیفت پی", en: "ShiftPay" },
+} as const;
+
+export function getProductDisplayName(
+  product: { slug: string; name: string },
+  locale: "fa" | "en",
+) {
+  const key = normalizeProductKey(product.slug) as keyof typeof localizedProductNames;
+  return localizedProductNames[key]?.[locale] ?? product.name;
+}
+
+/* founder-visual-system-v6-preferred-order */
 
 export type Product = (typeof productPortfolio)[number];
 

@@ -1,12 +1,10 @@
-/* eslint-disable @next/next/no-img-element -- Legacy WordPress media can originate from arbitrary external hosts. */
-import Image from "next/image";
 import Link from "next/link";
-import { founder, type Locale } from "@/content/founder-site";
+import type { Locale } from "@/content/founder-site";
 import { founderCareerProfile } from "@/content/founder/profile";
 import { selectedAchievements } from "@/content/founder/achievements";
 import { productPortfolio as products } from "@/content/product-portfolio";
 import { getLegacyPosts } from "@/lib/legacy-wordpress";
-import { formatSiteDate } from "@/lib/locale-format";
+import { formatSiteDate, formatSiteNumber, localeDigits } from "@/lib/locale-format";
 import styles from "./FounderV6.module.css";
 
 const vision = {
@@ -24,6 +22,62 @@ const vision = {
   ],
 };
 
+const preferredProductOrder = [
+  "restyar",
+  "primesys",
+  "linkresan",
+  "farsio",
+  "idehjo",
+  "fahmio",
+  "filmtrack",
+  "shiftpay",
+] as const;
+
+const productNameMap = {
+  restyar: { fa: "رستیار", en: "RestYar" },
+  primesys: { fa: "پرایم سیستم", en: "PrimeSYS" },
+  linkresan: { fa: "لینک رسان", en: "LinkResan" },
+  farsio: { fa: "فارسیو", en: "Farsio" },
+  idehjo: { fa: "ایده جو", en: "IdeaJoo" },
+  fahmio: { fa: "فهمیو", en: "Fahmio" },
+  filmtrack: { fa: "فیلم ترک", en: "FilmTark" },
+  shiftpay: { fa: "شیفت پی", en: "ShiftPay" },
+} as const;
+
+const preferredOrderMap = new Map(
+  preferredProductOrder.map((slug, index) => [slug, index] as const),
+);
+
+function normalizeKey(value: string | undefined | null) {
+  return (value ?? "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+function getOrderRank(product: { slug: string; name: string }) {
+  const slugKey = normalizeKey(product.slug);
+  const nameKey = normalizeKey(product.name);
+  return preferredOrderMap.get(slugKey as keyof typeof productNameMap)
+    ?? preferredOrderMap.get(nameKey as keyof typeof productNameMap)
+    ?? Number.MAX_SAFE_INTEGER;
+}
+
+function getProductLabel(
+  product: { slug: string; name: string; nameFa?: string; nameEn?: string },
+  locale: Locale,
+) {
+  const key = normalizeKey(product.slug || product.name);
+  const mapped = productNameMap[key as keyof typeof productNameMap];
+
+  if (locale === "fa") {
+    return mapped?.fa ?? product.nameFa ?? product.name;
+  }
+
+  return mapped?.en ?? product.nameEn ?? product.name;
+}
+
+function formatOrdinal(index: number, locale: Locale) {
+  return localeDigits(String(index + 1).padStart(2, "0"), locale);
+}
+
 export default function FounderHome({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
   const narrative = fa ? founderCareerProfile.narrativeFa : founderCareerProfile.narrativeEn;
@@ -31,6 +85,26 @@ export default function FounderHome({ locale }: { locale: Locale }) {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   const latestPosts = posts.slice(0, 3);
+  const orderedProducts = [...products].sort(
+    (a, b) => getOrderRank(a) - getOrderRank(b) || a.name.localeCompare(b.name),
+  );
+  const featuredProducts = orderedProducts.slice(0, 8);
+
+  const heroMetrics = fa
+    ? [
+        { value: formatSiteNumber(featuredProducts.length, locale), label: "محصول منتخب" },
+        { value: formatSiteNumber(posts.length, locale), label: "خبر فناوری" },
+        { value: "۳۰+", label: "سال سابقه فعالیت در حوزه فناوری" },
+        { value: "۱۳۷۰", label: "شروع مسیر فناوری" },
+        { value: "PrimeSYS", label: "Founder & CEO" },
+      ]
+    : [
+        { value: formatSiteNumber(featuredProducts.length, locale), label: "Featured products" },
+        { value: formatSiteNumber(posts.length, locale), label: "Technology news posts" },
+        { value: "30+", label: "Years in technology" },
+        { value: "1990", label: "Technology journey began" },
+        { value: "PrimeSYS", label: "Founder & CEO" },
+      ];
 
   return (
     <main className={styles.home}>
@@ -38,8 +112,8 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         <div className={`wrap ${styles.heroGrid}`}>
           <div className={styles.heroCopy}>
             <div className={styles.heroKicker}>
-              <span>FOUNDER / PRODUCT / AI</span>
-              <span className={styles.liveDot}>{fa ? "در حال ساخت" : "Building now"}</span>
+              <span>FOUNDER / PRODUCT / TECHNOLOGY</span>
+              <span className={styles.liveDot}>{fa ? "در حال توسعه" : "Building now"}</span>
             </div>
 
             <h1>
@@ -66,8 +140,8 @@ export default function FounderHome({ locale }: { locale: Locale }) {
 
             <p className={styles.heroLead}>
               {fa
-                ? "بنیان‌گذار و مدیرعامل PrimeSYS؛ با مسیری که از سخت‌افزار و زیرساخت شروع شد و امروز به داده، هوش مصنوعی، محصول و رشد رسیده است."
-                : "Founder & CEO at PrimeSYS — a journey from hardware and infrastructure to data, AI, product building and growth."}
+                ? "بنیان‌گذار و مدیرعامل PrimeSYS؛ با بیش از سه دهه تجربه در فناوری، ساخت محصول، توسعه پلتفرم و طراحی راه‌حل‌های مبتنی بر داده و هوش مصنوعی."
+                : "Founder & CEO at PrimeSYS — with more than three decades across technology, product building, platforms, data and AI-driven solutions."}
             </p>
 
             <div className={styles.heroActions}>
@@ -83,48 +157,39 @@ export default function FounderHome({ locale }: { locale: Locale }) {
             </div>
 
             <div className={styles.heroSignals}>
-              <div>
-                <strong>{products.length}</strong>
-                <span>{fa ? "محصول و پلتفرم" : "Products & platforms"}</span>
-              </div>
-              <div>
-                <strong>1990</strong>
-                <span>{fa ? "شروع مسیر فناوری" : "Technology journey began"}</span>
-              </div>
-              <div>
-                <strong>PrimeSYS</strong>
-                <span>{fa ? "Founder & CEO" : "Founder & CEO"}</span>
-              </div>
+              {heroMetrics.map((item) => (
+                <div key={`${item.value}-${item.label}`}>
+                  <strong>{item.value}</strong>
+                  <span>{item.label}</span>
+                </div>
+              ))}
             </div>
           </div>
 
           <div className={styles.heroVisual}>
-            <div className={styles.portraitFrame}>
-              <div className={styles.portraitGlow} />
-              <Image
-                src="/assets/profile/amir-motefaker.png"
-                alt={fa ? founder.nameFa : founder.nameEn}
-                width={760}
-                height={880}
-                priority
-              />
-              <div className={styles.portraitCaption}>
-                <span>{fa ? "امیر متفکر" : "Amir Motefaker"}</span>
-                <strong>{fa ? "Founder • Product Builder • Technology" : "Founder • Product Builder • Technology"}</strong>
+            <div className={styles.productMatrix}>
+              <div className={styles.matrixGlow} />
+              <div className={styles.matrixCore}>
+                <span>{fa ? "اکوسیستم محصولات" : "PRODUCT ECOSYSTEM"}</span>
+                <strong>{fa ? "۸ محصول" : "8 Products"}</strong>
+                <small>
+                  {fa
+                    ? "محصولات مستقل با یک نگاه مشترک به فناوری، بازار و رشد."
+                    : "Independent products shaped by one technology, market and growth mindset."}
+                </small>
               </div>
-            </div>
 
-            <div className={`${styles.orbitCard} ${styles.orbitCardOne}`}>
-              <span>AI</span>
-              <small>{fa ? "محصول هوشمند" : "Intelligent products"}</small>
-            </div>
-            <div className={`${styles.orbitCard} ${styles.orbitCardTwo}`}>
-              <span>DATA</span>
-              <small>{fa ? "تصمیم داده‌محور" : "Data-led decisions"}</small>
-            </div>
-            <div className={`${styles.orbitCard} ${styles.orbitCardThree}`}>
-              <span>GROWTH</span>
-              <small>{fa ? "فناوری + بازار" : "Technology + market"}</small>
+              <div className={styles.matrixRing}>
+                {featuredProducts.map((product, index) => (
+                  <div
+                    key={product.slug}
+                    className={`${styles.matrixNode} ${styles[`matrixNode${index + 1}`] ?? ""}`}
+                  >
+                    <strong>{getProductLabel(product, locale)}</strong>
+                    <span>{fa ? product.categoryFa : product.categoryEn}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -132,9 +197,11 @@ export default function FounderHome({ locale }: { locale: Locale }) {
 
       <section className={styles.operatorStrip}>
         <div className={`wrap ${styles.operatorGrid}`}>
-          {["AI PRODUCTS", "SOFTWARE", "DATA", "GROWTH"].map((item, index) => (
+          {(fa
+            ? ["محصول", "پلتفرم", "هوش مصنوعی", "اتوماسیون", "رشد"]
+            : ["PRODUCT", "PLATFORM", "AI", "AUTOMATION", "GROWTH"]).map((item, index) => (
             <div key={item}>
-              <span>0{index + 1}</span>
+              <span>{formatOrdinal(index, locale)}</span>
               <strong>{item}</strong>
             </div>
           ))}
@@ -153,14 +220,14 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         <div className={`wrap ${styles.storyGrid}`}>
           {narrative.map((item, index) => (
             <article key={item} className={styles.storyCard}>
-              <span>0{index + 1}</span>
+              <span>{formatOrdinal(index, locale)}</span>
               <p>{item}</p>
             </article>
           ))}
         </div>
 
         <div className={`wrap ${styles.outcomes}`}>
-          {selectedAchievements.slice(0, 3).map((item) => (
+          {selectedAchievements.slice(0, 4).map((item) => (
             <article key={`${item.value}-${item.titleEn}`}>
               <strong>{item.value}</strong>
               <div>
@@ -184,18 +251,18 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         </div>
 
         <div className={`wrap ${styles.productGrid}`}>
-          {products.map((product, index) => (
+          {featuredProducts.map((product, index) => (
             <Link
               href={`/${locale}/products/${product.slug}`}
               className={styles.productCard}
               key={product.slug}
             >
               <div className={styles.productCardTop}>
-                <span>0{index + 1}</span>
+                <span>{formatSiteNumber(index + 1, locale)}</span>
                 <small>{product.industry}</small>
               </div>
               <div className={styles.productMark}>
-                <strong className="ltr">{product.name}</strong>
+                <strong>{getProductLabel(product, locale)}</strong>
               </div>
               <div className={styles.productCardBody}>
                 <span>{fa ? product.categoryFa : product.categoryEn}</span>
@@ -222,11 +289,11 @@ export default function FounderHome({ locale }: { locale: Locale }) {
           </div>
 
           <div className={styles.visionGrid}>
-            {vision[locale].map(([number, title, description]) => (
-              <article key={number}>
-                <span>{number}</span>
+            {vision[locale].map(([index, title, detail]) => (
+              <article key={title}>
+                <span>{localeDigits(index, locale)}</span>
                 <h3>{title}</h3>
-                <p>{description}</p>
+                <p>{detail}</p>
               </article>
             ))}
           </div>
@@ -236,48 +303,49 @@ export default function FounderHome({ locale }: { locale: Locale }) {
       <section className={styles.newsSection}>
         <div className={`wrap ${styles.sectionIntro}`}>
           <div>
-            <span className={styles.sectionEyebrow}>{fa ? "اخبار فناوری" : "TECHNOLOGY NEWS"}</span>
-            <h2>{fa ? "آخرین مطالب از آرشیو فناوری." : "Latest stories from the technology archive."}</h2>
+            <span className={styles.sectionEyebrow}>{fa ? "اخبار فناوری" : "TECH NEWS"}</span>
+            <h2>{fa ? "آخرین نوشته‌ها و خبرهای حوزه فناوری." : "Latest articles and technology updates."}</h2>
           </div>
           <Link href={`/${locale}/news`} className={styles.textLink}>
-            {fa ? "همه اخبار ↗" : "All stories ↗"}
+            {fa ? "رفتن به همه خبرها ↗" : "Browse all news ↗"}
           </Link>
         </div>
 
         <div className={`wrap ${styles.newsGrid}`}>
           {latestPosts.map((post) => (
-            <Link
-              href={`/${locale}/news/${encodeURIComponent(post.slug)}`}
-              className={styles.newsCard}
-              key={post.id}
-            >
-              <div className={styles.newsCover}>
-                {post.featured_image ? (
-                  <img src={post.featured_image} alt={post.title} loading="lazy" />
-                ) : (
-                  <div>AM / TECHNOLOGY</div>
-                )}
-              </div>
-              <div className={styles.newsBody}>
+            <article key={post.slug} className={styles.newsCard}>
+              <div className={styles.newsCardTop}>
+                <span>{fa ? "خبر فناوری" : "Tech post"}</span>
                 <time dateTime={post.date}>{formatSiteDate(post.date, locale)}</time>
-                <h3>{post.title}</h3>
-                <p>{post.excerpt_text}</p>
               </div>
-            </Link>
+              <h3>{post.title}</h3>
+              <p>{post.excerpt_text}</p>
+              <Link href={`/${locale}/news/${post.slug}`} className={styles.textLink}>
+                {fa ? "ادامه مطلب ↗" : "Read more ↗"}
+              </Link>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className={styles.finalCta}>
-        <div className={`wrap ${styles.finalCtaInner}`}>
-          <span>{fa ? "محصول • فناوری • همکاری" : "PRODUCT • TECHNOLOGY • COLLABORATION"}</span>
-          <h2>{fa ? "اگر قرار است چیزی ساخته شود، از یک گفت‌وگوی خوب شروع کنیم." : "If something should be built, start with a good conversation."}</h2>
+      <section className={styles.ctaSection}>
+        <div className={`wrap ${styles.ctaPanel}`}>
           <div>
+            <span className={styles.sectionEyebrow}>{fa ? "همکاری" : "LET'S BUILD"}</span>
+            <h2>{fa ? "اگر روی مسئله واقعی کار می‌کنید، گفت‌وگو را شروع کنیم." : "If you are working on a real problem, let's start the conversation."}</h2>
+            <p>
+              {fa
+                ? "از ساخت محصول و طراحی پلتفرم تا توسعه اکوسیستم و راه‌حل‌های AI، برای همکاری و مشاوره در تماس باشید."
+                : "From product strategy and platform design to ecosystem building and AI-enabled solutions — reach out for collaboration and advisory work."}
+            </p>
+          </div>
+
+          <div className={styles.ctaActions}>
             <Link href={`/${locale}/contact`} className="btn btn-primary">
-              {fa ? "شروع گفتگو" : "Start a conversation"}
+              {fa ? "تماس و همکاری" : "Contact & collaboration"}
             </Link>
-            <Link href={`/${locale}/resume`} className="btn btn-ghost">
-              {fa ? "مشاهده رزومه" : "View career"}
+            <Link href={`/${locale}/products`} className="btn btn-ghost">
+              {fa ? "مرور محصولات" : "Review products"}
             </Link>
           </div>
         </div>

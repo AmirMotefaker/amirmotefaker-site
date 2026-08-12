@@ -6,6 +6,7 @@ import {
   productFilters,
   productPortfolio,
   getStatusLabel,
+  getProductDisplayName,
 } from "@/content/product-portfolio";
 import type { Locale } from "@/content/founder-site";
 import styles from "./ProductPortfolio.module.css";
@@ -65,7 +66,7 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
             <div className={styles.cardTop}>
               <div>
                 <span className={styles.industryBadge}>{product.industry}</span>
-                <h2 className="ltr">{product.name}</h2>
+                <h2 className={fa ? undefined : "ltr"}>{getProductDisplayName(product, locale)}</h2>
                 <div className={`ltr ${styles.domain}`}>{product.domain}</div>
               </div>
               <span className={styles.externalIcon} aria-hidden="true">↗</span>
@@ -96,7 +97,7 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.domainLink}
-                aria-label={`${product.name} — ${product.domain}`}
+                aria-label={`${getProductDisplayName(product, locale)} — ${product.domain}`}
               >
                 {product.domain} ↗
               </a>

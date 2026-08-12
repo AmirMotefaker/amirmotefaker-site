@@ -50,3 +50,20 @@ Validated locally:
 - ESLint: PASS
 - Next.js production build: PASS
 - git diff --check: PASS
+
+## Local review refinements — recovery v3
+
+This iteration continues the partially applied local-review refinement after the first recovery script stopped before validation.
+
+Implemented:
+
+- reduced Home Hero typography and retained the product-ecosystem visual from the partial refinement;
+- retained the requested richer Home metrics, including technology-news count, 30+ years in technology, and 1370 / 1990 start-year presentation;
+- fixed the portfolio-order patch for the current `rawProductPortfolio -> productPortfolio.map(...)` source structure;
+- enforced preferred product order globally: RestYar, PrimeSYS, LinkResan, Farsio, IdeaJoo, Fahmio, FilmTark, ShiftPay;
+- added Persian product display names on Persian product surfaces while retaining English names on English surfaces;
+- removed DOM-wide post-render digit mutation from the global shell to prevent streamed hydration text mutation;
+- preserved locale number helpers and made Persian Jalali / Shamsi and English Gregorian date formatting explicit;
+- corrected Home legacy-news bindings to the actual source fields: `title` and `excerpt_text`.
+
+Validation is executed by the recovery script before commit/push.

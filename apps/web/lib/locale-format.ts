@@ -22,13 +22,35 @@ export function formatSiteNumber(value: number, locale: SiteLocale) {
   return new Intl.NumberFormat(locale === "fa" ? "fa-IR" : "en-US").format(value);
 }
 
-export function formatSiteDate(value: string, locale: SiteLocale) {
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return localeDigits(value, locale);
+function toDate(value: string | Date) {
+  const date = value instanceof Date ? value : new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
 
-  return new Intl.DateTimeFormat(locale === "fa" ? "fa-IR" : "en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }).format(date);
+export function formatSiteDate(value: string | Date, locale: SiteLocale) {
+  const date = toDate(value);
+  if (!date) return localeDigits(typeof value === "string" ? value : "", locale);
+
+  return new Intl.DateTimeFormat(
+    locale === "fa" ? "fa-IR-u-ca-persian" : "en-US-u-ca-gregory",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "Asia/Tehran",
+    },
+  ).format(date);
+}
+
+export function formatSiteYear(value: string | Date, locale: SiteLocale) {
+  const date = toDate(value);
+  if (!date) return localeDigits(typeof value === "string" ? value : "", locale);
+
+  return new Intl.DateTimeFormat(
+    locale === "fa" ? "fa-IR-u-ca-persian" : "en-US-u-ca-gregory",
+    {
+      year: "numeric",
+      timeZone: "Asia/Tehran",
+    },
+  ).format(date);
 }

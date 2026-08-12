@@ -8,7 +8,7 @@
 }
 .heroGrid{
   display:grid;
-  grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+  grid-template-columns:minmax(0,1fr) minmax(340px,.95fr);
   gap:clamp(42px,7vw,96px);
   align-items:center;
 }
@@ -44,8 +44,8 @@
 .heroCopy h1{
   max-width:980px;
   margin:0;
-  font-size:clamp(3.4rem,7.8vw,7.7rem);
-  line-height:.98;
+  font-size:clamp(2.55rem,5.3vw,5.35rem);
+  line-height:1.03;
   letter-spacing:-.055em;
 }
 .heroCopy h1 span{
@@ -58,7 +58,7 @@
   max-width:780px;
   margin:28px 0 0;
   color:var(--text-dim);
-  font-size:clamp(1.05rem,1.8vw,1.28rem);
+  font-size:clamp(1rem,1.45vw,1.14rem);
   line-height:2;
 }
 .heroActions{
@@ -79,7 +79,7 @@
 }
 .heroSignals{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-columns:repeat(5,minmax(0,1fr));
   gap:1px;
   margin-top:48px;
   border:1px solid var(--border);
@@ -195,7 +195,7 @@
 }
 .operatorGrid{
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-columns:repeat(5,minmax(0,1fr));
 }
 .operatorGrid>div{
   min-height:104px;
@@ -254,7 +254,7 @@
 }
 .storyGrid{
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-columns:repeat(5,minmax(0,1fr));
   gap:12px;
 }
 .storyCard{
@@ -282,7 +282,7 @@
 }
 .outcomes{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-columns:repeat(5,minmax(0,1fr));
   gap:12px;
   margin-top:12px;
 }
@@ -418,7 +418,7 @@
 }
 .visionGrid{
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-columns:repeat(5,minmax(0,1fr));
   gap:1px;
   background:var(--border);
   border:1px solid var(--border);
@@ -449,7 +449,7 @@
 
 .newsGrid{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-columns:repeat(5,minmax(0,1fr));
   gap:14px;
 }
 .newsCard{
@@ -652,7 +652,7 @@
 }
 .principlesGrid{
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-columns:repeat(5,minmax(0,1fr));
   gap:12px;
 }
 .principlesGrid article{
@@ -853,5 +853,179 @@
   .newsCard:hover,
   .textLink:hover{
     transform:none;
+  }
+}
+
+/* founder-visual-system-v6-local-review-fixes */
+.heroSignals strong{
+  font-size:clamp(1.24rem,1.8vw,1.9rem);
+}
+.heroSignals span{
+  line-height:1.75;
+}
+.heroVisual{
+  position:relative;
+  min-height:560px;
+  display:grid;
+  place-items:center;
+}
+.productMatrix{
+  position:relative;
+  width:min(100%,620px);
+  min-height:540px;
+  border:1px solid var(--border-strong);
+  border-radius:36px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 75% 12%,rgba(73,198,255,.15),transparent 26%),
+    radial-gradient(circle at 16% 84%,rgba(123,97,255,.18),transparent 36%),
+    linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015)),
+    var(--surface);
+  box-shadow:0 36px 110px rgba(0,0,0,.24);
+}
+.matrixGlow{
+  position:absolute;
+  inset:18% 14% auto;
+  height:40%;
+  border-radius:50%;
+  background:linear-gradient(135deg,rgba(123,97,255,.35),rgba(73,198,255,.20));
+  filter:blur(68px);
+}
+.matrixCore{
+  position:absolute;
+  inset:50%;
+  z-index:2;
+  width:220px;
+  height:220px;
+  transform:translate(-50%,-50%);
+  border:1px solid var(--border-strong);
+  border-radius:50%;
+  background:rgba(5,8,14,.82);
+  box-shadow:0 18px 46px rgba(0,0,0,.24);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:28px;
+}
+.matrixCore span{
+  color:var(--text-faint);
+  font-size:.72rem;
+  letter-spacing:.12em;
+  font-family:var(--font-en);
+}
+.matrixCore strong{
+  margin-top:10px;
+  font-size:clamp(1.6rem,2vw,2rem);
+}
+.matrixCore small{
+  margin-top:10px;
+  color:var(--text-dim);
+  line-height:1.7;
+}
+.matrixRing{
+  position:relative;
+  min-height:540px;
+}
+.matrixNode{
+  position:absolute;
+  z-index:3;
+  width:166px;
+  min-height:92px;
+  padding:16px 16px 14px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:20px;
+  background:rgba(6,10,18,.86);
+  backdrop-filter:blur(14px);
+  box-shadow:0 18px 40px rgba(0,0,0,.22);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.matrixNode strong{
+  font-size:1rem;
+  line-height:1.4;
+}
+.matrixNode span{
+  color:var(--text-faint);
+  font-size:.74rem;
+  line-height:1.7;
+}
+.matrixNode1{top:24px;inset-inline-start:32px}
+.matrixNode2{top:56px;inset-inline-end:40px}
+.matrixNode3{top:174px;inset-inline-start:0}
+.matrixNode4{top:200px;inset-inline-end:0}
+.matrixNode5{bottom:154px;inset-inline-start:22px}
+.matrixNode6{bottom:138px;inset-inline-end:18px}
+.matrixNode7{bottom:32px;inset-inline-start:88px}
+.matrixNode8{bottom:24px;inset-inline-end:88px}
+@media (max-width:1200px){
+  .heroSignals{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+@media (max-width:980px){
+  .heroGrid{
+    grid-template-columns:1fr;
+  }
+  .heroVisual{
+    min-height:520px;
+  }
+}
+@media (max-width:760px){
+  .heroSignals{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .operatorGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .matrixNode{
+    width:146px;
+    min-height:86px;
+    padding:14px 14px 12px;
+  }
+  .matrixCore{
+    width:190px;
+    height:190px;
+    padding:20px;
+  }
+  .matrixNode1{top:18px;inset-inline-start:14px}
+  .matrixNode2{top:32px;inset-inline-end:16px}
+  .matrixNode3{top:154px;inset-inline-start:0}
+  .matrixNode4{top:172px;inset-inline-end:0}
+  .matrixNode5{bottom:136px;inset-inline-start:12px}
+  .matrixNode6{bottom:128px;inset-inline-end:12px}
+  .matrixNode7{bottom:16px;inset-inline-start:52px}
+  .matrixNode8{bottom:14px;inset-inline-end:52px}
+}
+@media (max-width:540px){
+  .heroCopy h1{
+    font-size:clamp(2.15rem,11vw,3.2rem);
+  }
+  .productMatrix{
+    min-height:620px;
+    border-radius:28px;
+  }
+  .matrixRing{
+    min-height:620px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+    padding:18px 16px 18px;
+  }
+  .matrixNode{
+    position:relative;
+    inset:auto !important;
+    width:100%;
+  }
+  .matrixCore{
+    position:relative;
+    inset:auto;
+    transform:none;
+    width:calc(100% - 32px);
+    height:auto;
+    border-radius:26px;
+    margin:18px 16px 0;
   }
 }
