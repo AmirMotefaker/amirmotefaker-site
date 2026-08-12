@@ -1,0 +1,15 @@
+export const salesRepresentations = [
+  { brand: "تکین الکترونیک آرکا", periodFa: "۱۴۰۲ – زمان ثبت رزومه", periodEn: "1402 – current at the time of the resume" },
+  { brand: "طرح و پردازش غدیر", periodFa: "۱۴۰۲ – زمان ثبت رزومه", periodEn: "1402 – current at the time of the resume" },
+  { brand: "امن پرداز", periodFa: "۱۳۹۲ – ۱۳۹۴", periodEn: "1392 – 1394" },
+  { brand: "شبکه گستر", periodFa: "۱۳۹۲ – ۱۳۹۴", periodEn: "1392 – 1394" },
+  { brand: "LG / مادیران", periodFa: "۱۳۷۶ – ۱۳۸۱", periodEn: "1376 – 1381" },
+  { brand: "Samsung / سام‌سرویس", periodFa: "۱۳۷۶ – ۱۳۸۱", periodEn: "1376 – 1381" },
+  { brand: "HP", periodFa: "۱۳۷۸ – ۱۳۸۲", periodEn: "1378 – 1382" },
+  { brand: "Genius / A4Tech", periodFa: "۱۳۷۸ – ۱۳۸۲", periodEn: "1378 – 1382" },
+  { brand: "Creative", periodFa: "۱۳۷۸ – ۱۳۸۲", periodEn: "1378 – 1382" },
+  { brand: "Transcend", periodFa: "۱۳۸۲ – ۱۳۸۵", periodEn: "1382 – 1385" },
+  { brand: "ASUS", periodFa: "۱۳۸۰ – ۱۳۸۵", periodEn: "1380 – 1385" },
+  { brand: "GIGABYTE", periodFa: "۱۳۸۱ – ۱۳۸۴", periodEn: "1381 – 1384" },
+  { brand: "Maxtor", periodFa: "۱۳۷۸ – ۱۳۸۵", periodEn: "1378 – 1385" },
+] as const;
