@@ -1,0 +1,490 @@
+.page {
+  padding-bottom: 5rem;
+  color: inherit;
+}
+
+.hero,
+.section,
+.legacySection,
+.cta {
+  margin-top: clamp(2.5rem, 6vw, 6rem);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.heroCopy h1,
+.sectionHead h2,
+.cta h2 {
+  margin: 0;
+  text-wrap: balance;
+}
+
+.heroCopy h1 {
+  margin-top: 0.85rem;
+  font-size: clamp(2.35rem, 6vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.eyebrow,
+.sectionHead > span,
+.cta > div > span {
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.lead {
+  max-width: 54rem;
+  margin: 1.5rem 0 0;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.9;
+  opacity: 0.86;
+}
+
+.headline {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  opacity: 0.68;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.primaryAction {
+  background: var(--accent, #f97316);
+  color: #fff;
+}
+
+.secondaryAction {
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  color: inherit;
+}
+
+.primaryAction:hover,
+.secondaryAction:hover {
+  transform: translateY(-2px);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.metrics article,
+.narrativeCard,
+.timelineCard,
+.achievementCard,
+.compactCard,
+.credentialCard,
+.archiveCard,
+.representationList > div {
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  background: color-mix(in srgb, currentColor 4%, transparent);
+  box-shadow: 0 18px 50px color-mix(in srgb, #000 8%, transparent);
+}
+
+.metrics article {
+  min-height: 9rem;
+  border-radius: 1.4rem;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.metrics strong {
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+.metrics span {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  opacity: 0.7;
+}
+
+.sectionHead {
+  max-width: 58rem;
+  margin-bottom: 1.8rem;
+}
+
+.sectionHead h2 {
+  margin-top: 0.65rem;
+  font-size: clamp(1.8rem, 4vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.sectionHead p {
+  margin: 0.9rem 0 0;
+  line-height: 1.9;
+  opacity: 0.72;
+}
+
+.narrativeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.narrativeCard {
+  border-radius: 1.35rem;
+  padding: 1.25rem;
+}
+
+.narrativeCard > span {
+  display: block;
+  margin-bottom: 1.75rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  opacity: 0.48;
+}
+
+.narrativeCard p,
+.compactCard p,
+.credentialCard p,
+.archiveCard p {
+  margin: 0;
+  line-height: 1.85;
+  opacity: 0.76;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timelineCard {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.35fr) minmax(0, 1fr);
+  gap: 1.4rem;
+  border-radius: 1.5rem;
+  padding: clamp(1.1rem, 3vw, 1.75rem);
+}
+
+.timelineMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-inline-end: 1.25rem;
+  border-inline-end: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.timelineMeta span {
+  font-weight: 800;
+}
+
+.timelineMeta small {
+  line-height: 1.6;
+  opacity: 0.55;
+}
+
+.timelineBody h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.timelineBody > strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--accent, #f97316);
+}
+
+.timelineBody > p {
+  margin: 0.85rem 0 0;
+  line-height: 1.9;
+  opacity: 0.78;
+}
+
+.detailBlock {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.detailBlock h4 {
+  margin: 0 0 0.55rem;
+  font-size: 0.85rem;
+}
+
+.detailBlock ul {
+  margin: 0;
+  padding-inline-start: 1.2rem;
+}
+
+.detailBlock li {
+  margin: 0.4rem 0;
+  line-height: 1.75;
+  opacity: 0.78;
+}
+
+.achievementGrid,
+.credentialGrid,
+.archiveGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.achievementGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.achievementCard {
+  border-radius: 1.4rem;
+  padding: 1.35rem;
+}
+
+.achievementCard > strong {
+  display: block;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1;
+  color: var(--accent, #f97316);
+}
+
+.achievementCard h3 {
+  margin: 1rem 0 0.55rem;
+}
+
+.achievementCard p {
+  margin: 0;
+  line-height: 1.75;
+  opacity: 0.72;
+}
+
+.twoColumn {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+
+.stack {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.compactCard {
+  border-radius: 1.2rem;
+  padding: 1.15rem;
+}
+
+.compactCard h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+}
+
+.compactCard small {
+  display: block;
+  margin-top: 0.65rem;
+  opacity: 0.55;
+}
+
+.skillCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.skillCloud span {
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  border-radius: 999px;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.languageList {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.3rem;
+}
+
+.languageList > div,
+.representationList > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.languageList > div {
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.languageList span,
+.representationList span {
+  opacity: 0.62;
+}
+
+.credentialGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.credentialCard {
+  border-radius: 1.2rem;
+  padding: 1.1rem;
+}
+
+.credentialCard > span {
+  display: inline-flex;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.67rem;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+}
+
+.credentialCard h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.archiveGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.archiveCard {
+  border-radius: 1.2rem;
+  padding: 1.1rem;
+}
+
+.archiveCard > span {
+  font-size: 0.8rem;
+  opacity: 0.58;
+}
+
+.archiveCard h3 {
+  margin: 0.55rem 0 0.25rem;
+}
+
+.archiveCard > strong {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--accent, #f97316);
+}
+
+.representationList {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.representationList > div {
+  border-radius: 1rem;
+  padding: 0.85rem 1rem;
+}
+
+.legacySection details {
+  border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  padding-top: 1.25rem;
+}
+
+.legacySection summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  border-radius: 1.75rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background:
+    radial-gradient(circle at 10% 10%, color-mix(in srgb, var(--accent, #f97316) 18%, transparent), transparent 40%),
+    color-mix(in srgb, currentColor 3%, transparent);
+}
+
+.cta h2 {
+  max-width: 50rem;
+  margin-top: 0.55rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.65rem);
+  line-height: 1.2;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .twoColumn {
+    grid-template-columns: 1fr;
+  }
+
+  .narrativeGrid,
+  .credentialGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .achievementGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .heroCopy h1 {
+    letter-spacing: -0.025em;
+  }
+
+  .metrics,
+  .narrativeGrid,
+  .achievementGrid,
+  .credentialGrid,
+  .archiveGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineCard {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineMeta {
+    padding-inline-end: 0;
+    padding-bottom: 0.9rem;
+    border-inline-end: 0;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  }
+
+  .cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .languageList > div,
+  .representationList > div {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryAction,
+  .secondaryAction {
+    transition: none;
+  }
+}
