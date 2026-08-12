@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { founder, products, type Locale } from "@/content/founder-site";
+import { founder, type Locale } from "@/content/founder-site";
+import { productPortfolio as products } from "@/content/product-portfolio";
 import LocaleDigits from "@/components/founder/LocaleDigits";
 import ThemeToggle from "@/components/founder/ThemeToggle";
 
