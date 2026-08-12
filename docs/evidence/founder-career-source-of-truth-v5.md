@@ -41,3 +41,12 @@ pm run build: PASS
 ## Deployment boundary
 
 No production deployment or DNS change is included.
+## Final-base transition
+
+- Foundation PR #32 merged to `main`.
+- Foundation merge SHA: `02a0bc558ae693be540b15df58834cc88149c64b`
+- Foundation exact-SHA tag: `v4.1.0-foundation-hardening`
+- Career PR #34 retargeted from the stacked foundation branch to `main`.
+- The original validated Career content head `12f4617e4d7173d7cb5e6fa49288f28ea99623b1` remains in branch history.
+- A fresh GitHub Actions validation is required on the final `main` base before merge.
+- Production deployment remains out of scope.
