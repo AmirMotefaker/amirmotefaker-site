@@ -30,11 +30,11 @@
 
 ## Validation
 
-- 
+-
 pm ci: PASS
-- 
+-
 pm run lint: PASS
-- 
+-
 pm run build: PASS
 - git diff --check: PASS
 
