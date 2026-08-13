@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProductDetailView from "@/components/products/ProductDetailView";
-import { getProduct, productPortfolio } from "@/content/product-portfolio";
+import { getProduct, getProductDisplayName, productPortfolio } from "@/content/product-portfolio";
 import type { Locale } from "@/content/founder-site";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
@@ -23,8 +23,8 @@ export async function generateMetadata({
   const product = getProduct(slug);
   if (!product) return {};
 
-  const title = `${product.name} | Amir Motefaker`;
-  const description = locale === "fa" ? product.shortDescriptionFa : product.positioning;
+  const title = `${getProductDisplayName(product, locale)} | Amir Motefaker`;
+  const description = locale === "fa" ? product.shortDescriptionFa : product.shortDescriptionEn;
   const canonical = `${base}/${locale}/products/${product.slug}`;
 
   return {
@@ -61,7 +61,7 @@ export default async function Page({
   const brandSchema = {
     "@context": "https://schema.org",
     "@type": "Brand",
-    name: product.name,
+    name: getProductDisplayName(product, locale),
     url: productUrl,
     description: product.positioning,
   };
@@ -79,7 +79,7 @@ export default async function Page({
       {
         "@type": "ListItem",
         position: 2,
-        name: product.name,
+        name: getProductDisplayName(product, locale),
         item: pageUrl,
       },
     ],

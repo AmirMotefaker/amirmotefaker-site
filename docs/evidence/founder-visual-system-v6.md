@@ -67,3 +67,18 @@ Implemented:
 - corrected Home legacy-news bindings to the actual source fields: `title` and `excerpt_text`.
 
 Validation is executed by the recovery script before commit/push.
+
+## Final local UI / UX / Content pass — 2026-08-13
+
+- Local-only finalization. Vercel was explicitly not used.
+- Completed the public bilingual copy for all eight canonical product pages from the existing product descriptions, capabilities, mission/vision and stated direction.
+- Unknown lifecycle status is not invented; public UI uses neutral portfolio/category information instead.
+- Persian product names, industries and categories are localized.
+- About no longer exposes the legacy archive disclosure in the final experience.
+- News index no longer contains Local/review-state wording.
+- Persian founder chronology uses Shamsi years (1370 / 1397); English retains Gregorian years.
+- Footer year is localized by locale.
+- Home grid geometry is corrected for four story/outcome/vision/principle items and three latest-news items.
+- Missing Home news-card and CTA styles referenced by the component are now present.
+- PR #38 remains Draft until final local visual approval.
+- Production deployment was not performed.

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import LegacyPageContent from "@/components/founder/LegacyPageContent";
 import { founder, type Locale } from "@/content/founder-site";
 import { founderCareerProfile } from "@/content/founder/profile";
 import { selectedAchievements } from "@/content/founder/achievements";
+import { localeDigits } from "@/lib/locale-format";
 import styles from "./FounderV6.module.css";
 
 const principles = {
@@ -72,7 +72,7 @@ export default function AboutPageV6({ locale }: { locale: Locale }) {
       <section className={`wrap ${styles.aboutNarrative}`}>
         {narrative.map((paragraph, index) => (
           <article key={paragraph}>
-            <span>0{index + 1}</span>
+            <span>{localeDigits(String(index + 1).padStart(2, "0"), locale)}</span>
             <p>{paragraph}</p>
           </article>
         ))}
@@ -98,7 +98,7 @@ export default function AboutPageV6({ locale }: { locale: Locale }) {
       <section className={`wrap ${styles.outcomes}`}>
         {selectedAchievements.slice(0, 3).map((item) => (
           <article key={`${item.value}-${item.titleEn}`}>
-            <strong>{item.value}</strong>
+            <strong>{localeDigits(item.value, locale)}</strong>
             <div>
               <h3>{fa ? item.titleFa : item.titleEn}</h3>
               <p>{fa ? item.detailFa : item.detailEn}</p>
@@ -121,13 +121,6 @@ export default function AboutPageV6({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
-
-      <section className={`wrap ${styles.archive}`}>
-        <details>
-          <summary>{fa ? "نمایش محتوای آرشیوی صفحه قدیمی" : "Show archived legacy page content"}</summary>
-          <LegacyPageContent locale={locale} pageId={122} />
-        </details>
-      </section>
-    </main>
+</main>
   );
 }

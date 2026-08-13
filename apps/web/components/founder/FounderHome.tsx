@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Locale } from "@/content/founder-site";
 import { founderCareerProfile } from "@/content/founder/profile";
 import { selectedAchievements } from "@/content/founder/achievements";
-import { productPortfolio as products } from "@/content/product-portfolio";
+import { getProductCategory, getProductIndustry, productPortfolio as products } from "@/content/product-portfolio";
 import { getLegacyPosts } from "@/lib/legacy-wordpress";
 import { formatSiteDate, formatSiteNumber, localeDigits } from "@/lib/locale-format";
 import styles from "./FounderV6.module.css";
@@ -113,7 +113,7 @@ export default function FounderHome({ locale }: { locale: Locale }) {
           <div className={styles.heroCopy}>
             <div className={styles.heroKicker}>
               <span>FOUNDER / PRODUCT / TECHNOLOGY</span>
-              <span className={styles.liveDot}>{fa ? "در حال توسعه" : "Building now"}</span>
+              <span className={styles.liveDot}>{fa ? "محصول / پلتفرم / AI" : "PRODUCTS / PLATFORMS / AI"}</span>
             </div>
 
             <h1>
@@ -159,7 +159,7 @@ export default function FounderHome({ locale }: { locale: Locale }) {
             <div className={styles.heroSignals}>
               {heroMetrics.map((item) => (
                 <div key={`${item.value}-${item.label}`}>
-                  <strong>{item.value}</strong>
+                  <strong>{localeDigits(item.value, locale)}</strong>
                   <span>{item.label}</span>
                 </div>
               ))}
@@ -186,7 +186,7 @@ export default function FounderHome({ locale }: { locale: Locale }) {
                     className={`${styles.matrixNode} ${styles[`matrixNode${index + 1}`] ?? ""}`}
                   >
                     <strong>{getProductLabel(product, locale)}</strong>
-                    <span>{fa ? product.categoryFa : product.categoryEn}</span>
+                    <span>{getProductCategory(product, locale)}</span>
                   </div>
                 ))}
               </div>
@@ -229,7 +229,7 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         <div className={`wrap ${styles.outcomes}`}>
           {selectedAchievements.slice(0, 4).map((item) => (
             <article key={`${item.value}-${item.titleEn}`}>
-              <strong>{item.value}</strong>
+              <strong>{localeDigits(item.value, locale)}</strong>
               <div>
                 <h3>{fa ? item.titleFa : item.titleEn}</h3>
                 <p>{fa ? item.detailFa : item.detailEn}</p>
@@ -259,13 +259,13 @@ export default function FounderHome({ locale }: { locale: Locale }) {
             >
               <div className={styles.productCardTop}>
                 <span>{formatSiteNumber(index + 1, locale)}</span>
-                <small>{product.industry}</small>
+                <small>{getProductIndustry(product, locale)}</small>
               </div>
               <div className={styles.productMark}>
                 <strong>{getProductLabel(product, locale)}</strong>
               </div>
               <div className={styles.productCardBody}>
-                <span>{fa ? product.categoryFa : product.categoryEn}</span>
+                <span>{getProductCategory(product, locale)}</span>
                 <p>{fa ? product.shortDescriptionFa : product.shortDescriptionEn}</p>
               </div>
               <div className={styles.productCardFoot}>
