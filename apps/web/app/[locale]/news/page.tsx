@@ -36,8 +36,8 @@ export default async function Page({
           <h1>{fa ? "اخبار فناوری و هوش مصنوعی" : "Technology & AI News"}</h1>
           <p>
             {fa
-              ? "آرشیو واقعی مطالب سایت قبلی؛ اکنون روی طراحی جدید و به‌صورت Local."
-              : "The legacy technology archive, now rendered inside the new local design."}
+              ? "آرشیو نوشته‌ها و خبرهای فناوری AmirMotefaker.ir؛ از هوش مصنوعی و نرم‌افزار تا محصولات، ابزارها و روندهای دنیای دیجیتال."
+              : "The AmirMotefaker.ir technology archive, covering AI, software, products, tools and digital-industry trends. Original articles are preserved in their source language."}
           </p>
         </section>
 

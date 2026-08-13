@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { founder, type Locale } from "@/content/founder-site";
-import { productPortfolio as products } from "@/content/product-portfolio";
-import LocaleDigits from "@/components/founder/LocaleDigits";
+import { getProductDisplayName, productPortfolio as products } from "@/content/product-portfolio";
 import ThemeToggle from "@/components/founder/ThemeToggle";
+import { formatSiteYear } from "@/lib/locale-format";
 
 const labels = {
   fa: {
@@ -50,11 +50,11 @@ export default function FounderShell({
   children: React.ReactNode;
 }) {
   const l = labels[locale];
+  const fa = locale === "fa";
   const other = locale === "fa" ? "en" : "fa";
 
   return (
     <div className="founder-site" lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
-      <LocaleDigits locale={locale} />
       <div className="bg-glow" />
       <div className="noise" />
 
@@ -112,7 +112,7 @@ export default function FounderShell({
           <div className="footer-links-block">
             <h3>{l.quickLinks}</h3>
             <div className="footer-links">
-              <Link href={`/${locale}`}>Home</Link>
+              <Link href={`/${locale}`}>{fa ? "خانه" : "Home"}</Link>
               <Link href={`/${locale}/about`}>{l.about}</Link>
               <Link href={`/${locale}/products`}>{l.products}</Link>
               <Link href={`/${locale}/resume`}>{l.timeline}</Link>
@@ -127,7 +127,7 @@ export default function FounderShell({
             <div className="footer-links">
               {products.slice(0, 5).map((product) => (
                 <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>
-                  {product.name}
+                  {getProductDisplayName(product, locale)}
                 </Link>
               ))}
             </div>
@@ -150,7 +150,7 @@ export default function FounderShell({
         </div>
 
         <div className="wrap footer-bottom">
-          <span>© 2026 {locale === "fa" ? founder.nameFa : founder.nameEn}. {l.rights}</span>
+          <span>© {formatSiteYear(new Date(), locale)} {locale === "fa" ? founder.nameFa : founder.nameEn}. {l.rights}</span>
           <span>{locale === "fa" ? "طراحی و توسعه محلی" : "Local design & development build"}</span>
         </div>
       </footer>

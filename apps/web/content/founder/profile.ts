@@ -5,12 +5,12 @@ export const founderCareerProfile = {
   headlineEn: "Founder & CEO @ PrimeSYS | Business Networker | Negotiator | Regular and Persistent",
   locationFa: "قزوین، ایران",
   locationEn: "Qazvin, Iran",
-  technologySinceFa: "همراه فناوری از ۱۹۹۰؛ از DOS و سخت‌افزار تا داده، هوش مصنوعی و ساخت محصول.",
+  technologySinceFa: "همراه فناوری از ۱۳۷۰؛ از DOS و سخت‌افزار تا داده، هوش مصنوعی و ساخت محصول.",
   technologySinceEn: "Working with technology since 1990, from DOS and hardware to data, AI and product building.",
   narrativeFa: [
     "مسیر من با کامپیوترهای IBM و DOS آغاز شد و با تحصیل در مهندسی سخت‌افزار و معماری سیستم‌های کامپیوتری ادامه پیدا کرد.",
     "در سال‌های بعد، تجربه زیرساخت و پشتیبانی فناوری اطلاعات با فروش، مذاکره، توسعه بازار و مدیریت تیم ترکیب شد.",
-    "از ۲۰۱۸ به بعد، برنامه‌نویسی و تحلیل داده به بخش جدی‌تری از مسیرم تبدیل شد؛ با SQL، Python، R، Power BI و Tableau.",
+    "از ۱۳۹۷ به بعد، برنامه‌نویسی و تحلیل داده به بخش جدی‌تری از مسیرم تبدیل شد؛ با SQL، Python، R، Power BI و Tableau.",
     "امروز تمرکز من روی ساخت محصولات، پلتفرم‌ها و اکوسیستم‌هایی است که فناوری، داده، فروش و رشد را به هم متصل می‌کنند.",
   ],
   narrativeEn: [

@@ -260,3 +260,61 @@
   .filterButton,.activeFilter,.productCard,.relatedGrid a{transition:none}
   .productCard:hover,.relatedGrid a:hover,.activeFilter{transform:none}
 }
+/* founder-visual-system-v6 */
+.productsPage,
+.detailPage{
+  padding-top:clamp(72px,8vw,108px);
+}
+.indexHero{
+  padding-bottom:44px;
+}
+.indexHero h1{
+  max-width:1100px;
+  font-size:clamp(3.4rem,8vw,7.2rem);
+  letter-spacing:-.05em;
+}
+.productGrid{
+  gap:14px;
+}
+.productCard{
+  min-height:430px;
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 84% 10%,var(--card-soft),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.035),transparent 48%),
+    var(--surface);
+  box-shadow:0 24px 70px rgba(0,0,0,.10);
+}
+.productCard:first-child{
+  min-height:500px;
+}
+.cardTop h2{
+  letter-spacing:-.045em;
+}
+.productHero{
+  gap:clamp(38px,6vw,82px);
+}
+.conceptVisual{
+  min-height:520px;
+  border-radius:34px;
+  box-shadow:0 30px 90px rgba(0,0,0,.16);
+}
+.sectionCard,
+.visionMission article,
+.experienceSection>div{
+  border-radius:28px;
+}
+.capabilityGrid article{
+  min-height:140px;
+  padding:22px 4px 12px;
+}
+.productCta{
+  padding:54px 0 0;
+  margin-bottom:20px;
+}
+@media(max-width:560px){
+  .productsPage,
+  .detailPage{
+    padding-top:64px;
+  }
+}
