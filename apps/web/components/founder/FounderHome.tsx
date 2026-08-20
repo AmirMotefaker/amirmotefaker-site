@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Locale } from "@/content/founder-site";
 import { founderCareerProfile } from "@/content/founder/profile";
 import { selectedAchievements } from "@/content/founder/achievements";
-import { getProductCategory, getProductIndustry, productPortfolio as products } from "@/content/product-portfolio";
+import { getProductCategory, getProductDisplayName, getProductIndustry, productPortfolio as products } from "@/content/product-portfolio";
 import { getLegacyPosts } from "@/lib/legacy-wordpress";
 import { formatSiteDate, formatSiteNumber, localeDigits } from "@/lib/locale-format";
 import styles from "./FounderV6.module.css";
@@ -22,58 +22,6 @@ const vision = {
   ],
 };
 
-const preferredProductOrder = [
-  "restyar",
-  "primesys",
-  "linkresan",
-  "farsio",
-  "idehjo",
-  "fahmio",
-  "filmtrack",
-  "shiftpay",
-] as const;
-
-const productNameMap = {
-  restyar: { fa: "رستیار", en: "RestYar" },
-  primesys: { fa: "پرایم سیستم", en: "PrimeSYS" },
-  linkresan: { fa: "لینک رسان", en: "LinkResan" },
-  farsio: { fa: "فارسیو", en: "Farsio" },
-  idehjo: { fa: "ایده جو", en: "IdeaJoo" },
-  fahmio: { fa: "فهمیو", en: "Fahmio" },
-  filmtrack: { fa: "فیلم ترک", en: "FilmTark" },
-  shiftpay: { fa: "شیفت پی", en: "ShiftPay" },
-} as const;
-
-const preferredOrderMap = new Map(
-  preferredProductOrder.map((slug, index) => [slug, index] as const),
-);
-
-function normalizeKey(value: string | undefined | null) {
-  return (value ?? "").toLowerCase().replace(/[^a-z0-9]+/g, "");
-}
-
-function getOrderRank(product: { slug: string; name: string }) {
-  const slugKey = normalizeKey(product.slug);
-  const nameKey = normalizeKey(product.name);
-  return preferredOrderMap.get(slugKey as keyof typeof productNameMap)
-    ?? preferredOrderMap.get(nameKey as keyof typeof productNameMap)
-    ?? Number.MAX_SAFE_INTEGER;
-}
-
-function getProductLabel(
-  product: { slug: string; name: string; nameFa?: string; nameEn?: string },
-  locale: Locale,
-) {
-  const key = normalizeKey(product.slug || product.name);
-  const mapped = productNameMap[key as keyof typeof productNameMap];
-
-  if (locale === "fa") {
-    return mapped?.fa ?? product.nameFa ?? product.name;
-  }
-
-  return mapped?.en ?? product.nameEn ?? product.name;
-}
-
 function formatOrdinal(index: number, locale: Locale) {
   return localeDigits(String(index + 1).padStart(2, "0"), locale);
 }
@@ -85,10 +33,7 @@ export default function FounderHome({ locale }: { locale: Locale }) {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   const latestPosts = posts.slice(0, 3);
-  const orderedProducts = [...products].sort(
-    (a, b) => getOrderRank(a) - getOrderRank(b) || a.name.localeCompare(b.name),
-  );
-  const featuredProducts = orderedProducts.slice(0, 8);
+  const featuredProducts = products;
 
   const heroMetrics = fa
     ? [
@@ -185,7 +130,7 @@ export default function FounderHome({ locale }: { locale: Locale }) {
                     key={product.slug}
                     className={`${styles.matrixNode} ${styles[`matrixNode${index + 1}`] ?? ""}`}
                   >
-                    <strong>{getProductLabel(product, locale)}</strong>
+                    <strong>{getProductDisplayName(product, locale)}</strong>
                     <span>{getProductCategory(product, locale)}</span>
                   </div>
                 ))}
