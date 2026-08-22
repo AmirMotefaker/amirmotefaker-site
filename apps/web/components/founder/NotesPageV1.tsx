@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Locale } from "@/content/founder-site";
+import { noteCategoryLabels, publishedNotes } from "@/content/notes";
 import styles from "./KnowledgePage.module.css";
 
 const noteTypes = {
@@ -52,12 +53,38 @@ export default function NotesPageV1({ locale }: { locale: Locale }) {
       <section className={styles.section}>
         <div className="wrap">
           <div className={styles.sectionIntro}>
+            <h2>{fa ? "یادداشت‌های منتشرشده" : "Published notes"}</h2>
+            <p>{fa ? "فقط یادداشت‌هایی که از مدل محتوایی canonical با وضعیت Published عبور کرده‌اند اینجا نمایش داده می‌شوند." : "Only notes that pass through the canonical content model with Published status appear here."}</p>
+          </div>
+
+          {publishedNotes.length > 0 ? (
+            <div className={styles.grid}>
+              {publishedNotes.map((note) => (
+                <article className={styles.card} key={note.slug}>
+                  <span>{noteCategoryLabels[locale][note.category]}</span>
+                  <h3>{fa ? note.titleFa : note.titleEn}</h3>
+                  <p>{fa ? note.summaryFa : note.summaryEn}</p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className={styles.cta}>
+              <h2>{fa ? "هنوز یادداشت دست‌اولی منتشر نشده است." : "No first-hand notes have been published yet."}</h2>
+              <p>{fa ? "این وضعیت عمداً خالی است؛ صفحه با مقاله ساختگی، بازنویسی خبر یا محتوای پرکننده پر نمی‌شود." : "This state is intentionally empty. The page will not be filled with fabricated articles, rewritten news or placeholder content."}</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="wrap">
+          <div className={styles.sectionIntro}>
             <h2>{fa ? "آرشیو قدیمی خبرها چه می‌شود؟" : "What happens to the legacy news archive?"}</h2>
             <p>{fa ? "محتوای قدیمی برای حفظ سابقه و ارزش جست‌وجو باقی می‌ماند، اما از نظر تحریریه با Notes یکی نیست. خبرهای قدیمی آرشیو هستند؛ Notes محتوای دست‌اول جدید است." : "Legacy content remains available for historical and search continuity, but it is editorially distinct from Notes. Old technology posts are an archive; Notes is the new first-hand publishing layer."}</p>
           </div>
           <div className={styles.cta}>
             <h2>{fa ? "Notes باید با تجربه واقعی رشد کند." : "Notes should grow from real operating experience."}</h2>
-            <p>{fa ? "تا زمانی که یادداشت دست‌اول آماده انتشار نباشد، این صفحه با مقاله‌های ساختگی یا بازنویسی اخبار پر نمی‌شود." : "Until first-hand notes are ready, this page will not be padded with fabricated articles or rewritten news."}</p>
+            <p>{fa ? "هر مطلب جدید باید زاویه دست‌اول، مالک محتوا، تاریخ، ارتباط با محصول یا Thesis و منبع برای واقعیت‌های بیرونی داشته باشد." : "Every new note needs a first-hand angle, content owner, date, product or thesis relationship, and sources for external facts."}</p>
           </div>
         </div>
       </section>
