@@ -1,26 +1,26 @@
 import Link from "next/link";
 import type { Locale } from "@/content/founder-site";
-import { founderCareerProfile } from "@/content/founder/profile";
-import { selectedAchievements } from "@/content/founder/achievements";
-import { getProductCategory, getProductDisplayName, getProductIndustry, productPortfolio as products } from "@/content/product-portfolio";
-import { getLegacyPosts } from "@/lib/legacy-wordpress";
-import { formatSiteDate, formatSiteNumber, localeDigits } from "@/lib/locale-format";
+import {
+  getProductCategory,
+  getProductDisplayName,
+  getProductIndustry,
+  productPortfolio as products,
+} from "@/content/product-portfolio";
+import { formatSiteNumber, localeDigits } from "@/lib/locale-format";
 import styles from "./FounderV6.module.css";
 
-const vision = {
+const thesisPrinciples = {
   fa: [
-    ["01", "هوش مصنوعی", "ساخت ابزارها و محصولات AI که به مسئله واقعی کاربر و کسب‌وکار متصل باشند."],
-    ["02", "مهندسی نرم‌افزار", "طراحی پلتفرم‌های قابل توسعه؛ از تجربه کاربری تا معماری و عملیات."],
-    ["03", "تحول دیجیتال", "اتصال فرایند، داده، محصول و فروش برای ساخت سیستم‌هایی که واقعاً استفاده می‌شوند."],
-    ["04", "اتوماسیون", "حذف کار تکراری، افزایش سرعت تصمیم‌گیری و ساخت جریان‌های کاری هوشمند."],
+    ["01", "مسئله قبل از تکنولوژی", "ابتدا مسئله و رفتار واقعی کاربر را می‌فهمیم."],
+    ["02", "محصول قبل از نمایش", "قابلیت واقعی مهم‌تر از ادعای بزرگ است."],
+    ["03", "سیستم قبل از ویژگی", "محصول باید بتواند رشد کند، یاد بگیرد و به اکوسیستم متصل شود."],
   ],
   en: [
-    ["01", "Artificial Intelligence", "Building AI products around real user and business problems."],
-    ["02", "Software Engineering", "Designing scalable platforms from product experience to architecture and operations."],
-    ["03", "Digital Transformation", "Connecting process, data, product and sales into systems people actually use."],
-    ["04", "Automation", "Removing repetitive work and creating faster, smarter operating flows."],
+    ["01", "Problem before technology", "Understand the real user problem and behavior first."],
+    ["02", "Product before presentation", "Working capability matters more than oversized claims."],
+    ["03", "Systems before features", "Products should be able to grow, learn and connect into a broader ecosystem."],
   ],
-};
+} as const;
 
 function formatOrdinal(index: number, locale: Locale) {
   return localeDigits(String(index + 1).padStart(2, "0"), locale);
@@ -28,28 +28,7 @@ function formatOrdinal(index: number, locale: Locale) {
 
 export default function FounderHome({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
-  const narrative = fa ? founderCareerProfile.narrativeFa : founderCareerProfile.narrativeEn;
-  const posts = [...getLegacyPosts()].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
-  const latestPosts = posts.slice(0, 3);
   const featuredProducts = products;
-
-  const heroMetrics = fa
-    ? [
-        { value: formatSiteNumber(featuredProducts.length, locale), label: "محصول منتخب" },
-        { value: formatSiteNumber(posts.length, locale), label: "خبر فناوری" },
-        { value: "۳۰+", label: "سال سابقه فعالیت در حوزه فناوری" },
-        { value: "۱۳۷۰", label: "شروع مسیر فناوری" },
-        { value: "PrimeSYS", label: "Founder & CEO" },
-      ]
-    : [
-        { value: formatSiteNumber(featuredProducts.length, locale), label: "Featured products" },
-        { value: formatSiteNumber(posts.length, locale), label: "Technology news posts" },
-        { value: "30+", label: "Years in technology" },
-        { value: "1990", label: "Technology journey began" },
-        { value: "PrimeSYS", label: "Founder & CEO" },
-      ];
 
   return (
     <main className={styles.home}>
@@ -57,57 +36,44 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         <div className={`wrap ${styles.heroGrid}`}>
           <div className={styles.heroCopy}>
             <div className={styles.heroKicker}>
-              <span>FOUNDER / PRODUCT / TECHNOLOGY</span>
-              <span className={styles.liveDot}>{fa ? "محصول / پلتفرم / AI" : "PRODUCTS / PLATFORMS / AI"}</span>
+              <span>{fa ? "بنیان‌گذار / محصول / فناوری" : "FOUNDER / PRODUCT / TECHNOLOGY"}</span>
+              <span className={styles.liveDot}>{fa ? "ساخت محصول" : "BUILDING PRODUCTS"}</span>
             </div>
 
             <h1>
               {fa ? (
                 <>
-                  فناوری را به
-                  <span> محصول</span>
+                  فناوری را به <span>محصول</span>،
                   <br />
-                  و محصول را به
-                  <span> اکوسیستم</span>
+                  و محصول را به یک <span>پرتفوی قابل ساخت</span>
                   <br />
                   تبدیل می‌کنم.
                 </>
               ) : (
                 <>
-                  I turn technology into
-                  <span> products</span>
+                  I turn technology into <span>products</span>
                   <br />
-                  and products into
-                  <span> ecosystems.</span>
+                  — and products into a <span>portfolio built to compound.</span>
                 </>
               )}
             </h1>
 
             <p className={styles.heroLead}>
               {fa
-                ? "بنیان‌گذار و مدیرعامل PrimeSYS؛ با بیش از سه دهه تجربه در فناوری، ساخت محصول، توسعه پلتفرم و طراحی راه‌حل‌های مبتنی بر داده و هوش مصنوعی."
-                : "Founder & CEO at PrimeSYS — with more than three decades across technology, product building, platforms, data and AI-driven solutions."}
+                ? "من امیر متفکر هستم؛ کارآفرین و سازنده محصولات فناوری. تمرکز من روی ساخت محصولاتی است که هوش مصنوعی، نرم‌افزار و داده را به مسئله‌های واقعی کاربران و کسب‌وکارها متصل می‌کنند."
+                : "I'm Amir Motefaker, an entrepreneur and technology product builder. I focus on products that connect AI, software and data to real problems for people and businesses."}
             </p>
 
             <div className={styles.heroActions}>
               <Link href={`/${locale}/products`} className="btn btn-primary">
-                {fa ? "مشاهده اکوسیستم محصولات" : "Explore the product ecosystem"}
+                {fa ? "مشاهده محصولات" : "Explore products"}
               </Link>
-              <Link href={`/${locale}/about`} className="btn btn-ghost">
-                {fa ? "داستان من" : "My story"}
+              <Link href={`/${locale}/thesis`} className="btn btn-ghost">
+                {fa ? "نگاه من به ساخت محصول" : "Read my product thesis"}
               </Link>
-              <Link href={`/${locale}/resume`} className={styles.textLink}>
-                {fa ? "مسیر حرفه‌ای ↗" : "Professional journey ↗"}
+              <Link href={`/${locale}/about`} className={styles.textLink}>
+                {fa ? "درباره امیر ↗" : "About Amir ↗"}
               </Link>
-            </div>
-
-            <div className={styles.heroSignals}>
-              {heroMetrics.map((item) => (
-                <div key={`${item.value}-${item.label}`}>
-                  <strong>{localeDigits(item.value, locale)}</strong>
-                  <span>{item.label}</span>
-                </div>
-              ))}
             </div>
           </div>
 
@@ -115,12 +81,14 @@ export default function FounderHome({ locale }: { locale: Locale }) {
             <div className={styles.productMatrix}>
               <div className={styles.matrixGlow} />
               <div className={styles.matrixCore}>
-                <span>{fa ? "اکوسیستم محصولات" : "PRODUCT ECOSYSTEM"}</span>
-                <strong>{fa ? "۸ محصول" : "8 Products"}</strong>
+                <span>{fa ? "پرتفوی محصولات" : "PRODUCT PORTFOLIO"}</span>
+                <strong>
+                  {formatSiteNumber(featuredProducts.length, locale)} {fa ? "محصول فعال" : "active products"}
+                </strong>
                 <small>
                   {fa
-                    ? "محصولات مستقل با یک نگاه مشترک به فناوری، بازار و رشد."
-                    : "Independent products shaped by one technology, market and growth mindset."}
+                    ? "محصولات مستقل؛ یک منطق مشترک برای ساختن."
+                    : "Independent products. A shared logic for building."}
                 </small>
               </div>
 
@@ -143,8 +111,8 @@ export default function FounderHome({ locale }: { locale: Locale }) {
       <section className={styles.operatorStrip}>
         <div className={`wrap ${styles.operatorGrid}`}>
           {(fa
-            ? ["محصول", "پلتفرم", "هوش مصنوعی", "اتوماسیون", "رشد"]
-            : ["PRODUCT", "PLATFORM", "AI", "AUTOMATION", "GROWTH"]).map((item, index) => (
+            ? ["مسئله", "محصول", "هوش مصنوعی", "سیستم", "رشد"]
+            : ["PROBLEM", "PRODUCT", "AI", "SYSTEMS", "GROWTH"]).map((item, index) => (
             <div key={item}>
               <span>{formatOrdinal(index, locale)}</span>
               <strong>{item}</strong>
@@ -153,45 +121,46 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className={styles.storySection} id="expertise">
-        <div className={`wrap ${styles.sectionIntro}`}>
-          <div>
-            <span className={styles.sectionEyebrow}>{fa ? "مسیر ساختن" : "THE BUILDER JOURNEY"}</span>
-            <h2>{fa ? "از DOS و سخت‌افزار تا AI و محصول." : "From DOS and hardware to AI and products."}</h2>
+      <section className={styles.visionSection}>
+        <div className={`wrap ${styles.visionShell}`}>
+          <div className={styles.visionHeading}>
+            <span className={styles.sectionEyebrow}>{fa ? "نگاه من به ساخت محصول" : "PRODUCT THESIS"}</span>
+            <h2>
+              {fa
+                ? "محصول خوب از فناوری شروع نمی‌شود؛ از یک مسئله واقعی شروع می‌شود."
+                : "Good products don't start with technology. They start with a real problem."}
+            </h2>
+            <p>
+              {fa
+                ? "در پروژه‌هایی که می‌سازم، فناوری زمانی ارزشمند است که اصطکاک را کم کند، تصمیم‌گیری را بهتر کند یا یک تجربه پیچیده را ساده‌تر سازد. هوش مصنوعی برای من یک برچسب بازاریابی نیست؛ یکی از ابزارهای ساختن محصول بهتر است."
+                : "Across the products I build, technology matters when it reduces friction, improves decisions or makes a complex experience simpler. AI is not the proposition by itself; it is one of the tools for building a better product."}
+            </p>
           </div>
-          <p>{fa ? founderCareerProfile.technologySinceFa : founderCareerProfile.technologySinceEn}</p>
-        </div>
 
-        <div className={`wrap ${styles.storyGrid}`}>
-          {narrative.map((item, index) => (
-            <article key={item} className={styles.storyCard}>
-              <span>{formatOrdinal(index, locale)}</span>
-              <p>{item}</p>
-            </article>
-          ))}
-        </div>
+          <div className={styles.visionGrid}>
+            {thesisPrinciples[locale].map(([index, title, detail]) => (
+              <article key={title}>
+                <span>{localeDigits(index, locale)}</span>
+                <h3>{title}</h3>
+                <p>{detail}</p>
+              </article>
+            ))}
+          </div>
 
-        <div className={`wrap ${styles.outcomes}`}>
-          {selectedAchievements.slice(0, 4).map((item) => (
-            <article key={`${item.value}-${item.titleEn}`}>
-              <strong>{localeDigits(item.value, locale)}</strong>
-              <div>
-                <h3>{fa ? item.titleFa : item.titleEn}</h3>
-                <p>{fa ? item.detailFa : item.detailEn}</p>
-              </div>
-            </article>
-          ))}
+          <Link href={`/${locale}/thesis`} className={styles.textLink}>
+            {fa ? "مطالعه کامل Thesis ↗" : "Read the full thesis ↗"}
+          </Link>
         </div>
       </section>
 
       <section className={styles.productsSection}>
         <div className={`wrap ${styles.sectionIntro}`}>
           <div>
-            <span className={styles.sectionEyebrow}>{fa ? "اکوسیستم محصولات" : "PRODUCT ECOSYSTEM"}</span>
-            <h2>{fa ? "محصولات مستقل؛ یک نگاه مشترک به فناوری." : "Independent products. One technology mindset."}</h2>
+            <span className={styles.sectionEyebrow}>{fa ? "پرتفوی محصولات" : "PRODUCT PORTFOLIO"}</span>
+            <h2>{fa ? "محصولات مستقل؛ یک منطق مشترک برای ساختن." : "Independent products. A shared logic for building."}</h2>
           </div>
           <Link href={`/${locale}/products`} className={styles.textLink}>
-            {fa ? "مشاهده همه محصولات ↗" : "View all products ↗"}
+            {fa ? "مشاهده کل پرتفوی ↗" : "Explore the portfolio ↗"}
           </Link>
         </div>
 
@@ -222,72 +191,108 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className={styles.visionSection}>
-        <div className={`wrap ${styles.visionShell}`}>
-          <div className={styles.visionHeading}>
-            <span className={styles.sectionEyebrow}>{fa ? "چشم‌انداز فناوری" : "TECHNOLOGY VISION"}</span>
-            <h2>
-              {fa
-                ? "فناوری زمانی مهم است که پیچیدگی را کم کند و توان ساختن را بیشتر."
-                : "Technology matters when it reduces complexity and increases the ability to build."}
-            </h2>
+      <section className={styles.storySection}>
+        <div className={`wrap ${styles.sectionIntro}`}>
+          <div>
+            <span className={styles.sectionEyebrow}>{fa ? "شواهد ساختن" : "BUILDING EVIDENCE"}</span>
+            <h2>{fa ? "پرتفوی باید با چیزی بیشتر از ادعا توضیح داده شود." : "A portfolio should be explained by more than claims."}</h2>
           </div>
+          <p>
+            {fa
+              ? "دمو، محصول قابل استفاده، مخزن عمومی، تجربه واقعی کاربر و نتایج قابل اندازه‌گیری، هرجا که قابل انتشار باشند، باید روایت این سایت را پشتیبانی کنند."
+              : "Working products, demos, public repositories, real user experience and measurable outcomes should support the story wherever they can be published."}
+          </p>
+        </div>
 
-          <div className={styles.visionGrid}>
-            {vision[locale].map(([index, title, detail]) => (
-              <article key={title}>
-                <span>{localeDigits(index, locale)}</span>
-                <h3>{title}</h3>
-                <p>{detail}</p>
-              </article>
-            ))}
-          </div>
+        <div className={`wrap ${styles.storyGrid}`}>
+          {(fa
+            ? ["محصول قابل استفاده", "دمو یا Preview", "مخزن و شواهد فنی", "مطالعه موردی"]
+            : ["Working product", "Demo or preview", "Technical evidence", "Case study"]).map((item, index) => (
+            <article key={item} className={styles.storyCard}>
+              <span>{formatOrdinal(index, locale)}</span>
+              <p>{item}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className={styles.newsSection}>
         <div className={`wrap ${styles.sectionIntro}`}>
           <div>
-            <span className={styles.sectionEyebrow}>{fa ? "اخبار فناوری" : "TECH NEWS"}</span>
-            <h2>{fa ? "آخرین نوشته‌ها و خبرهای حوزه فناوری." : "Latest articles and technology updates."}</h2>
+            <span className={styles.sectionEyebrow}>{fa ? "یادداشت‌ها" : "NOTES"}</span>
+            <h2>{fa ? "تصمیم‌ها، آزمایش‌ها و چیزهایی که در مسیر ساختن یاد می‌گیرم." : "Decisions, experiments and lessons from building."}</h2>
           </div>
-          <Link href={`/${locale}/news`} className={styles.textLink}>
-            {fa ? "رفتن به همه خبرها ↗" : "Browse all news ↗"}
+          <Link href={`/${locale}/notes`} className={styles.textLink}>
+            {fa ? "مشاهده یادداشت‌ها ↗" : "Read the notes ↗"}
           </Link>
         </div>
 
         <div className={`wrap ${styles.newsGrid}`}>
-          {latestPosts.map((post) => (
-            <article key={post.slug} className={styles.newsCard}>
-              <div className={styles.newsCardTop}>
-                <span>{fa ? "خبر فناوری" : "Tech post"}</span>
-                <time dateTime={post.date}>{formatSiteDate(post.date, locale)}</time>
-              </div>
-              <h3>{post.title}</h3>
-              <p>{post.excerpt_text}</p>
-              <Link href={`/${locale}/news/${post.slug}`} className={styles.textLink}>
-                {fa ? "ادامه مطلب ↗" : "Read more ↗"}
-              </Link>
-            </article>
-          ))}
+          <article className={styles.newsCard}>
+            <div className={styles.newsCardTop}>
+              <span>{fa ? "محصول" : "PRODUCT"}</span>
+            </div>
+            <h3>{fa ? "تصمیم‌های محصول" : "Product decisions"}</h3>
+            <p>{fa ? "چرا یک قابلیت ساخته، حذف یا بازطراحی شد." : "Why a capability was built, removed or redesigned."}</p>
+          </article>
+          <article className={styles.newsCard}>
+            <div className={styles.newsCardTop}>
+              <span>{fa ? "فناوری" : "TECHNOLOGY"}</span>
+            </div>
+            <h3>{fa ? "یادداشت‌های میدانی AI" : "AI field notes"}</h3>
+            <p>{fa ? "آنچه از استفاده واقعی هوش مصنوعی در محصول یاد می‌گیریم." : "What real product use teaches us about AI."}</p>
+          </article>
+          <article className={styles.newsCard}>
+            <div className={styles.newsCardTop}>
+              <span>{fa ? "بازار" : "MARKET"}</span>
+            </div>
+            <h3>{fa ? "مشاهده و آزمایش" : "Observations and experiments"}</h3>
+            <p>{fa ? "فرضیه‌هایی که با بازار، کاربر و داده سنجیده می‌شوند." : "Hypotheses tested against markets, users and data."}</p>
+          </article>
+        </div>
+      </section>
+
+      <section className={styles.storySection}>
+        <div className={`wrap ${styles.sectionIntro}`}>
+          <div>
+            <span className={styles.sectionEyebrow}>{fa ? "درباره امیر" : "ABOUT AMIR"}</span>
+            <h2>{fa ? "مسیر من با ساختن گره خورده است." : "My path has always been tied to building."}</h2>
+          </div>
+          <p>
+            {fa
+              ? "از تجربه‌های اولیه در فناوری تا ساخت محصولات و کسب‌وکارهای امروز، تمرکز من روی تبدیل مسئله‌های واقعی به سیستم‌ها و محصولاتی بوده که بتوانند استفاده شوند، رشد کنند و بهتر شوند."
+              : "From early work in technology to building today's products and businesses, my focus has been turning real problems into systems and products that can be used, improved and scaled."}
+          </p>
+        </div>
+        <div className={`wrap ${styles.heroActions}`}>
+          <Link href={`/${locale}/about`} className="btn btn-ghost">
+            {fa ? "داستان من" : "My story"}
+          </Link>
+          <Link href={`/${locale}/resume`} className={styles.textLink}>
+            {fa ? "مسیر حرفه‌ای ↗" : "Professional journey ↗"}
+          </Link>
         </div>
       </section>
 
       <section className={styles.ctaSection}>
         <div className={`wrap ${styles.ctaPanel}`}>
           <div>
-            <span className={styles.sectionEyebrow}>{fa ? "همکاری" : "LET'S BUILD"}</span>
-            <h2>{fa ? "اگر روی مسئله واقعی کار می‌کنید، گفت‌وگو را شروع کنیم." : "If you are working on a real problem, let's start the conversation."}</h2>
+            <span className={styles.sectionEyebrow}>{fa ? "گفت‌وگو" : "START A CONVERSATION"}</span>
+            <h2>
+              {fa
+                ? "اگر یک مسئله واقعی برای ساختن دارید، مسیر درست گفت‌وگو را انتخاب کنید."
+                : "If you have a real problem worth building around, choose the right conversation."}
+            </h2>
             <p>
               {fa
-                ? "از ساخت محصول و طراحی پلتفرم تا توسعه اکوسیستم و راه‌حل‌های AI، برای همکاری و مشاوره در تماس باشید."
-                : "From product strategy and platform design to ecosystem building and AI-enabled solutions — reach out for collaboration and advisory work."}
+                ? "برای همکاری محصول، شراکت، گفت‌وگوی راهبردی، موضوعات تجاری یا رسانه‌ای، از مسیر مرتبط وارد شوید تا گفتگو از همان ابتدا زمینه مشخصی داشته باشد."
+                : "For product collaboration, partnerships, strategic conversations, commercial inquiries or media, use the relevant route so the context is clear from the start."}
             </p>
           </div>
 
           <div className={styles.ctaActions}>
             <Link href={`/${locale}/contact`} className="btn btn-primary">
-              {fa ? "تماس و همکاری" : "Contact & collaboration"}
+              {fa ? "شروع گفتگو" : "Start a conversation"}
             </Link>
             <Link href={`/${locale}/products`} className="btn btn-ghost">
               {fa ? "مرور محصولات" : "Review products"}
