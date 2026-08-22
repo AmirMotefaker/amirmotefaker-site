@@ -10,12 +10,69 @@ import type { Locale } from "@/content/founder-site";
 import { localeDigits } from "@/lib/locale-format";
 import styles from "./ProductPortfolio.module.css";
 
+function getLifecycleLabel(status: Product["status"], locale: Locale) {
+  const labels = {
+    fa: {
+      live: "فعال",
+      development: "در حال توسعه",
+      discovery: "در مرحله کشف",
+      concept: "مفهوم اولیه",
+      "to-confirm": "وضعیت در حال تأیید",
+    },
+    en: {
+      live: "Live",
+      development: "In development",
+      discovery: "Discovery",
+      concept: "Concept",
+      "to-confirm": "Status to confirm",
+    },
+  } as const;
+
+  return labels[locale][status];
+}
+
+function getPrimaryAction(product: Product, locale: Locale) {
+  const fa = locale === "fa";
+
+  switch (product.status) {
+    case "live":
+      return {
+        type: "external" as const,
+        label: fa ? `مشاهده ${getProductDisplayName(product, locale)}` : `Visit ${getProductDisplayName(product, locale)}`,
+      };
+    case "development":
+      return {
+        type: "contact" as const,
+        label: fa ? "پیگیری توسعه / درخواست Preview" : "Follow development / request preview",
+      };
+    case "discovery":
+      return {
+        type: "contact" as const,
+        label: fa ? "پیگیری روند محصول" : "Follow product progress",
+      };
+    case "concept":
+      return {
+        type: "none" as const,
+        label: fa ? "هنوز برای استفاده عمومی عرضه نشده" : "Not publicly available yet",
+      };
+    case "to-confirm":
+    default:
+      return {
+        type: "none" as const,
+        label: fa ? "وضعیت دسترسی عمومی در حال تأیید است" : "Public availability is being confirmed",
+      };
+  }
+}
+
 export default function ProductDetailView({ locale, product }: { locale: Locale; product: Product }) {
   const fa = locale === "fa";
   const displayName = getProductDisplayName(product, locale);
   const related = getRelatedProducts(product);
   const problems = fa ? product.problemFa : product.problemEn;
   const capabilities = fa ? product.capabilitiesFa : product.capabilitiesEn;
+  const roadmap = fa ? product.roadmapFa : product.roadmapEn;
+  const futureDirections = product.futureDirections ?? [];
+  const primaryAction = getPrimaryAction(product, locale);
 
   return (
     <main className={styles.detailPage} data-product-theme={product.slug}>
@@ -29,9 +86,17 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
           <p>{fa ? product.hero.descriptionFa : product.hero.descriptionEn}</p>
 
           <div className={styles.heroActions}>
-            <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              {fa ? product.hero.secondaryCtaFa : product.hero.secondaryCtaEn} ↗
-            </a>
+            {primaryAction.type === "external" ? (
+              <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                {primaryAction.label} ↗
+              </a>
+            ) : primaryAction.type === "contact" ? (
+              <Link href={`/${locale}/contact`} className="btn btn-primary">
+                {primaryAction.label}
+              </Link>
+            ) : (
+              <span className="btn btn-ghost" aria-disabled="true">{primaryAction.label}</span>
+            )}
             <Link href={`/${locale}/contact`} className="btn btn-ghost">
               {fa ? "گفت‌وگو درباره همکاری" : "Discuss collaboration"}
             </Link>
@@ -57,6 +122,10 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
 
       <section className={`wrap ${styles.snapshotGrid}`}>
         <article>
+          <span>{fa ? "وضعیت محصول" : "Lifecycle"}</span>
+          <strong>{getLifecycleLabel(product.status, locale)}</strong>
+        </article>
+        <article>
           <span>{fa ? "صنعت" : "Industry"}</span>
           <strong>{getProductIndustry(product, locale)}</strong>
         </article>
@@ -68,11 +137,18 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
           <span>{fa ? "مخاطبان" : "Audience"}</span>
           <strong>{fa ? product.audienceFa : product.audienceEn}</strong>
         </article>
-        <article>
-          <span>{fa ? "دامنه" : "Domain"}</span>
-          <strong className="ltr">{product.domain}</strong>
-        </article>
       </section>
+
+      {product.status === "to-confirm" ? (
+        <section className={`wrap ${styles.notice}`}>
+          <span className="sec-tag">{fa ? "مرز انتشار" : "PUBLICATION BOUNDARY"}</span>
+          <p>
+            {fa
+              ? "عضویت این محصول در پرتفوی تأیید شده است، اما وضعیت دسترسی عمومی و مرحله چرخه عمر آن هنوز در رجیستری محصول نهایی نشده است. بنابراین این صفحه از ادعای «فعال» یا CTA استفاده قطعی خودداری می‌کند."
+              : "This product is confirmed as part of the portfolio, but its public availability and lifecycle state are not yet finalized in the product registry. This page therefore avoids claiming it is live or presenting a definitive usage CTA."}
+          </p>
+        </section>
+      ) : null}
 
       {product.criticalPositioningFa ? (
         <section className={`wrap ${styles.notice}`}>
@@ -102,8 +178,8 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
 
       <section className={`wrap ${styles.sectionShell}`}>
         <div className={styles.sectionHeading}>
-          <span className="sec-tag">{fa ? "قابلیت‌ها" : "CORE CAPABILITIES"}</span>
-          <h2>{fa ? "قابلیت‌های اصلی" : "Core capabilities"}</h2>
+          <span className="sec-tag">{fa ? "قابلیت‌های فعلی" : "CURRENT CAPABILITIES"}</span>
+          <h2>{fa ? "آنچه امروز به‌عنوان قابلیت محصول ثبت شده" : "What is currently recorded as product capability"}</h2>
         </div>
         <div className={styles.capabilityGrid}>
           {capabilities.map((capability, index) => (
@@ -118,8 +194,8 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
       {(product.currentProductFa || product.productPromiseFa) ? (
         <section className={`wrap ${styles.experienceSection}`}>
           <div>
-            <span className="sec-tag">{fa ? "تجربه محصول" : "PRODUCT EXPERIENCE"}</span>
-            <h2>{fa ? "محصول امروز و وعده تجربه" : "Current product & experience promise"}</h2>
+            <span className="sec-tag">{fa ? "وضعیت فعلی" : "CURRENT PRODUCT"}</span>
+            <h2>{fa ? "محصول امروز" : "Current product state"}</h2>
             {product.currentProductFa ? (
               <p><strong>{fa ? "محصول فعلی: " : "Current product: "}</strong>{fa ? product.currentProductFa : product.currentProductEn}</p>
             ) : null}
@@ -128,12 +204,46 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
             ) : null}
           </div>
           <div className={styles.experienceVisual}>
-            <span>{fa ? "نمای مفهومی" : "PRODUCT CONCEPT"}</span>
-            <strong className={fa ? undefined : "ltr"}>{displayName}</strong>
+            <span>{fa ? "وضعیت چرخه عمر" : "LIFECYCLE STATE"}</span>
+            <strong className={fa ? undefined : "ltr"}>{getLifecycleLabel(product.status, locale)}</strong>
             <p>{product.positioning}</p>
           </div>
         </section>
       ) : null}
+
+      {(roadmap.some(Boolean) || futureDirections.length > 0) ? (
+        <section className={`wrap ${styles.sectionShell}`}>
+          <div className={styles.sectionHeading}>
+            <span className="sec-tag">{fa ? "مسیر آینده" : "FUTURE DIRECTION"}</span>
+            <h2>{fa ? "Roadmap و جهت‌های آینده — نه قابلیت فعلی" : "Roadmap and future directions — not current capability"}</h2>
+            <p>
+              {fa
+                ? "موارد این بخش رو به جلو هستند و نباید به‌عنوان قابلیت موجود یا وعده زمان‌بندی‌شده تفسیر شوند."
+                : "Items in this section are forward-looking and should not be interpreted as current capabilities or time-bound commitments."}
+            </p>
+          </div>
+          <div className={styles.capabilityGrid}>
+            {[...roadmap.filter(Boolean), ...futureDirections].map((item, index) => (
+              <article key={`${item}-${index}`}>
+                <span>{localeDigits(String(index + 1).padStart(2, "0"), locale)}</span>
+                <h3>{item}</h3>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className={`wrap ${styles.sectionShell}`}>
+        <div className={styles.sectionHeading}>
+          <span className="sec-tag">{fa ? "شواهد" : "EVIDENCE"}</span>
+          <h2>{fa ? "شواهد قابل انتشار" : "Publishable evidence"}</h2>
+          <p>
+            {fa
+              ? "این بخش فقط باید با دمو، مخزن عمومی، محصول قابل استفاده، مطالعه موردی یا نتیجه قابل اندازه‌گیری واقعی تکمیل شود. تا زمان اتصال Evidence Registry، هیچ عدد یا ادعای جایگزین نمایش داده نمی‌شود."
+              : "This section should only be populated with real demos, public repositories, working products, case studies or measured outcomes. Until an Evidence Registry is connected, no placeholder metrics or substitute claims are shown."}
+          </p>
+        </div>
+      </section>
 
       <section className={`wrap ${styles.sectionShell}`}>
         <div className={styles.sectionHeading}>
@@ -176,15 +286,25 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
 
       <section className={`wrap ${styles.productCta}`}>
         <div>
-          <span className="sec-tag">{fa ? "محصول و همکاری" : "PRODUCT & COLLABORATION"}</span>
-          <h2>{fa ? "برای ساخت محصول و همکاری فناورانه در ارتباط باشیم." : "Let's connect around product and technology."}</h2>
+          <span className="sec-tag">{fa ? "گام بعد" : "NEXT STEP"}</span>
+          <h2>
+            {primaryAction.type === "external"
+              ? (fa ? "محصول در دسترس است؛ می‌توانید از دامنه رسمی وارد شوید." : "The product is available; continue to its official domain.")
+              : (fa ? "برای وضعیت، همکاری یا دسترسی احتمالی از مسیر تماس مرتبط وارد شوید." : "Use the contact route for status, collaboration or potential access.")}
+          </h2>
         </div>
         <div className={styles.heroActions}>
-          <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-            {fa ? `مشاهده ${displayName}` : `Visit ${displayName}`} ↗
-          </a>
-          <Link href={`/${locale}/contact`} className="btn btn-ghost">
-            {fa ? "تماس با امیر" : "Contact Amir"}
+          {primaryAction.type === "external" ? (
+            <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              {primaryAction.label} ↗
+            </a>
+          ) : (
+            <Link href={`/${locale}/contact`} className="btn btn-primary">
+              {fa ? "شروع گفت‌وگو" : "Start a conversation"}
+            </Link>
+          )}
+          <Link href={`/${locale}/products`} className="btn btn-ghost">
+            {fa ? "بازگشت به پرتفوی" : "Back to portfolio"}
           </Link>
         </div>
       </section>
