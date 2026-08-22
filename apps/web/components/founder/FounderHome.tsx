@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Locale } from "@/content/founder-site";
+import { getVerifiedEvidence } from "@/content/evidence-registry";
 import {
   getProductCategory,
   getProductDisplayName,
@@ -29,6 +30,7 @@ function formatOrdinal(index: number, locale: Locale) {
 export default function FounderHome({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
   const featuredProducts = products;
+  const evidence = getVerifiedEvidence();
 
   return (
     <main className={styles.home}>
@@ -166,11 +168,7 @@ export default function FounderHome({ locale }: { locale: Locale }) {
 
         <div className={`wrap ${styles.productGrid}`}>
           {featuredProducts.map((product, index) => (
-            <Link
-              href={`/${locale}/products/${product.slug}`}
-              className={styles.productCard}
-              key={product.slug}
-            >
+            <Link href={`/${locale}/products/${product.slug}`} className={styles.productCard} key={product.slug}>
               <div className={styles.productCardTop}>
                 <span>{formatSiteNumber(index + 1, locale)}</span>
                 <small>{getProductIndustry(product, locale)}</small>
@@ -191,30 +189,35 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className={styles.storySection}>
-        <div className={`wrap ${styles.sectionIntro}`}>
-          <div>
-            <span className={styles.sectionEyebrow}>{fa ? "شواهد ساختن" : "BUILDING EVIDENCE"}</span>
-            <h2>{fa ? "پرتفوی باید با چیزی بیشتر از ادعا توضیح داده شود." : "A portfolio should be explained by more than claims."}</h2>
+      {evidence.length > 0 ? (
+        <section className={styles.storySection}>
+          <div className={`wrap ${styles.sectionIntro}`}>
+            <div>
+              <span className={styles.sectionEyebrow}>{fa ? "شواهد ساختن" : "BUILDING EVIDENCE"}</span>
+              <h2>{fa ? "پرتفوی باید با چیزی بیشتر از ادعا توضیح داده شود." : "A portfolio should be explained by more than claims."}</h2>
+            </div>
+            <p>
+              {fa
+                ? "این بخش فقط شواهد تأییدشده‌ای را نشان می‌دهد که در Evidence Registry ثبت شده‌اند."
+                : "This section only shows verified proof registered in the Evidence Registry."}
+            </p>
           </div>
-          <p>
-            {fa
-              ? "دمو، محصول قابل استفاده، مخزن عمومی، تجربه واقعی کاربر و نتایج قابل اندازه‌گیری، هرجا که قابل انتشار باشند، باید روایت این سایت را پشتیبانی کنند."
-              : "Working products, demos, public repositories, real user experience and measurable outcomes should support the story wherever they can be published."}
-          </p>
-        </div>
 
-        <div className={`wrap ${styles.storyGrid}`}>
-          {(fa
-            ? ["محصول قابل استفاده", "دمو یا Preview", "مخزن و شواهد فنی", "مطالعه موردی"]
-            : ["Working product", "Demo or preview", "Technical evidence", "Case study"]).map((item, index) => (
-            <article key={item} className={styles.storyCard}>
-              <span>{formatOrdinal(index, locale)}</span>
-              <p>{item}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+          <div className={`wrap ${styles.storyGrid}`}>
+            {evidence.slice(0, 4).map((item, index) => (
+              <article key={item.id} className={styles.storyCard}>
+                <span>{formatOrdinal(index, locale)}</span>
+                <p>{fa ? item.titleFa : item.titleEn}</p>
+                {item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.textLink}>
+                    {fa ? "مشاهده مدرک ↗" : "View evidence ↗"}
+                  </a>
+                ) : null}
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className={styles.newsSection}>
         <div className={`wrap ${styles.sectionIntro}`}>
@@ -229,23 +232,17 @@ export default function FounderHome({ locale }: { locale: Locale }) {
 
         <div className={`wrap ${styles.newsGrid}`}>
           <article className={styles.newsCard}>
-            <div className={styles.newsCardTop}>
-              <span>{fa ? "محصول" : "PRODUCT"}</span>
-            </div>
+            <div className={styles.newsCardTop}><span>{fa ? "محصول" : "PRODUCT"}</span></div>
             <h3>{fa ? "تصمیم‌های محصول" : "Product decisions"}</h3>
             <p>{fa ? "چرا یک قابلیت ساخته، حذف یا بازطراحی شد." : "Why a capability was built, removed or redesigned."}</p>
           </article>
           <article className={styles.newsCard}>
-            <div className={styles.newsCardTop}>
-              <span>{fa ? "فناوری" : "TECHNOLOGY"}</span>
-            </div>
+            <div className={styles.newsCardTop}><span>{fa ? "فناوری" : "TECHNOLOGY"}</span></div>
             <h3>{fa ? "یادداشت‌های میدانی AI" : "AI field notes"}</h3>
             <p>{fa ? "آنچه از استفاده واقعی هوش مصنوعی در محصول یاد می‌گیریم." : "What real product use teaches us about AI."}</p>
           </article>
           <article className={styles.newsCard}>
-            <div className={styles.newsCardTop}>
-              <span>{fa ? "بازار" : "MARKET"}</span>
-            </div>
+            <div className={styles.newsCardTop}><span>{fa ? "بازار" : "MARKET"}</span></div>
             <h3>{fa ? "مشاهده و آزمایش" : "Observations and experiments"}</h3>
             <p>{fa ? "فرضیه‌هایی که با بازار، کاربر و داده سنجیده می‌شوند." : "Hypotheses tested against markets, users and data."}</p>
           </article>
@@ -265,12 +262,8 @@ export default function FounderHome({ locale }: { locale: Locale }) {
           </p>
         </div>
         <div className={`wrap ${styles.heroActions}`}>
-          <Link href={`/${locale}/about`} className="btn btn-ghost">
-            {fa ? "داستان من" : "My story"}
-          </Link>
-          <Link href={`/${locale}/resume`} className={styles.textLink}>
-            {fa ? "مسیر حرفه‌ای ↗" : "Professional journey ↗"}
-          </Link>
+          <Link href={`/${locale}/about`} className="btn btn-ghost">{fa ? "داستان من" : "My story"}</Link>
+          <Link href={`/${locale}/resume`} className={styles.textLink}>{fa ? "مسیر حرفه‌ای ↗" : "Professional journey ↗"}</Link>
         </div>
       </section>
 
@@ -278,25 +271,16 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         <div className={`wrap ${styles.ctaPanel}`}>
           <div>
             <span className={styles.sectionEyebrow}>{fa ? "گفت‌وگو" : "START A CONVERSATION"}</span>
-            <h2>
-              {fa
-                ? "اگر یک مسئله واقعی برای ساختن دارید، مسیر درست گفت‌وگو را انتخاب کنید."
-                : "If you have a real problem worth building around, choose the right conversation."}
-            </h2>
+            <h2>{fa ? "اگر یک مسئله واقعی برای ساختن دارید، مسیر درست گفت‌وگو را انتخاب کنید." : "If you have a real problem worth building around, choose the right conversation."}</h2>
             <p>
               {fa
                 ? "برای همکاری محصول، شراکت، گفت‌وگوی راهبردی، موضوعات تجاری یا رسانه‌ای، از مسیر مرتبط وارد شوید تا گفتگو از همان ابتدا زمینه مشخصی داشته باشد."
                 : "For product collaboration, partnerships, strategic conversations, commercial inquiries or media, use the relevant route so the context is clear from the start."}
             </p>
           </div>
-
           <div className={styles.ctaActions}>
-            <Link href={`/${locale}/contact`} className="btn btn-primary">
-              {fa ? "شروع گفتگو" : "Start a conversation"}
-            </Link>
-            <Link href={`/${locale}/products`} className="btn btn-ghost">
-              {fa ? "مرور محصولات" : "Review products"}
-            </Link>
+            <Link href={`/${locale}/contact`} className="btn btn-primary">{fa ? "شروع گفتگو" : "Start a conversation"}</Link>
+            <Link href={`/${locale}/products`} className="btn btn-ghost">{fa ? "مرور محصولات" : "Review products"}</Link>
           </div>
         </div>
       </section>
