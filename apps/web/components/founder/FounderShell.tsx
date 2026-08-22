@@ -7,17 +7,17 @@ import { formatSiteYear } from "@/lib/locale-format";
 
 const labels = {
   fa: {
-    about: "درباره من",
+    about: "درباره",
     products: "محصولات",
-    expertise: "تخصص",
+    thesis: "نگاه من",
+    notes: "یادداشت‌ها",
     timeline: "مسیر حرفه‌ای",
-    news: "اخبار فناوری",
+    legacyNews: "آرشیو خبرها",
     contact: "تماس",
-    seeProducts: "مشاهده محصولات",
     sitemap: "نقشه سایت",
-    interest: "علاقه‌مند به فناوری",
+    interest: "بنیان‌گذار / محصول / فناوری",
     footerText:
-      "ساخت محصولات هوشمند، اکوسیستم‌های دیجیتال و تجربه‌های داده‌محور برای آینده کسب‌وکار.",
+      "ساخت محصولات فناوری با تمرکز بر مسئله واقعی، تجربه کاربر و استفاده عملی از هوش مصنوعی و نرم‌افزار.",
     quickLinks: "دسترسی سریع",
     productLinks: "محصولات منتخب",
     contactBlock: "ارتباط",
@@ -26,15 +26,15 @@ const labels = {
   en: {
     about: "About",
     products: "Products",
-    expertise: "Expertise",
+    thesis: "Thesis",
+    notes: "Notes",
     timeline: "Journey",
-    news: "Technology News",
+    legacyNews: "News Archive",
     contact: "Contact",
-    seeProducts: "View Products",
     sitemap: "Sitemap",
-    interest: "Technology Enthusiast",
+    interest: "Founder / Product / Technology",
     footerText:
-      "Building intelligent products, digital ecosystems and data-driven experiences for the future.",
+      "Building technology products around real problems, user experience and practical applications of AI and software.",
     quickLinks: "Quick Links",
     productLinks: "Featured Products",
     contactBlock: "Contact",
@@ -77,11 +77,10 @@ export default function FounderShell({
           </Link>
 
           <div className="nav-links">
-            <Link href={`/${locale}/about`}>{l.about}</Link>
             <Link href={`/${locale}/products`}>{l.products}</Link>
-            <Link href={`/${locale}#expertise`}>{l.expertise}</Link>
-            <Link href={`/${locale}/resume`}>{l.timeline}</Link>
-            <Link href={`/${locale}/news`}>{l.news}</Link>
+            <Link href={`/${locale}/thesis`}>{l.thesis}</Link>
+            <Link href={`/${locale}/notes`}>{l.notes}</Link>
+            <Link href={`/${locale}/about`}>{l.about}</Link>
           </div>
 
           <div className="nav-cta">
@@ -113,10 +112,12 @@ export default function FounderShell({
             <h3>{l.quickLinks}</h3>
             <div className="footer-links">
               <Link href={`/${locale}`}>{fa ? "خانه" : "Home"}</Link>
-              <Link href={`/${locale}/about`}>{l.about}</Link>
               <Link href={`/${locale}/products`}>{l.products}</Link>
+              <Link href={`/${locale}/thesis`}>{l.thesis}</Link>
+              <Link href={`/${locale}/notes`}>{l.notes}</Link>
+              <Link href={`/${locale}/about`}>{l.about}</Link>
               <Link href={`/${locale}/resume`}>{l.timeline}</Link>
-              <Link href={`/${locale}/news`}>{l.news}</Link>
+              <Link href={`/${locale}/news`}>{l.legacyNews}</Link>
               <Link href={`/${locale}/contact`}>{l.contact}</Link>
               <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">{l.sitemap}</a>
             </div>

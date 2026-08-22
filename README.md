@@ -1,39 +1,57 @@
 # AmirMotefaker.ir
 
-Private source of truth for the AmirMotefaker.ir website.
+Canonical source repository for the AmirMotefaker.ir founder-led technology portfolio website.
 
 ## Product direction
 
-A modern Persian founder website built around:
+AmirMotefaker.ir is the trust, narrative and discovery layer for Amir Motefaker and his product portfolio. It answers three questions:
 
-- Product leadership
-- Software engineering
-- Growth, marketing and sales
-- Evidence-backed product case studies
-- Editorial technology publishing
+1. Who is Amir Motefaker?
+2. What products is he building?
+3. Why do these products belong in one portfolio?
 
-## Repository structure
+It is not positioned as a generic personal blog, technology news portal, software agency or legal holding-company website.
 
-- docs/ — approved strategy, architecture, design and operations
-- prototype/ — reviewed offline Persian RTL prototype
-- src/wp-content/themes/amirmotefaker-v1/ — WordPress Block Theme scaffold
-- src/wp-content/plugins/amirmotefaker-core/ — core plugin scaffold
-- scripts/Test-Product.ps1 — reusable Foundation Product Test
-- .github/workflows/foundation-gate.yml — GitHub CI
+## Canonical application
 
-## Current release boundary
+- Runtime: Next.js / React / TypeScript
+- Application root: `apps/web/`
+- Default locale: Persian (`fa`, RTL)
+- Secondary locale: English (`en`, LTR)
+- Current production: legacy WordPress website at `https://amirmotefaker.ir`
+- Production cutover: not yet authorized or completed
 
-This Foundation milestone does not deploy to Production.
+WordPress source and migration material are historical inputs under `archive/` and `apps/web/content/legacy/wordpress/`; they are not the canonical presentation implementation.
 
-It performs no:
+## Repository map
 
-- WordPress mutation
-- Hosting mutation
-- DNS, SSL or nameserver change
-- Mail configuration
-- Database operation
-- Production content publication
+- `apps/web/` — canonical website application
+- `apps/web/content/` — founder, portfolio and migrated editorial content
+- `docs/strategy/` — brand, portfolio and content strategy
+- `docs/architecture/` — architecture decision records
+- `docs/design/` — approved design and information architecture
+- `docs/evidence/` — milestone validation evidence
+- `docs/operations/` — staging, cutover and rollback planning
+- `archive/` — historical WordPress material
 
-## Legacy repository
+## Current priority
 
-AmirMotefaker/amirmotefaker.github.io is historical reference only and is not the source authority for this website.
+`Portfolio Truth Reset v7.0` aligns the product portfolio, founder narrative, naming, lifecycle states and website information architecture before the next visual-design milestone.
+
+## Quality gates
+
+Run from `apps/web/`:
+
+```bash
+npm ci
+npm run lint
+npm run build
+```
+
+GitHub Actions also runs Foundation Gate and Preview Validation.
+
+## Production safety boundary
+
+Repository work does not authorize production deployment. Production mutation requires a separate release gate after verified backups, isolated staging restore, redirect and SEO validation, visual/accessibility/performance QA and rollback rehearsal.
+
+Never commit credentials, private source documents, unsanitized database exports or production secrets.

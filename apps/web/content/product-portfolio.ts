@@ -1,3 +1,5 @@
+import { getBrand, getBrandName, getBrandOrder, isActivePortfolioBrand } from "@/content/brand-registry";
+
 export type ProductStatus = "live" | "development" | "discovery" | "concept" | "to-confirm";
 
 export type PortfolioProduct = {
@@ -288,53 +290,122 @@ const rawProductPortfolio: PortfolioProduct[] = [
     name: "Fahmio",
     domain: "Fahmio.ir",
     industry: "EdTech / KnowledgeTech",
-    category: "AI Knowledge Platform",
-    positioning: "AI-Powered Knowledge & Learning",
+    category: "Adaptive Learning System",
+    positioning: "Persian-First Adaptive Learning & AI Teacher",
     filterGroup: "AI & Intelligent Products",
     shortDescriptionFa:
-      "خلاصه‌های هوشمند و صوتی برای اینکه در زمان کمتر، ایده‌های مهم کتاب‌ها را بهتر بفهمی.",
-    shortDescriptionEn: "AI-Powered Knowledge & Learning",
+      "سیستم یادگیری تطبیقی فارسی‌محور با ارزیابی تشخیصی، گراف مهارت، دوقلوی یادگیری، تمرین تطبیقی و معلم هوشمند.",
+    shortDescriptionEn: "A Persian-first adaptive learning system powered by an AI teacher and learning twin.",
     status: "to-confirm",
     featured: true,
-    tags: ["EdTech", "KnowledgeTech", "AI", "Audio Summaries", "Learning"],
+    tags: ["EdTech", "Adaptive Learning", "AI Teacher", "Learning Twin", "Skill Graph"],
     hero: {
       eyebrow: "EDTECH / KNOWLEDGETECH",
-      titleFa: "دانش را بفهم.",
-      titleEn: "AI-Powered Knowledge & Learning",
+      titleFa: "یادگیری، متناسب با هر یادگیرنده.",
+      titleEn: "Adaptive learning for every learner.",
       descriptionFa:
-        "خلاصه‌های هوشمند و صوتی برای اینکه در زمان کمتر، ایده‌های مهم کتاب‌ها را بهتر بفهمی.",
-      descriptionEn: "AI-Powered Knowledge & Learning",
+        "Fahmio با شناخت سطح، مهارت‌ها و الگوی یادگیری هر فرد، مسیر آموزش و تمرین را به‌صورت پویا شخصی‌سازی می‌کند.",
+      descriptionEn: "Fahmio adapts instruction and practice to each learner's level, skills and learning pattern.",
       primaryCtaFa: "مشاهده جزئیات",
       primaryCtaEn: "Explore Fahmio",
       secondaryCtaFa: "مشاهده Fahmio",
       secondaryCtaEn: "Visit Fahmio",
     },
-    currentProductFa: "خلاصه صوتی کتاب با هوش مصنوعی.",
-    capabilities: ["Audio summaries", "Knowledge cards", "AI Q&A", "Learning paths", "Personalized learning", "Knowledge discovery"],
-    futureDirections: ["Audio summaries", "Knowledge cards", "AI Q&A", "Learning paths", "Personalized learning", "Knowledge discovery"],
+    currentProductFa: "زیرساخت یادگیری تطبیقی برای محتوای آموزشی فارسی.",
+    capabilities: ["Diagnostic assessment", "Skill graph", "Learning twin", "Adaptive practice", "AI teacher", "Curriculum engine"],
+    futureDirections: ["Teacher dashboard", "School deployment", "Learning analytics", "Curriculum intelligence"],
     problemFa: [TO_CONFIRM],
     problemEn: [TO_CONFIRM],
     solutionFa: TO_CONFIRM,
     solutionEn: TO_CONFIRM,
-    technology: ["Artificial Intelligence", "Audio", "Knowledge Experience"],
+    technology: ["Artificial Intelligence", "Adaptive Learning", "Knowledge Graphs", "Learning Analytics"],
     visionFa:
-      "تبدیل‌شدن به یک پلتفرم هوشمند برای تبدیل دانش پراکنده به تجربه‌ای قابل فهم، شخصی و قابل استفاده.",
+      "تبدیل‌شدن به زیرساخت یادگیری تطبیقی فارسی که آموزش را برای هر یادگیرنده قابل فهم، شخصی و اثربخش می‌کند.",
     visionEn: TO_CONFIRM,
     missionFa:
-      "کمک به افراد برای کشف، فهم و مصرف سریع‌تر دانش با استفاده از هوش مصنوعی و تجربه صوتی.",
+      "شناخت نیاز یادگیری هر فرد و ساخت مسیر آموزش، تمرین و بازخورد متناسب با او.",
     missionEn: TO_CONFIRM,
     roadmapFa: [TO_CONFIRM],
     roadmapEn: [TO_CONFIRM],
     amirRoleFa: TO_CONFIRM,
     amirRoleEn: TO_CONFIRM,
     visualDirectionFa:
-      "Editorial + audio؛ book grid، waveform، knowledge cards. از stock-photo-heavy layout اجتناب شود.",
-    related: ["farsio", "idehjo"],
+      "Learning intelligence؛ skill graph، learning progress، adaptive paths و teacher interface. از کلیشه‌های کودکانه EdTech اجتناب شود.",
+    related: ["farsio", "zobdino"],
+  },
+  {
+    slug: "zobdino",
+    name: "Zobdino",
+    domain: "Zobdino.ir",
+    industry: "KnowledgeTech / PublishingTech",
+    category: "AI Book Intelligence",
+    positioning: "Persian AI Book Intelligence & Audio Summaries",
+    filterGroup: "AI & Intelligent Products",
+    shortDescriptionFa:
+      "پلتفرم هوشمند کتاب برای دریافت فایل، استخراج محتوا، خلاصه‌سازی فارسی و تبدیل کتاب یا خلاصه آن به تجربه صوتی.",
+    shortDescriptionEn:
+      "An AI book-intelligence platform for ingesting files, extracting content, creating Persian summaries and generating audio experiences.",
+    status: "development",
+    featured: true,
+    tags: ["Book Intelligence", "AI Summarization", "Persian Audio", "PublishingTech", "KnowledgeTech"],
+    hero: {
+      eyebrow: "AI BOOK INTELLIGENCE",
+      titleFa: "کتاب را بخوان، بفهم و بشنو.",
+      titleEn: "Read, understand and listen to books.",
+      descriptionFa:
+        "Zobdino فایل‌های کتاب را به محتوای قابل پردازش، خلاصه فارسی و خروجی صوتی تبدیل می‌کند.",
+      descriptionEn:
+        "Zobdino turns book files into processable content, Persian summaries and audio output.",
+      primaryCtaFa: "مشاهده جزئیات",
+      primaryCtaEn: "Explore Zobdino",
+      secondaryCtaFa: "مشاهده Zobdino",
+      secondaryCtaEn: "Visit Zobdino",
+    },
+    currentProductFa:
+      "خلاصه‌سازی و تبدیل محتوای کتاب به صوت فارسی؛ پشتیبانی گسترده فرمت‌ها و تجربه کامل تبدیل کتاب در مسیر توسعه است.",
+    capabilities: [
+      "Book file ingestion",
+      "Text extraction",
+      "Persian summarization",
+      "Full-book audio generation",
+      "Summary audio generation",
+      "Male and female Persian voices",
+      "Book discovery and categories",
+    ],
+    futureDirections: ["PDF", "EPUB", "CBZ/CBR", "AZW3", "KFX", "MOBI", "Personal knowledge library"],
+    problemFa: [
+      "مطالعه و استخراج نکات کلیدی از کتاب‌های طولانی برای بسیاری از کاربران زمان‌بر است.",
+      "فرمت‌های متعدد کتاب و کیفیت متفاوت فایل‌ها، تبدیل مطمئن محتوا به متن و صوت را دشوار می‌کند.",
+    ],
+    problemEn: [
+      "Reading and extracting key ideas from long books takes significant time.",
+      "Multiple book formats and inconsistent source quality make reliable text and audio conversion difficult.",
+    ],
+    solutionFa:
+      "Zobdino ورود فایل، استخراج متن، خلاصه‌سازی فارسی و تولید صوت را در یک جریان هوشمند کتاب کنار هم قرار می‌دهد.",
+    solutionEn:
+      "Zobdino combines file ingestion, text extraction, Persian summarization and audio generation in one book-intelligence workflow.",
+    technology: ["Artificial Intelligence", "Document Processing", "Persian NLP", "Text to Speech"],
+    visionFa:
+      "ساختن لایه هوشمند فارسی برای تبدیل هر کتاب به تجربه‌ای قابل فهم، قابل جست‌وجو و قابل شنیدن.",
+    visionEn:
+      "Build a Persian intelligence layer that makes books understandable, searchable and listenable.",
+    missionFa:
+      "کمک به کاربران برای دسترسی سریع‌تر و منعطف‌تر به دانش کتاب‌ها در قالب متن، خلاصه و صوت.",
+    missionEn:
+      "Help people access book knowledge more quickly and flexibly through text, summaries and audio.",
+    roadmapFa: ["تثبیت pipeline استخراج", "گسترش فرمت‌ها", "افزایش کتاب‌ها و دسته‌بندی‌ها", "یکپارچگی صدای آوایار"],
+    roadmapEn: ["Harden extraction pipeline", "Expand formats", "Grow catalog and categories", "Integrate AvaYar voices"],
+    amirRoleFa: TO_CONFIRM,
+    amirRoleEn: TO_CONFIRM,
+    visualDirectionFa:
+      "Editorial intelligence؛ کتاب، ساختار محتوا، خلاصه و waveform. از ظاهر فروشگاه کتاب عمومی و تصاویر بی‌هویت اجتناب شود.",
+    related: ["farsio", "fahmio"],
   },
   {
     slug: "idehjo",
-    name: "Idehjo",
-    domain: "Idehjo.ir",
+    name: "IdehJo",
+    domain: "IdehJo.ir",
     industry: "InnovationTech",
     category: "Innovation Intelligence",
     positioning: "Innovation Intelligence Platform",
@@ -575,47 +646,64 @@ const publicContentBySlug: Record<string, PublicContentCompletion> = {
     industryFa: "فناوری نوآوری",
     shortDescriptionEn: "A daily innovation feed combining global idea discovery, community voting, Persian translation, AI analysis and local-market adaptation.",
     heroTitleEn: "The right idea, at the right time.",
-    heroDescriptionEn: "IdeaJoo turns global idea discovery, voting, Persian translation and AI analysis into a daily innovation-intelligence experience.",
+    heroDescriptionEn: "IdehJo turns global idea discovery, voting, Persian translation and AI analysis into a daily innovation-intelligence experience.",
     audienceFa: "کارآفرینان، سازندگان محصول، تیم‌های نوآوری و افرادی که روندها و ایده‌های جهانی را دنبال می‌کنند",
     audienceEn: "Entrepreneurs, product builders, innovation teams and people tracking global ideas and trends",
     capabilitiesFa: ["کشف ایده‌های جهانی","رأی کاربران","تحلیل با هوش مصنوعی","ترجمه فارسی","بررسی انطباق با بازار ایران","رصد روندها"],
     problemFa: ["حجم بالای ایده‌ها و خبرهای جهانی تشخیص نوآوری‌های واقعاً مهم را زمان‌بر می‌کند.","ترجمه صرف، بدون تحلیل و زمینه بازار، برای تصمیم‌گیری درباره یک ایده کافی نیست."],
     problemEn: ["The volume of global ideas and product news makes it time-consuming to identify what actually matters.","Translation alone is not enough without analysis and market context."],
-    solutionFa: "IdeaJoo کشف، رأی، ترجمه و تحلیل را در یک جریان روزانه ترکیب می‌کند تا ایده‌های مهم سریع‌تر دیده و از زاویه بازار ایران بررسی شوند.",
-    solutionEn: "IdeaJoo combines discovery, voting, translation and analysis in one daily flow so important ideas can be surfaced faster and considered through a local-market lens.",
+    solutionFa: "IdehJo کشف، رأی، ترجمه و تحلیل را در یک جریان روزانه ترکیب می‌کند تا ایده‌های مهم سریع‌تر دیده و از زاویه بازار ایران بررسی شوند.",
+    solutionEn: "IdehJo combines discovery, voting, translation and analysis in one daily flow so important ideas can be surfaced faster and considered through a local-market lens.",
     visionEn: "Build an intelligent radar for ideas, products and trends that may shape the future of business.",
     missionEn: "Collect, filter, translate and analyze global innovation and turn it into usable insight for the Iranian market."
   },
   fahmio: {
-    categoryFa: "پلتفرم هوشمند دانش",
-    industryFa: "فناوری آموزش / دانش",
-    shortDescriptionEn: "AI-assisted text and audio summaries designed to help people understand key ideas from books and knowledge sources in less time.",
-    heroTitleEn: "Understand knowledge faster.",
-    heroDescriptionEn: "Fahmio uses AI and audio experiences to turn knowledge content into summaries, knowledge cards and more usable learning paths.",
-    audienceFa: "یادگیرندگان، کتاب‌خوان‌ها و افرادی که می‌خواهند دانش را سریع‌تر کشف، خلاصه و مرور کنند",
-    audienceEn: "Learners, readers and people who want to discover, summarize and review knowledge faster",
-    capabilitiesFa: ["خلاصه صوتی","کارت‌های دانش","پرسش و پاسخ با AI","مسیرهای یادگیری","یادگیری شخصی‌سازی‌شده","کشف دانش"],
-    problemFa: ["زمان محدود، مطالعه عمیق همه منابع را برای بسیاری از افراد دشوار می‌کند.","یادگیرنده برای حرکت از خلاصه به پرسش، کشف و مسیر یادگیری به تجربه‌ای پیوسته‌تر نیاز دارد."],
-    problemEn: ["Limited time makes deep reading of every useful source difficult.","Learners need a smoother path from summary to questions, discovery and continued learning."],
-    solutionFa: "Fahmio محتوای دانشی را به تجربه‌ای فشرده‌تر و قابل مصرف در متن و صوت تبدیل می‌کند و مسیر محصول را به سمت کارت دانش، پرسش و پاسخ و یادگیری شخصی‌تر می‌برد.",
-    solutionEn: "Fahmio turns knowledge content into a more compact text-and-audio experience, with a direction toward knowledge cards, Q&A and more personalized learning.",
-    visionEn: "Become an intelligent platform that turns scattered knowledge into an understandable, personal and usable experience.",
-    missionEn: "Help people discover, understand and consume knowledge faster through AI and audio experiences.",
-    currentProductEn: "AI-assisted audio book summaries."
+    categoryFa: "سیستم یادگیری تطبیقی",
+    industryFa: "فناوری آموزش / هوش مصنوعی",
+    shortDescriptionEn: "A Persian-first adaptive learning system powered by diagnostic assessment, a skill graph, learning twin, adaptive practice and an AI teacher.",
+    heroTitleEn: "Adaptive learning for every learner.",
+    heroDescriptionEn: "Fahmio adapts instruction and practice to each learner's level, skills and learning pattern.",
+    audienceFa: "دانش‌آموزان، معلمان، خانواده‌ها و نهادهای آموزشی که به مسیر یادگیری شخصی و قابل سنجش نیاز دارند",
+    audienceEn: "Students, teachers, families and education organizations that need measurable, personalized learning paths",
+    capabilitiesFa: ["ارزیابی تشخیصی","گراف مهارت","دوقلوی یادگیری","تمرین تطبیقی","معلم هوشمند","موتور برنامه درسی"],
+    problemFa: ["آموزش یکسان، تفاوت سطح، سرعت و شکاف مهارتی یادگیرندگان را نادیده می‌گیرد.","معلم و خانواده برای تصمیم بهتر به تصویر پیوسته‌ای از پیشرفت و نیازهای یادگیرنده احتیاج دارند."],
+    problemEn: ["One-size-fits-all instruction ignores differences in level, pace and skill gaps.","Teachers and families need a continuous view of learner progress and needs."],
+    solutionFa: "Fahmio با ارزیابی تشخیصی، گراف مهارت و دوقلوی یادگیری، آموزش و تمرین را متناسب با وضعیت هر یادگیرنده تنظیم می‌کند.",
+    solutionEn: "Fahmio uses diagnostic assessment, a skill graph and a learning twin to adapt instruction and practice to each learner.",
+    visionEn: "Build the Persian adaptive-learning infrastructure that makes education personal, understandable and effective for every learner.",
+    missionEn: "Understand each learner's needs and deliver the right instruction, practice and feedback at the right time.",
+    currentProductEn: "Persian-first adaptive learning foundation."
+  },
+  zobdino: {
+    categoryFa: "هوشمندی کتاب و خلاصه صوتی",
+    industryFa: "فناوری دانش / نشر دیجیتال",
+    shortDescriptionEn: "An AI book-intelligence platform for ingesting files, extracting content, creating Persian summaries and generating audio experiences.",
+    heroTitleEn: "Read, understand and listen to books.",
+    heroDescriptionEn: "Zobdino turns book files into processable content, Persian summaries and audio output.",
+    audienceFa: "کتاب‌خوان‌ها، یادگیرندگان و کاربران فارسی‌زبانی که می‌خواهند کتاب را در قالب متن، خلاصه یا صوت مصرف کنند",
+    audienceEn: "Readers, learners and Persian-speaking users who want books as text, summaries or audio",
+    capabilitiesFa: ["دریافت فایل کتاب","استخراج متن","خلاصه‌سازی فارسی","تولید صوت کامل کتاب","تولید صوت خلاصه","صدای زن و مرد فارسی","کشف و دسته‌بندی کتاب"],
+    problemFa: ["مطالعه و استخراج نکات کلیدی از کتاب‌های طولانی زمان‌بر است.","فرمت‌های متعدد و کیفیت متفاوت فایل‌ها، تبدیل مطمئن کتاب به متن و صوت را دشوار می‌کند."],
+    problemEn: ["Reading and extracting key ideas from long books takes significant time.","Multiple formats and inconsistent source quality make reliable text and audio conversion difficult."],
+    solutionFa: "Zobdino ورود فایل، استخراج متن، خلاصه‌سازی فارسی و تولید صوت را در یک جریان هوشمند کتاب کنار هم قرار می‌دهد.",
+    solutionEn: "Zobdino combines file ingestion, text extraction, Persian summarization and audio generation in one book-intelligence workflow.",
+    visionEn: "Build a Persian intelligence layer that makes books understandable, searchable and listenable.",
+    missionEn: "Help people access book knowledge more quickly and flexibly through text, summaries and audio.",
+    currentProductEn: "Persian book summarization and audio generation."
   },
   filmtrack: {
     categoryFa: "پلتفرم فیلم و سریال",
     industryFa: "فناوری سرگرمی / رسانه",
     shortDescriptionEn: "A Persian-language movie and TV community for watchlists, tracking, sharing, discovery, ratings and social interaction.",
     heroTitleEn: "Your personal home for movies and TV.",
-    heroDescriptionEn: "FilmTark is designed for managing what you watch, discovering new titles, rating them and connecting with people who share similar tastes.",
+    heroDescriptionEn: "FilmTrack is designed for managing what you watch, discovering new titles, rating them and connecting with people who share similar tastes.",
     audienceFa: "کاربران فارسی‌زبان علاقه‌مند به فیلم و سریال که می‌خواهند تماشا، کشف و تعامل اجتماعی را در یک تجربه نگه دارند",
     audienceEn: "Persian-speaking movie and TV fans who want tracking, discovery and social interaction in one experience",
     capabilitiesFa: ["فهرست تماشا","ردیابی تماشا","اشتراک‌گذاری","کشف آثار","امتیازدهی","جامعه کاربری"],
     problemFa: ["فهرست تماشا، وضعیت دیدن آثار و امتیازها معمولاً میان چند سرویس یا یادداشت شخصی پراکنده می‌شوند.","کاربر فارسی‌زبان به تجربه‌ای بومی‌تر برای دنبال‌کردن و اشتراک‌گذاری علاقه‌مندی‌های سینمایی نیاز دارد."],
     problemEn: ["Watchlists, viewing progress and ratings are often scattered across separate services or personal notes.","Persian-speaking users benefit from a more localized experience for tracking and sharing film interests."],
-    solutionFa: "FilmTark مدیریت تماشا، کشف، امتیازدهی و تعامل اجتماعی را در یک تجربه فارسی‌زبان برای فیلم و سریال کنار هم قرار می‌دهد.",
-    solutionEn: "FilmTark combines watch tracking, discovery, ratings and social interaction in one Persian-language movie and TV experience.",
+    solutionFa: "FilmTrack مدیریت تماشا، کشف، امتیازدهی و تعامل اجتماعی را در یک تجربه فارسی‌زبان برای فیلم و سریال کنار هم قرار می‌دهد.",
+    solutionEn: "FilmTrack combines watch tracking, discovery, ratings and social interaction in one Persian-language movie and TV experience.",
     visionEn: "Build a comprehensive Persian-language experience for discovering, tracking and sharing movies and TV.",
     missionEn: "Help film fans manage what they watch, discover new titles and connect with people who share similar tastes.",
     productPromiseEn: "Track the movies and series you watch."
@@ -639,12 +727,13 @@ const publicContentBySlug: Record<string, PublicContentCompletion> = {
   },
 };
 
-export const productPortfolio = rawProductPortfolio.map((product) => {
+export const portfolioAssets = rawProductPortfolio.map((product) => {
   const completed = publicContentBySlug[product.slug];
   if (!completed) throw new Error(`Missing public content completion for ${product.slug}`);
 
   return {
     ...product,
+    name: getBrand(product.slug)?.name ?? product.name,
     ...completed,
     hero: {
       ...product.hero,
@@ -671,52 +760,19 @@ export const productPortfolio = rawProductPortfolio.map((product) => {
     currentProductEn: completed.currentProductEn,
     productPromiseEn: completed.productPromiseEn,
     criticalPositioningEn: completed.criticalPositioningEn,
-    website: `https://${product.domain.toLowerCase()}`,
+    website: `https://${getBrand(product.slug)?.domain ?? product.domain.toLowerCase()}`,
     technologies: product.technology,
   };
 });
-const preferredProductOrder = [
-  "restyar",
-  "primesys",
-  "linkresan",
-  "farsio",
-  "idehjo",
-  "fahmio",
-  "filmtrack",
-  "shiftpay",
-] as const;
+portfolioAssets.sort((a, b) => getBrandOrder(a.slug) - getBrandOrder(b.slug) || a.name.localeCompare(b.name));
 
-const preferredProductOrderMap = new Map<string, number>(
-  preferredProductOrder.map((slug, index) => [slug, index]),
-);
-
-function normalizeProductKey(value: string) {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, "");
-}
-
-productPortfolio.sort((a, b) => {
-  const aRank = preferredProductOrderMap.get(normalizeProductKey(a.slug)) ?? Number.MAX_SAFE_INTEGER;
-  const bRank = preferredProductOrderMap.get(normalizeProductKey(b.slug)) ?? Number.MAX_SAFE_INTEGER;
-  return aRank - bRank || a.name.localeCompare(b.name);
-});
-
-const localizedProductNames = {
-  restyar: { fa: "رستیار", en: "RestYar" },
-  primesys: { fa: "پرایم سیستم", en: "PrimeSYS" },
-  linkresan: { fa: "لینک رسان", en: "LinkResan" },
-  farsio: { fa: "فارسیو", en: "Farsio" },
-  idehjo: { fa: "ایده جو", en: "IdeaJoo" },
-  fahmio: { fa: "فهمیو", en: "Fahmio" },
-  filmtrack: { fa: "فیلم ترک", en: "FilmTark" },
-  shiftpay: { fa: "شیفت پی", en: "ShiftPay" },
-} as const;
+export const productPortfolio = portfolioAssets.filter((product) => isActivePortfolioBrand(product.slug));
 
 export function getProductDisplayName(
   product: { slug: string; name: string },
   locale: "fa" | "en",
 ) {
-  const key = normalizeProductKey(product.slug) as keyof typeof localizedProductNames;
-  return localizedProductNames[key]?.[locale] ?? product.name;
+  return getBrandName(product.slug, locale) || product.name;
 }
 
 /* founder-visual-system-v6-preferred-order */

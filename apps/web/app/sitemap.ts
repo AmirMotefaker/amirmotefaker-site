@@ -10,12 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
 
   for (const locale of locales) {
-    for (const path of ["", "/about", "/products", "/resume", "/news", "/contact", "/pages"]) {
+    for (const path of ["", "/about", "/products", "/thesis", "/notes", "/resume", "/news", "/contact", "/pages"]) {
       routes.push({
         url: `${base}/${locale}${path}`,
         lastModified: now,
         changeFrequency: "weekly",
-        priority: path === "" ? 1 : 0.8,
+        priority: path === "" ? 1 : path === "/products" || path === "/thesis" || path === "/notes" ? 0.9 : 0.8,
       });
     }
 
