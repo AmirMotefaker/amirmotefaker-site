@@ -1,11 +1,13 @@
 import Link from "next/link";
 import type { Locale } from "@/content/founder-site";
-import { getVerifiedEvidence } from "@/content/evidence-registry";
+import { getProductEvidence, getVerifiedEvidence } from "@/content/evidence-registry";
+import { publishedNotes } from "@/content/notes";
 import {
   getProductCategory,
   getProductDisplayName,
   getProductIndustry,
   productPortfolio as products,
+  type Product,
 } from "@/content/product-portfolio";
 import { formatSiteNumber, localeDigits } from "@/lib/locale-format";
 import styles from "./FounderV6.module.css";
@@ -25,6 +27,26 @@ const thesisPrinciples = {
 
 function formatOrdinal(index: number, locale: Locale) {
   return localeDigits(String(index + 1).padStart(2, "0"), locale);
+}
+
+function getLifecycleLabel(status: Product["status"], locale: Locale) {
+  const labels = {
+    fa: {
+      live: "فعال",
+      development: "در حال توسعه",
+      discovery: "در مرحله کشف",
+      concept: "مفهوم اولیه",
+      "to-confirm": "در حال تأیید",
+    },
+    en: {
+      live: "Live",
+      development: "In development",
+      discovery: "Discovery",
+      concept: "Concept",
+      "to-confirm": "To confirm",
+    },
+  } as const;
+  return labels[locale][status];
 }
 
 export default function FounderHome({ locale }: { locale: Locale }) {
@@ -67,15 +89,9 @@ export default function FounderHome({ locale }: { locale: Locale }) {
             </p>
 
             <div className={styles.heroActions}>
-              <Link href={`/${locale}/products`} className="btn btn-primary">
-                {fa ? "مشاهده محصولات" : "Explore products"}
-              </Link>
-              <Link href={`/${locale}/thesis`} className="btn btn-ghost">
-                {fa ? "نگاه من به ساخت محصول" : "Read my product thesis"}
-              </Link>
-              <Link href={`/${locale}/about`} className={styles.textLink}>
-                {fa ? "درباره امیر ↗" : "About Amir ↗"}
-              </Link>
+              <Link href={`/${locale}/products`} className="btn btn-primary">{fa ? "مشاهده محصولات" : "Explore products"}</Link>
+              <Link href={`/${locale}/thesis`} className="btn btn-ghost">{fa ? "نگاه من به ساخت محصول" : "Read my product thesis"}</Link>
+              <Link href={`/${locale}/about`} className={styles.textLink}>{fa ? "درباره امیر ↗" : "About Amir ↗"}</Link>
             </div>
           </div>
 
@@ -84,24 +100,14 @@ export default function FounderHome({ locale }: { locale: Locale }) {
               <div className={styles.matrixGlow} />
               <div className={styles.matrixCore}>
                 <span>{fa ? "پرتفوی محصولات" : "PRODUCT PORTFOLIO"}</span>
-                <strong>
-                  {formatSiteNumber(featuredProducts.length, locale)} {fa ? "محصول فعال" : "active products"}
-                </strong>
-                <small>
-                  {fa
-                    ? "محصولات مستقل؛ یک منطق مشترک برای ساختن."
-                    : "Independent products. A shared logic for building."}
-                </small>
+                <strong>{formatSiteNumber(featuredProducts.length, locale)} {fa ? "محصول فعال" : "active products"}</strong>
+                <small>{fa ? "محصولات مستقل؛ یک منطق مشترک برای ساختن." : "Independent products. A shared logic for building."}</small>
               </div>
-
               <div className={styles.matrixRing}>
                 {featuredProducts.map((product, index) => (
-                  <div
-                    key={product.slug}
-                    className={`${styles.matrixNode} ${styles[`matrixNode${index + 1}`] ?? ""}`}
-                  >
+                  <div key={product.slug} className={`${styles.matrixNode} ${styles[`matrixNode${index + 1}`] ?? ""}`}>
                     <strong>{getProductDisplayName(product, locale)}</strong>
-                    <span>{getProductCategory(product, locale)}</span>
+                    <span>{getLifecycleLabel(product.status, locale)}</span>
                   </div>
                 ))}
               </div>
@@ -112,13 +118,8 @@ export default function FounderHome({ locale }: { locale: Locale }) {
 
       <section className={styles.operatorStrip}>
         <div className={`wrap ${styles.operatorGrid}`}>
-          {(fa
-            ? ["مسئله", "محصول", "هوش مصنوعی", "سیستم", "رشد"]
-            : ["PROBLEM", "PRODUCT", "AI", "SYSTEMS", "GROWTH"]).map((item, index) => (
-            <div key={item}>
-              <span>{formatOrdinal(index, locale)}</span>
-              <strong>{item}</strong>
-            </div>
+          {(fa ? ["مسئله", "محصول", "هوش مصنوعی", "سیستم", "رشد"] : ["PROBLEM", "PRODUCT", "AI", "SYSTEMS", "GROWTH"]).map((item, index) => (
+            <div key={item}><span>{formatOrdinal(index, locale)}</span><strong>{item}</strong></div>
           ))}
         </div>
       </section>
@@ -127,31 +128,15 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         <div className={`wrap ${styles.visionShell}`}>
           <div className={styles.visionHeading}>
             <span className={styles.sectionEyebrow}>{fa ? "نگاه من به ساخت محصول" : "PRODUCT THESIS"}</span>
-            <h2>
-              {fa
-                ? "محصول خوب از فناوری شروع نمی‌شود؛ از یک مسئله واقعی شروع می‌شود."
-                : "Good products don't start with technology. They start with a real problem."}
-            </h2>
-            <p>
-              {fa
-                ? "در پروژه‌هایی که می‌سازم، فناوری زمانی ارزشمند است که اصطکاک را کم کند، تصمیم‌گیری را بهتر کند یا یک تجربه پیچیده را ساده‌تر سازد. هوش مصنوعی برای من یک برچسب بازاریابی نیست؛ یکی از ابزارهای ساختن محصول بهتر است."
-                : "Across the products I build, technology matters when it reduces friction, improves decisions or makes a complex experience simpler. AI is not the proposition by itself; it is one of the tools for building a better product."}
-            </p>
+            <h2>{fa ? "محصول خوب از فناوری شروع نمی‌شود؛ از یک مسئله واقعی شروع می‌شود." : "Good products don't start with technology. They start with a real problem."}</h2>
+            <p>{fa ? "در پروژه‌هایی که می‌سازم، فناوری زمانی ارزشمند است که اصطکاک را کم کند، تصمیم‌گیری را بهتر کند یا یک تجربه پیچیده را ساده‌تر سازد. هوش مصنوعی برای من یک برچسب بازاریابی نیست؛ یکی از ابزارهای ساختن محصول بهتر است." : "Across the products I build, technology matters when it reduces friction, improves decisions or makes a complex experience simpler. AI is not the proposition by itself; it is one of the tools for building a better product."}</p>
           </div>
-
           <div className={styles.visionGrid}>
             {thesisPrinciples[locale].map(([index, title, detail]) => (
-              <article key={title}>
-                <span>{localeDigits(index, locale)}</span>
-                <h3>{title}</h3>
-                <p>{detail}</p>
-              </article>
+              <article key={title}><span>{localeDigits(index, locale)}</span><h3>{title}</h3><p>{detail}</p></article>
             ))}
           </div>
-
-          <Link href={`/${locale}/thesis`} className={styles.textLink}>
-            {fa ? "مطالعه کامل Thesis ↗" : "Read the full thesis ↗"}
-          </Link>
+          <Link href={`/${locale}/thesis`} className={styles.textLink}>{fa ? "مطالعه کامل Thesis ↗" : "Read the full thesis ↗"}</Link>
         </div>
       </section>
 
@@ -159,33 +144,35 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         <div className={`wrap ${styles.sectionIntro}`}>
           <div>
             <span className={styles.sectionEyebrow}>{fa ? "پرتفوی محصولات" : "PRODUCT PORTFOLIO"}</span>
-            <h2>{fa ? "محصولات مستقل؛ یک منطق مشترک برای ساختن." : "Independent products. A shared logic for building."}</h2>
+            <h2>{fa ? "محصولات مستقل؛ وضعیت واقعی، شواهد واقعی." : "Independent products. Real states, real evidence."}</h2>
           </div>
-          <Link href={`/${locale}/products`} className={styles.textLink}>
-            {fa ? "مشاهده کل پرتفوی ↗" : "Explore the portfolio ↗"}
-          </Link>
+          <Link href={`/${locale}/products`} className={styles.textLink}>{fa ? "مشاهده کل پرتفوی ↗" : "Explore the portfolio ↗"}</Link>
         </div>
 
         <div className={`wrap ${styles.productGrid}`}>
-          {featuredProducts.map((product, index) => (
-            <Link href={`/${locale}/products/${product.slug}`} className={styles.productCard} key={product.slug}>
-              <div className={styles.productCardTop}>
-                <span>{formatSiteNumber(index + 1, locale)}</span>
-                <small>{getProductIndustry(product, locale)}</small>
-              </div>
-              <div className={styles.productMark}>
-                <strong>{getProductDisplayName(product, locale)}</strong>
-              </div>
-              <div className={styles.productCardBody}>
-                <span>{getProductCategory(product, locale)}</span>
-                <p>{fa ? product.shortDescriptionFa : product.shortDescriptionEn}</p>
-              </div>
-              <div className={styles.productCardFoot}>
-                <span className="ltr">{product.domain}</span>
-                <span>↗</span>
-              </div>
-            </Link>
-          ))}
+          {featuredProducts.map((product, index) => {
+            const productEvidence = getProductEvidence(product.slug);
+            return (
+              <Link href={`/${locale}/products/${product.slug}`} className={styles.productCard} key={product.slug}>
+                <div className={styles.productCardTop}>
+                  <span>{formatSiteNumber(index + 1, locale)}</span>
+                  <small>{getLifecycleLabel(product.status, locale)}</small>
+                </div>
+                <div className={styles.productMark}><strong>{getProductDisplayName(product, locale)}</strong></div>
+                <div className={styles.productCardBody}>
+                  <span>{getProductCategory(product, locale)}</span>
+                  <p>{fa ? product.shortDescriptionFa : product.shortDescriptionEn}</p>
+                  {productEvidence.length > 0 ? (
+                    <span>{fa ? `${formatSiteNumber(productEvidence.length, locale)} مدرک تأییدشده` : `${productEvidence.length} verified evidence item${productEvidence.length === 1 ? "" : "s"}`}</span>
+                  ) : null}
+                </div>
+                <div className={styles.productCardFoot}>
+                  <span>{getProductIndustry(product, locale)}</span>
+                  <span>↗</span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
@@ -194,60 +181,42 @@ export default function FounderHome({ locale }: { locale: Locale }) {
           <div className={`wrap ${styles.sectionIntro}`}>
             <div>
               <span className={styles.sectionEyebrow}>{fa ? "شواهد ساختن" : "BUILDING EVIDENCE"}</span>
-              <h2>{fa ? "پرتفوی باید با چیزی بیشتر از ادعا توضیح داده شود." : "A portfolio should be explained by more than claims."}</h2>
+              <h2>{fa ? "ادعا کمتر؛ مدرک بیشتر." : "Less claiming. More evidence."}</h2>
             </div>
-            <p>
-              {fa
-                ? "این بخش فقط شواهد تأییدشده‌ای را نشان می‌دهد که در Evidence Registry ثبت شده‌اند."
-                : "This section only shows verified proof registered in the Evidence Registry."}
-            </p>
+            <p>{fa ? "فقط شواهدی که در Evidence Registry تأیید شده‌اند اینجا نمایش داده می‌شوند." : "Only evidence verified in the Evidence Registry is shown here."}</p>
           </div>
-
           <div className={`wrap ${styles.storyGrid}`}>
-            {evidence.slice(0, 4).map((item, index) => (
+            {evidence.slice(0, 6).map((item, index) => (
               <article key={item.id} className={styles.storyCard}>
                 <span>{formatOrdinal(index, locale)}</span>
                 <p>{fa ? item.titleFa : item.titleEn}</p>
-                {item.url ? (
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.textLink}>
-                    {fa ? "مشاهده مدرک ↗" : "View evidence ↗"}
-                  </a>
-                ) : null}
+                {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.textLink}>{fa ? "مشاهده مدرک ↗" : "View evidence ↗"}</a> : null}
               </article>
             ))}
           </div>
         </section>
       ) : null}
 
-      <section className={styles.newsSection}>
-        <div className={`wrap ${styles.sectionIntro}`}>
-          <div>
-            <span className={styles.sectionEyebrow}>{fa ? "یادداشت‌ها" : "NOTES"}</span>
-            <h2>{fa ? "تصمیم‌ها، آزمایش‌ها و چیزهایی که در مسیر ساختن یاد می‌گیرم." : "Decisions, experiments and lessons from building."}</h2>
+      {publishedNotes.length > 0 ? (
+        <section className={styles.newsSection}>
+          <div className={`wrap ${styles.sectionIntro}`}>
+            <div>
+              <span className={styles.sectionEyebrow}>{fa ? "یادداشت‌ها" : "NOTES"}</span>
+              <h2>{fa ? "تصمیم‌ها، آزمایش‌ها و چیزهایی که در مسیر ساختن یاد می‌گیرم." : "Decisions, experiments and lessons from building."}</h2>
+            </div>
+            <Link href={`/${locale}/notes`} className={styles.textLink}>{fa ? "مشاهده یادداشت‌ها ↗" : "Read the notes ↗"}</Link>
           </div>
-          <Link href={`/${locale}/notes`} className={styles.textLink}>
-            {fa ? "مشاهده یادداشت‌ها ↗" : "Read the notes ↗"}
-          </Link>
-        </div>
-
-        <div className={`wrap ${styles.newsGrid}`}>
-          <article className={styles.newsCard}>
-            <div className={styles.newsCardTop}><span>{fa ? "محصول" : "PRODUCT"}</span></div>
-            <h3>{fa ? "تصمیم‌های محصول" : "Product decisions"}</h3>
-            <p>{fa ? "چرا یک قابلیت ساخته، حذف یا بازطراحی شد." : "Why a capability was built, removed or redesigned."}</p>
-          </article>
-          <article className={styles.newsCard}>
-            <div className={styles.newsCardTop}><span>{fa ? "فناوری" : "TECHNOLOGY"}</span></div>
-            <h3>{fa ? "یادداشت‌های میدانی AI" : "AI field notes"}</h3>
-            <p>{fa ? "آنچه از استفاده واقعی هوش مصنوعی در محصول یاد می‌گیریم." : "What real product use teaches us about AI."}</p>
-          </article>
-          <article className={styles.newsCard}>
-            <div className={styles.newsCardTop}><span>{fa ? "بازار" : "MARKET"}</span></div>
-            <h3>{fa ? "مشاهده و آزمایش" : "Observations and experiments"}</h3>
-            <p>{fa ? "فرضیه‌هایی که با بازار، کاربر و داده سنجیده می‌شوند." : "Hypotheses tested against markets, users and data."}</p>
-          </article>
-        </div>
-      </section>
+          <div className={`wrap ${styles.newsGrid}`}>
+            {publishedNotes.slice(0, 3).map((note) => (
+              <article className={styles.newsCard} key={note.slug}>
+                <div className={styles.newsCardTop}><span>{fa ? "یادداشت" : "NOTE"}</span></div>
+                <h3>{fa ? note.titleFa : note.titleEn}</h3>
+                <p>{fa ? note.summaryFa : note.summaryEn}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className={styles.storySection}>
         <div className={`wrap ${styles.sectionIntro}`}>
@@ -255,11 +224,7 @@ export default function FounderHome({ locale }: { locale: Locale }) {
             <span className={styles.sectionEyebrow}>{fa ? "درباره امیر" : "ABOUT AMIR"}</span>
             <h2>{fa ? "مسیر من با ساختن گره خورده است." : "My path has always been tied to building."}</h2>
           </div>
-          <p>
-            {fa
-              ? "از تجربه‌های اولیه در فناوری تا ساخت محصولات و کسب‌وکارهای امروز، تمرکز من روی تبدیل مسئله‌های واقعی به سیستم‌ها و محصولاتی بوده که بتوانند استفاده شوند، رشد کنند و بهتر شوند."
-              : "From early work in technology to building today's products and businesses, my focus has been turning real problems into systems and products that can be used, improved and scaled."}
-          </p>
+          <p>{fa ? "از تجربه‌های اولیه در فناوری تا ساخت محصولات و کسب‌وکارهای امروز، تمرکز من روی تبدیل مسئله‌های واقعی به سیستم‌ها و محصولاتی بوده که بتوانند استفاده شوند، رشد کنند و بهتر شوند." : "From early work in technology to building today's products and businesses, my focus has been turning real problems into systems and products that can be used, improved and scaled."}</p>
         </div>
         <div className={`wrap ${styles.heroActions}`}>
           <Link href={`/${locale}/about`} className="btn btn-ghost">{fa ? "داستان من" : "My story"}</Link>
@@ -272,11 +237,7 @@ export default function FounderHome({ locale }: { locale: Locale }) {
           <div>
             <span className={styles.sectionEyebrow}>{fa ? "گفت‌وگو" : "START A CONVERSATION"}</span>
             <h2>{fa ? "اگر یک مسئله واقعی برای ساختن دارید، مسیر درست گفت‌وگو را انتخاب کنید." : "If you have a real problem worth building around, choose the right conversation."}</h2>
-            <p>
-              {fa
-                ? "برای همکاری محصول، شراکت، گفت‌وگوی راهبردی، موضوعات تجاری یا رسانه‌ای، از مسیر مرتبط وارد شوید تا گفتگو از همان ابتدا زمینه مشخصی داشته باشد."
-                : "For product collaboration, partnerships, strategic conversations, commercial inquiries or media, use the relevant route so the context is clear from the start."}
-            </p>
+            <p>{fa ? "برای همکاری محصول، شراکت، گفت‌وگوی راهبردی، موضوعات تجاری یا رسانه‌ای، از مسیر مرتبط وارد شوید تا گفتگو از همان ابتدا زمینه مشخصی داشته باشد." : "For product collaboration, partnerships, strategic conversations, commercial inquiries or media, use the relevant route so the context is clear from the start."}</p>
           </div>
           <div className={styles.ctaActions}>
             <Link href={`/${locale}/contact`} className="btn btn-primary">{fa ? "شروع گفتگو" : "Start a conversation"}</Link>
