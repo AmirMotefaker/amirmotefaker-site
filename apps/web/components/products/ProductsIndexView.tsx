@@ -11,7 +11,7 @@ import {
   type ProductStatus,
 } from "@/content/product-portfolio";
 import type { Locale } from "@/content/founder-site";
-import styles from "./ProductPortfolio.module.css";
+import styles from "./ProductShowcase.module.css";
 
 const filterLabelsFa: Record<(typeof productFilters)[number], string> = {
   "همه": "همه",
