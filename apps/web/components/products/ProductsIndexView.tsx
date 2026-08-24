@@ -14,184 +14,96 @@ import type { Locale } from "@/content/founder-site";
 import styles from "./ProductShowcase.module.css";
 
 const filterLabelsFa: Record<(typeof productFilters)[number], string> = {
-  "همه": "همه",
-  "AI & Intelligent Products": "هوش مصنوعی و محصولات هوشمند",
-  "FinTech": "فین‌تک",
-  "FoodTech": "فودتک",
-  "Enterprise Technology": "فناوری سازمانی",
-  "Digital Platforms": "پلتفرم‌های دیجیتال",
+  "همه": "همه", "AI & Intelligent Products": "هوش مصنوعی و محصولات هوشمند", "FinTech": "فین‌تک",
+  "FoodTech": "فودتک", "Enterprise Technology": "فناوری سازمانی", "Digital Platforms": "پلتفرم‌های دیجیتال",
   "EntertainmentTech": "فناوری سرگرمی",
 };
 
 const statusLabels: Record<ProductStatus, { fa: string; en: string }> = {
-  live: { fa: "فعال", en: "Live" },
-  development: { fa: "در حال توسعه", en: "In development" },
-  discovery: { fa: "در مرحله کشف", en: "Discovery" },
-  concept: { fa: "مفهوم اولیه", en: "Concept" },
+  live: { fa: "فعال", en: "Live" }, development: { fa: "در حال توسعه", en: "In development" },
+  discovery: { fa: "در مرحله کشف", en: "Discovery" }, concept: { fa: "مفهوم اولیه", en: "Concept" },
   "to-confirm": { fa: "در انتظار تأیید", en: "To confirm" },
 };
 
-function getStatusLabel(status: ProductStatus, locale: Locale) {
-  return locale === "fa" ? statusLabels[status].fa : statusLabels[status].en;
-}
+const productMarks: Record<string, string> = {
+  linkresan: "LR", farsio: "FA", fahmio: "FH", zobdino: "ZO", filmtrack: "FT", idehjo: "IJ",
+  restyar: "RY", primesys: "PS", shiftpay: "SP",
+};
 
+function getStatusLabel(status: ProductStatus, locale: Locale) { return locale === "fa" ? statusLabels[status].fa : statusLabels[status].en; }
 function getPrimaryCta(status: ProductStatus, fa: boolean) {
-  switch (status) {
-    case "live":
-      return fa ? "ورود به محصول" : "Visit product";
-    case "development":
-      return fa ? "مشاهده مسیر توسعه" : "View development";
-    case "discovery":
-      return fa ? "شناخت محصول" : "Explore discovery";
-    case "concept":
-      return fa ? "مشاهده مفهوم" : "Explore concept";
-    default:
-      return fa ? "مشاهده جزئیات" : "View details";
-  }
+  if (status === "live") return fa ? "مشاهده محصول" : "View product";
+  if (status === "development") return fa ? "مسیر ساخت" : "Build journey";
+  return fa ? "شناخت محصول" : "Explore product";
 }
 
 export default function ProductsIndexView({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
   const [filter, setFilter] = useState<(typeof productFilters)[number]>("همه");
-
-  const visible = useMemo(
-    () => filter === "همه" ? productPortfolio : productPortfolio.filter((product) => product.filterGroup === filter),
-    [filter],
-  );
-
-  const portfolioStats = useMemo(() => {
-    const live = productPortfolio.filter((product) => product.status === "live").length;
-    const building = productPortfolio.filter((product) => product.status === "development").length;
-    const categories = new Set(productPortfolio.map((product) => product.filterGroup)).size;
-    return { live, building, categories };
-  }, []);
+  const visible = useMemo(() => filter === "همه" ? productPortfolio : productPortfolio.filter((p) => p.filterGroup === filter), [filter]);
+  const portfolioStats = useMemo(() => ({
+    live: productPortfolio.filter((p) => p.status === "live").length,
+    building: productPortfolio.filter((p) => p.status === "development").length,
+    categories: new Set(productPortfolio.map((p) => p.filterGroup)).size,
+  }), []);
 
   return (
     <main className={styles.productsPage}>
       <section className={`wrap ${styles.showcaseHero}`}>
         <div className={styles.heroMain}>
-          <span className="sec-tag">{fa ? "پرتفوی محصولات" : "FOUNDER PRODUCT PORTFOLIO"}</span>
-          <h1>
-            {fa ? (
-              <>محصولاتی برای <em>ساختن آینده.</em></>
-            ) : (
-              <>Products built for <em>what comes next.</em></>
-            )}
-          </h1>
-          <p className={styles.heroLead}>
-            {fa
-              ? "پرتفویی از محصولات فناوری که از مسئله‌های واقعی شروع می‌شوند؛ با تمرکز بر هوش مصنوعی، نرم‌افزار و زیرساخت‌های دیجیتال قابل مقیاس."
-              : "A portfolio of technology products that start with real problems — spanning AI, software and scalable digital infrastructure."}
-          </p>
+          <span className="sec-tag">{fa ? "پرتفوی بنیان‌گذار" : "FOUNDER PORTFOLIO"}</span>
+          <h1>{fa ? <>ساختن، نه فقط <em>ایده‌پردازی.</em></> : <>Building, not just <em>imagining.</em></>}</h1>
+          <p className={styles.heroLead}>{fa ? "مجموعه‌ای از محصولات مستقل که هرکدام برای حل یک مسئله واقعی ساخته شده‌اند؛ از زیرساخت دیجیتال و هوش مصنوعی تا آموزش، رسانه و فین‌تک." : "Independent products built around real problems — spanning digital infrastructure, AI, education, media and fintech."}</p>
         </div>
-
         <aside className={styles.heroManifesto}>
-          <span className={styles.manifestoIndex}>PORTFOLIO / 26</span>
-          <p>{fa ? "از ایده تا محصول، از محصول تا کسب‌وکار." : "From idea to product. From product to business."}</p>
-          <span className={styles.englishLine}>BUILD · VALIDATE · SCALE</span>
+          <span className={styles.manifestoIndex}>AM / PRODUCT SYSTEM / 2026</span>
+          <p>{fa ? "هر محصول باید مسئله، سیستم و مسیر رشد خودش را داشته باشد." : "Every product needs its own problem, system and path to scale."}</p>
+          <span className={styles.englishLine}>THINK → BUILD → SHIP → LEARN</span>
         </aside>
       </section>
 
       <section className={`wrap ${styles.portfolioStrip}`} aria-label={fa ? "نمای کلی پرتفوی" : "Portfolio overview"}>
-        <article>
-          <strong>{String(productPortfolio.length).padStart(2, "0")}</strong>
-          <span>{fa ? "محصول در پرتفوی" : "Portfolio products"}</span>
-        </article>
-        <article>
-          <strong>{String(portfolioStats.live).padStart(2, "0")}</strong>
-          <span>{fa ? "محصول فعال" : "Live products"}</span>
-        </article>
-        <article>
-          <strong>{String(portfolioStats.building).padStart(2, "0")}</strong>
-          <span>{fa ? "در حال ساخت" : "In development"}</span>
-        </article>
-        <article>
-          <strong>{String(portfolioStats.categories).padStart(2, "0")}</strong>
-          <span>{fa ? "حوزه فناوری" : "Technology sectors"}</span>
-        </article>
+        <article><strong>{String(productPortfolio.length).padStart(2,"0")}</strong><span>{fa ? "محصول" : "Products"}</span></article>
+        <article><strong>{String(portfolioStats.live).padStart(2,"0")}</strong><span>{fa ? "فعال" : "Live"}</span></article>
+        <article><strong>{String(portfolioStats.building).padStart(2,"0")}</strong><span>{fa ? "در حال ساخت" : "Building"}</span></article>
+        <article><strong>{String(portfolioStats.categories).padStart(2,"0")}</strong><span>{fa ? "حوزه فناوری" : "Sectors"}</span></article>
       </section>
 
-      <section className={`wrap ${styles.portfolioControls}`} aria-label={fa ? "فیلتر محصولات" : "Product filters"}>
-        <div className={styles.controlIntro}>
-          <span>{fa ? "پرتفوی" : "PORTFOLIO"}</span>
-          <strong>{fa ? "محصولات و کسب‌وکارها" : "Products & ventures"}</strong>
-        </div>
-        <div className={styles.filters} role="group" aria-label={fa ? "دسته‌بندی محصولات" : "Product categories"}>
-          {productFilters.map((item) => {
-            const label = fa ? filterLabelsFa[item] : item === "همه" ? "All" : item;
-            return (
-              <button type="button" key={item} onClick={() => setFilter(item)}
-                className={filter === item ? styles.activeFilter : styles.filterButton} aria-pressed={filter === item}>
-                {label}
-              </button>
-            );
-          })}
+      <section className={`wrap ${styles.portfolioControls}`}>
+        <div className={styles.controlIntro}><span>VENTURE INDEX</span><strong>{fa ? "محصولات و کسب‌وکارها" : "Products & ventures"}</strong></div>
+        <div className={styles.filters} role="group">
+          {productFilters.map((item) => <button type="button" key={item} onClick={() => setFilter(item)} className={filter === item ? styles.activeFilter : styles.filterButton} aria-pressed={filter === item}>{fa ? filterLabelsFa[item] : item === "همه" ? "All" : item}</button>)}
         </div>
       </section>
 
       <section className={`wrap ${styles.productGrid}`} aria-live="polite">
         {visible.map((product, index) => (
-          <article
-            key={product.slug}
-            className={`${styles.productCard} ${index === 0 ? styles.featuredCard : ""}`}
-            data-theme={product.slug}
-            data-status={product.status}
-            style={{ ["--portfolio-order" as string]: index }}
-          >
-            <div className={styles.cardRail}>
-              <span className={styles.cardNumber}>{String(index + 1).padStart(2, "0")}</span>
-              <span className={styles.statusDot} aria-hidden="true" />
-              <span className={styles.statusText}>{getStatusLabel(product.status, locale)}</span>
-            </div>
-
+          <article key={product.slug} className={`${styles.productCard} ${index === 0 ? styles.featuredCard : ""}`} data-theme={product.slug} data-status={product.status}>
+            <div className={styles.cardRail}><span className={styles.cardNumber}>{String(index + 1).padStart(2,"0")}</span><span className={styles.statusDot}/><span className={styles.statusText}>{getStatusLabel(product.status, locale)}</span></div>
             <div className={styles.cardBody}>
               <div className={styles.cardTop}>
-                <div className={styles.cardIdentity}>
-                  <span className={styles.industryBadge}>{getProductIndustry(product, locale)}</span>
-                  <h2 className={fa ? undefined : "ltr"}>{getProductDisplayName(product, locale)}</h2>
-                  <div className={`ltr ${styles.domain}`}>{product.domain}</div>
+                <div className={styles.identityRow}>
+                  <div className={styles.productMark} aria-hidden="true">{productMarks[product.slug] ?? product.slug.slice(0,2).toUpperCase()}</div>
+                  <div><span className={styles.industryBadge}>{getProductIndustry(product, locale)}</span><h2 className={fa ? undefined : "ltr"}>{getProductDisplayName(product, locale)}</h2><div className={`ltr ${styles.domain}`}>{product.domain}</div></div>
                 </div>
-                <span className={styles.externalIcon} aria-hidden="true">↗</span>
+                <span className={styles.externalIcon}>↗</span>
               </div>
-
-              <div className={styles.cardNarrative}>
-                <p className={styles.positioning}>{product.positioning}</p>
-                <p className={styles.description}>{fa ? product.shortDescriptionFa : product.shortDescriptionEn}</p>
+              <div className={styles.cardNarrative}><p className={styles.positioning}>{product.positioning}</p><p className={styles.description}>{fa ? product.shortDescriptionFa : product.shortDescriptionEn}</p></div>
+              <div className={styles.evidenceRow}>
+                <div><span>{fa ? "مرحله" : "STAGE"}</span><strong>{getStatusLabel(product.status, locale)}</strong></div>
+                <div><span>{fa ? "حوزه" : "SECTOR"}</span><strong>{getProductCategory(product, locale)}</strong></div>
+                <div><span>{fa ? "محصول" : "PRODUCT"}</span><strong>{product.status === "live" ? (fa ? "در دسترس" : "Available") : (fa ? "در حال ساخت" : "Building")}</strong></div>
               </div>
-
               <div className={styles.cardFooter}>
-                <div className={styles.cardMeta}>
-                  <span>{getProductCategory(product, locale)}</span>
-                  {product.tags.slice(0, 2).map((tag) => <span key={tag}>{tag}</span>)}
-                </div>
-                <div className={styles.cardActions}>
-                  <Link href={`/${locale}/products/${product.slug}`} className={styles.primaryCardLink}>
-                    {getPrimaryCta(product.status, fa)} <span aria-hidden="true">↗</span>
-                  </Link>
-                  {product.status === "live" && (
-                    <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer"
-                      className={styles.domainLink}
-                      aria-label={`${getProductDisplayName(product, locale)} — ${product.domain}`}>
-                      {fa ? "وب‌سایت محصول" : "Product website"}
-                    </a>
-                  )}
-                </div>
+                <div className={styles.cardMeta}>{product.tags.slice(0,3).map((tag) => <span key={tag}>{tag}</span>)}</div>
+                <div className={styles.cardActions}><Link href={`/${locale}/products/${product.slug}`} className={styles.primaryCardLink}>{getPrimaryCta(product.status, fa)} <span>↗</span></Link>{product.status === "live" && <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className={styles.domainLink}>{fa ? "وب‌سایت مستقل" : "Independent website"}</a>}</div>
               </div>
             </div>
           </article>
         ))}
       </section>
 
-      <section className={`wrap ${styles.closingCta}`}>
-        <div>
-          <span className="sec-tag">{fa ? "ساختن" : "BUILD"}</span>
-          <h2>{fa ? "برای من، پرتفوی فقط فهرست پروژه‌ها نیست؛ سابقه ساختن است." : "A portfolio is not a project list. It is a record of building."}</h2>
-        </div>
-        <div className={styles.closingActions}>
-          <Link href={`/${locale}/about`} className="btn btn-ghost">{fa ? "درباره من" : "About me"}</Link>
-          <Link href={`/${locale}/contact`} className="btn btn-primary">{fa ? "شروع گفتگو" : "Start a conversation"}</Link>
-        </div>
-      </section>
+      <section className={`wrap ${styles.closingCta}`}><div><span className="sec-tag">{fa ? "اصل کار" : "THE WORK"}</span><h2>{fa ? "این صفحه قرار نیست پروژه‌ها را بشمارد؛ باید نشان دهد چه چیزهایی واقعاً ساخته شده‌اند." : "This page is not here to count projects. It exists to show what has actually been built."}</h2></div><div className={styles.closingActions}><Link href={`/${locale}/about`} className="btn btn-ghost">{fa ? "درباره من" : "About me"}</Link><Link href={`/${locale}/contact`} className="btn btn-primary">{fa ? "شروع گفتگو" : "Start a conversation"}</Link></div></section>
     </main>
   );
 }
