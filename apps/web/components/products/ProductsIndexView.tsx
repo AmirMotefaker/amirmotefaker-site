@@ -86,7 +86,7 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className={`wrap ${styles.productGrid}`} aria-live="polite">
+      <section className={`wrap ${styles.productGrid}`} aria-live="polite" data-preview-ready="true">
         {visible.map((product, index) => (
           <article key={product.slug} className={styles.productCard} data-theme={product.slug}
             style={{ ["--portfolio-order" as string]: index }}>
