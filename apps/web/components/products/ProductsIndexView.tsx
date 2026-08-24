@@ -8,6 +8,7 @@ import {
   getProductCategory,
   getProductDisplayName,
   getProductIndustry,
+  type ProductStatus,
 } from "@/content/product-portfolio";
 import type { Locale } from "@/content/founder-site";
 import styles from "./ProductPortfolio.module.css";
@@ -21,6 +22,33 @@ const filterLabelsFa: Record<(typeof productFilters)[number], string> = {
   "Digital Platforms": "پلتفرم‌های دیجیتال",
   "EntertainmentTech": "فناوری سرگرمی",
 };
+
+const statusLabels: Record<ProductStatus, { fa: string; en: string }> = {
+  live: { fa: "فعال", en: "Live" },
+  development: { fa: "در حال توسعه", en: "In development" },
+  discovery: { fa: "در مرحله کشف", en: "Discovery" },
+  concept: { fa: "مفهوم اولیه", en: "Concept" },
+  "to-confirm": { fa: "در انتظار تأیید", en: "To confirm" },
+};
+
+function getStatusLabel(status: ProductStatus, locale: Locale) {
+  return locale === "fa" ? statusLabels[status].fa : statusLabels[status].en;
+}
+
+function getPrimaryCta(status: ProductStatus, fa: boolean) {
+  switch (status) {
+    case "live":
+      return fa ? "مشاهده محصول" : "View product";
+    case "development":
+      return fa ? "مشاهده مسیر توسعه" : "View development";
+    case "discovery":
+      return fa ? "شناخت محصول" : "Explore discovery";
+    case "concept":
+      return fa ? "مشاهده مفهوم" : "Explore concept";
+    default:
+      return fa ? "مشاهده جزئیات" : "View details";
+  }
+}
 
 export default function ProductsIndexView({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
@@ -38,8 +66,8 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
         <h1>{fa ? "محصولاتی که می‌سازم." : "Products & Ventures"}</h1>
         <p>
           {fa
-            ? "هشت محصول و پلتفرم در تقاطع هوش مصنوعی، نرم‌افزار و صنایع واقعی؛ از فودتک و فین‌تک تا زبان، دانش، رسانه و فناوری سازمانی."
-            : "Eight products and platforms across AI, software and real-world industries — from FoodTech and FinTech to language, knowledge, media and enterprise technology."}
+            ? `${productPortfolio.length} محصول و پلتفرم در پرتفوی فعال، با تمرکز بر هوش مصنوعی، نرم‌افزار و صنایع واقعی.`
+            : `${productPortfolio.length} products and platforms across AI, software and real-world industries.`}
         </p>
         <p className={styles.englishLine}>AI-powered products for real-world problems.</p>
       </section>
@@ -73,6 +101,7 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
             <p className={styles.positioning}>{product.positioning}</p>
             <p className={styles.description}>{fa ? product.shortDescriptionFa : product.shortDescriptionEn}</p>
             <div className={styles.cardMeta}>
+              <span>{getStatusLabel(product.status, locale)}</span>
               <span>{getProductCategory(product, locale)}</span>
               <span>{getProductIndustry(product, locale)}</span>
             </div>
@@ -81,13 +110,17 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
             </div>
             <div className={styles.cardActions}>
               <Link href={`/${locale}/products/${product.slug}`} className="btn btn-primary">
-                {fa ? "مشاهده محصول" : "View product"}
+                {getPrimaryCta(product.status, fa)}
               </Link>
-              <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer"
-                className={styles.domainLink}
-                aria-label={`${getProductDisplayName(product, locale)} — ${product.domain}`}>
-                {product.domain} ↗
-              </a>
+              {product.status === "live" ? (
+                <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer"
+                  className={styles.domainLink}
+                  aria-label={`${getProductDisplayName(product, locale)} — ${product.domain}`}>
+                  {product.domain} ↗
+                </a>
+              ) : (
+                <span className={styles.domainLink}>{getStatusLabel(product.status, locale)}</span>
+              )}
             </div>
           </article>
         ))}
