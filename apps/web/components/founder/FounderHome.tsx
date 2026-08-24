@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import type { Locale } from "@/content/founder-site";
+import { founder, type Locale } from "@/content/founder-site";
 import { getVerifiedEvidence } from "@/content/evidence-registry";
 import {
   getProductCategory,
@@ -41,10 +42,9 @@ function lifecycle(status: Product["status"], fa: boolean) {
 export default function FounderHome({ locale }: { locale: Locale }) {
   const fa = locale === "fa";
   const evidence = getVerifiedEvidence();
-  const liveCount = products.filter((p) => p.status === "live").length;
-  const buildingCount = products.filter((p) => p.status === "development").length;
   const sectors = new Set(products.map((p) => p.filterGroup)).size;
-  const featured = products.slice(0, 6);
+  const featured = products.slice(0, 4);
+  const portfolioNames = products.slice(0, 6);
 
   return (
     <main className={styles.home}>
@@ -52,67 +52,123 @@ export default function FounderHome({ locale }: { locale: Locale }) {
         <div className={`wrap ${styles.heroGrid}`}>
           <div className={styles.heroCopy}>
             <div className={styles.heroKicker}>
-              <span>{fa ? "امیر متفکر / بنیان‌گذار / سازنده محصول" : "AMIR MOTefAKER / FOUNDER / PRODUCT BUILDER"}</span>
-              <strong>{fa ? "در حال ساخت" : "BUILDING"}</strong>
+              <span>{fa ? "امیر متفکر" : "AMIR MOTefAKER"}</span>
+              <span>{fa ? "کارآفرین · سازنده محصول · فناوری" : "ENTREPRENEUR · PRODUCT BUILDER · TECHNOLOGY"}</span>
             </div>
-            <h1>{fa ? <>ایده را به <em>محصول واقعی.</em></> : <>Turning ideas into <em>real products.</em></>}</h1>
-            <p className={styles.heroLead}>{fa ? "من روی ساخت محصولات فناوری کار می‌کنم؛ محصولاتی که هوش مصنوعی، نرم‌افزار و داده را به مسئله‌های واقعی در کسب‌وکار، آموزش، رسانه و زیرساخت دیجیتال متصل می‌کنند." : "I build technology products that connect AI, software and data to real problems across business, education, media and digital infrastructure."}</p>
+
+            <h1>
+              {fa ? (
+                <>محصولات فناوری را <em>از مسئله تا اجرا</em> می‌سازم.</>
+              ) : (
+                <>I build technology products <em>from problem to execution.</em></>
+              )}
+            </h1>
+
+            <p className={styles.heroLead}>
+              {fa
+                ? "بنیان‌گذار و سازنده مجموعه‌ای از محصولات مستقل در هوش مصنوعی، نرم‌افزار، آموزش، رسانه، فین‌تک و زیرساخت دیجیتال. این سایت نمای زنده‌ای از چیزهایی است که می‌سازم، آزمایش می‌کنم و توسعه می‌دهم."
+                : "Founder and builder of independent products across AI, software, education, media, fintech and digital infrastructure. This site is a living view of what I build, test and grow."}
+            </p>
+
             <div className={styles.heroActions}>
-              <Link href={`/${locale}/products`} className="btn btn-primary">{fa ? "مشاهده پرتفوی" : "Explore portfolio"}</Link>
-              <Link href={`/${locale}/about`} className="btn btn-ghost">{fa ? "درباره من" : "About me"}</Link>
-              <Link href={`/${locale}/thesis`} className={styles.textLink}>{fa ? "نگاه من به ساخت محصول ↗" : "Product thesis ↗"}</Link>
+              <Link href={`/${locale}/products`} className="btn btn-primary">{fa ? "مشاهده محصولات" : "Explore products"}</Link>
+              <Link href={`/${locale}/about`} className="btn btn-ghost">{fa ? "درباره امیر" : "About Amir"}</Link>
+            </div>
+
+            <div className={styles.heroPortfolioLine}>
+              <span>{fa ? "پرتفوی منتخب" : "SELECTED PORTFOLIO"}</span>
+              <div>
+                {portfolioNames.map((product) => (
+                  <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>
+                    {getProductDisplayName(product, locale)}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 
-          <aside className={styles.signature}>
-            <div className={styles.signatureTop}><span>FOUNDER SYSTEM / 2026</span><span>IR / GLOBAL</span></div>
-            <div className={styles.signatureCore}>
-              <div className={styles.signatureCell}><span>{fa ? "محصول" : "PRODUCTS"}</span><strong>{String(products.length).padStart(2,"0")}</strong></div>
-              <div className={styles.signatureCell}><span>{fa ? "فعال" : "LIVE"}</span><strong>{String(liveCount).padStart(2,"0")}</strong></div>
-              <div className={styles.signatureCell}><span>{fa ? "در حال ساخت" : "BUILDING"}</span><strong>{String(buildingCount).padStart(2,"0")}</strong></div>
-              <div className={styles.signatureCell}><span>{fa ? "حوزه" : "SECTORS"}</span><strong>{String(sectors).padStart(2,"0")}</strong></div>
+          <aside className={styles.founderVisual}>
+            <div className={styles.portraitFrame}>
+              <Image
+                src="/assets/profile/amir-motefaker.png"
+                alt={fa ? founder.nameFa : founder.nameEn}
+                fill
+                priority
+                sizes="(max-width: 980px) 80vw, 38vw"
+                className={styles.portrait}
+              />
+              <div className={styles.portraitOverlay} />
+              <div className={styles.portraitCaption}>
+                <span>{fa ? "FOUNDER / PRODUCT / TECHNOLOGY" : "FOUNDER / PRODUCT / TECHNOLOGY"}</span>
+                <strong>{fa ? founder.nameFa : founder.nameEn}</strong>
+              </div>
             </div>
-            <div className={styles.signatureFoot}>THINK → BUILD → SHIP → LEARN</div>
+            <div className={styles.authorityBar}>
+              <div><strong>{String(products.length).padStart(2,"0")}</strong><span>{fa ? "محصول در پرتفوی" : "Portfolio products"}</span></div>
+              <div><strong>{String(sectors).padStart(2,"0")}</strong><span>{fa ? "حوزه فناوری" : "Technology sectors"}</span></div>
+              <div><strong>{String(evidence.length).padStart(2,"0")}</strong><span>{fa ? "شاهد تأییدشده" : "Verified evidence"}</span></div>
+            </div>
           </aside>
         </div>
       </section>
 
-      <section className={styles.proofStrip}>
-        <div className={`wrap ${styles.proofGrid}`}>
-          <article><strong>{String(products.length).padStart(2,"0")}</strong><span>{fa ? "محصول در پرتفوی" : "Portfolio products"}</span></article>
-          <article><strong>{String(liveCount).padStart(2,"0")}</strong><span>{fa ? "محصول فعال" : "Live products"}</span></article>
-          <article><strong>{String(evidence.length).padStart(2,"0")}</strong><span>{fa ? "مدرک تأییدشده" : "Verified evidence"}</span></article>
-          <article><strong>{String(sectors).padStart(2,"0")}</strong><span>{fa ? "حوزه فناوری" : "Technology sectors"}</span></article>
+      <section className={styles.portfolioTicker}>
+        <div className="wrap">
+          <span>{fa ? "محصولات و کسب‌وکارها" : "PRODUCTS & VENTURES"}</span>
+          <div className={styles.tickerNames}>
+            {portfolioNames.map((product, index) => (
+              <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>
+                <small>{String(index + 1).padStart(2,"0")}</small>{getProductDisplayName(product, locale)}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className={styles.section}>
         <div className={`wrap ${styles.sectionHead}`}>
-          <div><span className={styles.eyebrow}>{fa ? "پرتفوی منتخب" : "SELECTED VENTURES"}</span></div>
-          <div><h2>{fa ? "محصولات مستقل، با مسئله و مسیر رشد مستقل." : "Independent products, each with its own problem and growth path."}</h2><p>{fa ? "صفحه اصلی قرار نیست همه چیز را یکجا نشان دهد؛ اینجا فقط مهم‌ترین Ventureها را می‌بینید و برای جزئیات وارد پرتفوی کامل می‌شوید." : "The homepage highlights the ventures that best explain the portfolio. The full product index contains the complete operating view."}</p></div>
+          <div><span className={styles.eyebrow}>{fa ? "VENTURES منتخب" : "SELECTED VENTURES"}</span></div>
+          <div>
+            <h2>{fa ? "چند محصول، چند صنعت؛ یک سابقه مستمر از ساختن." : "Multiple products, multiple industries — one continuous record of building."}</h2>
+            <p>{fa ? "هر Venture مسئله، بازار، فناوری و مسیر رشد خودش را دارد. صفحه اصلی فقط مهم‌ترین آن‌ها را معرفی می‌کند؛ جزئیات کامل در Portfolio قرار دارد." : "Each venture has its own problem, market, technology and growth path. The homepage highlights the clearest examples; the full operating view lives in the portfolio."}</p>
+          </div>
         </div>
+
         <div className={`wrap ${styles.ventureGrid}`}>
           {featured.map((product, index) => (
             <Link href={`/${locale}/products/${product.slug}`} key={product.slug} className={styles.ventureCard}>
-              <div className={styles.ventureTop}><div className={styles.ventureMark}>{marks[product.slug] ?? product.slug.slice(0,2).toUpperCase()}</div><span className={styles.ventureState}>{String(index + 1).padStart(2,"0")} / {lifecycle(product.status, fa)}</span></div>
-              <h3>{getProductDisplayName(product, locale)}</h3>
+              <div className={styles.ventureTop}>
+                <div className={styles.ventureMark}>{marks[product.slug] ?? product.slug.slice(0,2).toUpperCase()}</div>
+                <span className={styles.ventureState}>{String(index + 1).padStart(2,"0")} · {lifecycle(product.status, fa)}</span>
+              </div>
+              <div className={styles.ventureIdentity}>
+                <h3>{getProductDisplayName(product, locale)}</h3>
+                <span>{product.domain}</span>
+              </div>
               <p>{fa ? product.shortDescriptionFa : product.shortDescriptionEn}</p>
-              <div className={styles.ventureFoot}><span>{getProductCategory(product, locale)}</span><span>↗</span></div>
+              <div className={styles.ventureFoot}><span>{getProductCategory(product, locale)}</span><strong>{fa ? "مشاهده محصول ↗" : "View product ↗"}</strong></div>
             </Link>
           ))}
         </div>
-        <div className={`wrap ${styles.heroActions}`}><Link href={`/${locale}/products`} className={styles.textLink}>{fa ? "مشاهده کل پرتفوی ↗" : "Explore full portfolio ↗"}</Link></div>
+
+        <div className={`wrap ${styles.sectionAction}`}>
+          <Link href={`/${locale}/products`} className="btn btn-ghost">{fa ? `مشاهده هر ${products.length} محصول` : `Explore all ${products.length} products`}</Link>
+        </div>
       </section>
 
       {evidence.length > 0 && (
-        <section className={styles.section}>
+        <section className={`${styles.section} ${styles.proofSection}`}>
           <div className={`wrap ${styles.sectionHead}`}>
-            <div><span className={styles.eyebrow}>{fa ? "اثبات اجرا" : "PROOF OF EXECUTION"}</span></div>
-            <div><h2>{fa ? "ادعا کمتر؛ شواهد قابل بررسی بیشتر." : "Less claiming. More verifiable proof."}</h2><p>{fa ? "فقط مواردی نمایش داده می‌شوند که در Evidence Registry تأیید شده‌اند." : "Only evidence that has been verified in the Evidence Registry is surfaced here."}</p></div>
+            <div><span className={styles.eyebrow}>{fa ? "PROOF OF EXECUTION" : "PROOF OF EXECUTION"}</span></div>
+            <div><h2>{fa ? "پرتفوی باید با خروجی قابل بررسی حرف بزند." : "A portfolio should speak through verifiable output."}</h2><p>{fa ? "شواهد تأییدشده، مسیر ساختن را از ادعا جدا می‌کنند." : "Verified evidence separates a building record from a collection of claims."}</p></div>
           </div>
           <div className={`wrap ${styles.proofCards}`}>
             {evidence.slice(0,6).map((item, index) => (
-              <article className={styles.proofCard} key={item.id}><span>{String(index + 1).padStart(2,"0")}</span><h3>{fa ? item.titleFa : item.titleEn}</h3>{item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer">{fa ? "مشاهده مدرک ↗" : "View evidence ↗"}</a> : null}</article>
+              <article className={styles.proofCard} key={item.id}>
+                <span>{String(index + 1).padStart(2,"0")}</span>
+                <h3>{fa ? item.titleFa : item.titleEn}</h3>
+                {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer">{fa ? "بررسی مدرک ↗" : "Inspect evidence ↗"}</a> : null}
+              </article>
             ))}
           </div>
         </section>
@@ -120,19 +176,18 @@ export default function FounderHome({ locale }: { locale: Locale }) {
 
       <section className={styles.section}>
         <div className={`wrap ${styles.sectionHead}`}>
-          <div><span className={styles.eyebrow}>{fa ? "منطق ساخت" : "PRODUCT THESIS"}</span></div>
-          <div><h2>{fa ? "محصول خوب از فناوری شروع نمی‌شود؛ از مسئله شروع می‌شود." : "Good products do not start with technology. They start with a problem."}</h2><p>{fa ? "این سه اصل، معیار تصمیم‌گیری من در طراحی و توسعه محصول هستند." : "These three principles shape how I decide what and how to build."}</p></div>
+          <div><span className={styles.eyebrow}>{fa ? "PRODUCT THESIS" : "PRODUCT THESIS"}</span></div>
+          <div><h2>{fa ? "محصول خوب از فناوری شروع نمی‌شود؛ از مسئله شروع می‌شود." : "Good products do not start with technology. They start with a problem."}</h2><p>{fa ? "سه اصل که در تصمیم‌گیری برای ساخت، توسعه و متوقف‌کردن محصولات استفاده می‌کنم." : "Three principles I use when deciding what to build, grow or stop."}</p></div>
         </div>
         <div className={`wrap ${styles.thesisGrid}`}>
           {thesisPrinciples[locale].map(([index, title, detail]) => <article className={styles.thesisCard} key={title}><span>{index}</span><h3>{title}</h3><p>{detail}</p></article>)}
         </div>
-        <div className={`wrap ${styles.heroActions}`}><Link href={`/${locale}/thesis`} className={styles.textLink}>{fa ? "مطالعه Product Thesis ↗" : "Read product thesis ↗"}</Link></div>
       </section>
 
       <section className={styles.cta}>
         <div className={`wrap ${styles.ctaPanel}`}>
-          <div><span className={styles.eyebrow}>{fa ? "شروع گفتگو" : "START A CONVERSATION"}</span><h2>{fa ? "اگر مسئله‌ای ارزش ساختن دارد، درباره‌اش حرف بزنیم." : "If the problem is worth building around, let's talk."}</h2></div>
-          <div className={styles.ctaSide}><p>{fa ? "برای همکاری محصول، سرمایه‌گذاری، شراکت یا گفت‌وگوی تخصصی از صفحه تماس شروع کنید." : "For product collaboration, investment, partnerships or a focused conversation, start from the contact page."}</p><Link href={`/${locale}/contact`} className="btn btn-primary">{fa ? "شروع گفتگو" : "Start a conversation"}</Link><Link href={`/${locale}/resume`} className={styles.textLink}>{fa ? "مسیر حرفه‌ای ↗" : "Professional journey ↗"}</Link></div>
+          <div><span className={styles.eyebrow}>{fa ? "ارتباط" : "CONTACT"}</span><h2>{fa ? "برای ساختن، سرمایه‌گذاری یا همکاری جدی گفتگو کنیم." : "Let's talk about building, investing or serious collaboration."}</h2></div>
+          <div className={styles.ctaSide}><p>{fa ? "مسیر تماس برای همکاری محصول، سرمایه‌گذاری، شراکت یا گفت‌وگوی تخصصی." : "A direct path for product collaboration, investment, partnerships or focused conversations."}</p><Link href={`/${locale}/contact`} className="btn btn-primary">{fa ? "شروع گفتگو" : "Start a conversation"}</Link><Link href={`/${locale}/resume`} className={styles.textLink}>{fa ? "مسیر حرفه‌ای ↗" : "Professional journey ↗"}</Link></div>
         </div>
       </section>
     </main>
