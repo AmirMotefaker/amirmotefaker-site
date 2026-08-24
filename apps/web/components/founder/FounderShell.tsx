@@ -22,6 +22,7 @@ const labels = {
     productLinks: "محصولات منتخب",
     contactBlock: "ارتباط",
     rights: "تمام حقوق محفوظ است.",
+    languageSwitch: "انگلیسی",
   },
   en: {
     about: "About",
@@ -39,6 +40,7 @@ const labels = {
     productLinks: "Featured Products",
     contactBlock: "Contact",
     rights: "All rights reserved.",
+    languageSwitch: "Persian",
   },
 };
 
@@ -85,7 +87,7 @@ export default function FounderShell({
 
           <div className="nav-cta">
             <ThemeToggle />
-            <Link href={`/${other}`} className="locale-switch">{other.toUpperCase()}</Link>
+            <Link href={`/${other}`} className="locale-switch">{l.languageSwitch}</Link>
             <Link href={`/${locale}/contact`} className="btn btn-primary">{l.contact}</Link>
           </div>
         </nav>
