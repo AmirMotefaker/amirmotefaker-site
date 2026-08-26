@@ -67,6 +67,15 @@ export const brandRegistry = [
     order: 60,
   },
   {
+    slug: "tasvia",
+    name: "Tasvia",
+    nameFa: "تسویا",
+    domain: "tasvia-app",
+    classification: "active",
+    claimStatus: "founder-confirmed",
+    order: 70,
+  },
+  {
     slug: "primesys",
     name: "PrimeSYS",
     nameFa: "پرایم‌سیستم",
@@ -83,15 +92,6 @@ export const brandRegistry = [
     classification: "pending-classification",
     claimStatus: "team-draft",
     order: 120,
-  },
-  {
-    slug: "shiftpay",
-    name: "ShiftPay",
-    nameFa: "شیفت‌پی",
-    domain: "shiftpay.ir",
-    classification: "pending-classification",
-    claimStatus: "team-draft",
-    order: 130,
   },
 ] as const satisfies readonly BrandRegistryEntry[];
 
