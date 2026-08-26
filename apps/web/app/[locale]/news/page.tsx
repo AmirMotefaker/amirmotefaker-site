@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getLegacyPosts } from "@/lib/legacy-wordpress";
@@ -5,6 +6,41 @@ import { formatSiteDate, formatSiteNumber } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
 
 const PAGE_SIZE = 12;
+const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale: Locale = raw === "en" ? "en" : "fa";
+  const fa = locale === "fa";
+  const url = `${base}/${locale}/news`;
+  const title = fa ? "اخبار فناوری و هوش مصنوعی | امیر متفکر" : "Technology & AI News | Amir Motefaker";
+  const description = fa
+    ? "آرشیو اخبار و نوشته‌های فناوری امیر متفکر؛ شامل هوش مصنوعی، نرم‌افزار، محصولات دیجیتال، ابزارها و روندهای فناوری."
+    : "Amir Motefaker's technology news archive covering AI, software, digital products, tools and technology trends.";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: {
+        "fa-IR": `${base}/fa/news`,
+        "en-US": `${base}/en/news`,
+        "x-default": `${base}/en/news`,
+      },
+    },
+    openGraph: {
+      type: "website",
+      url,
+      title,
+      description,
+      siteName: fa ? "امیر متفکر، علاقه‌مند به فناوری" : "Amir Motefaker, Tech-savvy",
+      locale: fa ? "fa_IR" : "en_US",
+      alternateLocale: fa ? ["en_US"] : ["fa_IR"],
+    },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
 
 export default async function Page({
   params,
@@ -28,8 +64,32 @@ export default async function Page({
   const start = (currentPage - 1) * PAGE_SIZE;
   const visible = posts.slice(start, start + PAGE_SIZE);
 
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: fa ? "اخبار فناوری و هوش مصنوعی" : "Technology & AI News",
+    url: `${base}/${locale}/news`,
+    inLanguage: fa ? "fa-IR" : "en-US",
+    isPartOf: {
+      "@type": "WebSite",
+      name: fa ? "امیر متفکر، علاقه‌مند به فناوری" : "Amir Motefaker, Tech-savvy",
+      url: `${base}/${locale}`,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: posts.length,
+      itemListElement: visible.map((post, index) => ({
+        "@type": "ListItem",
+        position: start + index + 1,
+        url: `${base}/${locale}/news/${encodeURIComponent(post.slug)}`,
+        name: post.title,
+      })),
+    },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }} />
       <main className="inner-page">
         <section className="wrap inner-hero">
           <span className="sec-tag">{fa ? "اخبار فناوری" : "TECHNOLOGY NEWS"}</span>
@@ -43,43 +103,24 @@ export default async function Page({
 
         <section className="wrap">
           <div className="legacy-news-toolbar">
-            <span>
-              {fa ? "تعداد مطالب:" : "Articles:"} {formatSiteNumber(posts.length, locale)}
-            </span>
-            <span>
-              {fa ? "صفحه" : "Page"} {formatSiteNumber(currentPage, locale)} / {formatSiteNumber(totalPages, locale)}
-            </span>
+            <span>{fa ? "تعداد مطالب:" : "Articles:"} {formatSiteNumber(posts.length, locale)}</span>
+            <span>{fa ? "صفحه" : "Page"} {formatSiteNumber(currentPage, locale)} / {formatSiteNumber(totalPages, locale)}</span>
           </div>
 
           <div className="legacy-news-grid">
             {visible.map((post) => (
-              <Link
-                key={post.id}
-                href={`/${locale}/news/${encodeURIComponent(post.slug)}`}
-                className="news-card"
-              >
+              <Link key={post.id} href={`/${locale}/news/${encodeURIComponent(post.slug)}`} className="news-card">
                 <div className="news-cover">
                   {post.featured_image ? (
-                    <Image
-                      src={post.featured_image}
-                      alt={post.title}
-                      width={960}
-                      height={540}
-                      unoptimized
-                    />
+                    <Image src={post.featured_image} alt={post.title} width={960} height={540} unoptimized />
                   ) : null}
                 </div>
-
                 <div className="news-card-body">
-                  <time className="news-date" dateTime={post.date}>
-                    {formatSiteDate(post.date, locale)}
-                  </time>
+                  <time className="news-date" dateTime={post.date}>{formatSiteDate(post.date, locale)}</time>
                   <h2>{post.title}</h2>
                   <p>{post.excerpt_text}</p>
                   <div className="news-taxonomies">
-                    {post.categories.slice(0, 3).map((category) => (
-                      <span key={category.id}>{category.name}</span>
-                    ))}
+                    {post.categories.slice(0, 3).map((category) => <span key={category.id}>{category.name}</span>)}
                   </div>
                 </div>
               </Link>
@@ -87,16 +128,12 @@ export default async function Page({
           </div>
 
           {totalPages > 1 ? (
-            <nav className="news-pagination" aria-label="Pagination">
+            <nav className="news-pagination" aria-label={fa ? "صفحه‌بندی اخبار فناوری" : "Technology news pagination"}>
               {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) =>
                 page === currentPage ? (
-                  <span key={page} className="active">
-                    {formatSiteNumber(page, locale)}
-                  </span>
+                  <span key={page} className="active" aria-current="page">{formatSiteNumber(page, locale)}</span>
                 ) : (
-                  <Link key={page} href={`/${locale}/news?page=${page}`}>
-                    {formatSiteNumber(page, locale)}
-                  </Link>
+                  <Link key={page} href={`/${locale}/news?page=${page}`}>{formatSiteNumber(page, locale)}</Link>
                 ),
               )}
             </nav>
