@@ -3,6 +3,8 @@ export type Locale = "fa" | "en";
 export const founder = {
   nameFa: "امیر متفکر",
   nameEn: "Amir Motefaker",
+  titleFa: "امیر متفکر، علاقه‌مند به فناوری",
+  titleEn: "Amir Motefaker, Tech-savvy",
   email: "info@amirmotefaker.ir",
   phone: "+98 912 789 3644",
   phoneHref: "+989127893644",
