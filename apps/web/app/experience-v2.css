@@ -1,0 +1,84 @@
+:root{
+  --font-fa:system-ui,-apple-system,"Segoe UI Variable","Segoe UI",Tahoma,"Noto Sans Arabic",Arial,sans-serif;
+  --font-en:"Space Grotesk Variable","Space Grotesk",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --focus:#8fb0ff;
+  --bg:#070708;
+  --surface:#101012;
+  --surface-2:#151518;
+  --surface-3:#1b1b1f;
+  --border:rgba(255,255,255,.12);
+  --border-strong:rgba(255,255,255,.22);
+  --text:#f7f7f8;
+  --text-dim:#b8b8c0;
+  --text-faint:#8a8a94;
+}
+
+html[data-theme="light"]{
+  --bg:#f7f7f5;
+  --surface:#ffffff;
+  --surface-2:#f0f0ed;
+  --surface-3:#e8e8e4;
+  --border:rgba(10,10,12,.13);
+  --border-strong:rgba(10,10,12,.24);
+  --text:#111114;
+  --text-dim:#4f5058;
+  --text-faint:#686972;
+  --focus:#315ecf;
+}
+
+html,body{background:var(--bg);color:var(--text)}
+body{font-family:var(--font-fa);font-size:16px;line-height:1.85;text-rendering:optimizeLegibility}
+.founder-site[dir="ltr"]{font-family:var(--font-en);line-height:1.65}
+
+h1,h2,h3,h4,h5,h6{font-family:inherit;text-wrap:balance;letter-spacing:0}
+.founder-site[dir="ltr"] h1,.founder-site[dir="ltr"] h2,.founder-site[dir="ltr"] h3{letter-spacing:-.02em}
+
+.inner-hero h1{font-size:clamp(2rem,4vw,3.75rem);line-height:1.22}
+.product-title{font-size:clamp(2.35rem,5vw,4.8rem);line-height:1.08}
+h1.headline{font-size:clamp(2.25rem,4.7vw,4.45rem);line-height:1.18;font-weight:700}
+.sec-title{font-size:clamp(1.65rem,3vw,2.5rem);line-height:1.35}
+
+p,.p-desc,.sec-sub,.about-copy p,.t-item p,.inner-hero p,.prose-card p{color:var(--text-dim)}
+.exp-card p,.contact-cards small,.stat-label,.foot-row{color:var(--text-faint)}
+
+button,a,input,textarea,select{font:inherit}
+a,button{outline:none}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{
+  outline:3px solid color-mix(in srgb,var(--focus) 72%,transparent);
+  outline-offset:3px;
+  border-radius:8px;
+}
+
+.btn-primary{background:var(--text)!important;color:var(--bg)!important;border-color:var(--text)!important}
+.btn-ghost,.locale-switch,.theme-toggle{background:var(--surface)!important;color:var(--text)!important;border-color:var(--border-strong)!important}
+.btn-ghost:hover,.locale-switch:hover,.theme-toggle:hover{background:var(--surface-2)!important;color:var(--text)!important}
+
+.theme-toggle{min-width:38px;min-height:36px;padding:0 10px!important;display:inline-flex;align-items:center;justify-content:center;gap:0!important;border-radius:8px!important}
+.theme-toggle-label{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.theme-toggle-icon{font-size:14px;line-height:1}
+
+.p-card,.fact-card,.exp-card,.prose-card,.contact-cards>a,.contact-cards>div,.empty-news,.cta-box{background:var(--surface);border-color:var(--border)}
+.p-cat{color:var(--text)!important;border-color:var(--border-strong)!important;background:var(--surface-2)!important}
+.p-arrow,.social-row a{border-color:var(--border-strong);color:var(--text-dim)}
+
+html[data-theme="light"] .portraitShade{background:linear-gradient(180deg,transparent 62%,rgba(20,20,22,.58))}
+html[data-theme="light"] .grad-text{background:none!important;color:var(--text)!important;-webkit-text-fill-color:currentColor}
+html[data-theme="light"] .stat-num{background:none!important;color:var(--text)!important;-webkit-text-fill-color:currentColor}
+html[data-theme="light"] .divider{background:var(--border)}
+html[data-theme="light"] ::selection{background:#c9d7ff;color:#111114}
+
+@media(max-width:760px){
+  body{font-size:15px;line-height:1.8}
+  .wrap{padding-inline:18px}
+  .inner-page{padding-top:104px}
+  .inner-hero{padding-inline:18px;padding-bottom:38px}
+  .inner-hero h1{font-size:clamp(1.85rem,9vw,2.75rem)}
+  .product-title{font-size:clamp(2.1rem,11vw,3.5rem)}
+  h1.headline{font-size:clamp(2rem,10vw,3.2rem)}
+  .prose-card{padding:24px 20px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
