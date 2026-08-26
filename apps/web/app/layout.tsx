@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import { Vazirmatn } from "next/font/google";
 import "@fontsource-variable/space-grotesk/wght.css";
 import "@fontsource-variable/jetbrains-mono/wght.css";
@@ -73,8 +74,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const fontStyle = { "--font-fa": "var(--font-vazirmatn)" } as CSSProperties;
+
   return (
-    <html lang="fa" dir="rtl" suppressHydrationWarning className={vazirmatn.variable}>
+    <html
+      lang="fa"
+      dir="rtl"
+      suppressHydrationWarning
+      className={vazirmatn.variable}
+      style={fontStyle}
+    >
       <body>
         <ThemeBoot />
         {children}
