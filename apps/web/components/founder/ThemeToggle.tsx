@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import type { Locale } from "@/content/founder-site";
 
 type Theme = "light" | "dark";
 
@@ -33,7 +34,7 @@ function subscribeToTheme(onStoreChange: () => void) {
   };
 }
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ locale = "en" }: { locale?: Locale }) {
   const theme = useSyncExternalStore(
     subscribeToTheme,
     getThemeSnapshot,
@@ -47,17 +48,22 @@ export default function ThemeToggle() {
   }
 
   const next = theme === "dark" ? "light" : "dark";
+  const fa = locale === "fa";
+  const label = theme === "dark" ? (fa ? "روشن" : "Light") : (fa ? "تیره" : "Dark");
+  const ariaLabel = theme === "dark"
+    ? (fa ? "تغییر به حالت روشن" : "Switch to light mode")
+    : (fa ? "تغییر به حالت تیره" : "Switch to dark mode");
 
   return (
     <button
       type="button"
       className="theme-toggle"
       onClick={() => updateTheme(next)}
-      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-      title={theme === "dark" ? "Light mode" : "Dark mode"}
+      aria-label={ariaLabel}
+      title={label}
     >
-      <span className="theme-toggle-icon">{theme === "dark" ? "☀" : "☾"}</span>
-      <span className="theme-toggle-label">{theme === "dark" ? "Light" : "Dark"}</span>
+      <span className="theme-toggle-icon" aria-hidden="true">{theme === "dark" ? "☀" : "☾"}</span>
+      <span className="theme-toggle-label">{label}</span>
     </button>
   );
 }
