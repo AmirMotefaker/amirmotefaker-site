@@ -70,7 +70,7 @@ export const brandRegistry = [
     slug: "tasvia",
     name: "Tasvia",
     nameFa: "تسویا",
-    domain: "tasvia-app",
+    domain: "",
     classification: "active",
     claimStatus: "founder-confirmed",
     order: 70,
