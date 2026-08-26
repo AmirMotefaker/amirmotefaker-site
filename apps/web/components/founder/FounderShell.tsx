@@ -15,9 +15,8 @@ const labels = {
     legacyNews: "آرشیو خبرها",
     contact: "تماس",
     sitemap: "نقشه سایت",
-    interest: "بنیان‌گذار / محصول / فناوری",
-    footerText:
-      "ساخت محصولات فناوری با تمرکز بر مسئله واقعی، تجربه کاربر و استفاده عملی از هوش مصنوعی و نرم‌افزار.",
+    interest: "علاقه‌مند به فناوری",
+    footerText: "ساخت و توسعه محصولات دیجیتال با تمرکز بر مسئله واقعی، تجربه کاربر و استفاده عملی از فناوری.",
     quickLinks: "دسترسی سریع",
     productLinks: "محصولات منتخب",
     contactBlock: "ارتباط",
@@ -33,9 +32,8 @@ const labels = {
     legacyNews: "News Archive",
     contact: "Contact",
     sitemap: "Sitemap",
-    interest: "Founder / Product / Technology",
-    footerText:
-      "Building technology products around real problems, user experience and practical applications of AI and software.",
+    interest: "Tech-savvy",
+    footerText: "Building and developing digital products around real problems, user experience and practical technology.",
     quickLinks: "Quick Links",
     productLinks: "Featured Products",
     contactBlock: "Contact",
@@ -44,36 +42,22 @@ const labels = {
   },
 };
 
-export default function FounderShell({
-  locale,
-  children,
-}: {
-  locale: Locale;
-  children: React.ReactNode;
-}) {
+export default function FounderShell({ locale, children }: { locale: Locale; children: React.ReactNode }) {
   const l = labels[locale];
   const fa = locale === "fa";
-  const other = locale === "fa" ? "en" : "fa";
+  const other = fa ? "en" : "fa";
+  const canonicalTitle = fa ? founder.titleFa : founder.titleEn;
 
   return (
-    <div className="founder-site" lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
-      <div className="bg-glow" />
-      <div className="noise" />
-
+    <div className="founder-site" lang={locale} dir={fa ? "rtl" : "ltr"}>
       <header className="site-header">
         <nav className="wrap header-shell">
-          <Link href={`/${locale}`} className="brand-block" aria-label="Amir Motefaker">
+          <Link href={`/${locale}`} className="brand-block" aria-label={canonicalTitle}>
             <span className="brand-avatar">
-              <Image
-                src="/assets/profile/amir-motefaker.png"
-                alt={locale === "fa" ? founder.nameFa : founder.nameEn}
-                width={52}
-                height={52}
-                priority
-              />
+              <Image src="/assets/profile/amir-motefaker.png" alt={fa ? founder.nameFa : founder.nameEn} width={52} height={52} priority />
             </span>
             <span className="brand-copy">
-              <strong>{locale === "fa" ? founder.nameFa : founder.nameEn}</strong>
+              <strong>{fa ? founder.nameFa : founder.nameEn}</strong>
               <small>{l.interest}</small>
             </span>
           </Link>
@@ -100,10 +84,10 @@ export default function FounderShell({
           <div className="footer-brand">
             <div className="footer-brand-top">
               <span className="brand-avatar brand-avatar-sm">
-                <Image src="/assets/profile/amir-motefaker.png" alt="Amir Motefaker" width={44} height={44} />
+                <Image src="/assets/profile/amir-motefaker.png" alt={fa ? founder.nameFa : founder.nameEn} width={44} height={44} />
               </span>
               <div className="brand-copy">
-                <strong>{locale === "fa" ? founder.nameFa : founder.nameEn}</strong>
+                <strong>{fa ? founder.nameFa : founder.nameEn}</strong>
                 <small>{l.interest}</small>
               </div>
             </div>
@@ -129,9 +113,7 @@ export default function FounderShell({
             <h3>{l.productLinks}</h3>
             <div className="footer-links">
               {products.slice(0, 5).map((product) => (
-                <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>
-                  {getProductDisplayName(product, locale)}
-                </Link>
+                <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>{getProductDisplayName(product, locale)}</Link>
               ))}
             </div>
           </div>
@@ -141,7 +123,7 @@ export default function FounderShell({
             <div className="footer-links footer-links-compact">
               <a href={`mailto:${founder.email}`}>{founder.email}</a>
               <a href={`tel:${founder.phoneHref}`}>{founder.phone}</a>
-              <span>{locale === "fa" ? founder.cityFa : founder.cityEn}</span>
+              <span>{fa ? founder.cityFa : founder.cityEn}</span>
               <div className="social-links">
                 <a href={founder.github} target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href={founder.kaggle} target="_blank" rel="noopener noreferrer">Kaggle</a>
@@ -153,8 +135,8 @@ export default function FounderShell({
         </div>
 
         <div className="wrap footer-bottom">
-          <span>© {formatSiteYear(new Date(), locale)} {locale === "fa" ? founder.nameFa : founder.nameEn}. {l.rights}</span>
-          <span>{locale === "fa" ? "طراحی و توسعه محلی" : "Local design & development build"}</span>
+          <span>© {formatSiteYear(new Date(), locale)} {canonicalTitle}. {l.rights}</span>
+          <span>{fa ? "طراحی و توسعه محلی" : "Local design & development build"}</span>
         </div>
       </footer>
     </div>
