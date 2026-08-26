@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import "@fontsource-variable/estedad/wght.css";
+import { Vazirmatn } from "next/font/google";
 import "@fontsource-variable/space-grotesk/wght.css";
 import "@fontsource-variable/jetbrains-mono/wght.css";
 import "./globals.css";
 import "./experience-v2.css";
 import ThemeBoot from "@/components/founder/ThemeBoot";
+
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  variable: "--font-vazirmatn",
+  display: "swap",
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
@@ -68,7 +74,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl" suppressHydrationWarning>
+    <html lang="fa" dir="rtl" suppressHydrationWarning className={vazirmatn.variable}>
       <body>
         <ThemeBoot />
         {children}
