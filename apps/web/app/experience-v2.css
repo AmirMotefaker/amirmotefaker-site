@@ -67,6 +67,42 @@ html[data-theme="light"] .stat-num{background:none!important;color:var(--text)!i
 html[data-theme="light"] .divider{background:var(--border)}
 html[data-theme="light"] ::selection{background:#c9d7ff;color:#111114}
 
+/* Product Detail v2 — editorial, readable, responsive */
+[class*="ProductPortfolio-module"][class*="detailPage"]{padding-top:112px!important}
+[class*="ProductPortfolio-module"][class*="productHero"]{gap:clamp(28px,5vw,64px)!important;align-items:start!important;padding-bottom:54px!important}
+[class*="ProductPortfolio-module"][class*="heroCopy"] h1{font-size:clamp(2.7rem,6vw,5.6rem)!important;line-height:1.02!important;letter-spacing:-.025em!important;margin-top:10px!important}
+.founder-site[dir="rtl"] [class*="ProductPortfolio-module"][class*="heroCopy"] h1{letter-spacing:0!important}
+[class*="ProductPortfolio-module"][class*="heroCopy"] h2{font-size:clamp(1.55rem,2.7vw,2.45rem)!important;line-height:1.45!important;max-width:760px!important}
+[class*="ProductPortfolio-module"][class*="heroCopy"] p{font-size:15px!important;line-height:1.95!important}
+[class*="ProductPortfolio-module"][class*="conceptVisual"]{min-height:360px!important;border-radius:20px!important;padding:20px!important;background:var(--surface)!important}
+[class*="ProductPortfolio-module"][class*="conceptVisual"]::after{opacity:.35!important}
+[class*="ProductPortfolio-module"][class*="snapshotGrid"] article{min-width:0!important}
+[class*="ProductPortfolio-module"][class*="snapshotGrid"] strong{line-height:1.6!important}
+[class*="ProductPortfolio-module"][class*="sectionCard"],
+[class*="ProductPortfolio-module"][class*="visionMission"] article,
+[class*="ProductPortfolio-module"][class*="experienceSection"]>div{border-radius:18px!important;padding:26px!important;background:var(--surface)!important}
+[class*="ProductPortfolio-module"][class*="sectionHeading"] h2,
+[class*="ProductPortfolio-module"][class*="sectionCard"] h2,
+[class*="ProductPortfolio-module"][class*="experienceSection"] h2{font-size:clamp(1.5rem,2.5vw,2.2rem)!important;line-height:1.5!important}
+[class*="ProductPortfolio-module"][class*="sectionCard"] p,
+[class*="ProductPortfolio-module"][class*="sectionCard"] li,
+[class*="ProductPortfolio-module"][class*="visionMission"] p,
+[class*="ProductPortfolio-module"][class*="experienceSection"] p{line-height:1.95!important}
+[class*="ProductPortfolio-module"][class*="capabilityGrid"] article{padding:18px 0 12px!important}
+[class*="ProductPortfolio-module"][class*="relatedGrid"] a{border-radius:16px!important;background:var(--surface)!important}
+[class*="ProductPortfolio-module"][class*="productCta"]{padding-bottom:36px!important}
+
+html[data-theme="light"] [class*="ProductPortfolio-module"][class*="conceptVisual"],
+html[data-theme="light"] [class*="ProductPortfolio-module"][class*="sectionCard"],
+html[data-theme="light"] [class*="ProductPortfolio-module"][class*="relatedGrid"] a,
+html[data-theme="light"] [class*="ProductPortfolio-module"][class*="experienceSection"]>div{background:#fff!important;color:var(--text)!important}
+
+@media(max-width:900px){
+  [class*="ProductPortfolio-module"][class*="productHero"]{grid-template-columns:1fr!important}
+  [class*="ProductPortfolio-module"][class*="conceptVisual"]{order:2!important;min-height:auto!important}
+  [class*="ProductPortfolio-module"][class*="snapshotGrid"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+
 @media(max-width:760px){
   body{font-size:15px;line-height:1.8}
   .wrap{padding-inline:18px}
@@ -76,6 +112,18 @@ html[data-theme="light"] ::selection{background:#c9d7ff;color:#111114}
   .product-title{font-size:clamp(2.1rem,11vw,3.5rem)}
   h1.headline{font-size:clamp(2rem,10vw,3.2rem)}
   .prose-card{padding:24px 20px}
+  [class*="ProductPortfolio-module"][class*="detailPage"]{padding-top:92px!important}
+  [class*="ProductPortfolio-module"][class*="productHero"]{padding-bottom:36px!important}
+  [class*="ProductPortfolio-module"][class*="heroCopy"] h1{font-size:clamp(2.25rem,13vw,3.5rem)!important}
+  [class*="ProductPortfolio-module"][class*="heroCopy"] h2{font-size:clamp(1.35rem,7vw,1.85rem)!important}
+  [class*="ProductPortfolio-module"][class*="snapshotGrid"]{grid-template-columns:1fr!important;padding-bottom:44px!important}
+  [class*="ProductPortfolio-module"][class*="twoColumnSection"],
+  [class*="ProductPortfolio-module"][class*="visionMission"],
+  [class*="ProductPortfolio-module"][class*="experienceSection"]{gap:12px!important;margin-bottom:48px!important}
+  [class*="ProductPortfolio-module"][class*="sectionShell"]{margin-bottom:48px!important}
+  [class*="ProductPortfolio-module"][class*="sectionCard"],
+  [class*="ProductPortfolio-module"][class*="visionMission"] article,
+  [class*="ProductPortfolio-module"][class*="experienceSection"]>div{padding:21px!important;border-radius:15px!important}
 }
 
 @media(prefers-reduced-motion:reduce){
