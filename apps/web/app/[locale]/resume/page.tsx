@@ -13,28 +13,31 @@ export async function generateMetadata({
   const locale: Locale = raw === "en" ? "en" : "fa";
   const fa = locale === "fa";
   const canonical = `${base}/${locale}/resume`;
+  const title = fa ? "مسیر حرفه‌ای امیر متفکر | رزومه، تجربه و مدارک" : "Amir Motefaker Career | Experience, Education & Credentials";
+  const description = fa
+    ? "مسیر حرفه‌ای امیر متفکر از فناوری اطلاعات و فروش تا داده، هوش مصنوعی، محصول، تحصیلات، گواهی‌نامه‌ها و مجوزهای حرفه‌ای."
+    : "Amir Motefaker's professional journey across IT, sales, data, AI and products, including education, credentials and professional qualifications.";
 
   return {
-    title: fa ? "مسیر حرفه‌ای امیر متفکر | رزومه، تجربه و مدارک" : "Amir Motefaker Career | Experience, Education & Credentials",
-    description: fa
-      ? "مسیر حرفه‌ای امیر متفکر از فناوری اطلاعات و فروش تا داده، هوش مصنوعی، محصول، تحصیلات، گواهی‌نامه‌ها و مجوزهای حرفه‌ای."
-      : "Amir Motefaker's professional journey across IT, sales, data, AI and products, including education, credentials and professional qualifications.",
+    title,
+    description,
     alternates: {
       canonical,
       languages: {
-        fa: `${base}/fa/resume`,
-        en: `${base}/en/resume`,
-        "x-default": `${base}/fa/resume`,
+        "fa-IR": `${base}/fa/resume`,
+        "en-US": `${base}/en/resume`,
+        "x-default": `${base}/en/resume`,
       },
     },
     openGraph: {
       type: "website",
       url: canonical,
-      title: fa ? "مسیر حرفه‌ای امیر متفکر" : "Amir Motefaker — Professional Journey",
-      description: fa
-        ? "تجربه، تحصیلات، مدارک، مجوزها و نقاط عطف حرفه‌ای."
-        : "Experience, education, credentials, licenses and professional milestones.",
+      title,
+      description,
+      locale: fa ? "fa_IR" : "en_US",
+      alternateLocale: fa ? ["en_US"] : ["fa_IR"],
     },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
