@@ -83,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       "@id": `${base}/${locale}/products/${product.slug}#product`,
       name: getProductDisplayName(product, locale),
       url: `${base}/${locale}/products/${product.slug}`,
-      applicationCategory: product.categoryEn,
+      applicationCategory: product.category,
     })),
   };
 
