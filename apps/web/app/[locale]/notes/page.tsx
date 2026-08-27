@@ -16,8 +16,22 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: { canonical, languages: { fa: `${base}/fa/notes`, en: `${base}/en/notes` } },
-    openGraph: { title, description, url: canonical, type: "website" },
+    alternates: {
+      canonical,
+      languages: {
+        "fa-IR": `${base}/fa/notes`,
+        "en-US": `${base}/en/notes`,
+        "x-default": `${base}/en/notes`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: "website",
+      locale: fa ? "fa_IR" : "en_US",
+      alternateLocale: fa ? ["en_US"] : ["fa_IR"],
+    },
     twitter: { card: "summary_large_image", title, description },
   };
 }
