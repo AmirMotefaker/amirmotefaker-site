@@ -59,6 +59,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   const fa = locale === "fa";
   const articleUrl = `${base}/${locale}/news/${encodeURIComponent(post.slug)}`;
+  const personId = `${base}/${locale}/#person`;
   const relatedProducts = getRelatedNewsProducts({
     title: post.title,
     excerpt: post.excerpt_text,
@@ -75,10 +76,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     inLanguage: fa ? "fa-IR" : "en-US",
     mainEntityOfPage: articleUrl,
     image: post.featured_image || undefined,
-    author: { "@type": "Person", name: fa ? "امیر متفکر" : "Amir Motefaker", url: `${base}/${locale}/about` },
-    publisher: { "@type": "Person", name: fa ? "امیر متفکر" : "Amir Motefaker", url: `${base}/${locale}` },
+    author: { "@id": personId },
+    publisher: { "@id": personId },
     about: relatedProducts.map((product) => ({
       "@type": "SoftwareApplication",
+      "@id": `${base}/${locale}/products/${product.slug}#product`,
       name: getProductDisplayName(product, locale),
       url: `${base}/${locale}/products/${product.slug}`,
       applicationCategory: product.categoryEn,
