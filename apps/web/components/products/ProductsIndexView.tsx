@@ -4,12 +4,12 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import {
   productFilters,
-  productPortfolio,
   getProductCategory,
   getProductDisplayName,
   getProductIndustry,
   type ProductStatus,
 } from "@/content/product-portfolio";
+import { canonicalProductPortfolio as productPortfolio } from "@/content/canonical-product-portfolio";
 import type { Locale } from "@/content/founder-site";
 import styles from "./ProductShowcase.module.css";
 
@@ -27,7 +27,7 @@ const statusLabels: Record<ProductStatus, { fa: string; en: string }> = {
 
 const productMarks: Record<string, string> = {
   linkresan: "LR", farsio: "FA", fahmio: "FH", zobdino: "ZO", filmtrack: "FT", idehjo: "IJ",
-  restyar: "RY", primesys: "PS", shiftpay: "SP",
+  restyar: "RY", primesys: "PS", tasvia: "TS",
 };
 
 function getStatusLabel(status: ProductStatus, locale: Locale) { return locale === "fa" ? statusLabels[status].fa : statusLabels[status].en; }
@@ -84,7 +84,7 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
               <div className={styles.cardTop}>
                 <div className={styles.identityRow}>
                   <div className={styles.productMark} aria-hidden="true">{productMarks[product.slug] ?? product.slug.slice(0,2).toUpperCase()}</div>
-                  <div><span className={styles.industryBadge}>{getProductIndustry(product, locale)}</span><h2 className={fa ? undefined : "ltr"}>{getProductDisplayName(product, locale)}</h2><div className={`ltr ${styles.domain}`}>{product.domain}</div></div>
+                  <div><span className={styles.industryBadge}>{getProductIndustry(product, locale)}</span><h2 className={fa ? undefined : "ltr"}>{getProductDisplayName(product, locale)}</h2>{product.domain ? <div className={`ltr ${styles.domain}`}>{product.domain}</div> : null}</div>
                 </div>
                 <span className={styles.externalIcon}>↗</span>
               </div>
@@ -96,7 +96,7 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
               </div>
               <div className={styles.cardFooter}>
                 <div className={styles.cardMeta}>{product.tags.slice(0,3).map((tag) => <span key={tag}>{tag}</span>)}</div>
-                <div className={styles.cardActions}><Link href={`/${locale}/products/${product.slug}`} className={styles.primaryCardLink}>{getPrimaryCta(product.status, fa)} <span>↗</span></Link>{product.status === "live" && <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className={styles.domainLink}>{fa ? "وب‌سایت مستقل" : "Independent website"}</a>}</div>
+                <div className={styles.cardActions}><Link href={`/${locale}/products/${product.slug}`} className={styles.primaryCardLink}>{getPrimaryCta(product.status, fa)} <span>↗</span></Link>{product.status === "live" && product.domain ? <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className={styles.domainLink}>{fa ? "وب‌سایت مستقل" : "Independent website"}</a> : null}</div>
               </div>
             </div>
           </article>
