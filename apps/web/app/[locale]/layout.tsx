@@ -65,27 +65,37 @@ export default async function LocaleLayout({
   const locale = resolveLocale(raw);
   const fa = locale === "fa";
   const title = fa ? founder.titleFa : founder.titleEn;
+  const personId = `${base}/${locale}/#person`;
+  const websiteId = `${base}/${locale}/#website`;
 
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": personId,
     name: fa ? founder.nameFa : founder.nameEn,
     alternateName: fa ? founder.nameEn : founder.nameFa,
-    url: `${base}/${locale}`,
+    url: `${base}/${locale}/about`,
+    mainEntityOfPage: `${base}/${locale}/about`,
     image: `${base}/assets/profile/amir-motefaker.png`,
     sameAs: [founder.github, founder.linkedin, founder.x, founder.kaggle],
+    knowsAbout: fa
+      ? ["هوش مصنوعی", "محصول دیجیتال", "فین‌تک", "فناوری آموزشی", "فناوری سلامت", "فناوری گردشگری"]
+      : ["Artificial Intelligence", "Digital Products", "FinTech", "Education Technology", "Health Technology", "Tourism Technology"],
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": websiteId,
     name: title,
     url: `${base}/${locale}`,
     inLanguage: fa ? "fa-IR" : "en-US",
-    publisher: {
-      "@type": "Person",
-      name: fa ? founder.nameFa : founder.nameEn,
-    },
+    publisher: { "@id": personId },
+    about: { "@id": personId },
+    hasPart: [
+      { "@type": "CollectionPage", name: fa ? "محصولات" : "Products", url: `${base}/${locale}/products` },
+      { "@type": "CollectionPage", name: fa ? "اخبار فناوری" : "Technology News", url: `${base}/${locale}/news` },
+    ],
   };
 
   return (
