@@ -71,10 +71,12 @@ export default async function Page({
   const displayName = getProductDisplayName(product, locale);
   const pageUrl = `${base}/${locale}/products/${product.slug}`;
   const productUrl = product.domain ? `https://${product.domain.toLowerCase()}` : undefined;
+  const personId = `${base}/${locale}/#person`;
 
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": `${pageUrl}#product`,
     name: displayName,
     description: locale === "fa" ? product.shortDescriptionFa : product.shortDescriptionEn,
     applicationCategory: product.category,
@@ -82,11 +84,7 @@ export default async function Page({
     url: productUrl || pageUrl,
     mainEntityOfPage: pageUrl,
     inLanguage: locale === "fa" ? "fa-IR" : "en-US",
-    creator: {
-      "@type": "Person",
-      name: "Amir Motefaker",
-      url: `${base}/${locale}`,
-    },
+    creator: { "@id": personId },
   };
 
   const breadcrumbSchema = {
