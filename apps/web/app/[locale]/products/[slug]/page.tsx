@@ -23,19 +23,31 @@ export async function generateMetadata({
   const product = getProduct(slug);
   if (!product) return {};
 
-  const title = `${getProductDisplayName(product, locale)} | Amir Motefaker`;
+  const displayName = getProductDisplayName(product, locale);
+  const title = `${displayName} | ${locale === "fa" ? "پرتفوی امیر متفکر" : "Amir Motefaker Portfolio"}`;
   const description = locale === "fa" ? product.shortDescriptionFa : product.shortDescriptionEn;
   const canonical = `${base}/${locale}/products/${product.slug}`;
+  const faUrl = `${base}/fa/products/${product.slug}`;
+  const enUrl = `${base}/en/products/${product.slug}`;
 
   return {
     title,
     description,
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      languages: {
+        "fa-IR": faUrl,
+        "en-US": enUrl,
+        "x-default": enUrl,
+      },
+    },
     openGraph: {
       title,
       description,
       url: canonical,
       type: "website",
+      locale: locale === "fa" ? "fa_IR" : "en_US",
+      alternateLocale: [locale === "fa" ? "en_US" : "fa_IR"],
     },
     twitter: {
       card: "summary_large_image",
@@ -55,15 +67,25 @@ export default async function Page({
   const product = getProduct(slug);
   if (!product) notFound();
 
-  const productUrl = `https://${product.domain.toLowerCase()}`;
+  const displayName = getProductDisplayName(product, locale);
   const pageUrl = `${base}/${locale}/products/${product.slug}`;
+  const productUrl = product.domain ? `https://${product.domain.toLowerCase()}` : undefined;
 
-  const brandSchema = {
+  const productSchema = {
     "@context": "https://schema.org",
-    "@type": "Brand",
-    name: getProductDisplayName(product, locale),
-    url: productUrl,
-    description: product.positioning,
+    "@type": "SoftwareApplication",
+    name: displayName,
+    description: locale === "fa" ? product.shortDescriptionFa : product.shortDescriptionEn,
+    applicationCategory: product.category,
+    operatingSystem: "Web",
+    url: productUrl || pageUrl,
+    mainEntityOfPage: pageUrl,
+    inLanguage: locale === "fa" ? "fa-IR" : "en-US",
+    creator: {
+      "@type": "Person",
+      name: "Amir Motefaker",
+      url: `${base}/${locale}`,
+    },
   };
 
   const breadcrumbSchema = {
@@ -79,7 +101,7 @@ export default async function Page({
       {
         "@type": "ListItem",
         position: 2,
-        name: getProductDisplayName(product, locale),
+        name: displayName,
         item: pageUrl,
       },
     ],
@@ -89,7 +111,7 @@ export default async function Page({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(brandSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <script
         type="application/ld+json"

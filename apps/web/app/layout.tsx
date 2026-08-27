@@ -1,40 +1,49 @@
 import type { Metadata } from "next";
-import "@fontsource-variable/estedad/wght.css";
+import type { CSSProperties } from "react";
+import { Vazirmatn } from "next/font/google";
 import "@fontsource-variable/space-grotesk/wght.css";
 import "@fontsource-variable/jetbrains-mono/wght.css";
 import "./globals.css";
+import "./experience-v2.css";
 import ThemeBoot from "@/components/founder/ThemeBoot";
+
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  variable: "--font-vazirmatn",
+  display: "swap",
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Amir Motefaker | AI Products, Technology & Digital Ecosystems",
-    template: "%s | Amir Motefaker",
+    default: "Amir Motefaker, Tech-savvy",
+    template: "%s | Amir Motefaker, Tech-savvy",
   },
   description:
-    "Personal website of Amir Motefaker — AI products, software, digital ecosystems, technology strategy, data and innovation.",
+    "Amir Motefaker, Tech-savvy — technology products and digital ventures across AI, FinTech, education, health, tourism and digital infrastructure.",
   keywords: [
     "Amir Motefaker",
     "امیر متفکر",
+    "Technology",
+    "Tech-savvy",
     "AI",
     "هوش مصنوعی",
-    "Technology",
+    "FinTech",
     "Digital Products",
     "Software",
-    "Data",
-    "Persian AI",
+    "Technology News",
   ],
   authors: [{ name: "Amir Motefaker" }],
   creator: "Amir Motefaker",
   openGraph: {
     type: "website",
     url: siteUrl,
-    siteName: "Amir Motefaker",
-    title: "Amir Motefaker | AI Products, Technology & Digital Ecosystems",
+    siteName: "Amir Motefaker, Tech-savvy",
+    title: "Amir Motefaker, Tech-savvy",
     description:
-      "Building AI-powered products, software platforms and digital ecosystems.",
+      "Technology products and digital ventures across AI, FinTech, education, health, tourism and digital infrastructure.",
     images: [
       {
         url: "/assets/profile/amir-motefaker.png",
@@ -46,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amir Motefaker",
+    title: "Amir Motefaker, Tech-savvy",
     description:
-      "AI products, software platforms, data, strategy and digital ecosystems.",
+      "Technology products, digital ventures and technology news.",
     images: ["/assets/profile/amir-motefaker.png"],
   },
   alternates: {
@@ -65,8 +74,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const fontStyle = { "--font-fa": "var(--font-vazirmatn)" } as CSSProperties;
+
   return (
-    <html lang="fa" dir="rtl" suppressHydrationWarning>
+    <html
+      lang="fa"
+      dir="rtl"
+      suppressHydrationWarning
+      className={vazirmatn.variable}
+      style={fontStyle}
+    >
       <body>
         <ThemeBoot />
         {children}
