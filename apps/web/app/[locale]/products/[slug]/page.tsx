@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProductDetailView from "@/components/products/ProductDetailView";
-import { getProduct, getProductDisplayName, productPortfolio } from "@/content/product-portfolio";
+import { getProductDisplayName } from "@/content/product-portfolio";
+import { canonicalProductPortfolio, getCanonicalProduct } from "@/content/canonical-product-portfolio";
 import type { Locale } from "@/content/founder-site";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
 export function generateStaticParams() {
-  return productPortfolio.flatMap((product) => [
+  return canonicalProductPortfolio.flatMap((product) => [
     { locale: "fa", slug: product.slug },
     { locale: "en", slug: product.slug },
   ]);
@@ -20,7 +21,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
-  const product = getProduct(slug);
+  const product = getCanonicalProduct(slug);
   if (!product) return {};
 
   const displayName = getProductDisplayName(product, locale);
@@ -64,7 +65,7 @@ export default async function Page({
 }) {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
-  const product = getProduct(slug);
+  const product = getCanonicalProduct(slug);
   if (!product) notFound();
 
   const displayName = getProductDisplayName(product, locale);
