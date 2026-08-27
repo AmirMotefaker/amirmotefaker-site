@@ -23,21 +23,14 @@ export async function generateMetadata({
   return {
     title: `${page.title} | AmirMotefaker.ir`,
     description,
-    alternates: {
-      canonical,
-      languages: {
-        "fa-IR": `${base}/fa${path}`,
-        "en-US": `${base}/en${path}`,
-        "x-default": `${base}/en${path}`,
-      },
-    },
+    robots: { index: false, follow: true },
+    alternates: { canonical },
     openGraph: {
       title: page.title,
       description,
       url: canonical,
       type: "article",
       locale: locale === "fa" ? "fa_IR" : "en_US",
-      alternateLocale: locale === "fa" ? ["en_US"] : ["fa_IR"],
     },
   };
 }

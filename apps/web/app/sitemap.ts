@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { canonicalProductPortfolio as products } from "@/content/canonical-product-portfolio";
-import { getLegacyPages, getLegacyPosts } from "@/lib/legacy-wordpress";
+import { getLegacyPosts } from "@/lib/legacy-wordpress";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 const locales = ["fa", "en"] as const;
@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
 
   for (const locale of locales) {
-    for (const path of ["", "/about", "/products", "/thesis", "/notes", "/resume", "/news", "/contact", "/pages"]) {
+    for (const path of ["", "/about", "/products", "/thesis", "/notes", "/resume", "/news", "/contact"]) {
       routes.push({
         url: `${base}/${locale}${path}`,
         lastModified: now,
@@ -48,17 +48,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(post.modified || post.date),
         changeFrequency: "weekly",
         priority: 0.75,
-        alternates: alternates(path),
-      });
-    }
-
-    for (const page of getLegacyPages()) {
-      const path = `/pages/${encodeURIComponent(page.slug)}`;
-      routes.push({
-        url: `${base}/${locale}${path}`,
-        lastModified: new Date(page.modified),
-        changeFrequency: "monthly",
-        priority: 0.6,
         alternates: alternates(path),
       });
     }

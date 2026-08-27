@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { getLegacyPostBySlug } from "@/lib/legacy-wordpress";
 import { formatSiteDate } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
+import { getProductDisplayName } from "@/content/product-portfolio";
+import { getRelatedNewsProducts } from "@/content/news-authority";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
@@ -56,6 +59,13 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   const fa = locale === "fa";
   const articleUrl = `${base}/${locale}/news/${encodeURIComponent(post.slug)}`;
+  const personId = `${base}/${locale}/#person`;
+  const relatedProducts = getRelatedNewsProducts({
+    title: post.title,
+    excerpt: post.excerpt_text,
+    categories: post.categories.map((category) => category.name),
+  });
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -66,8 +76,15 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     inLanguage: fa ? "fa-IR" : "en-US",
     mainEntityOfPage: articleUrl,
     image: post.featured_image || undefined,
-    author: { "@type": "Person", name: fa ? "امیر متفکر" : "Amir Motefaker", url: `${base}/${locale}` },
-    publisher: { "@type": "Person", name: fa ? "امیر متفکر" : "Amir Motefaker", url: `${base}/${locale}` },
+    author: { "@id": personId },
+    publisher: { "@id": personId },
+    about: relatedProducts.map((product) => ({
+      "@type": "SoftwareApplication",
+      "@id": `${base}/${locale}/products/${product.slug}#product`,
+      name: getProductDisplayName(product, locale),
+      url: `${base}/${locale}/products/${product.slug}`,
+      applicationCategory: product.category,
+    })),
   };
 
   const breadcrumbJsonLd = {
@@ -100,6 +117,31 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           ) : null}
 
           <div className="wp-content" dangerouslySetInnerHTML={{ __html: post.content_html }} />
+
+          {relatedProducts.length > 0 ? (
+            <aside className="prose-card" aria-labelledby="related-portfolio-heading">
+              <span className="sec-tag">{fa ? "ارتباط با پرتفوی" : "PORTFOLIO CONTEXT"}</span>
+              <h2 id="related-portfolio-heading">{fa ? "محصولات مرتبط با این موضوع" : "Related products in the portfolio"}</h2>
+              <p>
+                {fa
+                  ? "این ارتباط بر اساس موضوع و دسته‌بندی همین مطلب است و به معنی ادعای مشارکت محصول در خبر نیست."
+                  : "These links are based on the article topic and taxonomy; they do not imply that the products participated in the reported event."}
+              </p>
+              <div className="footer-links">
+                {relatedProducts.map((product) => (
+                  <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>
+                    {getProductDisplayName(product, locale)} ↗
+                  </Link>
+                ))}
+              </div>
+            </aside>
+          ) : null}
+
+          <nav className="article-meta" aria-label={fa ? "مسیرهای مرتبط" : "Related navigation"}>
+            <Link href={`/${locale}/news`}>{fa ? "بازگشت به اخبار فناوری" : "Back to Technology News"}</Link>
+            <Link href={`/${locale}/products`}>{fa ? "مشاهده محصولات" : "Explore products"}</Link>
+            <Link href={`/${locale}/about`}>{fa ? "درباره امیر متفکر" : "About Amir Motefaker"}</Link>
+          </nav>
         </article>
       </main>
     </>

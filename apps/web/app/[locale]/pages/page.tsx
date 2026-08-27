@@ -18,21 +18,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: {
-      canonical,
-      languages: {
-        "fa-IR": `${base}/fa/pages`,
-        "en-US": `${base}/en/pages`,
-        "x-default": `${base}/en/pages`,
-      },
-    },
+    robots: { index: false, follow: true },
+    alternates: { canonical },
     openGraph: {
       title,
       description,
       url: canonical,
       type: "website",
       locale: fa ? "fa_IR" : "en_US",
-      alternateLocale: fa ? ["en_US"] : ["fa_IR"],
     },
   };
 }
@@ -51,6 +44,7 @@ export default async function Page({
       <section className="wrap inner-hero">
         <span className="sec-tag">{locale === "fa" ? "صفحات سایت قبلی" : "LEGACY PAGES"}</span>
         <h1>{locale === "fa" ? "آرشیو کامل صفحات" : "Complete Page Archive"}</h1>
+        <p>{locale === "fa" ? "این بخش برای حفظ دسترسی به محتوای نسخه‌های قبلی نگهداری می‌شود و بخشی از ساختار اصلی محتوای امروز سایت نیست." : "This archive preserves access to content from earlier versions of the site and is not part of the current primary content architecture."}</p>
       </section>
 
       <section className="wrap legacy-pages-grid">
