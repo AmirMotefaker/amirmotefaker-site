@@ -8,12 +8,22 @@ import type { Locale } from "@/content/founder-site";
 const PAGE_SIZE = 12;
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ page?: string }>;
+}): Promise<Metadata> {
   const { locale: raw } = await params;
+  const query = await searchParams;
   const locale: Locale = raw === "en" ? "en" : "fa";
   const fa = locale === "fa";
-  const url = `${base}/${locale}/news`;
-  const title = fa ? "اخبار فناوری و هوش مصنوعی | امیر متفکر" : "Technology & AI News | Amir Motefaker";
+  const page = Math.max(1, Number(query.page || "1") || 1);
+  const suffix = page > 1 ? `?page=${page}` : "";
+  const url = `${base}/${locale}/news${suffix}`;
+  const titleBase = fa ? "اخبار فناوری و هوش مصنوعی | امیر متفکر" : "Technology & AI News | Amir Motefaker";
+  const title = page > 1 ? `${titleBase} — ${fa ? "صفحه" : "Page"} ${formatSiteNumber(page, locale)}` : titleBase;
   const description = fa
     ? "آرشیو اخبار و نوشته‌های فناوری امیر متفکر؛ شامل هوش مصنوعی، نرم‌افزار، محصولات دیجیتال، ابزارها و روندهای فناوری."
     : "Amir Motefaker's technology news archive covering AI, software, digital products, tools and technology trends.";
@@ -24,9 +34,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: {
       canonical: url,
       languages: {
-        "fa-IR": `${base}/fa/news`,
-        "en-US": `${base}/en/news`,
-        "x-default": `${base}/en/news`,
+        "fa-IR": `${base}/fa/news${suffix}`,
+        "en-US": `${base}/en/news${suffix}`,
+        "x-default": `${base}/en/news${suffix}`,
       },
     },
     openGraph: {
@@ -63,12 +73,13 @@ export default async function Page({
   const currentPage = Math.min(requestedPage, totalPages);
   const start = (currentPage - 1) * PAGE_SIZE;
   const visible = posts.slice(start, start + PAGE_SIZE);
+  const canonicalSuffix = currentPage > 1 ? `?page=${currentPage}` : "";
 
   const collectionJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: fa ? "اخبار فناوری و هوش مصنوعی" : "Technology & AI News",
-    url: `${base}/${locale}/news`,
+    url: `${base}/${locale}/news${canonicalSuffix}`,
     inLanguage: fa ? "fa-IR" : "en-US",
     isPartOf: {
       "@type": "WebSite",
