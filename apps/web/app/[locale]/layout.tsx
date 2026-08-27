@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import FounderShell from "@/components/founder/FounderShell";
 import { founder, type Locale } from "@/content/founder-site";
@@ -6,7 +7,8 @@ import { founder, type Locale } from "@/content/founder-site";
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
 function resolveLocale(raw: string): Locale {
-  return raw === "en" ? "en" : "fa";
+  if (raw === "fa" || raw === "en") return raw;
+  notFound();
 }
 
 export async function generateMetadata({
