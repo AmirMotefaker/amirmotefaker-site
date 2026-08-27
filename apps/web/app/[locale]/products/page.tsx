@@ -21,8 +21,22 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: { canonical },
-    openGraph: { title, description, url: canonical, type: "website" },
+    alternates: {
+      canonical,
+      languages: {
+        "fa-IR": `${base}/fa/products`,
+        "en-US": `${base}/en/products`,
+        "x-default": `${base}/en/products`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: "website",
+      locale: fa ? "fa_IR" : "en_US",
+      alternateLocale: fa ? ["en_US"] : ["fa_IR"],
+    },
     twitter: { card: "summary_large_image", title, description },
   };
 }
