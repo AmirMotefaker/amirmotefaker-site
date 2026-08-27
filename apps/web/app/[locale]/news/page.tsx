@@ -4,6 +4,8 @@ import Image from "next/image";
 import { getLegacyPosts } from "@/lib/legacy-wordpress";
 import { formatSiteDate, formatSiteNumber } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
+import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
+import { getProductDisplayName } from "@/content/product-portfolio";
 
 const PAGE_SIZE = 12;
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
@@ -76,18 +78,17 @@ export default async function Page({
   const start = (currentPage - 1) * PAGE_SIZE;
   const visible = posts.slice(start, start + PAGE_SIZE);
   const canonicalSuffix = currentPage > 1 ? `?page=${currentPage}` : "";
+  const personId = `${base}/${locale}/#person`;
 
   const collectionJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
+    "@id": `${base}/${locale}/news#collection`,
     name: fa ? "اخبار فناوری و هوش مصنوعی" : "Technology & AI News",
     url: `${base}/${locale}/news${canonicalSuffix}`,
     inLanguage: fa ? "fa-IR" : "en-US",
-    isPartOf: {
-      "@type": "WebSite",
-      name: fa ? "امیر متفکر، علاقه‌مند به فناوری" : "Amir Motefaker, Tech-savvy",
-      url: `${base}/${locale}`,
-    },
+    creator: { "@id": personId },
+    isPartOf: { "@id": `${base}/${locale}/#website` },
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: posts.length,
@@ -112,6 +113,11 @@ export default async function Page({
               ? "آرشیو نوشته‌ها و خبرهای فناوری AmirMotefaker.ir؛ از هوش مصنوعی و نرم‌افزار تا محصولات، ابزارها و روندهای دنیای دیجیتال."
               : "The AmirMotefaker.ir technology archive, covering AI, software, products, tools and digital-industry trends. Original articles are preserved in their source language."}
           </p>
+          <div className="footer-links">
+            <Link href={`/${locale}/products`}>{fa ? "پرتفوی محصولات" : "Product portfolio"} ↗</Link>
+            <Link href={`/${locale}/about`}>{fa ? "درباره امیر متفکر" : "About Amir Motefaker"} ↗</Link>
+            <Link href={`/${locale}/notes`}>{fa ? "یادداشت‌ها" : "Notes"} ↗</Link>
+          </div>
         </section>
 
         <section className="wrap">
@@ -119,6 +125,25 @@ export default async function Page({
             <span>{fa ? "تعداد مطالب:" : "Articles:"} {formatSiteNumber(posts.length, locale)}</span>
             <span>{fa ? "صفحه" : "Page"} {formatSiteNumber(currentPage, locale)} / {formatSiteNumber(totalPages, locale)}</span>
           </div>
+
+          {currentPage === 1 ? (
+            <aside className="prose-card" aria-labelledby="portfolio-topics-heading">
+              <span className="sec-tag">{fa ? "موضوعات پرتفوی" : "PORTFOLIO TOPICS"}</span>
+              <h2 id="portfolio-topics-heading">{fa ? "فناوری در امتداد محصول" : "Technology through the product portfolio"}</h2>
+              <p>
+                {fa
+                  ? "از خبرها می‌توانید مستقیماً به محصولاتی بروید که در همان حوزه فناوری ساخته یا توسعه داده می‌شوند."
+                  : "Move from technology coverage to the products being built or developed in the same domains."}
+              </p>
+              <div className="footer-links">
+                {canonicalProductPortfolio.map((product) => (
+                  <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>
+                    {getProductDisplayName(product, locale)}
+                  </Link>
+                ))}
+              </div>
+            </aside>
+          ) : null}
 
           <div className="legacy-news-grid">
             {visible.map((post) => (
