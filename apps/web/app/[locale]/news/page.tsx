@@ -19,7 +19,9 @@ export async function generateMetadata({
   const query = await searchParams;
   const locale: Locale = raw === "en" ? "en" : "fa";
   const fa = locale === "fa";
-  const page = Math.max(1, Number(query.page || "1") || 1);
+  const requestedPage = Math.max(1, Number(query.page || "1") || 1);
+  const totalPages = Math.max(1, Math.ceil(getLegacyPosts().length / PAGE_SIZE));
+  const page = Math.min(requestedPage, totalPages);
   const suffix = page > 1 ? `?page=${page}` : "";
   const url = `${base}/${locale}/news${suffix}`;
   const titleBase = fa ? "اخبار فناوری و هوش مصنوعی | امیر متفکر" : "Technology & AI News | Amir Motefaker";
