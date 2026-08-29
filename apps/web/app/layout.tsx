@@ -77,7 +77,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const fontStyle = { "--font-fa": "var(--font-vazirmatn)" } as CSSProperties;
+  const fontStyle = {
+    "--font-fa": "var(--font-vazirmatn)",
+    "--background": "var(--bg)",
+  } as CSSProperties;
 
   return (
     <html
