@@ -4,27 +4,52 @@ import styles from "./KnowledgePage.module.css";
 
 const principles = {
   fa: [
-    ["01", "مسئله قبل از تکنولوژی", "ابتدا مسئله، رفتار و اصطکاک واقعی کاربر را می‌فهمم؛ بعد سراغ انتخاب فناوری می‌روم."],
-    ["02", "محصول قبل از نمایش", "قابلیت واقعی، تجربه کاربر و شواهد ساختن مهم‌تر از ادعاهای بزرگ و زبان تبلیغاتی هستند."],
-    ["03", "سیستم قبل از ویژگی", "محصول باید بتواند رشد کند، یاد بگیرد، داده تولید کند و در صورت نیاز به اکوسیستم بزرگ‌تری متصل شود."],
+    ["۰۱", "مسئله قبل از فناوری", "قبل از انتخاب ابزار، باید مسئله، رفتار کاربر، هزینه اصطکاک و دلیل واقعی نیاز به محصول روشن باشد."],
+    ["۰۲", "محصول قبل از ادعا", "قابلیت قابل استفاده، تجربه روشن و شواهد اجرا از روایت بزرگ، ترند و زبان تبلیغاتی مهم‌ترند."],
+    ["۰۳", "بازار هم‌زمان با محصول", "ساختن بدون فهم توزیع، قیمت‌گذاری و مسیر رسیدن به کاربر، محصول را به پروژه فنی تبدیل می‌کند نه کسب‌وکار."],
+    ["۰۴", "سیستم قبل از ویژگی", "هر قابلیت باید در معماری محصول، داده، عملیات و مسیر رشد جای مشخصی داشته باشد؛ نه اینکه فقط فهرست امکانات را بلندتر کند."],
+    ["۰۵", "هوش مصنوعی به‌عنوان اهرم", "AI زمانی ارزشمند است که کیفیت تصمیم، سرعت اجرا یا مقیاس‌پذیری را بهتر کند؛ نه صرفاً چون در بازار محبوب است."],
+    ["۰۶", "یادگیری قابل انتقال", "ارزش یک پرتفوی فقط تعداد محصولات نیست؛ تجربه ساخت، زیرساخت، توزیع و یادگیری باید میان پروژه‌ها قابل استفاده مجدد باشد."],
   ],
   en: [
-    ["01", "Problem before technology", "I start with the real user problem, behavior and friction before choosing the technology."],
-    ["02", "Product before presentation", "Working capability, user experience and building evidence matter more than oversized claims."],
-    ["03", "Systems before features", "A product should be able to grow, learn, generate useful data and connect to a broader ecosystem when that creates value."],
+    ["01", "Problem before technology", "Before choosing a tool, the problem, user behavior, cost of friction and the real reason for the product must be clear."],
+    ["02", "Product before claims", "Usable capability, clear experience and evidence of execution matter more than oversized narratives, trends or marketing language."],
+    ["03", "Market alongside product", "Building without understanding distribution, pricing and the path to the user turns a product into a technical project rather than a business."],
+    ["04", "Systems before features", "Every capability needs a place in the product architecture, data, operations and growth path instead of merely extending a feature list."],
+    ["05", "AI as leverage", "AI earns its place when it improves decision quality, execution speed or scalability, not simply because it is fashionable."],
+    ["06", "Transferable learning", "A portfolio is more than a product count. Building knowledge, infrastructure, distribution and operating lessons should compound across ventures."],
   ],
 };
 
 const beliefs = {
   fa: [
-    ["هوش مصنوعی باید در محصول حل شود، نه فقط در پیام بازاریابی.", "AI زمانی ارزش دارد که زمان، خطا، اصطکاک یا هزینه تصمیم‌گیری را کاهش دهد."],
-    ["فارسی یک لایه محصولی جدی است.", "زبان، فرهنگ، رفتار و زیرساخت بازار فارسی فرصت ساخت تجربه‌هایی را ایجاد می‌کنند که ترجمه ساده محصولات خارجی نیستند."],
-    ["پرتفوی باید از یادگیری مشترک سود ببرد.", "دانش محصول، زیرساخت، داده، توزیع و تجربه عملیاتی باید بین پروژه‌ها قابل انتقال باشد؛ بدون اینکه هویت مستقل هر محصول از بین برود."],
+    ["کارآفرینی یعنی مدیریت مجموعه‌ای از عدم‌قطعیت‌ها.", "بازار، رفتار کاربر، فناوری، زمان و سرمایه هم‌زمان تغییر می‌کنند. تصمیم خوب الزاماً تصمیم قطعی نیست؛ تصمیمی است که با شواهد موجود، ریسک را قابل مدیریت کند."],
+    ["فناوری باید در خدمت مدل ارزش باشد.", "معماری فنی، اتوماسیون و هوش مصنوعی زمانی مزیت می‌سازند که به تجربه بهتر، هزینه کمتر، سرعت بیشتر یا تصمیم دقیق‌تر منتهی شوند."],
+    ["بازار فارسی نیازمند محصول بومی، نه ترجمه رابط کاربری است.", "زبان، پرداخت، اعتماد، کانال توزیع، مقررات، رفتار خرید و زیرساخت بخشی از خود محصول هستند و باید از ابتدا در تصمیم طراحی دیده شوند."],
+    ["پرتفوی باید مزیت مرکب ایجاد کند.", "هر محصول هویت مستقل دارد، اما دانش فنی، تجربه عرضه، زیرساخت و شبکه یادگیری می‌تواند هزینه ساخت محصول بعدی را کاهش دهد و کیفیت تصمیم‌ها را بالا ببرد."],
   ],
   en: [
-    ["AI should disappear into the product, not dominate the marketing.", "AI earns its place when it reduces time, error, friction or the cost of making a decision."],
-    ["Persian is a serious product layer.", "Language, culture, behavior and infrastructure in Persian-speaking markets create opportunities that are not solved by translating foreign products."],
-    ["A portfolio should compound learning.", "Product knowledge, infrastructure, data, distribution and operating experience should transfer across projects without erasing each product's independent identity."],
+    ["Entrepreneurship is the management of multiple uncertainties.", "Markets, user behavior, technology, timing and capital move at the same time. A good decision is not necessarily certain; it makes risk manageable with the evidence available."],
+    ["Technology should serve the value model.", "Architecture, automation and AI become advantages when they lead to a better experience, lower cost, greater speed or better decisions."],
+    ["Persian markets require localization beyond interface translation.", "Language, payments, trust, distribution, regulation, buying behavior and infrastructure are part of the product and should shape design decisions from the start."],
+    ["A portfolio should create compounding advantage.", "Each product keeps an independent identity, while technical knowledge, launch experience, infrastructure and learning networks can improve the economics and quality of the next build."],
+  ],
+};
+
+const operatingModel = {
+  fa: [
+    ["کشف", "مسئله را با شواهد، رفتار و محدودیت‌های واقعی تعریف می‌کنم."],
+    ["طراحی", "ارزش پیشنهادی، تجربه، مدل کسب‌وکار و معماری را در یک تصمیم محصولی می‌بینم."],
+    ["ساخت", "نسخه قابل استفاده را با دامنه کنترل‌شده می‌سازم و از توسعه نمایشی دوری می‌کنم."],
+    ["سنجش", "خروجی، رفتار کاربر و سیگنال بازار باید فرضیه اولیه را تأیید، اصلاح یا رد کنند."],
+    ["توسعه", "تنها چیزی را مقیاس می‌دهم که دلیل روشن برای ادامه و سازوکار قابل نگهداری داشته باشد."],
+  ],
+  en: [
+    ["Discover", "Define the problem through evidence, behavior and real constraints."],
+    ["Design", "Treat value proposition, experience, business model and architecture as one product decision."],
+    ["Build", "Ship a usable version with controlled scope instead of optimizing for theatrical complexity."],
+    ["Measure", "Output, user behavior and market signals should confirm, refine or reject the initial thesis."],
+    ["Scale", "Scale only what has a clear reason to continue and an operating model that can be maintained."],
   ],
 };
 
@@ -34,12 +59,12 @@ export default function ThesisPageV1({ locale }: { locale: Locale }) {
     <main className={styles.page}>
       <section className={styles.hero}>
         <div className="wrap">
-          <span className={styles.eyebrow}>{fa ? "نگاه من به ساخت محصول" : "PRODUCT THESIS"}</span>
-          <h1>{fa ? "محصول خوب از فناوری شروع نمی‌شود؛ از یک مسئله واقعی شروع می‌شود." : "Good products don't start with technology. They start with a real problem."}</h1>
-          <p className={styles.lead}>{fa ? "در پروژه‌هایی که می‌سازم، فناوری زمانی ارزشمند است که اصطکاک را کم کند، تصمیم‌گیری را بهتر کند یا یک تجربه پیچیده را ساده‌تر سازد. هوش مصنوعی برای من یک برچسب بازاریابی نیست؛ یکی از ابزارهای ساختن محصول بهتر است." : "Across the products I build, technology matters when it reduces friction, improves decisions or makes a complex experience simpler. AI is not the proposition by itself; it is one of the tools for building a better product."}</p>
+          <span className={styles.eyebrow}>{fa ? "نگاه من به کارآفرینی و ساخت محصول" : "FOUNDER PERSPECTIVE"}</span>
+          <h1>{fa ? "کارآفرینی برای من، ساختن یک سیستم ارزش است؛ نه صرفاً راه‌اندازی یک محصول." : "Entrepreneurship is the work of building a value system, not merely launching a product."}</h1>
+          <p className={styles.lead}>{fa ? "محصول، بازار، فناوری، فروش و عملیات را جدا از هم نمی‌بینم. یک ایده زمانی ارزش ساختن دارد که مسئله واقعی داشته باشد، بتوان برای آن تجربه قابل استفاده ساخت، مسیر رسیدن به بازار روشن باشد و شواهد بتوانند تصمیم بعدی را بهتر کنند." : "I do not separate product, market, technology, sales and operations into isolated disciplines. An idea is worth building when it addresses a real problem, can become a usable experience, has a credible path to market and generates evidence for better decisions."}</p>
           <div className={styles.actions}>
-            <Link href={`/${locale}/products`} className="btn btn-primary">{fa ? "مشاهده محصولات" : "Explore products"}</Link>
-            <Link href={`/${locale}/notes`} className="btn btn-ghost">{fa ? "یادداشت‌ها" : "Read notes"}</Link>
+            <Link href={`/${locale}/products`} className="btn btn-primary">{fa ? "مشاهده پرتفوی" : "Explore the portfolio"}</Link>
+            <Link href={`/${locale}/resume`} className="btn btn-ghost">{fa ? "مسیر حرفه‌ای" : "Professional journey"}</Link>
           </div>
         </div>
       </section>
@@ -47,8 +72,8 @@ export default function ThesisPageV1({ locale }: { locale: Locale }) {
       <section className={styles.section}>
         <div className="wrap">
           <div className={styles.sectionIntro}>
-            <h2>{fa ? "سه اصل برای ساختن" : "Three principles for building"}</h2>
-            <p>{fa ? "این اصول قانون ثابت نیستند؛ چارچوبی برای تصمیم‌گیری‌اند و باید با شواهد، رفتار کاربر و شرایط بازار سنجیده شوند." : "These are not immutable rules. They are decision frameworks that should be tested against evidence, user behavior and market conditions."}</p>
+            <h2>{fa ? "شش اصل تصمیم‌گیری" : "Six operating principles"}</h2>
+            <p>{fa ? "این اصول شعار نیستند؛ چارچوب‌هایی هستند که باید در برابر شواهد، رفتار کاربر و واقعیت بازار پاسخ‌گو بمانند." : "These are not slogans. They are operating frameworks that remain accountable to evidence, user behavior and market reality."}</p>
           </div>
           <div className={styles.grid}>
             {principles[locale].map(([index, title, body]) => (
@@ -63,8 +88,22 @@ export default function ThesisPageV1({ locale }: { locale: Locale }) {
       <section className={styles.section}>
         <div className="wrap">
           <div className={styles.sectionIntro}>
+            <h2>{fa ? "مدل کاری من از مسئله تا رشد" : "My operating model from problem to growth"}</h2>
+            <p>{fa ? "هدف این مسیر، کم‌کردن فاصله میان ایده و یادگیری واقعی است؛ هر مرحله باید تصمیم مرحله بعد را بهتر کند." : "The goal is to shorten the distance between an idea and real learning. Each stage should improve the quality of the next decision."}</p>
+          </div>
+          <div className={styles.list}>
+            {operatingModel[locale].map(([title, body]) => (
+              <div className={styles.listItem} key={title}><strong>{title}</strong><p>{body}</p></div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="wrap">
+          <div className={styles.sectionIntro}>
             <h2>{fa ? "فرضیه‌هایی که پرتفوی را شکل می‌دهند" : "Beliefs shaping the portfolio"}</h2>
-            <p>{fa ? "این‌ها thesis هستند، نه ادعای اثبات‌شده. هر کدام باید در طول زمان با محصول، داده و تجربه واقعی پشتیبانی یا اصلاح شوند." : "These are theses, not proven facts. Each should be supported, refined or rejected over time through products, data and first-hand experience."}</p>
+            <p>{fa ? "این‌ها دیدگاه‌های کاری‌اند، نه ادعاهای اثبات‌شده؛ با محصول، داده و تجربه واقعی باید دائماً بازبینی شوند." : "These are operating beliefs rather than proven facts; products, data and first-hand experience should continuously refine them."}</p>
           </div>
           <div className={styles.list}>
             {beliefs[locale].map(([title, body]) => (
@@ -72,9 +111,9 @@ export default function ThesisPageV1({ locale }: { locale: Locale }) {
             ))}
           </div>
           <div className={styles.cta}>
-            <h2>{fa ? "محصولات، آزمون واقعی این نگاه هستند." : "Products are where this thesis gets tested."}</h2>
-            <p>{fa ? "هر محصول باید نشان دهد این اصول در یک مسئله، بازار و تجربه واقعی چگونه اجرا می‌شوند." : "Each product should show how these principles translate into a real problem, market and user experience."}</p>
-            <div className={styles.actions}><Link href={`/${locale}/products`} className="btn btn-primary">{fa ? "مرور پرتفوی" : "Review the portfolio"}</Link></div>
+            <h2>{fa ? "پرتفوی، آزمایشگاه واقعی این نگاه است." : "The portfolio is where this perspective is tested."}</h2>
+            <p>{fa ? "هر محصول باید مستقل از روایت، در یک مسئله واقعی ارزش بسازد و شواهد کافی برای تصمیم بعدی ایجاد کند." : "Each product must create value against a real problem and generate enough evidence for the next decision, independent of the narrative around it."}</p>
+            <div className={styles.actions}><Link href={`/${locale}/products`} className="btn btn-primary">{fa ? "مرور محصولات" : "Review the products"}</Link><Link href={`/${locale}/contact`} className="btn btn-ghost">{fa ? "گفتگو" : "Start a conversation"}</Link></div>
           </div>
         </div>
       </section>
