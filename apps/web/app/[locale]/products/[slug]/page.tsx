@@ -3,12 +3,18 @@ import { notFound } from "next/navigation";
 import ProductDetailView from "@/components/products/ProductDetailView";
 import { getProductDisplayName } from "@/content/product-portfolio";
 import { canonicalProductPortfolio, getCanonicalProduct } from "@/content/canonical-product-portfolio";
+import { getSupplementalProduct, supplementalProductPortfolio } from "@/content/supplemental-product-portfolio";
 import type { Locale } from "@/content/founder-site";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
+const publicProductPortfolio = [...canonicalProductPortfolio, ...supplementalProductPortfolio];
+
+function getPublicProduct(slug: string) {
+  return getCanonicalProduct(slug) ?? getSupplementalProduct(slug);
+}
 
 export function generateStaticParams() {
-  return canonicalProductPortfolio.flatMap((product) => [
+  return publicProductPortfolio.flatMap((product) => [
     { locale: "fa", slug: product.slug },
     { locale: "en", slug: product.slug },
   ]);
@@ -21,7 +27,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
-  const product = getCanonicalProduct(slug);
+  const product = getPublicProduct(slug);
   if (!product) return {};
 
   const displayName = getProductDisplayName(product, locale);
@@ -65,7 +71,7 @@ export default async function Page({
 }) {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
-  const product = getCanonicalProduct(slug);
+  const product = getPublicProduct(slug);
   if (!product) notFound();
 
   const displayName = getProductDisplayName(product, locale);
