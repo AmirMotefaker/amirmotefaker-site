@@ -9,9 +9,13 @@ import {
   getProductIndustry,
   type ProductStatus,
 } from "@/content/product-portfolio";
-import { canonicalProductPortfolio as productPortfolio } from "@/content/canonical-product-portfolio";
+import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
+import { supplementalProductPortfolio } from "@/content/supplemental-product-portfolio";
 import type { Locale } from "@/content/founder-site";
+import { localeDigits } from "@/lib/locale-format";
 import styles from "./ProductShowcase.module.css";
+
+const productPortfolio = [...canonicalProductPortfolio, ...supplementalProductPortfolio];
 
 const filterLabelsFa: Record<(typeof productFilters)[number], string> = {
   "همه": "همه", "AI & Intelligent Products": "هوش مصنوعی و محصولات هوشمند", "FinTech": "فین‌تک",
@@ -26,7 +30,7 @@ const statusLabels: Record<ProductStatus, { fa: string; en: string }> = {
 };
 
 const productMarks: Record<string, string> = {
-  linkresan: "LR", farsio: "FA", fahmio: "FH", zobdino: "ZO", filmtrack: "FT", idehjo: "IJ",
+  linkresan: "LR", farsio: "FA", neveshtyar: "NY", avayar: "AY", fahmio: "FH", zobdino: "ZO", filmtrack: "FT", idehjo: "IJ",
   restyar: "RY", primesys: "PS", tasvia: "TS",
 };
 
@@ -46,6 +50,7 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
     building: productPortfolio.filter((p) => p.status === "development").length,
     categories: new Set(productPortfolio.map((p) => p.filterGroup)).size,
   }), []);
+  const formatCount = (value: number) => localeDigits(String(value).padStart(2, "0"), locale);
 
   return (
     <main className={styles.productsPage}>
@@ -63,10 +68,10 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
       </section>
 
       <section className={`wrap ${styles.portfolioStrip}`} aria-label={fa ? "نمای کلی پرتفوی" : "Portfolio overview"}>
-        <article><strong>{String(productPortfolio.length).padStart(2,"0")}</strong><span>{fa ? "محصول" : "Products"}</span></article>
-        <article><strong>{String(portfolioStats.live).padStart(2,"0")}</strong><span>{fa ? "فعال" : "Live"}</span></article>
-        <article><strong>{String(portfolioStats.building).padStart(2,"0")}</strong><span>{fa ? "در حال ساخت" : "Building"}</span></article>
-        <article><strong>{String(portfolioStats.categories).padStart(2,"0")}</strong><span>{fa ? "حوزه فناوری" : "Sectors"}</span></article>
+        <article><strong>{formatCount(productPortfolio.length)}</strong><span>{fa ? "محصول" : "Products"}</span></article>
+        <article><strong>{formatCount(portfolioStats.live)}</strong><span>{fa ? "فعال" : "Live"}</span></article>
+        <article><strong>{formatCount(portfolioStats.building)}</strong><span>{fa ? "در حال ساخت" : "Building"}</span></article>
+        <article><strong>{formatCount(portfolioStats.categories)}</strong><span>{fa ? "حوزه فناوری" : "Sectors"}</span></article>
       </section>
 
       <section className={`wrap ${styles.portfolioControls}`}>
@@ -79,7 +84,7 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
       <section className={`wrap ${styles.productGrid}`} aria-live="polite">
         {visible.map((product, index) => (
           <article key={product.slug} className={`${styles.productCard} ${index === 0 ? styles.featuredCard : ""}`} data-theme={product.slug} data-status={product.status}>
-            <div className={styles.cardRail}><span className={styles.cardNumber}>{String(index + 1).padStart(2,"0")}</span><span className={styles.statusDot}/><span className={styles.statusText}>{getStatusLabel(product.status, locale)}</span></div>
+            <div className={styles.cardRail}><span className={styles.cardNumber}>{formatCount(index + 1)}</span><span className={styles.statusDot}/><span className={styles.statusText}>{getStatusLabel(product.status, locale)}</span></div>
             <div className={styles.cardBody}>
               <div className={styles.cardTop}>
                 <div className={styles.identityRow}>
