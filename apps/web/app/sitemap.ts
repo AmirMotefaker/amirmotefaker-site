@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next";
-import { canonicalProductPortfolio as products } from "@/content/canonical-product-portfolio";
+import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
+import { supplementalProductPortfolio } from "@/content/supplemental-product-portfolio";
 import { getLegacyPosts } from "@/lib/legacy-wordpress";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 const locales = ["fa", "en"] as const;
+const products = [...canonicalProductPortfolio, ...supplementalProductPortfolio];
 
 function alternates(path: string) {
   return {
