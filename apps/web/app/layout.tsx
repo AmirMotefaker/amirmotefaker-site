@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
-import { Vazirmatn } from "next/font/google";
+import "@fontsource-variable/estedad/wght.css";
 import "@fontsource-variable/space-grotesk/wght.css";
 import "@fontsource-variable/jetbrains-mono/wght.css";
 import "./globals.css";
 import "./experience-v2.css";
 import ThemeBoot from "@/components/founder/ThemeBoot";
-
-const vazirmatn = Vazirmatn({
-  subsets: ["arabic"],
-  variable: "--font-vazirmatn",
-  display: "swap",
-});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
@@ -77,14 +71,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const fontStyle = { "--font-fa": "var(--font-vazirmatn)" } as CSSProperties;
+  const fontStyle = { "--font-fa": "'Estedad Variable', 'Estedad', sans-serif" } as CSSProperties;
 
   return (
     <html
       lang="fa"
       dir="rtl"
       suppressHydrationWarning
-      className={vazirmatn.variable}
       style={fontStyle}
     >
       <body>

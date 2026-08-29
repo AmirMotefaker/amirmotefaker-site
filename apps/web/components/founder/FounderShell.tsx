@@ -4,6 +4,7 @@ import { founder, type Locale } from "@/content/founder-site";
 import { getProductDisplayName } from "@/content/product-portfolio";
 import { canonicalProductPortfolio as products } from "@/content/canonical-product-portfolio";
 import ThemeToggle from "@/components/founder/ThemeToggle";
+import LocaleDigits from "@/components/founder/LocaleDigits";
 import { formatSiteYear, localeDigits } from "@/lib/locale-format";
 import styles from "./FounderShell.module.css";
 
@@ -19,10 +20,12 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
     {href:`/${locale}/news`,label:l.news,news:true},
     {href:`/${locale}/notes`,label:l.notes},
     {href:`/${locale}/thesis`,label:l.thesis},
+    {href:`/${locale}/resume`,label:l.timeline},
     {href:`/${locale}/about`,label:l.about},
   ];
   const phoneDisplay=fa?localeDigits(founder.phone,locale):founder.phone;
   return <div className={`founder-site ${styles.shell}`} lang={locale} dir={fa?"rtl":"ltr"}>
+    <LocaleDigits locale={locale}/>
     <header className={styles.header}>
       <nav className={`wrap ${styles.nav}`} aria-label={fa?"ناوبری اصلی":"Primary navigation"}>
         <Link href={`/${locale}`} className={styles.brand} aria-label={canonicalTitle}>

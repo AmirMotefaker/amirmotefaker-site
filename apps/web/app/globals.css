@@ -27,6 +27,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-fa);font-weig
 .founder-site[dir="ltr"]{font-family:var(--font-en)}
 .ltr{direction:ltr;unicode-bidi:isolate;font-family:var(--font-en)}
 .mono{font-family:var(--font-mono);direction:ltr;unicode-bidi:isolate}
+.phone-number{direction:ltr;unicode-bidi:isolate;display:inline-block;font-variant-numeric:tabular-nums}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--purple);color:#fff}
 
