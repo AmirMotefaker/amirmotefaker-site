@@ -66,6 +66,9 @@ export const metadata: Metadata = {
       "fa-IR": "/fa",
       "en-US": "/en",
     },
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
   },
 };
 

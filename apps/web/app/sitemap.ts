@@ -16,14 +16,12 @@ function alternates(path: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   const routes: MetadataRoute.Sitemap = [];
 
   for (const locale of locales) {
     for (const path of ["", "/about", "/products", "/thesis", "/notes", "/resume", "/news", "/contact"]) {
       routes.push({
         url: `${base}/${locale}${path}`,
-        lastModified: now,
         changeFrequency: "weekly",
         priority: path === "" ? 1 : path === "/products" || path === "/news" || path === "/thesis" || path === "/notes" ? 0.9 : 0.8,
         alternates: alternates(path),
@@ -34,7 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const path = `/products/${product.slug}`;
       routes.push({
         url: `${base}/${locale}${path}`,
-        lastModified: now,
         changeFrequency: "monthly",
         priority: 0.85,
         alternates: alternates(path),
