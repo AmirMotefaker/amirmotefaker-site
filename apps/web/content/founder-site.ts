@@ -6,12 +6,13 @@ export const founder = {
   titleFa: "امیر متفکر، علاقه‌مند به فناوری",
   titleEn: "Amir Motefaker, Tech-savvy",
   email: "info@amirmotefaker.ir",
-  phone: "+98 912 789 3644",
+  phone: "09127893644",
   phoneHref: "+989127893644",
   cityFa: "قزوین، ایران",
   cityEn: "Qazvin, Iran",
-  addressFa: "قزوین، بلوار حکیم",
-  addressEn: "Hakim Blvd, Qazvin, Iran",
+  addressFa: "قزوین، بلوار حکیم، نبش حکیم ۱۶، پلاک ۱۸، واحد ۱",
+  addressEn: "No. 18, Unit 1, Hakim 16 corner, Hakim Blvd, Qazvin, Iran",
+  postalCode: "3414749222",
   github: "https://github.com/AmirMotefaker",
   kaggle: "https://www.kaggle.com/amirmotefaker",
   x: "https://x.com/AmirMotefaker",
@@ -43,3 +44,4 @@ export const timeline = [
   ["KarjooPlus", "KarjooPlus", "برند کارفرمایی و بازار کار", "Employer Brand & Labor Market", "مشاوره برند کارفرمایی، رویدادهای جذب و تحلیل بازار کار.", "Employer branding, recruiting events and labor-market research."],
   ["امروز", "Today", "ساخت محصولات هوش مصنوعی و اکوسیستم‌های دیجیتال", "Building AI products & digital ecosystems", "تمرکز بر AI، نرم‌افزار، محصول، داده، اتوماسیون و رشد.", "Focused on AI, software, product, data, automation and growth."]
 ] as const;
+// Preview verification trigger: v12.2

@@ -705,6 +705,10 @@
   border-radius:30px;
   background:var(--surface);
 }
+.contactSideHeading{padding:18px 18px 22px;border-bottom:1px solid var(--border)}
+.contactSideHeading span{color:var(--text-faint);font-size:.72rem}
+.contactSideHeading h2{margin:8px 0 0;font-size:clamp(1.45rem,2.5vw,2.2rem);line-height:1.4}
+.phoneNumber{direction:ltr;unicode-bidi:isolate;display:inline-block;text-align:start;font-variant-numeric:tabular-nums;letter-spacing:.035em}
 .contactPanel{
   padding:clamp(28px,5vw,56px);
 }

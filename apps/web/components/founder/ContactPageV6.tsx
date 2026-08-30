@@ -3,6 +3,7 @@ import { contactIntents } from "@/content/contact-intents";
 import { founder, type Locale } from "@/content/founder-site";
 import { getProductDisplayName, productPortfolio as products } from "@/content/product-portfolio";
 import styles from "./FounderV6.module.css";
+import { localeDigits } from "@/lib/locale-format";
 
 function mailtoForIntent(
   locale: Locale,
@@ -33,16 +34,16 @@ export default function ContactPageV6({ locale }: { locale: Locale }) {
       <section className={styles.contactHero}>
         <div className="wrap">
           <div className={styles.contactIntro}>
-            <span>CONTACT / INTENT ROUTING</span>
+            <span>{fa ? "تماس با من" : "CONTACT"}</span>
             <h1>
               {fa
-                ? "برای یک گفت‌وگوی بهتر، از مسیر درست شروع کنیم."
-                : "Start with the right context for a better conversation."}
+                ? "تماس با من"
+                : "Contact me"}
             </h1>
             <p>
               {fa
-                ? "سرمایه‌گذاری، شراکت، محصول، همکاری تخصصی و رسانه هرکدام زمینه متفاوتی دارند. مسیر مرتبط را انتخاب کنید تا موضوع از همان ابتدا روشن باشد."
-                : "Investment, partnerships, product inquiries, specialist collaboration and media requests each need different context. Choose the relevant route so the conversation starts clearly."}
+                ? "سؤال یا پیشنهادی دارید؟ خوشحال می‌شوم بشنوم. برای ارتباط مستقیم از راه‌های زیر استفاده کنید یا مسیر گفت‌وگوی مرتبط را انتخاب کنید."
+                : "Have a question or proposal? I would be glad to hear from you. Use the direct contact details below or choose the most relevant conversation route."}
             </p>
             <div className={styles.contactActions}>
               <a href={`mailto:${founder.email}?subject=${generalSubject}`} className="btn btn-primary">
@@ -81,19 +82,28 @@ export default function ContactPageV6({ locale }: { locale: Locale }) {
         </div>
 
         <aside className={styles.contactSide}>
+          <div className={styles.contactSideHeading}>
+            <span>{fa ? "راه‌های ارتباطی" : "CONTACT DETAILS"}</span>
+            <h2>{fa ? "مستقیم در ارتباط باشید." : "Get in touch directly."}</h2>
+          </div>
           <div className={styles.contactItem}>
             <span>{fa ? "ایمیل" : "Email"}</span>
             <a href={`mailto:${founder.email}`}>{founder.email}</a>
           </div>
 
           <div className={styles.contactItem}>
-            <span>{fa ? "تلفن" : "Phone"}</span>
-            <a href={`tel:${founder.phoneHref}`}>{founder.phone}</a>
+            <span>{fa ? "تلفن تماس" : "Phone"}</span>
+            <a href={`tel:${founder.phoneHref}`} className={styles.phoneNumber}>{localeDigits(founder.phone, locale)}</a>
           </div>
 
           <div className={styles.contactItem}>
-            <span>{fa ? "موقعیت" : "Location"}</span>
-            <strong>{fa ? founder.cityFa : founder.cityEn}</strong>
+            <span>{fa ? "آدرس" : "Address"}</span>
+            <strong>{fa ? founder.addressFa : founder.addressEn}</strong>
+          </div>
+
+          <div className={styles.contactItem}>
+            <span>{fa ? "کد پستی" : "Postal code"}</span>
+            <strong className={styles.phoneNumber}>{localeDigits(founder.postalCode, locale)}</strong>
           </div>
 
           <div className={styles.contactItem}>

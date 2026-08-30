@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/content/founder-site";
 import styles from "./KnowledgePage.module.css";
+import { localeDigits } from "@/lib/locale-format";
 
 const principles = {
   fa: [
@@ -25,6 +26,21 @@ const beliefs = {
     ["AI should disappear into the product, not dominate the marketing.", "AI earns its place when it reduces time, error, friction or the cost of making a decision."],
     ["Persian is a serious product layer.", "Language, culture, behavior and infrastructure in Persian-speaking markets create opportunities that are not solved by translating foreign products."],
     ["A portfolio should compound learning.", "Product knowledge, infrastructure, data, distribution and operating experience should transfer across projects without erasing each product's independent identity."],
+  ],
+};
+
+const operatingModel = {
+  fa: [
+    ["کشف", "مشاهده مسئله، گفت‌وگو با کاربر و تعریف دقیق اصطکاک پیش از راه‌حل."],
+    ["ساخت", "طراحی کوچک‌ترین تجربه‌ای که بتواند فرضیه اصلی محصول را در عمل آزمایش کند."],
+    ["سنجش", "اندازه‌گیری رفتار واقعی، کیفیت تجربه و ارزش ایجادشده؛ نه فقط تعداد قابلیت‌ها."],
+    ["ترکیب", "انتقال یادگیری، زیرساخت و توان توزیع میان محصولات مستقل پرتفوی."],
+  ],
+  en: [
+    ["Discover", "Observe the problem, speak with users and define the friction before the solution."],
+    ["Build", "Design the smallest experience capable of testing the product's central hypothesis."],
+    ["Measure", "Measure real behavior, experience quality and created value—not feature count."],
+    ["Compound", "Transfer learning, infrastructure and distribution capability across independent portfolio products."],
   ],
 };
 
@@ -53,7 +69,24 @@ export default function ThesisPageV1({ locale }: { locale: Locale }) {
           <div className={styles.grid}>
             {principles[locale].map(([index, title, body]) => (
               <article className={styles.card} key={title}>
-                <span>{index}</span><h3>{title}</h3><p>{body}</p>
+                <span>{localeDigits(index, locale)}</span><h3>{title}</h3><p>{body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="wrap">
+          <div className={styles.sectionIntro}>
+            <h2>{fa ? "مدل عملیاتی من برای تبدیل ایده به محصول" : "My operating model from idea to product"}</h2>
+            <p>{fa ? "کارآفرینی برای من مجموعه‌ای از عنوان‌ها نیست؛ یک چرخه تکرارشونده برای کشف، ساخت، سنجش و تبدیل یادگیری به مزیت است." : "Entrepreneurship is not a collection of titles. It is a repeatable cycle for discovery, building, measurement and turning learning into advantage."}</p>
+          </div>
+          <div className={styles.operatingGrid}>
+            {operatingModel[locale].map(([title, body], index) => (
+              <article className={styles.operatingCard} key={title}>
+                <span>{localeDigits(String(index + 1).padStart(2, "0"), locale)}</span>
+                <h3>{title}</h3><p>{body}</p>
               </article>
             ))}
           </div>
