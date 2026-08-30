@@ -44,3 +44,4 @@ export const timeline = [
   ["KarjooPlus", "KarjooPlus", "برند کارفرمایی و بازار کار", "Employer Brand & Labor Market", "مشاوره برند کارفرمایی، رویدادهای جذب و تحلیل بازار کار.", "Employer branding, recruiting events and labor-market research."],
   ["امروز", "Today", "ساخت محصولات هوش مصنوعی و اکوسیستم‌های دیجیتال", "Building AI products & digital ecosystems", "تمرکز بر AI، نرم‌افزار، محصول، داده، اتوماسیون و رشد.", "Focused on AI, software, product, data, automation and growth."]
 ] as const;
+// Preview verification trigger: v12.2
