@@ -27,7 +27,7 @@ export default function FounderHome({locale}:{locale:Locale}){
  return <main className={`${styles.home} ${v13.home}`}>
   <section className={`${styles.hero} ${v13.hero}`}><div className={`wrap ${styles.heroShell} ${v13.heroShell}`}>
    <div className={`${styles.heroCopy} ${v13.heroCopy}`}>
-    <div className={`${styles.identityLine} ${v13.identityLine}`}><i aria-hidden="true"/><span>Founder · Product Builder · Tech-savvy</span></div>
+    <div className={`${styles.identityLine} ${v13.identityLine}`}><i aria-hidden="true"/><span>{fa?"امیر متفکر · علاقه‌مند به فناوری":"Amir Motefaker · Tech-savvy"}</span></div>
     <h1 className={v13.headline}>{fa?<>محصول نمی‌سازم که فقط دیده شود؛ <em>سیستم‌هایی می‌سازم که اثر بگذارند.</em></>:<>I don’t build products just to be seen. <em>I build systems that create impact.</em></>}</h1>
     <p className={`${styles.heroLead} ${v13.heroLead}`}>{fa?"من امیر متفکر هستم؛ کارآفرین و سازنده مجموعه‌ای از محصولات مستقل در هوش مصنوعی، فین‌تک، آموزش، محتوا و تجربه‌های دیجیتال.":"I’m Amir Motefaker—an entrepreneur building a portfolio of independent products across AI, FinTech, education, content and digital experiences."}</p>
     <div className={styles.heroActions}><Link href={`/${locale}/products`} className={`${styles.primaryAction} ${v13.action} ${v13.primaryAction}`}>{fa?"ورود به اکوسیستم محصولات":"Enter the product ecosystem"}<span aria-hidden="true">↗</span></Link><Link href={`/${locale}/resume`} className={`${styles.secondaryAction} ${v13.action} ${v13.secondaryAction}`}>{fa?"مسیر حرفه‌ای":"Professional journey"}</Link></div>
