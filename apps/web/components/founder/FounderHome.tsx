@@ -7,6 +7,7 @@ import { canonicalProductPortfolio as products } from "@/content/canonical-produ
 import { emergingVentures, getEmergingVentureIndustry, getEmergingVentureName, getEmergingVentureStatus } from "@/content/venture-expansion";
 import { formatSiteNumber, localeDigits } from "@/lib/locale-format";
 import styles from "./FounderHomeV2.module.css";
+import v13 from "./FounderHomeV13.module.css";
 
 const thesisPrinciples = {
   fa: [["۰۱","مسئله، قبل از فناوری","ابتدا مسئله واقعی و رفتار کاربر را می‌فهمم؛ بعد سراغ ابزار می‌روم."],["۰۲","محصول، قبل از ادعا","خروجی قابل استفاده از هر روایت بازاریابی مهم‌تر است."],["۰۳","سیستم، قبل از ویژگی","محصول باید بتواند رشد کند، یاد بگیرد و به یک اکوسیستم بزرگ‌تر متصل شود."]],
@@ -21,23 +22,30 @@ export default function FounderHome({locale}:{locale:Locale}){
  const nonCanonicalEmerging=emergingVentures.filter(venture=>!products.some(product=>product.slug===venture.slug));
  const totalProducts=products.length+nonCanonicalEmerging.length;
  const sectors=new Set([...products.map(p=>p.filterGroup),...nonCanonicalEmerging.map(v=>v.industryEn)]).size;
- const featured=products.slice(0,4);
+ const featured=products.slice(0,6);
  const portfolioNames=products.slice(0,7);
- return <main className={styles.home}>
-  <section className={styles.hero}><div className={`wrap ${styles.heroShell}`}>
-   <div className={styles.heroCopy}>
-    <div className={styles.identityLine}><span>{fa?founder.titleFa:founder.titleEn}</span></div>
-    <h1>{fa?<>محصولات دیجیتال برای <em>مسئله‌های واقعی.</em></>:<>Digital products for <em>real problems.</em></>}</h1>
-    <p className={styles.heroLead}>{fa?"ساخت و توسعه محصولات دیجیتال با تمرکز بر هوش مصنوعی، فین‌تک، آموزش، سلامت، گردشگری و زیرساخت دیجیتال.":"Building and developing digital products across AI, FinTech, education, health, tourism and digital infrastructure."}</p>
-    <div className={styles.heroActions}><Link href={`/${locale}/products`} className={styles.primaryAction}>{fa?"مشاهده محصولات":"Explore products"}<span aria-hidden="true">↗</span></Link><Link href={`/${locale}/about`} className={styles.secondaryAction}>{fa?"درباره من":"About me"}</Link></div>
-    <div className={styles.heroMetrics}><div><strong>{formatSiteNumber(totalProducts,locale)}</strong><span>{fa?"محصول و ونچر":"Products & ventures"}</span></div><div><strong>{formatSiteNumber(sectors,locale)}</strong><span>{fa?"حوزه فناوری":"Technology sectors"}</span></div><div><strong>{formatSiteNumber(evidence.length,locale)}</strong><span>{fa?"شاهد تأییدشده":"Verified evidence"}</span></div></div>
+ return <main className={`${styles.home} ${v13.home}`}>
+  <section className={`${styles.hero} ${v13.hero}`}><div className={`wrap ${styles.heroShell} ${v13.heroShell}`}>
+   <div className={`${styles.heroCopy} ${v13.heroCopy}`}>
+    <div className={`${styles.identityLine} ${v13.identityLine}`}><i aria-hidden="true"/><span>Founder · Product Builder · Tech-savvy</span></div>
+    <h1 className={v13.headline}>{fa?<>امیر متفکر؛ ساختن <em>اکوسیستم محصولات فناوری.</em></>:<>Amir Motefaker; building a <em>technology product ecosystem.</em></>}</h1>
+    <p className={`${styles.heroLead} ${v13.heroLead}`}>{fa?"مرجع مرکزی مسیر حرفه‌ای، محصولات مستقل و دیدگاه‌های من درباره ساخت کسب‌وکارهای دیجیتال؛ از هوش مصنوعی و فین‌تک تا آموزش، سلامت و گردشگری.":"The central home for my professional journey, independent products and perspective on building digital businesses across AI, FinTech, education, health and tourism."}</p>
+    <div className={styles.heroActions}><Link href={`/${locale}/products`} className={`${styles.primaryAction} ${v13.action} ${v13.primaryAction}`}>{fa?"ورود به اکوسیستم محصولات":"Enter the product ecosystem"}<span aria-hidden="true">↗</span></Link><Link href={`/${locale}/resume`} className={`${styles.secondaryAction} ${v13.action} ${v13.secondaryAction}`}>{fa?"مسیر حرفه‌ای":"Professional journey"}</Link></div>
+    <div className={`${styles.heroMetrics} ${v13.heroMetrics}`}><div><strong>{formatSiteNumber(totalProducts,locale)}</strong><span>{fa?"محصول و ونچر":"Products & ventures"}</span></div><div><strong>{formatSiteNumber(sectors,locale)}</strong><span>{fa?"حوزه فناوری":"Technology sectors"}</span></div><div><strong>{formatSiteNumber(evidence.length,locale)}</strong><span>{fa?"شاهد تأییدشده":"Verified evidence"}</span></div></div>
    </div>
-   <aside className={styles.heroVisual}><div className={styles.portraitCard}><Image src="/assets/profile/amir-motefaker.png" alt={fa?founder.nameFa:founder.nameEn} fill priority sizes="(max-width:980px) 54vw, 24vw" className={styles.portrait}/><div className={styles.portraitShade}/><div className={styles.portraitMeta}><span>{fa?"علاقه‌مند به فناوری":"Tech-savvy"}</span><strong>{fa?founder.nameFa:founder.nameEn}</strong></div></div></aside>
+   <aside className={`${styles.heroVisual} ${v13.heroVisual}`} aria-label={fa?"نمای زنده اکوسیستم محصولات":"Live product ecosystem overview"}>
+    <div className={v13.commandCard}>
+     <div className={v13.commandHead}><div className={v13.commandIdentity}><span className={v13.commandAvatar}><Image src="/assets/profile/amir-motefaker.png" alt={fa?founder.nameFa:founder.nameEn} width={44} height={44} priority/></span><div><strong>{fa?founder.nameFa:founder.nameEn}</strong><small>Founder OS · v13</small></div></div><span className={v13.liveSignal}><i/>{fa?"در حال ساخت":"Building"}</span></div>
+     <div className={v13.commandStatement}><span>{fa?"ماموریت":"MISSION"}</span><p>{fa?"تبدیل مسئله‌های واقعی به محصولات دیجیتال مستقل و قابل رشد.":"Turning real problems into independent, scalable digital products."}</p></div>
+     <div className={v13.commandProducts}>{featured.slice(0,4).map(product=><Link key={product.slug} href={`/${locale}/products/${product.slug}`}><span className={v13.commandMark}>{marks[product.slug]??product.slug.slice(0,2).toUpperCase()}</span><span><strong>{getProductDisplayName(product,locale)}</strong><small>{getProductCategory(product,locale)}</small></span><i aria-hidden="true">↗</i></Link>)}</div>
+     <div className={v13.commandFoot}><span>{fa?"مرکز عملیات پرتفوی":"PORTFOLIO COMMAND CENTER"}</span><strong>{formatSiteNumber(totalProducts,locale)} / {formatSiteNumber(sectors,locale)}</strong></div>
+    </div>
+   </aside>
   </div>
   <div className={`wrap ${styles.portfolioRail}`}><span>{fa?"پرتفوی منتخب":"Selected portfolio"}</span><div>{portfolioNames.map(product=><Link key={product.slug} href={`/${locale}/products/${product.slug}`}>{getProductDisplayName(product,locale)}</Link>)}{nonCanonicalEmerging.map(venture=><span key={venture.slug} className={styles.railVenture}>{getEmergingVentureName(venture,locale)}</span>)}</div></div></section>
 
   <section className={styles.venturesSection}><div className={`wrap ${styles.sectionIntro}`}><span>{fa?"پرتفوی":"Portfolio"}</span><div><h2>{fa?"محصولات مستقل در چند صنعت فناوری.":"Independent products across multiple technology sectors."}</h2><p>{fa?"هر محصول مسئله، بازار و مسیر رشد خودش را دارد.":"Each product has its own problem, market and growth path."}</p></div></div>
-   <div className={`wrap ${styles.ventureGrid}`}>{featured.map((product,index)=><Link href={`/${locale}/products/${product.slug}`} key={product.slug} className={styles.ventureCard}><div className={styles.ventureTop}><div className={styles.ventureMark}>{marks[product.slug]??product.slug.slice(0,2).toUpperCase()}</div><span>{localeDigits(String(index+1).padStart(2,"0"),locale)} · {lifecycle(product.status,locale)}</span></div><div className={styles.ventureContent}><div><h3>{getProductDisplayName(product,locale)}</h3>{product.domain?<small>{product.domain}</small>:null}</div><p>{fa?product.shortDescriptionFa:product.shortDescriptionEn}</p></div><div className={styles.ventureFoot}><span>{getProductCategory(product,locale)}</span><strong>{fa?"مشاهده":"View"} ↗</strong></div></Link>)}</div>
+   <div className={`wrap ${styles.ventureGrid} ${v13.ventureGrid}`}>{featured.map((product,index)=><Link href={`/${locale}/products/${product.slug}`} key={product.slug} className={`${styles.ventureCard} ${v13.ventureCard}`}><div className={styles.ventureTop}><div className={styles.ventureMark}>{marks[product.slug]??product.slug.slice(0,2).toUpperCase()}</div><span>{localeDigits(String(index+1).padStart(2,"0"),locale)} · {lifecycle(product.status,locale)}</span></div><div className={`${styles.ventureContent} ${v13.ventureContent}`}><div><h3>{getProductDisplayName(product,locale)}</h3>{product.domain?<small>{product.domain}</small>:null}</div><p>{fa?product.shortDescriptionFa:product.shortDescriptionEn}</p></div><div className={`${styles.ventureFoot} ${v13.ventureFoot}`}><span>{getProductCategory(product,locale)}</span><strong>{fa?"مشاهده":"View"} ↗</strong></div></Link>)}</div>
 
    {nonCanonicalEmerging.length>0?<div className={`wrap ${styles.emergingBlock}`}>
     <div className={styles.emergingHeader}><span>{fa?"ونچرهای در حال نام‌گذاری":"Ventures in naming"}</span><p>{fa?"دو مسیر جدید در گردشگری و سلامت؛ نام عمومی این محصولات تا زمان تأیید نهایی منتشر نمی‌شود.":"Two new directions in tourism and health; their public product names remain generic until final confirmation."}</p></div>
