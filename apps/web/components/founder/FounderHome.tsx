@@ -28,17 +28,20 @@ export default function FounderHome({locale}:{locale:Locale}){
   <section className={`${styles.hero} ${v13.hero}`}><div className={`wrap ${styles.heroShell} ${v13.heroShell}`}>
    <div className={`${styles.heroCopy} ${v13.heroCopy}`}>
     <div className={`${styles.identityLine} ${v13.identityLine}`}><i aria-hidden="true"/><span>Founder · Product Builder · Tech-savvy</span></div>
-    <h1 className={v13.headline}>{fa?<>امیر متفکر؛ ساختن <em>اکوسیستم محصولات فناوری.</em></>:<>Amir Motefaker; building a <em>technology product ecosystem.</em></>}</h1>
-    <p className={`${styles.heroLead} ${v13.heroLead}`}>{fa?"مرجع مرکزی مسیر حرفه‌ای، محصولات مستقل و دیدگاه‌های من درباره ساخت کسب‌وکارهای دیجیتال؛ از هوش مصنوعی و فین‌تک تا آموزش، سلامت و گردشگری.":"The central home for my professional journey, independent products and perspective on building digital businesses across AI, FinTech, education, health and tourism."}</p>
+    <h1 className={v13.headline}>{fa?<>محصول نمی‌سازم که فقط دیده شود؛ <em>سیستم‌هایی می‌سازم که اثر بگذارند.</em></>:<>I don’t build products just to be seen. <em>I build systems that create impact.</em></>}</h1>
+    <p className={`${styles.heroLead} ${v13.heroLead}`}>{fa?"من امیر متفکر هستم؛ کارآفرین و سازنده مجموعه‌ای از محصولات مستقل در هوش مصنوعی، فین‌تک، آموزش، محتوا و تجربه‌های دیجیتال.":"I’m Amir Motefaker—an entrepreneur building a portfolio of independent products across AI, FinTech, education, content and digital experiences."}</p>
     <div className={styles.heroActions}><Link href={`/${locale}/products`} className={`${styles.primaryAction} ${v13.action} ${v13.primaryAction}`}>{fa?"ورود به اکوسیستم محصولات":"Enter the product ecosystem"}<span aria-hidden="true">↗</span></Link><Link href={`/${locale}/resume`} className={`${styles.secondaryAction} ${v13.action} ${v13.secondaryAction}`}>{fa?"مسیر حرفه‌ای":"Professional journey"}</Link></div>
     <div className={`${styles.heroMetrics} ${v13.heroMetrics}`}><div><strong>{formatSiteNumber(totalProducts,locale)}</strong><span>{fa?"محصول و ونچر":"Products & ventures"}</span></div><div><strong>{formatSiteNumber(sectors,locale)}</strong><span>{fa?"حوزه فناوری":"Technology sectors"}</span></div><div><strong>{formatSiteNumber(evidence.length,locale)}</strong><span>{fa?"شاهد تأییدشده":"Verified evidence"}</span></div></div>
    </div>
-   <aside className={`${styles.heroVisual} ${v13.heroVisual}`} aria-label={fa?"نمای زنده اکوسیستم محصولات":"Live product ecosystem overview"}>
-    <div className={v13.commandCard}>
-     <div className={v13.commandHead}><div className={v13.commandIdentity}><span className={v13.commandAvatar}><Image src="/assets/profile/amir-motefaker.png" alt={fa?founder.nameFa:founder.nameEn} width={44} height={44} priority/></span><div><strong>{fa?founder.nameFa:founder.nameEn}</strong><small>Founder OS · v13</small></div></div><span className={v13.liveSignal}><i/>{fa?"در حال ساخت":"Building"}</span></div>
-     <div className={v13.commandStatement}><span>{fa?"ماموریت":"MISSION"}</span><p>{fa?"تبدیل مسئله‌های واقعی به محصولات دیجیتال مستقل و قابل رشد.":"Turning real problems into independent, scalable digital products."}</p></div>
-     <div className={v13.commandProducts}>{featured.slice(0,4).map(product=><Link key={product.slug} href={`/${locale}/products/${product.slug}`}><span className={v13.commandMark}>{marks[product.slug]??product.slug.slice(0,2).toUpperCase()}</span><span><strong>{getProductDisplayName(product,locale)}</strong><small>{getProductCategory(product,locale)}</small></span><i aria-hidden="true">↗</i></Link>)}</div>
-     <div className={v13.commandFoot}><span>{fa?"مرکز عملیات پرتفوی":"PORTFOLIO COMMAND CENTER"}</span><strong>{formatSiteNumber(totalProducts,locale)} / {formatSiteNumber(sectors,locale)}</strong></div>
+   <aside className={`${styles.heroVisual} ${v13.heroVisual}`} aria-label={fa?"نقشه اکوسیستم محصولات امیر متفکر":"Amir Motefaker product ecosystem map"}>
+    <div className={v13.ecosystemCanvas}>
+     <div className={v13.canvasMeta}><span>AM / FOUNDER OS</span><span>{fa?"نسخه ۱۳.۱":"VERSION 13.1"}</span></div>
+     <div className={v13.founderCore}>
+      <span className={v13.portrait}><Image src="/assets/profile/amir-motefaker.png" alt={fa?founder.nameFa:founder.nameEn} width={190} height={230} priority sizes="190px"/></span>
+      <div><small>{fa?"بنیان‌گذار و سازنده محصول":"FOUNDER & PRODUCT BUILDER"}</small><strong>{fa?founder.nameFa:founder.nameEn}</strong><p>{fa?"ساختن، سنجیدن، بهتر کردن.":"Build. Measure. Evolve."}</p></div>
+     </div>
+     <div className={v13.productConstellation}>{featured.slice(0,5).map((product,index)=><Link key={product.slug} href={`/${locale}/products/${product.slug}`} className={v13[`orbit${index+1}`]}><span>{marks[product.slug]??product.slug.slice(0,2).toUpperCase()}</span><strong>{getProductDisplayName(product,locale)}</strong><small>{getProductCategory(product,locale)}</small></Link>)}</div>
+     <div className={v13.canvasFoot}><span><i/>{fa?"اکوسیستم فعال":"ACTIVE ECOSYSTEM"}</span><strong>{formatSiteNumber(totalProducts,locale)} {fa?"محصول و ونچر":"PRODUCTS & VENTURES"}</strong></div>
     </div>
    </aside>
   </div>
