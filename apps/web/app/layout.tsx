@@ -5,6 +5,7 @@ import "@fontsource-variable/space-grotesk/wght.css";
 import "@fontsource-variable/jetbrains-mono/wght.css";
 import "./globals.css";
 import "./experience-v2.css";
+import "./founder-v13-polish.css";
 import ThemeBoot from "@/components/founder/ThemeBoot";
 
 const vazirmatn = Vazirmatn({

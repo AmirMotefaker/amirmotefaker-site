@@ -8,10 +8,10 @@ import styles from "./FounderV6.module.css";
 
 const principles = {
   fa: [
-    ["SYSTEMS", "سیستم قبل از هیاهو", "محصول خوب باید قابل استفاده، قابل نگهداری و قابل توسعه باشد."],
-    ["DATA", "داده برای تصمیم", "داده زمانی ارزش دارد که تصمیم را روشن‌تر و اجرا را سریع‌تر کند."],
-    ["MARKET", "فناوری + بازار", "فناوری بدون شناخت مشتری و بازار، به‌تنهایی محصول نمی‌سازد."],
-    ["BUILD", "ساختن مداوم", "ایده با اجرا، اندازه‌گیری و تکرار به محصول واقعی تبدیل می‌شود."],
+    ["سیستم", "سیستم قبل از هیاهو", "محصول خوب باید قابل استفاده، قابل نگهداری و قابل توسعه باشد."],
+    ["داده", "داده برای تصمیم", "داده زمانی ارزش دارد که تصمیم را روشن‌تر و اجرا را سریع‌تر کند."],
+    ["بازار", "فناوری و بازار", "فناوری بدون شناخت مشتری و بازار، به‌تنهایی محصول نمی‌سازد."],
+    ["ساخت", "ساختن مداوم", "ایده با اجرا، اندازه‌گیری و تکرار به محصول واقعی تبدیل می‌شود."],
   ],
   en: [
     ["SYSTEMS", "Systems before hype", "A strong product should be usable, maintainable and extensible."],
@@ -30,13 +30,13 @@ export default function AboutPageV6({ locale }: { locale: Locale }) {
       <section className={styles.aboutHero}>
         <div className={`wrap ${styles.aboutHeroGrid}`}>
           <div className={styles.aboutCopy}>
-            <span>ABOUT / FOUNDER STORY</span>
+            <span>{fa ? "درباره من / داستان مسیر" : "ABOUT / FOUNDER STORY"}</span>
             <h1>
               {fa ? (
                 <>
-                  از <span>DOS</span> تا ساخت
+                  از نخستین تجربه‌های رایانه‌ای تا ساخت
                   <br />
-                  محصولات <span>AI</span>.
+                  محصولات هوشمند.
                 </>
               ) : (
                 <>
