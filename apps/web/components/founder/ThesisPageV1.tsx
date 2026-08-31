@@ -1,10 +1,11 @@
 import Link from "next/link";
 import type { Locale } from "@/content/founder-site";
+import { localeDigits } from "@/lib/locale-format";
 import styles from "./KnowledgePage.module.css";
 
 const principles = {
   fa: [
-    ["01", "مسئله قبل از تکنولوژی", "ابتدا مسئله، رفتار و اصطکاک واقعی کاربر را می‌فهمم؛ بعد سراغ انتخاب فناوری می‌روم."],
+    ["01", "مسئله قبل از فناوری", "ابتدا مسئله، رفتار و اصطکاک واقعی کاربر را می‌فهمم؛ بعد سراغ انتخاب فناوری می‌روم."],
     ["02", "محصول قبل از نمایش", "قابلیت واقعی، تجربه کاربر و شواهد ساختن مهم‌تر از ادعاهای بزرگ و زبان تبلیغاتی هستند."],
     ["03", "سیستم قبل از ویژگی", "محصول باید بتواند رشد کند، یاد بگیرد، داده تولید کند و در صورت نیاز به اکوسیستم بزرگ‌تری متصل شود."],
   ],
@@ -17,7 +18,7 @@ const principles = {
 
 const beliefs = {
   fa: [
-    ["هوش مصنوعی باید در محصول حل شود، نه فقط در پیام بازاریابی.", "AI زمانی ارزش دارد که زمان، خطا، اصطکاک یا هزینه تصمیم‌گیری را کاهش دهد."],
+    ["هوش مصنوعی باید در محصول حل شود، نه فقط در پیام بازاریابی.", "هوش مصنوعی زمانی ارزش دارد که زمان، خطا، اصطکاک یا هزینه تصمیم‌گیری را کاهش دهد."],
     ["فارسی یک لایه محصولی جدی است.", "زبان، فرهنگ، رفتار و زیرساخت بازار فارسی فرصت ساخت تجربه‌هایی را ایجاد می‌کنند که ترجمه ساده محصولات خارجی نیستند."],
     ["پرتفوی باید از یادگیری مشترک سود ببرد.", "دانش محصول، زیرساخت، داده، توزیع و تجربه عملیاتی باید بین پروژه‌ها قابل انتقال باشد؛ بدون اینکه هویت مستقل هر محصول از بین برود."],
   ],
@@ -53,7 +54,7 @@ export default function ThesisPageV1({ locale }: { locale: Locale }) {
           <div className={styles.grid}>
             {principles[locale].map(([index, title, body]) => (
               <article className={styles.card} key={title}>
-                <span>{index}</span><h3>{title}</h3><p>{body}</p>
+                <span>{fa ? localeDigits(index, locale) : index}</span><h3>{title}</h3><p>{body}</p>
               </article>
             ))}
           </div>
@@ -64,7 +65,7 @@ export default function ThesisPageV1({ locale }: { locale: Locale }) {
         <div className="wrap">
           <div className={styles.sectionIntro}>
             <h2>{fa ? "فرضیه‌هایی که پرتفوی را شکل می‌دهند" : "Beliefs shaping the portfolio"}</h2>
-            <p>{fa ? "این‌ها thesis هستند، نه ادعای اثبات‌شده. هر کدام باید در طول زمان با محصول، داده و تجربه واقعی پشتیبانی یا اصلاح شوند." : "These are theses, not proven facts. Each should be supported, refined or rejected over time through products, data and first-hand experience."}</p>
+            <p>{fa ? "این‌ها فرضیه‌های کاری‌اند، نه ادعاهای اثبات‌شده. هرکدام باید در طول زمان با محصول، داده و تجربه واقعی پشتیبانی یا اصلاح شوند." : "These are theses, not proven facts. Each should be supported, refined or rejected over time through products, data and first-hand experience."}</p>
           </div>
           <div className={styles.list}>
             {beliefs[locale].map(([title, body]) => (
