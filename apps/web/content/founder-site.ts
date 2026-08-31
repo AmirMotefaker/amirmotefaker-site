@@ -6,7 +6,7 @@ export const founder = {
   titleFa: "امیر متفکر، علاقه‌مند به فناوری",
   titleEn: "Amir Motefaker, Tech-savvy",
   email: "info@amirmotefaker.ir",
-  phone: "+98 912 789 3644",
+  phone: "09127893644",
   phoneHref: "+989127893644",
   cityFa: "قزوین، ایران",
   cityEn: "Qazvin, Iran",
