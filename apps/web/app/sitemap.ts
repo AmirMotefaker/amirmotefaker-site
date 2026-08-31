@@ -1,11 +1,9 @@
 import type { MetadataRoute } from "next";
 import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
-import { supplementalProductPortfolio } from "@/content/supplemental-product-portfolio";
 import { getLegacyPosts } from "@/lib/legacy-wordpress";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 const locales = ["fa", "en"] as const;
-const products = [...canonicalProductPortfolio, ...supplementalProductPortfolio];
 
 function alternates(path: string) {
   return {
@@ -19,23 +17,33 @@ function alternates(path: string) {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
+  const corePages = [
+    ["", 1, "weekly"],
+    ["/about", 0.95, "monthly"],
+    ["/products", 0.95, "weekly"],
+    ["/resume", 0.9, "monthly"],
+    ["/thesis", 0.9, "monthly"],
+    ["/notes", 0.85, "weekly"],
+    ["/news", 0.9, "daily"],
+    ["/contact", 0.65, "monthly"],
+  ] as const;
 
   for (const locale of locales) {
-    for (const path of ["", "/about", "/products", "/thesis", "/notes", "/resume", "/news", "/contact"]) {
+    for (const [path, priority, changeFrequency] of corePages) {
       routes.push({
         url: `${base}/${locale}${path}`,
-        changeFrequency: "weekly",
-        priority: path === "" ? 1 : path === "/products" || path === "/news" || path === "/thesis" || path === "/notes" ? 0.9 : 0.8,
+        changeFrequency,
+        priority,
         alternates: alternates(path),
       });
     }
 
-    for (const product of products) {
+    for (const product of canonicalProductPortfolio) {
       const path = `/products/${product.slug}`;
       routes.push({
         url: `${base}/${locale}${path}`,
         changeFrequency: "monthly",
-        priority: 0.85,
+        priority: 0.92,
         alternates: alternates(path),
       });
     }
@@ -45,8 +53,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       routes.push({
         url: `${base}/${locale}${path}`,
         lastModified: new Date(post.modified || post.date),
-        changeFrequency: "weekly",
-        priority: 0.75,
+        changeFrequency: "monthly",
+        priority: 0.72,
         alternates: alternates(path),
       });
     }
