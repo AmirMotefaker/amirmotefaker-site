@@ -13,7 +13,7 @@ export type EmergingVenture = {
 
 export const emergingVentures: EmergingVenture[] = [
   {
-    slug: "tasvin",
+    slug: "tasvia",
     nameFa: "تسوین",
     nameEn: "Tasvin",
     industryFa: "فین‌تک و خدمات مالی",
