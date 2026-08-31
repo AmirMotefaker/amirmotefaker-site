@@ -11,7 +11,30 @@ export type BrandRegistryEntry = {
   order: number;
 };
 
+/**
+ * Founder-confirmed canonical portfolio, ordered for all public surfaces.
+ * The first eight products are live. Tasvin, Vayran and Darmic are final
+ * product brands but their public sites are not launched yet.
+ */
 export const brandRegistry = [
+  {
+    slug: "restyar",
+    name: "RestYar",
+    nameFa: "رِستیار",
+    domain: "restyar.ir",
+    classification: "active",
+    claimStatus: "founder-confirmed",
+    order: 10,
+  },
+  {
+    slug: "primesys",
+    name: "PrimeSYS",
+    nameFa: "پرایم سیستم",
+    domain: "primesys.ir",
+    classification: "active",
+    claimStatus: "founder-confirmed",
+    order: 20,
+  },
   {
     slug: "linkresan",
     name: "LinkResan",
@@ -19,7 +42,7 @@ export const brandRegistry = [
     domain: "linkresan.ir",
     classification: "active",
     claimStatus: "founder-confirmed",
-    order: 10,
+    order: 30,
   },
   {
     slug: "farsio",
@@ -28,7 +51,7 @@ export const brandRegistry = [
     domain: "farsio.ir",
     classification: "active",
     claimStatus: "founder-confirmed",
-    order: 20,
+    order: 40,
   },
   {
     slug: "fahmio",
@@ -37,7 +60,7 @@ export const brandRegistry = [
     domain: "fahmio.ir",
     classification: "active",
     claimStatus: "founder-confirmed",
-    order: 30,
+    order: 50,
   },
   {
     slug: "zobdino",
@@ -46,16 +69,7 @@ export const brandRegistry = [
     domain: "zobdino.ir",
     classification: "active",
     claimStatus: "founder-confirmed",
-    order: 40,
-  },
-  {
-    slug: "filmtrack",
-    name: "FilmTrack",
-    nameFa: "فیلم‌ترک",
-    domain: "filmtrack.ir",
-    classification: "active",
-    claimStatus: "founder-confirmed",
-    order: 50,
+    order: 60,
   },
   {
     slug: "idehjo",
@@ -64,34 +78,43 @@ export const brandRegistry = [
     domain: "idehjo.ir",
     classification: "active",
     claimStatus: "founder-confirmed",
-    order: 60,
-  },
-  {
-    slug: "tasvia",
-    name: "Tasvia",
-    nameFa: "تسویا",
-    domain: "",
-    classification: "active",
-    claimStatus: "founder-confirmed",
     order: 70,
   },
   {
-    slug: "primesys",
-    name: "PrimeSYS",
-    nameFa: "پرایم‌سیستم",
-    domain: "primesys.ir",
+    slug: "tasvin",
+    name: "Tasvin",
+    nameFa: "تسوین",
+    domain: "tasvin.ir",
     classification: "pending-classification",
-    claimStatus: "team-draft",
-    order: 110,
+    claimStatus: "founder-confirmed",
+    order: 80,
   },
   {
-    slug: "restyar",
-    name: "RestYar",
-    nameFa: "رستیار",
-    domain: "restyar.ir",
+    slug: "vayran",
+    name: "Vayran",
+    nameFa: "وایران",
+    domain: "vayran.ir",
     classification: "pending-classification",
-    claimStatus: "team-draft",
-    order: 120,
+    claimStatus: "founder-confirmed",
+    order: 90,
+  },
+  {
+    slug: "darmic",
+    name: "Darmic",
+    nameFa: "دارمیک",
+    domain: "darmic.ir",
+    classification: "pending-classification",
+    claimStatus: "founder-confirmed",
+    order: 100,
+  },
+  {
+    slug: "filmtrack",
+    name: "FilmTrack",
+    nameFa: "فیلم‌ترک",
+    domain: "filmtrack.ir",
+    classification: "active",
+    claimStatus: "founder-confirmed",
+    order: 110,
   },
 ] as const satisfies readonly BrandRegistryEntry[];
 
