@@ -3,31 +3,21 @@ import { notFound } from "next/navigation";
 import ProductDetailView from "@/components/products/ProductDetailView";
 import { getProductDisplayName } from "@/content/product-portfolio";
 import { canonicalProductPortfolio, getCanonicalProduct } from "@/content/canonical-product-portfolio";
-import { getSupplementalProduct, supplementalProductPortfolio } from "@/content/supplemental-product-portfolio";
 import type { Locale } from "@/content/founder-site";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
-const publicProductPortfolio = [...canonicalProductPortfolio, ...supplementalProductPortfolio];
-
-function getPublicProduct(slug: string) {
-  return getCanonicalProduct(slug) ?? getSupplementalProduct(slug);
-}
 
 export function generateStaticParams() {
-  return publicProductPortfolio.flatMap((product) => [
+  return canonicalProductPortfolio.flatMap((product) => [
     { locale: "fa", slug: product.slug },
     { locale: "en", slug: product.slug },
   ]);
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string; slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
-  const product = getPublicProduct(slug);
+  const product = getCanonicalProduct(slug);
   if (!product) return {};
 
   const displayName = getProductDisplayName(product, locale);
@@ -40,14 +30,7 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: {
-      canonical,
-      languages: {
-        "fa-IR": faUrl,
-        "en-US": enUrl,
-        "x-default": enUrl,
-      },
-    },
+    alternates: { canonical, languages: { "fa-IR": faUrl, "en-US": enUrl, "x-default": enUrl } },
     openGraph: {
       title,
       description,
@@ -56,22 +39,14 @@ export async function generateMetadata({
       locale: locale === "fa" ? "fa_IR" : "en_US",
       alternateLocale: [locale === "fa" ? "en_US" : "fa_IR"],
     },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ locale: string; slug: string }>;
-}) {
+export default async function Page({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
-  const product = getPublicProduct(slug);
+  const product = getCanonicalProduct(slug);
   if (!product) notFound();
 
   const displayName = getProductDisplayName(product, locale);
@@ -97,31 +72,15 @@ export default async function Page({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: locale === "fa" ? "محصولات" : "Products",
-        item: `${base}/${locale}/products`,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: displayName,
-        item: pageUrl,
-      },
+      { "@type": "ListItem", position: 1, name: locale === "fa" ? "محصولات" : "Products", item: `${base}/${locale}/products` },
+      { "@type": "ListItem", position: 2, name: displayName, item: pageUrl },
     ],
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <ProductDetailView locale={locale} product={product} />
     </>
   );
