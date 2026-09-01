@@ -19,3 +19,18 @@ jobs:
       - name: Run Foundation Product Test
         shell: pwsh
         run: ./scripts/Test-Product.ps1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+
+      - name: Install web dependencies
+        working-directory: apps/web
+        run: npm ci
+
+      - name: Run Clerk Production Readiness Gate
+        working-directory: apps/web
+        run: npm run test:clerk-readiness
