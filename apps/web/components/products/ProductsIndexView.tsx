@@ -156,9 +156,9 @@ export default function ProductsIndexView({ locale }: { locale: Locale }) {
                     <Link href={`/${locale}/products/${product.slug}`} className={styles.primaryCardLink}>
                       {getPrimaryCta(product.status, fa)} <span>↗</span>
                     </Link>
-                    {product.status === "live" && product.domain ? (
+                    {product.domain ? (
                       <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className={styles.domainLink}>
-                        {fa ? "ورود به وب‌سایت محصول" : "Independent website"}
+                        {fa ? "وب‌سایت رسمی محصول" : "Official product website"}
                       </a>
                     ) : null}
                   </div>

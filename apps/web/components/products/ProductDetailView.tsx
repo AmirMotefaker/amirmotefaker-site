@@ -54,8 +54,8 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
           {heroTitle ? <h2>{heroTitle}</h2> : null}
           <p>{heroDescription || (fa ? product.shortDescriptionFa : product.shortDescriptionEn)}</p>
           <div className={styles.heroActions}>
-            {product.status === "live" && product.domain ? (
-              <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">{fa ? "ورود به وب‌سایت محصول" : `Visit ${name}`} ↗</a>
+            {product.domain ? (
+              <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">{fa ? "وب‌سایت رسمی محصول" : `Visit ${name}`} ↗</a>
             ) : (
               <Link href={`/${locale}/contact`} className="btn btn-primary">{fa ? "پیگیری مسیر توسعه" : "Follow development"}</Link>
             )}
