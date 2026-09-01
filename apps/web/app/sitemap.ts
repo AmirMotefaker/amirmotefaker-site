@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
+import { finalPublicProductPortfolio } from "@/content/final-public-product-portfolio";
 import { getLegacyPosts } from "@/lib/legacy-wordpress";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    for (const product of canonicalProductPortfolio) {
+    for (const product of finalPublicProductPortfolio) {
       const path = `/products/${product.slug}`;
       routes.push({
         url: `${base}/${locale}${path}`,
