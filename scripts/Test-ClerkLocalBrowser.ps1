@@ -87,21 +87,6 @@ function Assert-Page([string]$BaseUrl, [string]$Path) {
   Write-Host "PASS $Path"
 }
 
-function Assert-Redirect([string]$BaseUrl, [string]$Path, [string]$ExpectedLocation) {
-  $probe = & curl.exe -sS -o NUL -D - --max-redirs 0 "$BaseUrl$Path"
-  Assert-Ok ($LASTEXITCODE -eq 0) "curl redirect probe failed for $Path."
-
-  $statusLine = $probe | Select-Object -First 1
-  $locationLine = $probe | Where-Object { $_ -match '^Location:' } | Select-Object -First 1
-
-  Assert-Ok ($statusLine -match '^HTTP/\S+\s+(301|302|303|307|308)\b') "Expected redirect status for $Path, got: $statusLine"
-  Assert-Ok $locationLine "Missing Location header for $Path."
-
-  $location = ($locationLine -replace '^Location:\s*', '').Trim()
-  Assert-Ok ($location -eq $ExpectedLocation) "Expected $Path -> $ExpectedLocation, got $location."
-  Write-Host "PASS $Path -> $ExpectedLocation"
-}
-
 try {
   Write-Host "`n=== CLERK LOCAL BROWSER QA ==="
   Assert-Ok (Test-Path $envFile) "Missing apps/web/.env.local. Run Clerk development env pull first."
@@ -131,16 +116,37 @@ try {
   $ownsServer = $true
   Wait-ForServer "$baseUrl/fa/sign-in"
 
-  Write-Host "`n[5/6] Verify localized auth routes and legacy redirects"
+  Write-Host "`n[5/6] Verify localized auth routes"
   foreach ($path in @("/fa/sign-in","/fa/sign-up","/en/sign-in","/en/sign-up")) {
     Assert-Page $baseUrl $path
   }
-  Assert-Redirect $baseUrl "/fa/login" "/fa/sign-in"
-  Assert-Redirect $baseUrl "/en/login" "/en/sign-in"
 
-  Write-Host "`n[6/6] Capture desktop/mobile browser evidence"
+  Write-Host "`n[6/6] Verify browser redirects and capture desktop/mobile evidence"
   npx -y playwright@latest install chromium
   Assert-Ok ($LASTEXITCODE -eq 0) "Playwright Chromium install failed."
+
+  $redirectProbe = Join-Path $artifacts "verify-legacy-login.mjs"
+  @"
+import { chromium } from 'playwright';
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage();
+const cases = [
+  ['/fa/login', '/fa/sign-in'],
+  ['/en/login', '/en/sign-in'],
+];
+for (const [from, to] of cases) {
+  await page.goto('$baseUrl' + from, { waitUntil: 'networkidle' });
+  const actual = new URL(page.url()).pathname;
+  if (actual !== to) {
+    throw new Error(`Expected ${from} -> ${to}, got ${actual}`);
+  }
+  console.log(`PASS ${from} -> ${to}`);
+}
+await browser.close();
+"@ | Set-Content -Path $redirectProbe -Encoding utf8
+
+  npx -y -p playwright@latest node $redirectProbe
+  Assert-Ok ($LASTEXITCODE -eq 0) "Browser redirect verification failed."
 
   $targets = @(
     @{ Path="/fa/sign-in"; Name="fa-sign-in" },
@@ -157,9 +163,11 @@ try {
     Assert-Ok ($LASTEXITCODE -eq 0) "Mobile screenshot failed for $($target.Path)."
   }
 
+  Remove-Item $redirectProbe -Force -ErrorAction SilentlyContinue
+
   Write-Host "`n✓ Production build PASS"
   Write-Host "✓ Four localized Clerk routes return HTTP 200"
-  Write-Host "✓ Legacy FA/EN login redirects preserve locale"
+  Write-Host "✓ Legacy FA/EN login redirects preserve locale in a real browser"
   Write-Host "✓ Desktop and mobile browser evidence captured"
   Write-Host "Evidence: $artifacts"
   Write-Host "`n=== CLERK LOCAL BROWSER QA PASS ==="
