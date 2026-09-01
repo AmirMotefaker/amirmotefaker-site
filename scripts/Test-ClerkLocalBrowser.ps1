@@ -27,37 +27,24 @@ function Test-HttpServer([string]$BaseUrl) {
 
 function Get-ListeningPid([int]$CandidatePort) {
   try {
-    $conn = Get-NetTCPConnection -LocalAddress 127.0.0.1 -LocalPort $CandidatePort -State Listen -ErrorAction Stop | Select-Object -First 1
+    $conn = Get-NetTCPConnection -LocalPort $CandidatePort -State Listen -ErrorAction Stop | Select-Object -First 1
     if ($conn) { return [int]$conn.OwningProcess }
-  } catch {
-    try {
-      $conn = Get-NetTCPConnection -LocalPort $CandidatePort -State Listen -ErrorAction Stop | Select-Object -First 1
-      if ($conn) { return [int]$conn.OwningProcess }
-    } catch { }
-  }
+  } catch { }
   return $null
 }
 
-function Stop-StaleNextDev([int]$CandidatePort) {
-  $pidOnPort = Get-ListeningPid $CandidatePort
-  if (-not $pidOnPort) { return $false }
+function Test-PortAvailable([int]$CandidatePort) {
+  return -not (Get-ListeningPid $CandidatePort)
+}
 
-  $proc = Get-CimInstance Win32_Process -Filter "ProcessId=$pidOnPort" -ErrorAction SilentlyContinue
-  if (-not $proc) { return $false }
+function Get-FreePort([int]$PreferredPort) {
+  if (Test-PortAvailable $PreferredPort) { return $PreferredPort }
 
-  $commandLine = [string]$proc.CommandLine
-  $repoMatch = $commandLine -like "*$web*"
-  $nextMatch = $commandLine -match "next(\.cmd)?\s+dev|next\\dist\\bin\\next.*dev"
-
-  if ($repoMatch -and $nextMatch) {
-    Write-Host "Stopping stale Next.js dev server PID $pidOnPort for this QA worktree..."
-    Stop-Process -Id $pidOnPort -Force -ErrorAction Stop
-    Start-Sleep -Seconds 1
-    return $true
+  foreach ($candidate in ($PreferredPort + 1)..($PreferredPort + 50)) {
+    if (Test-PortAvailable $candidate) { return $candidate }
   }
 
-  Write-Host "Port $CandidatePort is occupied by PID $pidOnPort, but it is not a Next.js dev process for this worktree."
-  return $false
+  throw "No free local port found in range $PreferredPort-$($PreferredPort + 50)."
 }
 
 function Show-ServerDiagnostics {
@@ -125,7 +112,7 @@ try {
   npm run test:clerk-readiness
   Assert-Ok ($LASTEXITCODE -eq 0) "Clerk readiness gate failed."
 
-  Write-Host "`n[3/5] Reuse or recover local Next.js dev server"
+  Write-Host "`n[3/5] Reuse or start local Next.js dev server"
   $baseUrl = "http://127.0.0.1:$Port"
 
   if (Test-HttpServer $baseUrl) {
@@ -133,10 +120,10 @@ try {
   } else {
     $pidOnPort = Get-ListeningPid $Port
     if ($pidOnPort) {
-      $stopped = Stop-StaleNextDev $Port
-      if (-not $stopped) {
-        throw "Port $Port is occupied by PID $pidOnPort and is not serving the QA route. Stop that process or choose another -Port."
-      }
+      Write-Host "Port $Port is occupied by PID $pidOnPort and is not serving the QA route."
+      $Port = Get-FreePort ($Port + 1)
+      $baseUrl = "http://127.0.0.1:$Port"
+      Write-Host "Using free QA port $Port instead."
     }
 
     Write-Host "Starting isolated local Next.js server at $baseUrl..."
