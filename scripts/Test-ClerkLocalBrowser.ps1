@@ -36,9 +36,9 @@ function Get-FreePort([int]$PreferredPort) {
 
 function Show-ServerDiagnostics {
   Write-Host "`n--- NEXT START STDOUT ---"
-  if (Test-Path $stdoutLog) { Get-Content $stdoutLog -Tail 120 }
+  if (Test-Path $stdoutLog) { Get-Content $stdoutLog -Tail 160 }
   Write-Host "`n--- NEXT START STDERR ---"
-  if (Test-Path $stderrLog) { Get-Content $stderrLog -Tail 120 }
+  if (Test-Path $stderrLog) { Get-Content $stderrLog -Tail 160 }
 }
 
 function Wait-ForServer([string]$Url, [int]$TimeoutSeconds = 120) {
@@ -53,6 +53,11 @@ function Wait-ForServer([string]$Url, [int]$TimeoutSeconds = 120) {
       $response = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 3
       if ($response.StatusCode -ge 200 -and $response.StatusCode -lt 500) { return }
     } catch {
+      $response = $_.Exception.Response
+      if ($response -and [int]$response.StatusCode -ge 500) {
+        Show-ServerDiagnostics
+        throw "Runtime HTTP $([int]$response.StatusCode) detected while probing $Url."
+      }
       Start-Sleep -Seconds 2
     }
   }
@@ -62,9 +67,22 @@ function Wait-ForServer([string]$Url, [int]$TimeoutSeconds = 120) {
 }
 
 function Assert-Page([string]$BaseUrl, [string]$Path) {
-  $response = Invoke-WebRequest -Uri "$BaseUrl$Path" -UseBasicParsing -TimeoutSec 20
-  Assert-Ok ($response.StatusCode -eq 200) "Expected HTTP 200 for $Path, got $($response.StatusCode)."
-  Assert-Ok ($response.Content -notmatch "Internal Server Error") "Server error content detected on $Path."
+  try {
+    $response = Invoke-WebRequest -Uri "$BaseUrl$Path" -UseBasicParsing -TimeoutSec 20
+  } catch {
+    $response = $_.Exception.Response
+    if ($response) {
+      Show-ServerDiagnostics
+      throw "Expected HTTP 200 for $Path, got $([int]$response.StatusCode)."
+    }
+    throw
+  }
+
+  if ($response.StatusCode -ne 200 -or $response.Content -match "Internal Server Error") {
+    Show-ServerDiagnostics
+    throw "Auth route failed for $Path. HTTP $($response.StatusCode)."
+  }
+
   Write-Host "PASS $Path"
 }
 
