@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { Vazirmatn } from "next/font/google";
@@ -89,8 +90,10 @@ export default function RootLayout({
       style={fontStyle}
     >
       <body>
-        <ThemeBoot />
-        {children}
+        <ClerkProvider>
+          <ThemeBoot />
+          {children}
+        </ClerkProvider>
       </body>
     </html>
   );
