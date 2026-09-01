@@ -9,7 +9,7 @@ import {
   getProductIndustry,
   type ProductStatus,
 } from "@/content/product-portfolio";
-import { canonicalProductPortfolio as productPortfolio } from "@/content/canonical-product-portfolio";
+import { finalPublicProductPortfolio as productPortfolio } from "@/content/final-public-product-portfolio";
 import type { Locale } from "@/content/founder-site";
 import { localeDigits } from "@/lib/locale-format";
 import styles from "./ProductShowcase.module.css";
