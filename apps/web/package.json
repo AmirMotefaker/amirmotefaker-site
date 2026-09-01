@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --fix",
+    "test:clerk-readiness": "node scripts/clerk-production-readiness.mjs",
     "seo:indexnow": "node scripts/indexnow-submit.mjs"
   },
   "dependencies": {
