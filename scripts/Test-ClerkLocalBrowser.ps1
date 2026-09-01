@@ -88,23 +88,18 @@ function Assert-Page([string]$BaseUrl, [string]$Path) {
 }
 
 function Assert-Redirect([string]$BaseUrl, [string]$Path, [string]$ExpectedLocation) {
-  $handler = [System.Net.Http.HttpClientHandler]::new()
-  $handler.AllowAutoRedirect = $false
-  $client = [System.Net.Http.HttpClient]::new($handler)
+  $probe = & curl.exe -sS -o NUL -D - --max-redirs 0 "$BaseUrl$Path"
+  Assert-Ok ($LASTEXITCODE -eq 0) "curl redirect probe failed for $Path."
 
-  try {
-    $response = $client.GetAsync("$BaseUrl$Path").GetAwaiter().GetResult()
-    $status = [int]$response.StatusCode
-    $location = if ($response.Headers.Location) { $response.Headers.Location.OriginalString } else { $null }
+  $statusLine = $probe | Select-Object -First 1
+  $locationLine = $probe | Where-Object { $_ -match '^Location:' } | Select-Object -First 1
 
-    Assert-Ok ($status -in 301,302,303,307,308) "Expected redirect status for $Path, got $status."
-    Assert-Ok ($location -eq $ExpectedLocation) "Expected $Path -> $ExpectedLocation, got $location."
-    Write-Host "PASS $Path -> $ExpectedLocation"
-  }
-  finally {
-    $client.Dispose()
-    $handler.Dispose()
-  }
+  Assert-Ok ($statusLine -match '^HTTP/\S+\s+(301|302|303|307|308)\b') "Expected redirect status for $Path, got: $statusLine"
+  Assert-Ok $locationLine "Missing Location header for $Path."
+
+  $location = ($locationLine -replace '^Location:\s*', '').Trim()
+  Assert-Ok ($location -eq $ExpectedLocation) "Expected $Path -> $ExpectedLocation, got $location."
+  Write-Host "PASS $Path -> $ExpectedLocation"
 }
 
 try {
