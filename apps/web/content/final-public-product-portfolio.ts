@@ -29,7 +29,17 @@ function syntheticProduct(input: {
   capabilitiesFa: string[];
   capabilitiesEn: string[];
 }): Product {
-  return {
+  const template = canonicalProductPortfolio[0];
+  if (!template) throw new Error("Canonical product template is unavailable");
+
+  const filterGroup: Product["filterGroup"] =
+    input.slug === "tasvin"
+      ? "FinTech"
+      : input.slug === "darmic"
+        ? "AI & Intelligent Products"
+        : "Digital Platforms";
+
+  return clone(template, {
     slug: input.slug,
     name: input.name,
     domain: input.domain,
@@ -40,12 +50,14 @@ function syntheticProduct(input: {
     industryEn: input.industryEn,
     category: input.category,
     categoryFa: input.industryFa,
-    categoryEn: input.industryEn,
+    categoryEn: input.category,
     positioning: input.positioning,
+    filterGroup,
     shortDescriptionFa: input.shortDescriptionFa,
     shortDescriptionEn: input.shortDescriptionEn,
     tags: [],
     hero: {
+      ...template.hero,
       eyebrow: input.industryEn.toUpperCase(),
       titleFa: input.titleFa,
       titleEn: input.titleEn,
@@ -56,13 +68,13 @@ function syntheticProduct(input: {
       secondaryCtaFa: "تماس و همکاری",
       secondaryCtaEn: "Contact",
     },
-    capabilities: input.capabilitiesEn,
-    capabilitiesFa: input.capabilitiesFa,
-    capabilitiesEn: input.capabilitiesEn,
     problemFa: input.problemFa,
     problemEn: input.problemEn,
     solutionFa: input.solutionFa,
     solutionEn: input.solutionEn,
+    capabilities: input.capabilitiesEn,
+    capabilitiesFa: input.capabilitiesFa,
+    capabilitiesEn: input.capabilitiesEn,
     technology: [],
     visionFa: input.titleFa,
     visionEn: input.titleEn,
@@ -73,8 +85,15 @@ function syntheticProduct(input: {
     amirRoleFa: "بنیان‌گذار و هدایت‌کننده استراتژی، طراحی محصول و مسیر توسعه.",
     amirRoleEn: "Founder, directing strategy, product design and development roadmap.",
     visualDirectionFa: "طراحی مینیمال و حرفه‌ای متناسب با هویت محصول.",
+    currentProductFa: undefined,
+    currentProductEn: undefined,
+    productPromiseFa: undefined,
+    productPromiseEn: undefined,
+    audienceFa: undefined,
+    audienceEn: undefined,
+    futureDirections: [],
     related: [],
-  } as Product;
+  });
 }
 
 const tasvia = getCanonicalProduct("tasvia");
