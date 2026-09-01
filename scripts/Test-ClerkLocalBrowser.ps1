@@ -11,6 +11,7 @@ $server = $null
 $ownsServer = $false
 $stdoutLog = Join-Path $artifacts "next-start.stdout.log"
 $stderrLog = Join-Path $artifacts "next-start.stderr.log"
+$hostName = "localhost"
 
 function Assert-Ok([bool]$Condition, [string]$Message) {
   if (-not $Condition) { throw $Message }
@@ -123,10 +124,10 @@ try {
 
   Write-Host "`n[4/6] Start isolated Next.js production server"
   $Port = Get-FreePort $Port
-  $baseUrl = "http://127.0.0.1:$Port"
+  $baseUrl = "http://$hostName`:$Port"
   Write-Host "QA base URL: $baseUrl"
 
-  $server = Start-Process -FilePath "npm.cmd" -ArgumentList @("run","start","--","--hostname","127.0.0.1","--port",$Port) -WorkingDirectory $web -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog
+  $server = Start-Process -FilePath "npm.cmd" -ArgumentList @("run","start","--","--hostname",$hostName,"--port",$Port) -WorkingDirectory $web -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog
   $ownsServer = $true
   Wait-ForServer "$baseUrl/fa/sign-in"
 
