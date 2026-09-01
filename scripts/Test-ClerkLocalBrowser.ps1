@@ -7,13 +7,39 @@ $ErrorActionPreference = "Stop"
 $web = Join-Path $RepoRoot "apps/web"
 $envFile = Join-Path $web ".env.local"
 $artifacts = Join-Path $RepoRoot ".artifacts/clerk-local-qa"
-$baseUrl = "http://127.0.0.1:$Port"
 $server = $null
 $stdoutLog = Join-Path $artifacts "next-dev.stdout.log"
 $stderrLog = Join-Path $artifacts "next-dev.stderr.log"
 
 function Assert-Ok([bool]$Condition, [string]$Message) {
   if (-not $Condition) { throw $Message }
+}
+
+function Test-PortAvailable([int]$CandidatePort) {
+  $listener = $null
+  try {
+    $listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopback, $CandidatePort)
+    $listener.Start()
+    return $true
+  } catch {
+    return $false
+  } finally {
+    if ($listener) { $listener.Stop() }
+  }
+}
+
+function Get-FreePort([int]$PreferredPort) {
+  if (Test-PortAvailable $PreferredPort) { return $PreferredPort }
+
+  Write-Host "Port $PreferredPort is already in use. Searching for a free QA port..."
+  foreach ($candidate in ($PreferredPort + 1)..($PreferredPort + 50)) {
+    if (Test-PortAvailable $candidate) {
+      Write-Host "Using free port $candidate instead."
+      return $candidate
+    }
+  }
+
+  throw "No free local port found in range $PreferredPort-$($PreferredPort + 50)."
 }
 
 function Show-ServerDiagnostics {
@@ -43,16 +69,16 @@ function Wait-ForServer([string]$Url, [int]$TimeoutSeconds = 120) {
   throw "Next.js server did not become ready within $TimeoutSeconds seconds."
 }
 
-function Assert-Page([string]$Path) {
-  $response = Invoke-WebRequest -Uri "$baseUrl$Path" -UseBasicParsing -TimeoutSec 20
+function Assert-Page([string]$BaseUrl, [string]$Path) {
+  $response = Invoke-WebRequest -Uri "$BaseUrl$Path" -UseBasicParsing -TimeoutSec 20
   Assert-Ok ($response.StatusCode -eq 200) "Expected HTTP 200 for $Path, got $($response.StatusCode)."
   Assert-Ok ($response.Content -notmatch "Internal Server Error") "Server error content detected on $Path."
   Write-Host "PASS $Path"
 }
 
-function Assert-Redirect([string]$Path, [string]$ExpectedLocation) {
+function Assert-Redirect([string]$BaseUrl, [string]$Path, [string]$ExpectedLocation) {
   try {
-    Invoke-WebRequest -Uri "$baseUrl$Path" -UseBasicParsing -MaximumRedirection 0 -TimeoutSec 20 | Out-Null
+    Invoke-WebRequest -Uri "$BaseUrl$Path" -UseBasicParsing -MaximumRedirection 0 -TimeoutSec 20 | Out-Null
     throw "Expected redirect for $Path but request returned without redirect."
   } catch {
     $response = $_.Exception.Response
@@ -72,6 +98,10 @@ try {
   New-Item -ItemType Directory -Force -Path $artifacts | Out-Null
   Remove-Item $stdoutLog,$stderrLog -Force -ErrorAction SilentlyContinue
 
+  $Port = Get-FreePort $Port
+  $baseUrl = "http://127.0.0.1:$Port"
+  Write-Host "QA base URL: $baseUrl"
+
   Write-Host "`n[1/5] Install dependencies"
   Push-Location $web
   npm install
@@ -87,10 +117,10 @@ try {
 
   Write-Host "`n[4/5] Verify localized auth routes and legacy redirects"
   foreach ($path in @("/fa/sign-in","/fa/sign-up","/en/sign-in","/en/sign-up")) {
-    Assert-Page $path
+    Assert-Page $baseUrl $path
   }
-  Assert-Redirect "/fa/login" "/fa/sign-in"
-  Assert-Redirect "/en/login" "/en/sign-in"
+  Assert-Redirect $baseUrl "/fa/login" "/fa/sign-in"
+  Assert-Redirect $baseUrl "/en/login" "/en/sign-in"
 
   Write-Host "`n[5/5] Capture desktop/mobile browser evidence"
   npx -y playwright@latest install chromium
