@@ -9,14 +9,28 @@ $envFile = Join-Path $web ".env.local"
 $artifacts = Join-Path $RepoRoot ".artifacts/clerk-local-qa"
 $baseUrl = "http://127.0.0.1:$Port"
 $server = $null
+$stdoutLog = Join-Path $artifacts "next-dev.stdout.log"
+$stderrLog = Join-Path $artifacts "next-dev.stderr.log"
 
 function Assert-Ok([bool]$Condition, [string]$Message) {
   if (-not $Condition) { throw $Message }
 }
 
-function Wait-ForServer([string]$Url, [int]$TimeoutSeconds = 90) {
+function Show-ServerDiagnostics {
+  Write-Host "`n--- NEXT DEV STDOUT ---"
+  if (Test-Path $stdoutLog) { Get-Content $stdoutLog -Tail 120 }
+  Write-Host "`n--- NEXT DEV STDERR ---"
+  if (Test-Path $stderrLog) { Get-Content $stderrLog -Tail 120 }
+}
+
+function Wait-ForServer([string]$Url, [int]$TimeoutSeconds = 120) {
   $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
   while ((Get-Date) -lt $deadline) {
+    if ($server -and $server.HasExited) {
+      Show-ServerDiagnostics
+      throw "Next.js dev server exited early with code $($server.ExitCode)."
+    }
+
     try {
       $response = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 3
       if ($response.StatusCode -ge 200 -and $response.StatusCode -lt 500) { return }
@@ -24,6 +38,8 @@ function Wait-ForServer([string]$Url, [int]$TimeoutSeconds = 90) {
       Start-Sleep -Seconds 2
     }
   }
+
+  Show-ServerDiagnostics
   throw "Next.js server did not become ready within $TimeoutSeconds seconds."
 }
 
@@ -54,6 +70,7 @@ try {
   Assert-Ok (Test-Path $envFile) "Missing apps/web/.env.local. Run Clerk development env pull first."
 
   New-Item -ItemType Directory -Force -Path $artifacts | Out-Null
+  Remove-Item $stdoutLog,$stderrLog -Force -ErrorAction SilentlyContinue
 
   Write-Host "`n[1/5] Install dependencies"
   Push-Location $web
@@ -65,7 +82,7 @@ try {
   Assert-Ok ($LASTEXITCODE -eq 0) "Clerk readiness gate failed."
 
   Write-Host "`n[3/5] Start isolated local Next.js server"
-  $server = Start-Process -FilePath "npm.cmd" -ArgumentList @("run","dev","--","--hostname","127.0.0.1","--port",$Port) -WorkingDirectory $web -PassThru -WindowStyle Hidden
+  $server = Start-Process -FilePath "npm.cmd" -ArgumentList @("run","dev","--","--hostname","127.0.0.1","--port",$Port) -WorkingDirectory $web -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog
   Wait-ForServer "$baseUrl/fa/sign-in"
 
   Write-Host "`n[4/5] Verify localized auth routes and legacy redirects"
