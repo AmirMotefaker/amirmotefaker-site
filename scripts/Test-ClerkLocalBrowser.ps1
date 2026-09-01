@@ -88,17 +88,22 @@ function Assert-Page([string]$BaseUrl, [string]$Path) {
 }
 
 function Assert-Redirect([string]$BaseUrl, [string]$Path, [string]$ExpectedLocation) {
+  $handler = [System.Net.Http.HttpClientHandler]::new()
+  $handler.AllowAutoRedirect = $false
+  $client = [System.Net.Http.HttpClient]::new($handler)
+
   try {
-    Invoke-WebRequest -Uri "$BaseUrl$Path" -UseBasicParsing -MaximumRedirection 0 -TimeoutSec 20 | Out-Null
-    throw "Expected redirect for $Path but request returned without redirect."
-  } catch {
-    $response = $_.Exception.Response
-    if (-not $response) { throw }
+    $response = $client.GetAsync("$BaseUrl$Path").GetAwaiter().GetResult()
     $status = [int]$response.StatusCode
-    $location = $response.Headers.Location
+    $location = if ($response.Headers.Location) { $response.Headers.Location.OriginalString } else { $null }
+
     Assert-Ok ($status -in 301,302,303,307,308) "Expected redirect status for $Path, got $status."
     Assert-Ok ($location -eq $ExpectedLocation) "Expected $Path -> $ExpectedLocation, got $location."
     Write-Host "PASS $Path -> $ExpectedLocation"
+  }
+  finally {
+    $client.Dispose()
+    $handler.Dispose()
   }
 }
 
