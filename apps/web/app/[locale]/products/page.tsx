@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ProductsIndexView from "@/components/products/ProductsIndexView";
 import type { Locale } from "@/content/founder-site";
-import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
+import { finalPublicProductPortfolio } from "@/content/final-public-product-portfolio";
 import { getProductDisplayName } from "@/content/product-portfolio";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
@@ -12,11 +12,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const fa = locale === "fa";
   const title = fa ? "محصولات امیر متفکر | ۱۱ محصول فناوری" : "Amir Motefaker Products | 11 Technology Ventures";
   const description = fa
-    ? "پرتفوی رسمی ۱۱ محصول امیر متفکر در هوش مصنوعی، فین‌تک، سلامت دیجیتال، گردشگری هوشمند، آموزش، زبان فارسی، مدیریت لینک، کتاب و سرگرمی."
+    ? "پرتفوی رسمی ۱۱ محصول امیر متفکر در هوش مصنوعی، فناوری مالی، سلامت دیجیتال، گردشگری هوشمند، آموزش، زبان فارسی، مدیریت لینک، کتاب و سرگرمی."
     : "The official 11-product portfolio of Amir Motefaker across AI, FinTech, digital health, smart tourism, education, Persian language technology, link management, books and entertainment.";
   const canonical = `${base}/${locale}/products`;
   const keywords = fa
-    ? ["محصولات امیر متفکر", "پرتفوی امیر متفکر", "محصولات فناوری ایران", "هوش مصنوعی فارسی", "فین‌تک ایران", "فناوری سلامت", "گردشگری هوشمند", "فناوری آموزشی", "مدیریت لینک", "خلاصه کتاب با هوش مصنوعی"]
+    ? ["محصولات امیر متفکر", "پرتفوی امیر متفکر", "محصولات فناوری ایران", "هوش مصنوعی فارسی", "فناوری مالی ایران", "فناوری سلامت", "گردشگری هوشمند", "فناوری آموزشی", "مدیریت لینک", "خلاصه کتاب با هوش مصنوعی"]
     : ["Amir Motefaker products", "Amir Motefaker portfolio", "AI products Iran", "FinTech Iran", "digital health", "smart tourism", "education technology", "Persian AI", "link management", "AI book intelligence"];
 
   return {
@@ -43,7 +43,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     "@type": "CollectionPage",
     "@id": `${pageUrl}#portfolio`,
     name: fa ? "پرتفوی محصولات امیر متفکر" : "Amir Motefaker Product Portfolio",
-    description: fa ? "مرجع رسمی محصولات فناوری ساخته یا هدایت‌شده توسط امیر متفکر." : "The official reference for technology products built or directed by Amir Motefaker.",
+    description: fa ? "مرجع رسمی ۱۱ محصول فناوری ساخته یا هدایت‌شده توسط امیر متفکر." : "The official reference for the 11 technology products built or directed by Amir Motefaker.",
     url: pageUrl,
     inLanguage: fa ? "fa-IR" : "en-US",
     about: { "@id": personId },
@@ -51,8 +51,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     isPartOf: { "@id": `${base}/${locale}/#website` },
     mainEntity: {
       "@type": "ItemList",
-      numberOfItems: canonicalProductPortfolio.length,
-      itemListElement: canonicalProductPortfolio.map((product, index) => ({
+      numberOfItems: finalPublicProductPortfolio.length,
+      itemListElement: finalPublicProductPortfolio.map((product, index) => ({
         "@type": "ListItem",
         position: index + 1,
         item: {
