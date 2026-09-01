@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SignIn } from "@clerk/nextjs";
+import { faIR } from "@clerk/localizations/fa-IR";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
@@ -50,6 +51,7 @@ export default async function SignInPage({ params }: { params: Promise<{ locale:
         <div style={{ display: "grid", placeItems: "center" }}>
           <SignIn
             signUpUrl={`/${locale}/sign-up`}
+            localization={fa ? faIR : undefined}
             appearance={{
               elements: {
                 rootBox: { width: "100%" },
