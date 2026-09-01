@@ -25,6 +25,41 @@ function Test-HttpServer([string]$BaseUrl) {
   }
 }
 
+function Get-ListeningPid([int]$CandidatePort) {
+  try {
+    $conn = Get-NetTCPConnection -LocalAddress 127.0.0.1 -LocalPort $CandidatePort -State Listen -ErrorAction Stop | Select-Object -First 1
+    if ($conn) { return [int]$conn.OwningProcess }
+  } catch {
+    try {
+      $conn = Get-NetTCPConnection -LocalPort $CandidatePort -State Listen -ErrorAction Stop | Select-Object -First 1
+      if ($conn) { return [int]$conn.OwningProcess }
+    } catch { }
+  }
+  return $null
+}
+
+function Stop-StaleNextDev([int]$CandidatePort) {
+  $pidOnPort = Get-ListeningPid $CandidatePort
+  if (-not $pidOnPort) { return $false }
+
+  $proc = Get-CimInstance Win32_Process -Filter "ProcessId=$pidOnPort" -ErrorAction SilentlyContinue
+  if (-not $proc) { return $false }
+
+  $commandLine = [string]$proc.CommandLine
+  $repoMatch = $commandLine -like "*$web*"
+  $nextMatch = $commandLine -match "next(\.cmd)?\s+dev|next\\dist\\bin\\next.*dev"
+
+  if ($repoMatch -and $nextMatch) {
+    Write-Host "Stopping stale Next.js dev server PID $pidOnPort for this QA worktree..."
+    Stop-Process -Id $pidOnPort -Force -ErrorAction Stop
+    Start-Sleep -Seconds 1
+    return $true
+  }
+
+  Write-Host "Port $CandidatePort is occupied by PID $pidOnPort, but it is not a Next.js dev process for this worktree."
+  return $false
+}
+
 function Show-ServerDiagnostics {
   Write-Host "`n--- NEXT DEV STDOUT ---"
   if (Test-Path $stdoutLog) { Get-Content $stdoutLog -Tail 120 }
@@ -90,13 +125,21 @@ try {
   npm run test:clerk-readiness
   Assert-Ok ($LASTEXITCODE -eq 0) "Clerk readiness gate failed."
 
-  Write-Host "`n[3/5] Reuse existing Next.js dev server when available"
+  Write-Host "`n[3/5] Reuse or recover local Next.js dev server"
   $baseUrl = "http://127.0.0.1:$Port"
 
   if (Test-HttpServer $baseUrl) {
     Write-Host "Reusing existing Next.js dev server at $baseUrl"
   } else {
-    Write-Host "No usable server found at $baseUrl. Starting isolated local Next.js server..."
+    $pidOnPort = Get-ListeningPid $Port
+    if ($pidOnPort) {
+      $stopped = Stop-StaleNextDev $Port
+      if (-not $stopped) {
+        throw "Port $Port is occupied by PID $pidOnPort and is not serving the QA route. Stop that process or choose another -Port."
+      }
+    }
+
+    Write-Host "Starting isolated local Next.js server at $baseUrl..."
     $server = Start-Process -FilePath "npm.cmd" -ArgumentList @("run","dev","--","--hostname","127.0.0.1","--port",$Port) -WorkingDirectory $web -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog
     $ownsServer = $true
     Wait-ForServer "$baseUrl/fa/sign-in"
