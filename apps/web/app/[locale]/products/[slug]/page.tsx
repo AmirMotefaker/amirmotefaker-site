@@ -3,26 +3,16 @@ import { notFound } from "next/navigation";
 import ProductDetailView from "@/components/products/ProductDetailView";
 import { getProductDisplayName } from "@/content/product-portfolio";
 import { canonicalProductPortfolio, getCanonicalProduct } from "@/content/canonical-product-portfolio";
+import { getProductTopicCluster } from "@/content/seo-topic-clusters";
 import type { Locale } from "@/content/founder-site";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
-const topicClusters: Record<string, { fa: string[]; en: string[] }> = {
-  restyar: { fa: ["مدیریت رستوران", "مدیریت کافه", "هوش مصنوعی رستوران", "فودتک", "نرم افزار مدیریت رستوران"], en: ["restaurant management", "cafe management", "restaurant AI", "FoodTech", "restaurant management software"] },
-  primesys: { fa: ["نرم افزار سازمانی", "سیستم مدیریت کسب و کار", "اتوماسیون سازمانی", "زیرساخت دیجیتال", "راهکار سازمانی"], en: ["enterprise software", "business management system", "enterprise automation", "digital infrastructure", "enterprise technology"] },
-  linkresan: { fa: ["کوتاه کننده لینک", "مدیریت لینک", "لینک کوتاه", "ساخت QR", "UTM", "تحلیل لینک"], en: ["URL shortener", "link management", "short links", "QR code", "UTM builder", "link analytics"] },
-  farsio: { fa: ["هوش مصنوعی فارسی", "دستیار نوشتن فارسی", "تبدیل متن به گفتار فارسی", "خلاصه سازی فارسی", "فناوری زبان فارسی"], en: ["Persian AI", "Persian writing assistant", "Persian text to speech", "Persian summarization", "Persian language technology"] },
-  fahmio: { fa: ["یادگیری تطبیقی", "آموزش هوشمند", "معلم هوش مصنوعی", "یادگیری شخصی سازی شده", "فناوری آموزشی"], en: ["adaptive learning", "AI education", "AI tutor", "personalized learning", "EdTech"] },
-  zobdino: { fa: ["خلاصه کتاب با هوش مصنوعی", "تبدیل کتاب به صوت", "خلاصه فارسی کتاب", "کتاب صوتی هوش مصنوعی", "هوشمندی کتاب"], en: ["AI book summary", "book to audio", "Persian book summary", "AI audiobook", "book intelligence"] },
-  idehjo: { fa: ["ایده کسب و کار", "ایده استارتاپ", "کشف ایده محصول", "تحلیل ایده", "ایده های فناوری"], en: ["business ideas", "startup ideas", "product idea discovery", "idea analysis", "technology ideas"] },
-  tasvin: { fa: ["فین تک ایران", "تسویه مالی", "تسویه کسب و کار", "پرداخت و تسویه", "تسویه تامین کننده"], en: ["FinTech Iran", "financial settlement", "business settlement", "payments and settlement", "supplier payouts"] },
-  vayran: { fa: ["گردشگری هوشمند ایران", "هوش مصنوعی گردشگری", "راهنمای سفر ایران", "برنامه ریزی سفر", "فناوری گردشگری"], en: ["smart tourism Iran", "AI tourism", "Iran travel guide", "trip planning", "TravelTech"] },
-  darmic: { fa: ["هوش مصنوعی پزشکی", "سلامت دیجیتال", "دستیار پزشکی هوشمند", "اطلاعات پزشکی", "فناوری سلامت"], en: ["medical AI", "digital health", "AI medical assistant", "medical information", "HealthTech"] },
-  filmtrack: { fa: ["ردیابی فیلم و سریال", "لیست تماشای فیلم", "کشف فیلم", "امتیاز فیلم", "پلتفرم فیلم فارسی"], en: ["movie tracking", "movie watchlist", "movie discovery", "movie ratings", "Persian movie platform"] },
-};
-
 export function generateStaticParams() {
-  return canonicalProductPortfolio.flatMap((product) => [{ locale: "fa", slug: product.slug }, { locale: "en", slug: product.slug }]);
+  return canonicalProductPortfolio.flatMap((product) => [
+    { locale: "fa", slug: product.slug },
+    { locale: "en", slug: product.slug },
+  ]);
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
@@ -31,10 +21,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const fa = locale === "fa";
   const product = getCanonicalProduct(slug);
   if (!product) return {};
+
   const displayName = getProductDisplayName(product, locale);
-  const cluster = topicClusters[product.slug]?.[locale] ?? [];
+  const cluster = getProductTopicCluster(product.slug, locale);
   const title = fa ? `${displayName} چیست؟ | محصول فناوری امیر متفکر` : `${displayName} | Technology Product by Amir Motefaker`;
-  const description = fa ? `${product.shortDescriptionFa} معرفی مسئله، راهکار، قابلیت‌ها و نقش امیر متفکر در توسعه ${displayName}.` : `${product.shortDescriptionEn} Explore the problem, solution, capabilities and Amir Motefaker's role in building ${displayName}.`;
+  const description = fa
+    ? `${product.shortDescriptionFa} معرفی مسئله، راهکار، قابلیت‌ها و نقش امیر متفکر در توسعه ${displayName}.`
+    : `${product.shortDescriptionEn} Explore the problem, solution, capabilities and Amir Motefaker's role in building ${displayName}.`;
   const canonical = `${base}/${locale}/products/${product.slug}`;
   const faUrl = `${base}/fa/products/${product.slug}`;
   const enUrl = `${base}/en/products/${product.slug}`;
@@ -43,11 +36,22 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     : [displayName, `${displayName} product`, ...cluster, product.category, "Amir Motefaker"];
 
   return {
-    title, description, keywords,
+    title,
+    description,
+    keywords,
     authors: [{ name: fa ? "امیر متفکر" : "Amir Motefaker", url: `${base}/${locale}/about` }],
     creator: fa ? "امیر متفکر" : "Amir Motefaker",
     alternates: { canonical, languages: { "fa-IR": faUrl, "en-US": enUrl, "x-default": enUrl } },
-    openGraph: { title, description, url: canonical, type: "website", locale: fa ? "fa_IR" : "en_US", alternateLocale: [fa ? "en_US" : "fa_IR"], siteName: fa ? "امیر متفکر" : "Amir Motefaker", images: [{ url: "/assets/profile/amir-motefaker.png", width: 1024, height: 1024, alt: displayName }] },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: "website",
+      locale: fa ? "fa_IR" : "en_US",
+      alternateLocale: [fa ? "en_US" : "fa_IR"],
+      siteName: fa ? "امیر متفکر" : "Amir Motefaker",
+      images: [{ url: "/assets/profile/amir-motefaker.png", width: 1024, height: 1024, alt: displayName }],
+    },
     twitter: { card: "summary_large_image", title, description, images: ["/assets/profile/amir-motefaker.png"] },
   };
 }
@@ -58,32 +62,64 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const fa = locale === "fa";
   const product = getCanonicalProduct(slug);
   if (!product) notFound();
+
   const displayName = getProductDisplayName(product, locale);
-  const cluster = topicClusters[product.slug]?.[locale] ?? [];
+  const cluster = getProductTopicCluster(product.slug, locale);
   const pageUrl = `${base}/${locale}/products/${product.slug}`;
   const productUrl = product.domain ? `https://${product.domain.toLowerCase()}` : pageUrl;
   const personId = `${base}/${locale}/#person`;
   const websiteId = `${base}/${locale}/#website`;
 
   const productSchema = {
-    "@context": "https://schema.org", "@type": "SoftwareApplication", "@id": `${pageUrl}#product`,
-    name: displayName, alternateName: product.name, description: fa ? product.shortDescriptionFa : product.shortDescriptionEn,
-    applicationCategory: product.category, operatingSystem: "Web", url: pageUrl, sameAs: product.domain ? [productUrl] : undefined,
-    mainEntityOfPage: { "@id": `${pageUrl}#webpage` }, inLanguage: fa ? "fa-IR" : "en-US", creator: { "@id": personId }, author: { "@id": personId },
-    isPartOf: { "@id": websiteId }, about: fa ? product.problemFa : product.problemEn, keywords: [displayName, product.category, product.positioning, ...cluster],
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${pageUrl}#product`,
+    name: displayName,
+    alternateName: product.name,
+    description: fa ? product.shortDescriptionFa : product.shortDescriptionEn,
+    applicationCategory: product.category,
+    operatingSystem: "Web",
+    url: pageUrl,
+    sameAs: product.domain ? [productUrl] : undefined,
+    mainEntityOfPage: { "@id": `${pageUrl}#webpage` },
+    inLanguage: fa ? "fa-IR" : "en-US",
+    creator: { "@id": personId },
+    author: { "@id": personId },
+    isPartOf: { "@id": websiteId },
+    about: fa ? product.problemFa : product.problemEn,
+    keywords: [displayName, product.category, product.positioning, ...cluster],
   };
+
   const webPageSchema = {
-    "@context": "https://schema.org", "@type": "WebPage", "@id": `${pageUrl}#webpage`, url: pageUrl,
-    name: fa ? `${displayName} چیست؟` : `${displayName} product profile`, description: fa ? product.shortDescriptionFa : product.shortDescriptionEn,
-    inLanguage: fa ? "fa-IR" : "en-US", isPartOf: { "@id": websiteId }, about: { "@id": `${pageUrl}#product` }, mainEntity: { "@id": `${pageUrl}#product` }, author: { "@id": personId },
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: fa ? `${displayName} چیست؟` : `${displayName} product profile`,
+    description: fa ? product.shortDescriptionFa : product.shortDescriptionEn,
+    inLanguage: fa ? "fa-IR" : "en-US",
+    isPartOf: { "@id": websiteId },
+    about: { "@id": `${pageUrl}#product` },
+    mainEntity: { "@id": `${pageUrl}#product` },
+    author: { "@id": personId },
   };
+
   const breadcrumbSchema = {
-    "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
       { "@type": "ListItem", position: 1, name: fa ? "امیر متفکر" : "Amir Motefaker", item: `${base}/${locale}` },
       { "@type": "ListItem", position: 2, name: fa ? "محصولات" : "Products", item: `${base}/${locale}/products` },
       { "@type": "ListItem", position: 3, name: displayName, item: pageUrl },
     ],
   };
 
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} /><ProductDetailView locale={locale} product={product} /></>;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <ProductDetailView locale={locale} product={product} />
+    </>
+  );
 }
