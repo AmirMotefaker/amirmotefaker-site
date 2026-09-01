@@ -7,6 +7,7 @@ import {
   type Product,
 } from "@/content/product-portfolio";
 import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
+import { getProductTopicCluster } from "@/content/seo-topic-clusters";
 import type { Locale } from "@/content/founder-site";
 import { localeDigits } from "@/lib/locale-format";
 import styles from "./ProductPortfolio.module.css";
@@ -29,6 +30,7 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
   const capabilities = list(fa ? product.capabilitiesFa : product.capabilitiesEn);
   const roadmap = list(fa ? product.roadmapFa : product.roadmapEn);
   const future = fa ? [] : list(product.futureDirections);
+  const topics = getProductTopicCluster(product.slug, locale);
   const evidence = getProductEvidence(product.slug);
   const audience = clean(fa ? product.audienceFa : product.audienceEn);
   const solution = clean(fa ? product.solutionFa : product.solutionEn);
@@ -80,6 +82,17 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
         <article><span>{fa ? "حوزه" : "Category"}</span><strong>{getProductCategory(product, locale)}</strong></article>
         {audience ? <article><span>{fa ? "مخاطبان" : "Audience"}</span><strong>{audience}</strong></article> : null}
       </section>
+
+      {topics.length ? (
+        <section className={`wrap ${styles.sectionShell}`} aria-labelledby={`${product.slug}-topics`}>
+          <div className={styles.sectionHeading}>
+            <span className="sec-tag">{fa ? "موضوعات مرتبط" : "RELATED TOPICS"}</span>
+            <h2 id={`${product.slug}-topics`}>{fa ? `حوزه‌ها و کاربردهای مرتبط با ${name}` : `${name} topics and use cases`}</h2>
+            <p>{fa ? "این موضوعات محدوده مسئله و کاربرد محصول را روشن می‌کنند و برای توضیح بهتر جایگاه آن در صنعت انتخاب شده‌اند." : "These topics clarify the product's problem space and practical context within its industry."}</p>
+          </div>
+          <div className={styles.technologyGrid}>{topics.map((topic) => <span key={topic}>{topic}</span>)}</div>
+        </section>
+      ) : null}
 
       {(problems.length || solution) ? (
         <section className={`wrap ${styles.twoColumnSection}`}>
