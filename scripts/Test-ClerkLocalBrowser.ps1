@@ -9,20 +9,11 @@ $envFile = Join-Path $web ".env.local"
 $artifacts = Join-Path $RepoRoot ".artifacts/clerk-local-qa"
 $server = $null
 $ownsServer = $false
-$stdoutLog = Join-Path $artifacts "next-dev.stdout.log"
-$stderrLog = Join-Path $artifacts "next-dev.stderr.log"
+$stdoutLog = Join-Path $artifacts "next-start.stdout.log"
+$stderrLog = Join-Path $artifacts "next-start.stderr.log"
 
 function Assert-Ok([bool]$Condition, [string]$Message) {
   if (-not $Condition) { throw $Message }
-}
-
-function Test-HttpServer([string]$BaseUrl) {
-  try {
-    $response = Invoke-WebRequest -Uri "$BaseUrl/fa/sign-in" -UseBasicParsing -TimeoutSec 3
-    return ($response.StatusCode -ge 200 -and $response.StatusCode -lt 500)
-  } catch {
-    return $false
-  }
 }
 
 function Get-ListeningPid([int]$CandidatePort) {
@@ -33,24 +24,20 @@ function Get-ListeningPid([int]$CandidatePort) {
   return $null
 }
 
-function Test-PortAvailable([int]$CandidatePort) {
-  return -not (Get-ListeningPid $CandidatePort)
-}
-
 function Get-FreePort([int]$PreferredPort) {
-  if (Test-PortAvailable $PreferredPort) { return $PreferredPort }
+  if (-not (Get-ListeningPid $PreferredPort)) { return $PreferredPort }
 
   foreach ($candidate in ($PreferredPort + 1)..($PreferredPort + 50)) {
-    if (Test-PortAvailable $candidate) { return $candidate }
+    if (-not (Get-ListeningPid $candidate)) { return $candidate }
   }
 
   throw "No free local port found in range $PreferredPort-$($PreferredPort + 50)."
 }
 
 function Show-ServerDiagnostics {
-  Write-Host "`n--- NEXT DEV STDOUT ---"
+  Write-Host "`n--- NEXT START STDOUT ---"
   if (Test-Path $stdoutLog) { Get-Content $stdoutLog -Tail 120 }
-  Write-Host "`n--- NEXT DEV STDERR ---"
+  Write-Host "`n--- NEXT START STDERR ---"
   if (Test-Path $stderrLog) { Get-Content $stderrLog -Tail 120 }
 }
 
@@ -59,7 +46,7 @@ function Wait-ForServer([string]$Url, [int]$TimeoutSeconds = 120) {
   while ((Get-Date) -lt $deadline) {
     if ($server -and $server.HasExited) {
       Show-ServerDiagnostics
-      throw "Next.js dev server exited early with code $($server.ExitCode)."
+      throw "Next.js production server exited early with code $($server.ExitCode)."
     }
 
     try {
@@ -71,7 +58,7 @@ function Wait-ForServer([string]$Url, [int]$TimeoutSeconds = 120) {
   }
 
   Show-ServerDiagnostics
-  throw "Next.js server did not become ready within $TimeoutSeconds seconds."
+  throw "Next.js production server did not become ready within $TimeoutSeconds seconds."
 }
 
 function Assert-Page([string]$BaseUrl, [string]$Path) {
@@ -103,45 +90,36 @@ try {
   New-Item -ItemType Directory -Force -Path $artifacts | Out-Null
   Remove-Item $stdoutLog,$stderrLog -Force -ErrorAction SilentlyContinue
 
-  Write-Host "`n[1/5] Install dependencies"
+  Write-Host "`n[1/6] Install dependencies"
   Push-Location $web
   npm install
   Assert-Ok ($LASTEXITCODE -eq 0) "npm install failed."
 
-  Write-Host "`n[2/5] Run static readiness gate"
+  Write-Host "`n[2/6] Run static readiness gate"
   npm run test:clerk-readiness
   Assert-Ok ($LASTEXITCODE -eq 0) "Clerk readiness gate failed."
 
-  Write-Host "`n[3/5] Reuse or start local Next.js dev server"
+  Write-Host "`n[3/6] Build production bundle"
+  npm run build
+  Assert-Ok ($LASTEXITCODE -eq 0) "Next.js production build failed."
+
+  Write-Host "`n[4/6] Start isolated Next.js production server"
+  $Port = Get-FreePort $Port
   $baseUrl = "http://127.0.0.1:$Port"
-
-  if (Test-HttpServer $baseUrl) {
-    Write-Host "Reusing existing Next.js dev server at $baseUrl"
-  } else {
-    $pidOnPort = Get-ListeningPid $Port
-    if ($pidOnPort) {
-      Write-Host "Port $Port is occupied by PID $pidOnPort and is not serving the QA route."
-      $Port = Get-FreePort ($Port + 1)
-      $baseUrl = "http://127.0.0.1:$Port"
-      Write-Host "Using free QA port $Port instead."
-    }
-
-    Write-Host "Starting isolated local Next.js server at $baseUrl..."
-    $server = Start-Process -FilePath "npm.cmd" -ArgumentList @("run","dev","--","--hostname","127.0.0.1","--port",$Port) -WorkingDirectory $web -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog
-    $ownsServer = $true
-    Wait-ForServer "$baseUrl/fa/sign-in"
-  }
-
   Write-Host "QA base URL: $baseUrl"
 
-  Write-Host "`n[4/5] Verify localized auth routes and legacy redirects"
+  $server = Start-Process -FilePath "npm.cmd" -ArgumentList @("run","start","--","--hostname","127.0.0.1","--port",$Port) -WorkingDirectory $web -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog
+  $ownsServer = $true
+  Wait-ForServer "$baseUrl/fa/sign-in"
+
+  Write-Host "`n[5/6] Verify localized auth routes and legacy redirects"
   foreach ($path in @("/fa/sign-in","/fa/sign-up","/en/sign-in","/en/sign-up")) {
     Assert-Page $baseUrl $path
   }
   Assert-Redirect $baseUrl "/fa/login" "/fa/sign-in"
   Assert-Redirect $baseUrl "/en/login" "/en/sign-in"
 
-  Write-Host "`n[5/5] Capture desktop/mobile browser evidence"
+  Write-Host "`n[6/6] Capture desktop/mobile browser evidence"
   npx -y playwright@latest install chromium
   Assert-Ok ($LASTEXITCODE -eq 0) "Playwright Chromium install failed."
 
@@ -160,7 +138,8 @@ try {
     Assert-Ok ($LASTEXITCODE -eq 0) "Mobile screenshot failed for $($target.Path)."
   }
 
-  Write-Host "`n✓ Four localized Clerk routes return HTTP 200"
+  Write-Host "`n✓ Production build PASS"
+  Write-Host "✓ Four localized Clerk routes return HTTP 200"
   Write-Host "✓ Legacy FA/EN login redirects preserve locale"
   Write-Host "✓ Desktop and mobile browser evidence captured"
   Write-Host "Evidence: $artifacts"
