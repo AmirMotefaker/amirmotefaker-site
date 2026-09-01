@@ -8,6 +8,7 @@ $web = Join-Path $RepoRoot "apps/web"
 $envFile = Join-Path $web ".env.local"
 $artifacts = Join-Path $RepoRoot ".artifacts/clerk-local-qa"
 $server = $null
+$ownsServer = $false
 $stdoutLog = Join-Path $artifacts "next-dev.stdout.log"
 $stderrLog = Join-Path $artifacts "next-dev.stderr.log"
 
@@ -15,31 +16,13 @@ function Assert-Ok([bool]$Condition, [string]$Message) {
   if (-not $Condition) { throw $Message }
 }
 
-function Test-PortAvailable([int]$CandidatePort) {
-  $listener = $null
+function Test-HttpServer([string]$BaseUrl) {
   try {
-    $listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopback, $CandidatePort)
-    $listener.Start()
-    return $true
+    $response = Invoke-WebRequest -Uri "$BaseUrl/fa/sign-in" -UseBasicParsing -TimeoutSec 3
+    return ($response.StatusCode -ge 200 -and $response.StatusCode -lt 500)
   } catch {
     return $false
-  } finally {
-    if ($listener) { $listener.Stop() }
   }
-}
-
-function Get-FreePort([int]$PreferredPort) {
-  if (Test-PortAvailable $PreferredPort) { return $PreferredPort }
-
-  Write-Host "Port $PreferredPort is already in use. Searching for a free QA port..."
-  foreach ($candidate in ($PreferredPort + 1)..($PreferredPort + 50)) {
-    if (Test-PortAvailable $candidate) {
-      Write-Host "Using free port $candidate instead."
-      return $candidate
-    }
-  }
-
-  throw "No free local port found in range $PreferredPort-$($PreferredPort + 50)."
 }
 
 function Show-ServerDiagnostics {
@@ -98,10 +81,6 @@ try {
   New-Item -ItemType Directory -Force -Path $artifacts | Out-Null
   Remove-Item $stdoutLog,$stderrLog -Force -ErrorAction SilentlyContinue
 
-  $Port = Get-FreePort $Port
-  $baseUrl = "http://127.0.0.1:$Port"
-  Write-Host "QA base URL: $baseUrl"
-
   Write-Host "`n[1/5] Install dependencies"
   Push-Location $web
   npm install
@@ -111,9 +90,19 @@ try {
   npm run test:clerk-readiness
   Assert-Ok ($LASTEXITCODE -eq 0) "Clerk readiness gate failed."
 
-  Write-Host "`n[3/5] Start isolated local Next.js server"
-  $server = Start-Process -FilePath "npm.cmd" -ArgumentList @("run","dev","--","--hostname","127.0.0.1","--port",$Port) -WorkingDirectory $web -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog
-  Wait-ForServer "$baseUrl/fa/sign-in"
+  Write-Host "`n[3/5] Reuse existing Next.js dev server when available"
+  $baseUrl = "http://127.0.0.1:$Port"
+
+  if (Test-HttpServer $baseUrl) {
+    Write-Host "Reusing existing Next.js dev server at $baseUrl"
+  } else {
+    Write-Host "No usable server found at $baseUrl. Starting isolated local Next.js server..."
+    $server = Start-Process -FilePath "npm.cmd" -ArgumentList @("run","dev","--","--hostname","127.0.0.1","--port",$Port) -WorkingDirectory $web -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog
+    $ownsServer = $true
+    Wait-ForServer "$baseUrl/fa/sign-in"
+  }
+
+  Write-Host "QA base URL: $baseUrl"
 
   Write-Host "`n[4/5] Verify localized auth routes and legacy redirects"
   foreach ($path in @("/fa/sign-in","/fa/sign-up","/en/sign-in","/en/sign-up")) {
@@ -148,7 +137,7 @@ try {
   Write-Host "`n=== CLERK LOCAL BROWSER QA PASS ==="
 }
 finally {
-  if ($server -and -not $server.HasExited) {
+  if ($ownsServer -and $server -and -not $server.HasExited) {
     Stop-Process -Id $server.Id -Force -ErrorAction SilentlyContinue
   }
   Pop-Location -ErrorAction SilentlyContinue
