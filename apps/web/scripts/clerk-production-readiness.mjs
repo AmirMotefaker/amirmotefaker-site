@@ -55,7 +55,8 @@ assert(signUp.includes("<SignUp"), "Sign-up page must render Clerk SignUp");
 assert(signUp.includes("signInUrl={`/${locale}/sign-in`}"), "Sign-up page must preserve locale when linking to sign-in");
 
 const shell = read("components/founder/AuthAction.tsx");
-assert(shell.includes("useUser"), "AuthAction must read Clerk session state");
+assert(shell.includes("useAuth"), "AuthAction must read Clerk session state");
+assert(shell.includes("isSignedIn"), "AuthAction must branch on Clerk signed-in state");
 assert(shell.includes("UserButton"), "Authenticated users must receive Clerk UserButton");
 
 const layout = read("app/layout.tsx");
