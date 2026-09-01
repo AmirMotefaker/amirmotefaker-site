@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProductDetailView from "@/components/products/ProductDetailView";
 import { getProductDisplayName } from "@/content/product-portfolio";
-import { canonicalProductPortfolio, getCanonicalProduct } from "@/content/canonical-product-portfolio";
+import { finalPublicProductPortfolio, getFinalPublicProduct } from "@/content/final-public-product-portfolio";
 import { getProductTopicCluster } from "@/content/seo-topic-clusters";
 import type { Locale } from "@/content/founder-site";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
 export function generateStaticParams() {
-  return canonicalProductPortfolio.flatMap((product) => [
+  return finalPublicProductPortfolio.flatMap((product) => [
     { locale: "fa", slug: product.slug },
     { locale: "en", slug: product.slug },
   ]);
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
   const fa = locale === "fa";
-  const product = getCanonicalProduct(slug);
+  const product = getFinalPublicProduct(slug);
   if (!product) return {};
 
   const displayName = getProductDisplayName(product, locale);
@@ -60,7 +60,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
   const fa = locale === "fa";
-  const product = getCanonicalProduct(slug);
+  const product = getFinalPublicProduct(slug);
   if (!product) notFound();
 
   const displayName = getProductDisplayName(product, locale);

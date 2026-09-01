@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import FounderShell from "@/components/founder/FounderShell";
 import { founder, type Locale } from "@/content/founder-site";
-import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
+import { finalPublicProductPortfolio } from "@/content/final-public-product-portfolio";
 import { getProductDisplayName } from "@/content/product-portfolio";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
@@ -19,14 +19,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const fa = locale === "fa";
   const title = fa ? "امیر متفکر | کارآفرین و سازنده محصولات فناوری" : "Amir Motefaker | Entrepreneur & Technology Product Builder";
   const description = fa
-    ? "وب‌سایت رسمی امیر متفکر؛ کارآفرین و سازنده محصولات فناوری با بیش از ۳۰ سال حضور در فناوری و پرتفویی شامل رستیار، پرایم سیستم، لینک رسان، فارسیو، فهمیو، زبدینو، ایده جو، تسوین، وایران، دارمیک و فیلم ترک."
-    : "Official website of Amir Motefaker, an entrepreneur and technology product builder with 30+ years in technology and a portfolio spanning AI, FinTech, education, health, tourism, media and digital infrastructure.";
+    ? "وب‌سایت رسمی امیر متفکر؛ کارآفرین و سازنده محصولات فناوری با بیش از ۳۰ سال حضور در فناوری و پرتفویی شامل رستیار، پرایم سیستم، لینک‌رسان، فارسیو، فهمیو، زبدینو، ایده‌جو، تسوین، وایران، دارمیک و فیلم‌ترک."
+    : "Official website of Amir Motefaker, an entrepreneur and technology product builder with 30+ years in technology and an 11-product portfolio spanning AI, FinTech, education, health, tourism, media and digital infrastructure.";
 
   return {
     title,
     description,
     keywords: fa
-      ? ["امیر متفکر", "کارآفرین فناوری", "محصولات فناوری", "هوش مصنوعی", "فین تک", "فناوری سلامت", "فناوری گردشگری", "فناوری آموزشی", "رستیار", "پرایم سیستم", "لینک رسان", "فارسیو", "فهمیو", "زبدینو", "ایده جو", "تسوین", "وایران", "دارمیک", "فیلم ترک"]
+      ? ["امیر متفکر", "کارآفرین فناوری", "محصولات فناوری", "هوش مصنوعی", "فناوری مالی", "فناوری سلامت", "فناوری گردشگری", "فناوری آموزشی", "رستیار", "پرایم سیستم", "لینک‌رسان", "فارسیو", "فهمیو", "زبدینو", "ایده‌جو", "تسوین", "وایران", "دارمیک", "فیلم‌ترک"]
       : ["Amir Motefaker", "technology entrepreneur", "technology products", "artificial intelligence", "FinTech", "digital health", "travel technology", "education technology", "RestYar", "PrimeSYS", "LinkResan", "Farsio", "Fahmio", "Zobdino", "IdehJo", "Tasvin", "Vayran", "Darmic", "FilmTrack"],
     alternates: {
       canonical: `/${locale}`,
@@ -54,10 +54,10 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const websiteId = `${base}/${locale}/#website`;
   const aboutUrl = `${base}/${locale}/about`;
   const knowsAbout = fa
-    ? ["کارآفرینی فناوری", "هوش مصنوعی", "طراحی و توسعه محصول دیجیتال", "فین‌تک", "فناوری آموزشی", "فناوری سلامت", "فناوری گردشگری", "رسانه دیجیتال", "زیرساخت نرم‌افزار", "تجربه کاربری"]
+    ? ["کارآفرینی فناوری", "هوش مصنوعی", "طراحی و توسعه محصول دیجیتال", "فناوری مالی", "فناوری آموزشی", "فناوری سلامت", "فناوری گردشگری", "رسانه دیجیتال", "زیرساخت نرم‌افزار", "تجربه کاربری"]
     : ["Technology Entrepreneurship", "Artificial Intelligence", "Digital Product Development", "FinTech", "Education Technology", "Health Technology", "Travel Technology", "Digital Media", "Software Infrastructure", "User Experience"];
 
-  const productRefs = canonicalProductPortfolio.map((product) => ({
+  const productRefs = finalPublicProductPortfolio.map((product) => ({
     "@id": `${base}/${locale}/products/${product.slug}#product`,
   }));
 
@@ -73,7 +73,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         mainEntityOfPage: { "@id": `${aboutUrl}#profile` },
         image: { "@type": "ImageObject", url: `${base}/assets/profile/amir-motefaker.png` },
         description: fa
-          ? "امیر متفکر، کارآفرین و سازنده مجموعه‌ای از محصولات مستقل فناوری در حوزه‌های هوش مصنوعی، فین‌تک، آموزش، سلامت، گردشگری، رسانه و زیرساخت دیجیتال است."
+          ? "امیر متفکر، کارآفرین و سازنده مجموعه‌ای از محصولات مستقل فناوری در حوزه‌های هوش مصنوعی، فناوری مالی، آموزش، سلامت، گردشگری، رسانه و زیرساخت دیجیتال است."
           : "Amir Motefaker is an entrepreneur and builder of independent technology products across AI, FinTech, education, health, tourism, media and digital infrastructure.",
         jobTitle: fa ? "کارآفرین و سازنده محصولات فناوری" : "Entrepreneur and Technology Product Builder",
         sameAs: [founder.github, founder.linkedin, founder.x, founder.kaggle].filter(Boolean),
@@ -96,7 +96,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
           { "@type": "CollectionPage", name: fa ? "یادداشت‌ها" : "Notes", url: `${base}/${locale}/notes` },
         ],
       },
-      ...canonicalProductPortfolio.map((product) => ({
+      ...finalPublicProductPortfolio.map((product) => ({
         "@type": "SoftwareApplication",
         "@id": `${base}/${locale}/products/${product.slug}#product`,
         name: getProductDisplayName(product, locale),
