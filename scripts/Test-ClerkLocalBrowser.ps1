@@ -7,6 +7,7 @@ $ErrorActionPreference = "Stop"
 $web = Join-Path $RepoRoot "apps/web"
 $envFile = Join-Path $web ".env.local"
 $artifacts = Join-Path $RepoRoot ".artifacts/clerk-local-qa"
+$browserQa = Join-Path $RepoRoot "scripts/clerk-local-browser-cdp.mjs"
 $server = $null
 $ownsServer = $false
 $stdoutLog = Join-Path $artifacts "next-start.stdout.log"
@@ -90,6 +91,7 @@ function Assert-Page([string]$BaseUrl, [string]$Path) {
 try {
   Write-Host "`n=== CLERK LOCAL BROWSER QA ==="
   Assert-Ok (Test-Path $envFile) "Missing apps/web/.env.local. Run Clerk development env pull first."
+  Assert-Ok (Test-Path $browserQa) "Missing browser QA helper: $browserQa"
 
   New-Item -ItemType Directory -Force -Path $artifacts | Out-Null
   Remove-Item $stdoutLog,$stderrLog -Force -ErrorAction SilentlyContinue
@@ -122,52 +124,12 @@ try {
   }
 
   Write-Host "`n[6/6] Verify browser redirects and capture desktop/mobile evidence"
-  npx -y playwright@latest install chromium
-  Assert-Ok ($LASTEXITCODE -eq 0) "Playwright Chromium install failed."
-
-  $redirectProbe = Join-Path $artifacts "verify-legacy-login.mjs"
-  @"
-import { chromium } from 'playwright';
-const browser = await chromium.launch({ headless: true });
-const page = await browser.newPage();
-const cases = [
-  ['/fa/login', '/fa/sign-in'],
-  ['/en/login', '/en/sign-in'],
-];
-for (const [from, to] of cases) {
-  await page.goto('$baseUrl' + from, { waitUntil: 'networkidle' });
-  const actual = new URL(page.url()).pathname;
-  if (actual !== to) {
-    throw new Error(`Expected ${from} -> ${to}, got ${actual}`);
-  }
-  console.log(`PASS ${from} -> ${to}`);
-}
-await browser.close();
-"@ | Set-Content -Path $redirectProbe -Encoding utf8
-
-  npx -y -p playwright@latest node $redirectProbe
-  Assert-Ok ($LASTEXITCODE -eq 0) "Browser redirect verification failed."
-
-  $targets = @(
-    @{ Path="/fa/sign-in"; Name="fa-sign-in" },
-    @{ Path="/fa/sign-up"; Name="fa-sign-up" },
-    @{ Path="/en/sign-in"; Name="en-sign-in" },
-    @{ Path="/en/sign-up"; Name="en-sign-up" }
-  )
-
-  foreach ($target in $targets) {
-    npx -y playwright@latest screenshot --wait-for-timeout=1500 --viewport-size="1440,1000" "$baseUrl$($target.Path)" (Join-Path $artifacts "$($target.Name)-desktop.png")
-    Assert-Ok ($LASTEXITCODE -eq 0) "Desktop screenshot failed for $($target.Path)."
-
-    npx -y playwright@latest screenshot --wait-for-timeout=1500 --device="iPhone 13" "$baseUrl$($target.Path)" (Join-Path $artifacts "$($target.Name)-mobile.png")
-    Assert-Ok ($LASTEXITCODE -eq 0) "Mobile screenshot failed for $($target.Path)."
-  }
-
-  Remove-Item $redirectProbe -Force -ErrorAction SilentlyContinue
+  node $browserQa $baseUrl $artifacts
+  Assert-Ok ($LASTEXITCODE -eq 0) "System Chrome browser QA failed."
 
   Write-Host "`n✓ Production build PASS"
   Write-Host "✓ Four localized Clerk routes return HTTP 200"
-  Write-Host "✓ Legacy FA/EN login redirects preserve locale in a real browser"
+  Write-Host "✓ Legacy FA/EN login redirects preserve locale in system Chrome"
   Write-Host "✓ Desktop and mobile browser evidence captured"
   Write-Host "Evidence: $artifacts"
   Write-Host "`n=== CLERK LOCAL BROWSER QA PASS ==="
