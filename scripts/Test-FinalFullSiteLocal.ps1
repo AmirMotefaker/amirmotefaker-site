@@ -13,8 +13,8 @@ function Test-Page([string]$Path, [int]$ExpectedStatus = 200) {
   $url = "$BaseUrl$Path"
   try {
     $response = Invoke-WebRequest -Uri $url -UseBasicParsing -TimeoutSec 30
-    Assert-Ok ($response.StatusCode -eq $ExpectedStatus) "Expected HTTP $ExpectedStatus for $Path, got $($response.StatusCode)."
-    Assert-Ok ($response.Content -notmatch 'Internal Server Error') "Internal Server Error rendered for $Path."
+    Assert-Ok ([bool]($response.StatusCode -eq $ExpectedStatus)) "Expected HTTP $ExpectedStatus for $Path, got $($response.StatusCode)."
+    Assert-Ok ([bool]($response.Content -notmatch 'Internal Server Error')) "Internal Server Error rendered for $Path."
     Write-Host "PASS $Path [$($response.StatusCode)]" -ForegroundColor Green
     return $response
   }
@@ -88,7 +88,7 @@ foreach ($path in @(
 Write-Host "`n[5/6] Clerk browser redirects + desktop/mobile auth evidence"
 $clerkArtifacts = Join-Path $artifacts "clerk"
 node (Join-Path $PSScriptRoot "clerk-local-browser-cdp.mjs") $BaseUrl $clerkArtifacts
-Assert-Ok ($LASTEXITCODE -eq 0) "Clerk browser QA failed."
+Assert-Ok ([bool]($LASTEXITCODE -eq 0)) "Clerk browser QA failed."
 
 Write-Host "`n[6/6] Desktop/mobile screenshots for critical public routes"
 $chromeCandidates = @(
@@ -100,7 +100,7 @@ $chromeCandidates = @(
   "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 ) | Where-Object { $_ -and (Test-Path $_) }
 
-Assert-Ok ($chromeCandidates.Count -gt 0) "No supported Chrome/Edge executable found."
+Assert-Ok ([bool]($chromeCandidates.Count -gt 0)) "No supported Chrome/Edge executable found."
 $chrome = $chromeCandidates[0]
 
 $evidenceRoutes = @(
@@ -136,8 +136,8 @@ foreach ($route in $evidenceRoutes) {
       "--screenshot=$shot" `
       $url | Out-Null
 
-    Assert-Ok ($LASTEXITCODE -eq 0) "Browser screenshot failed: $url ($($viewport.Name))"
-    Assert-Ok (Test-Path $shot) "Screenshot missing: $shot"
+    Assert-Ok ([bool]($LASTEXITCODE -eq 0)) "Browser screenshot failed: $url ($($viewport.Name))"
+    Assert-Ok ([bool](Test-Path $shot)) "Screenshot missing: $shot"
     Write-Host "PASS screenshot $($route.Name) $($viewport.Name)" -ForegroundColor Green
   }
 }
