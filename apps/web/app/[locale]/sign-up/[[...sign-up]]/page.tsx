@@ -29,7 +29,7 @@ export default async function SignUpPage({ params }: { params: Promise<{ locale:
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
-        padding: "clamp(132px, 14vw, 176px) 20px 64px",
+        padding: "clamp(184px, 18vw, 228px) 20px 64px",
         background: "radial-gradient(circle at 50% 8%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 38%)",
       }}
     >
