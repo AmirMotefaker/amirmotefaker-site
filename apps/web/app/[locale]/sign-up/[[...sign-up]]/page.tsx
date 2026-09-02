@@ -29,28 +29,19 @@ export default async function SignUpPage({ params }: { params: Promise<{ locale:
         background: "radial-gradient(circle at 50% 8%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 38%)",
       }}
     >
-      <div style={{ height: "clamp(96px, 10vw, 120px)", flex: "0 0 auto" }} aria-hidden="true" />
+      <div style={{ height: "clamp(118px, 12vw, 148px)" }} aria-hidden="true" />
       <section
         style={{
           width: "min(100% - 40px, 440px)",
           margin: "0 auto",
           paddingBottom: 64,
           display: "grid",
-          gap: 20,
+          gap: 18,
         }}
       >
-        <header style={{ textAlign: "center", paddingInline: 8 }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 12, color: "var(--text-faint)", marginBottom: 10 }}>
-            <span style={{ width: 26, height: 2, borderRadius: 999, background: "var(--accent)" }} />
-            <span>{fa ? "عضویت" : "MEMBERSHIP"}</span>
-          </div>
-          <h1 style={{ margin: 0, fontSize: "clamp(1.85rem, 5vw, 2.65rem)", lineHeight: 1.25 }}>
-            {fa ? "ساخت حساب کاربری" : "Create your account"}
-          </h1>
-          <p style={{ margin: "10px auto 0", maxWidth: 390, color: "var(--text-dim)", fontSize: 14, lineHeight: 1.8 }}>
-            {fa ? "برای دسترسی به امکانات حساب کاربری، ثبت‌نام امن را تکمیل کنید." : "Create a secure account to access member features."}
-          </p>
-        </header>
+        <p style={{ margin: 0, textAlign: "center", color: "var(--text-dim)", fontSize: 14, lineHeight: 1.8 }}>
+          {fa ? "برای دسترسی به امکانات حساب کاربری، ثبت‌نام امن را تکمیل کنید." : "Create a secure account to access member features."}
+        </p>
 
         <div lang="en" dir="ltr" style={{ width: "100%", display: "grid", placeItems: "center", isolation: "isolate" }}>
           <SignUp
