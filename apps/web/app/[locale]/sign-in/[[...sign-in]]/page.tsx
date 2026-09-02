@@ -26,14 +26,19 @@ export default async function SignInPage({ params }: { params: Promise<{ locale:
       dir={fa ? "rtl" : "ltr"}
       style={{
         minHeight: "100svh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-start",
-        padding: "clamp(184px, 18vw, 228px) 20px 64px",
         background: "radial-gradient(circle at 50% 8%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 38%)",
       }}
     >
-      <section style={{ width: "min(100%, 440px)", display: "grid", gap: 18 }}>
+      <div style={{ height: "clamp(96px, 10vw, 120px)", flex: "0 0 auto" }} aria-hidden="true" />
+      <section
+        style={{
+          width: "min(100% - 40px, 440px)",
+          margin: "0 auto",
+          paddingBottom: 64,
+          display: "grid",
+          gap: 20,
+        }}
+      >
         <header style={{ textAlign: "center", paddingInline: 8 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 12, color: "var(--text-faint)", marginBottom: 10 }}>
             <span style={{ width: 26, height: 2, borderRadius: 999, background: "var(--accent)" }} />
