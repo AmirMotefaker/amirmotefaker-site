@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import type { Locale } from "@/content/founder-site";
 
@@ -17,7 +17,6 @@ export default function LocaleSwitch({
   children: ReactNode;
 }) {
   const pathname = usePathname() || `/${locale}`;
-  const searchParams = useSearchParams();
   const targetLocale: Locale = locale === "fa" ? "en" : "fa";
   const segments = pathname.split("/");
 
@@ -27,12 +26,15 @@ export default function LocaleSwitch({
     segments.splice(1, 0, targetLocale);
   }
 
-  const localizedPath = segments.join("/") || `/${targetLocale}`;
-  const query = searchParams.toString();
-  const href = query ? `${localizedPath}?${query}` : localizedPath;
+  const href = segments.join("/") || `/${targetLocale}`;
 
   return (
-    <Link href={href} className={className} aria-label={ariaLabel} hrefLang={targetLocale === "fa" ? "fa-IR" : "en-US"}>
+    <Link
+      href={href}
+      className={className}
+      aria-label={ariaLabel}
+      hrefLang={targetLocale === "fa" ? "fa-IR" : "en-US"}
+    >
       {children}
     </Link>
   );
