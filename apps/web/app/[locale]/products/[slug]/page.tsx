@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import ProductDetailView from "@/components/products/ProductDetailView";
 import { getProductDisplayName } from "@/content/product-portfolio";
 import { finalPublicProductPortfolio, getFinalPublicProduct } from "@/content/final-public-product-portfolio";
@@ -18,6 +18,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
+  if (slug === "tasvin") return {};
+
   const fa = locale === "fa";
   const product = getFinalPublicProduct(slug);
   if (!product) return {};
@@ -59,6 +61,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function Page({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
+  if (slug === "tasvin") permanentRedirect(`/${locale}/products/tasvia`);
+
   const fa = locale === "fa";
   const product = getFinalPublicProduct(slug);
   if (!product) notFound();
