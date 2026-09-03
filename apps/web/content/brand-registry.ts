@@ -13,8 +13,11 @@ export type BrandRegistryEntry = {
 
 /**
  * Founder-confirmed canonical portfolio, ordered for all public surfaces.
- * The first eight products are live. Tasvin, Vayran and Darmic are final
+ * The first eight products are live. Tasvia, Vayran and Darmic are final
  * product brands but their public sites are not launched yet.
+ *
+ * Tasvia's public domain is intentionally left blank until it is verified;
+ * public structured data must never invent a sameAs destination.
  */
 export const brandRegistry = [
   {
@@ -81,10 +84,10 @@ export const brandRegistry = [
     order: 70,
   },
   {
-    slug: "tasvin",
-    name: "Tasvin",
-    nameFa: "تسوین",
-    domain: "tasvin.ir",
+    slug: "tasvia",
+    name: "Tasvia",
+    nameFa: "تسویا",
+    domain: "",
     classification: "pending-classification",
     claimStatus: "founder-confirmed",
     order: 80,
