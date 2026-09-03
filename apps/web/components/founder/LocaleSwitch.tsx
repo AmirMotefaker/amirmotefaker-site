@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import type { MouseEvent, ReactNode } from "react";
 import type { Locale } from "@/content/founder-site";
 
@@ -17,6 +17,7 @@ export default function LocaleSwitch({
   children: ReactNode;
 }) {
   const pathname = usePathname() || `/${locale}`;
+  const router = useRouter();
   const targetLocale: Locale = locale === "fa" ? "en" : "fa";
   const segments = pathname.split("/");
 
@@ -31,7 +32,7 @@ export default function LocaleSwitch({
   const preserveQuery = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!window.location.search) return;
     event.preventDefault();
-    window.location.assign(`${localizedPath}${window.location.search}`);
+    router.push(`${localizedPath}${window.location.search}`);
   };
 
   return (
