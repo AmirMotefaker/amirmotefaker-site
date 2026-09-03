@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState, type ReactNode } from "react";
+import type { MouseEvent, ReactNode } from "react";
 import type { Locale } from "@/content/founder-site";
 
 export default function LocaleSwitch({
@@ -17,13 +17,8 @@ export default function LocaleSwitch({
   children: ReactNode;
 }) {
   const pathname = usePathname() || `/${locale}`;
-  const [search, setSearch] = useState("");
   const targetLocale: Locale = locale === "fa" ? "en" : "fa";
   const segments = pathname.split("/");
-
-  useEffect(() => {
-    setSearch(window.location.search);
-  }, [pathname]);
 
   if (segments[1] === "fa" || segments[1] === "en") {
     segments[1] = targetLocale;
@@ -32,14 +27,20 @@ export default function LocaleSwitch({
   }
 
   const localizedPath = segments.join("/") || `/${targetLocale}`;
-  const href = `${localizedPath}${search}`;
+
+  const preserveQuery = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!window.location.search) return;
+    event.preventDefault();
+    window.location.assign(`${localizedPath}${window.location.search}`);
+  };
 
   return (
     <Link
-      href={href}
+      href={localizedPath}
       className={className}
       aria-label={ariaLabel}
       hrefLang={targetLocale === "fa" ? "fa-IR" : "en-US"}
+      onClick={preserveQuery}
     >
       {children}
     </Link>
