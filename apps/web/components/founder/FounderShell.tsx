@@ -14,21 +14,24 @@ const labels = {
     timeline: "مسیر حرفه‌ای", news: "اخبار فناوری", contact: "تماس با ما", login: "ورود",
     sitemap: "نقشه سایت", interest: "علاقه‌مند به فناوری",
     footerText: "ساخت و توسعه محصولات دیجیتال با تمرکز بر مسئله واقعی، تجربه کاربر و استفاده عملی از فناوری.",
-    quickLinks: "دسترسی سریع", productLinks: "محصولات", contactBlock: "ارتباط", rights: "تمام حقوق محفوظ است.",
-    languageSwitch: "تغییر زبان", menu: "منو", soon: "به‌زودی",
+    quickLinks: "دسترسی سریع", productLinks: "پرتفوی محصولات", contactBlock: "ارتباط", rights: "تمام حقوق محفوظ است.",
+    languageSwitch: "تغییر زبان", menu: "منو", soon: "به‌زودی", portfolioCount: "محصول مستقل",
+    productMenuHint: "مشاهده صفحه اختصاصی محصول", explorePortfolio: "مشاهده همه محصولات",
   },
   en: {
     home: "Home", about: "About", products: "Products", thesis: "Thesis", notes: "Notes",
     timeline: "Journey", news: "Technology News", contact: "Contact", login: "Sign in",
     sitemap: "Sitemap", interest: "Tech-savvy",
     footerText: "Building and developing digital products around real problems, user experience and practical technology.",
-    quickLinks: "Quick Links", productLinks: "Products", contactBlock: "Contact", rights: "All rights reserved.",
-    languageSwitch: "Change language", menu: "Menu", soon: "Coming soon",
+    quickLinks: "Quick Links", productLinks: "Product Portfolio", contactBlock: "Contact", rights: "All rights reserved.",
+    languageSwitch: "Change language", menu: "Menu", soon: "Coming soon", portfolioCount: "independent products",
+    productMenuHint: "Open dedicated product page", explorePortfolio: "Explore all products",
   },
 };
 
 const GlobeIcon = () => <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3c2.2 2.4 3.3 5.4 3.3 9S14.2 18.6 12 21c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3Z"/></svg>;
 const MailIcon = () => <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 7l8 6 8-6"/></svg>;
+const ArrowIcon = () => <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10M11 6l4 4-4 4"/></svg>;
 
 export default function FounderShell({ locale, children }: { locale: Locale; children: React.ReactNode }) {
   const l = labels[locale];
@@ -45,6 +48,8 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
     { href: `/${locale}/contact`, label: l.contact },
   ];
   const productName = (p: (typeof brandRegistry)[number]) => fa ? p.nameFa : p.name;
+  const productSecondary = (p: (typeof brandRegistry)[number]) => fa ? p.name : p.domain;
+  const productCount = fa ? localeDigits(String(brandRegistry.length), locale) : String(brandRegistry.length);
 
   return (
     <div className={`founder-site ${styles.shell} ${mobile.mobileFinal}`} lang={locale} dir={fa ? "rtl" : "ltr"}>
@@ -57,8 +62,31 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
 
           <div className={styles.links}>
             <div className={styles.productsMenu}>
-              <Link href={`/${locale}/products`} className={styles.productsTrigger}>{l.products}<span className={styles.chevron}/></Link>
-              <div className={styles.megaMenu}><div className={styles.megaGrid}>{brandRegistry.map(product => <Link key={product.slug} href={`/${locale}/products/${product.slug}`} className={styles.megaProduct}>{productName(product)}</Link>)}</div></div>
+              <Link href={`/${locale}/products`} className={styles.productsTrigger} aria-haspopup="true">
+                {l.products}<span className={styles.chevron}/>
+              </Link>
+              <div className={styles.megaBridge} aria-hidden="true" />
+              <div className={styles.megaMenu}>
+                <div className={styles.megaHead}>
+                  <div>
+                    <strong>{l.productLinks}</strong>
+                    <span>{productCount} {l.portfolioCount}</span>
+                  </div>
+                  <Link href={`/${locale}/products`} className={styles.megaAll}>{l.explorePortfolio}<ArrowIcon /></Link>
+                </div>
+                <div className={styles.megaGrid}>
+                  {brandRegistry.map((product, index) => (
+                    <Link key={product.slug} href={`/${locale}/products/${product.slug}`} className={styles.megaProduct}>
+                      <span className={styles.megaIndex}>{fa ? localeDigits(String(index + 1).padStart(2, "0"), locale) : String(index + 1).padStart(2, "0")}</span>
+                      <span className={styles.megaProductCopy}>
+                        <strong>{productName(product)}</strong>
+                        <small dir="ltr">{productSecondary(product)}</small>
+                      </span>
+                      <span className={styles.megaArrow}><ArrowIcon /></span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
             {navigation.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}
           </div>
@@ -79,7 +107,7 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
                 {navigation.slice(1).map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}
                 <AuthAction locale={locale} variant="mobile" />
               </nav>
-              <div className={styles.mobileProducts}>{brandRegistry.map(product => <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>{productName(product)}</Link>)}</div>
+              <div className={styles.mobileProducts}>{brandRegistry.map(product => <Link key={product.slug} href={`/${locale}/products/${product.slug}`}><strong>{productName(product)}</strong><small dir="ltr">{productSecondary(product)}</small></Link>)}</div>
               <div className={styles.mobileTheme}><ThemeToggle locale={locale}/></div>
               <div className={styles.mobileUtilities}><Link href={`/${other}`}>{l.languageSwitch}</Link></div>
             </div>
@@ -89,37 +117,53 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
 
       {children}
 
-      <footer className="site-footer">
-        <div className="wrap footer-grid">
-          <div className="footer-brand">
-            <div className="footer-brand-top">
-              <span className="brand-avatar brand-avatar-sm"><Image src="/assets/profile/amir-motefaker.png" alt={fa ? founder.nameFa : founder.nameEn} width={44} height={44}/></span>
-              <div className="brand-copy"><strong>{fa ? founder.nameFa : founder.nameEn}</strong><small>{l.interest}</small></div>
+      <footer className={styles.footer}>
+        <div className={`wrap ${styles.footerTop}`}>
+          <div className={styles.footerIdentity}>
+            <div className={styles.footerBrandTop}>
+              <span className={styles.footerAvatar}><Image src="/assets/profile/amir-motefaker.png" alt={fa ? founder.nameFa : founder.nameEn} width={52} height={52}/></span>
+              <div className={styles.footerBrandCopy}><strong>{fa ? founder.nameFa : founder.nameEn}</strong><small>{l.interest}</small></div>
             </div>
             <p>{l.footerText}</p>
+            <div className={styles.footerPortfolioBadge}><strong>{productCount}</strong><span>{l.portfolioCount}</span></div>
           </div>
-          <div className="footer-links-block">
+
+          <div className={styles.footerNavBlock}>
             <h3>{l.quickLinks}</h3>
-            <div className="footer-links">
-              {navigation.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}
-              <Link href={`/${locale}/products`}>{l.products}</Link>
+            <div className={styles.footerNavLinks}>
+              {navigation.map(item => <Link key={item.href} href={item.href}>{item.label}<span>↗</span></Link>)}
+              <Link href={`/${locale}/products`}>{l.products}<span>↗</span></Link>
               <AuthAction locale={locale} variant="footer" />
             </div>
           </div>
-          <div className="footer-links-block">
-            <h3>{l.productLinks}</h3>
-            <div className="footer-links">{brandRegistry.map(product => <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>{productName(product)}</Link>)}</div>
-          </div>
-          <div className="footer-links-block">
-            <h3>{l.contactBlock}</h3>
-            <div className="footer-links footer-links-compact">
-              <a href={`mailto:${founder.email}`}>{founder.email}</a>
-              <a href={`tel:${founder.phoneHref}`} dir="ltr">{fa ? localeDigits(founder.phone, locale) : founder.phone}</a>
-              <span>{fa ? founder.cityFa : founder.cityEn}</span>
+
+          <div className={styles.footerProductsBlock}>
+            <div className={styles.footerProductsHead}>
+              <h3>{l.productLinks}</h3>
+              <Link href={`/${locale}/products`}>{l.explorePortfolio}</Link>
+            </div>
+            <div className={styles.footerProductGrid}>
+              {brandRegistry.map(product => (
+                <Link key={product.slug} href={`/${locale}/products/${product.slug}`} className={styles.footerProductLink}>
+                  <strong>{productName(product)}</strong>
+                  <small dir="ltr">{productSecondary(product)}</small>
+                </Link>
+              ))}
             </div>
           </div>
+
+          <div className={styles.footerContact}>
+            <h3>{l.contactBlock}</h3>
+            <a href={`mailto:${founder.email}`} dir="ltr">{founder.email}</a>
+            <a href={`tel:${founder.phoneHref}`} dir="ltr">{fa ? localeDigits(founder.phone, locale) : founder.phone}</a>
+            <span>{fa ? founder.cityFa : founder.cityEn}</span>
+            <Link href={`/${locale}/contact`} className={styles.footerContactCta}>{l.contact}<ArrowIcon /></Link>
+          </div>
         </div>
-        <div className="wrap footer-bottom"><span>© {formatSiteYear(new Date(), locale)} {title}. {l.rights}</span></div>
+        <div className={`wrap ${styles.footerBottom}`}>
+          <span>© {formatSiteYear(new Date(), locale)} {title}. {l.rights}</span>
+          <span className={styles.footerDomain}>AmirMotefaker.ir</span>
+        </div>
       </footer>
     </div>
   );
