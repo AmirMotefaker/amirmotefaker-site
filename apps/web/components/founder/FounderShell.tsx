@@ -48,7 +48,8 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
     { href: `/${locale}/contact`, label: l.contact },
   ];
   const productName = (p: (typeof brandRegistry)[number]) => fa ? p.nameFa : p.name;
-  const productSecondary = (p: (typeof brandRegistry)[number]) => fa ? p.name : p.domain;
+  const productSecondary = (p: (typeof brandRegistry)[number]) => fa ? p.name : p.nameFa;
+  const secondaryDirection = fa ? "ltr" : "rtl";
   const productCount = fa ? localeDigits(String(brandRegistry.length), locale) : String(brandRegistry.length);
 
   return (
@@ -80,7 +81,7 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
                       <span className={styles.megaIndex}>{fa ? localeDigits(String(index + 1).padStart(2, "0"), locale) : String(index + 1).padStart(2, "0")}</span>
                       <span className={styles.megaProductCopy}>
                         <strong>{productName(product)}</strong>
-                        <small dir="ltr">{productSecondary(product)}</small>
+                        <small dir={secondaryDirection}>{productSecondary(product)}</small>
                       </span>
                       <span className={styles.megaArrow}><ArrowIcon /></span>
                     </Link>
@@ -107,7 +108,7 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
                 {navigation.slice(1).map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}
                 <AuthAction locale={locale} variant="mobile" />
               </nav>
-              <div className={styles.mobileProducts}>{brandRegistry.map(product => <Link key={product.slug} href={`/${locale}/products/${product.slug}`}><strong>{productName(product)}</strong><small dir="ltr">{productSecondary(product)}</small></Link>)}</div>
+              <div className={styles.mobileProducts}>{brandRegistry.map(product => <Link key={product.slug} href={`/${locale}/products/${product.slug}`}><strong>{productName(product)}</strong><small dir={secondaryDirection}>{productSecondary(product)}</small></Link>)}</div>
               <div className={styles.mobileTheme}><ThemeToggle locale={locale}/></div>
               <div className={styles.mobileUtilities}><Link href={`/${other}`}>{l.languageSwitch}</Link></div>
             </div>
@@ -146,7 +147,7 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
               {brandRegistry.map(product => (
                 <Link key={product.slug} href={`/${locale}/products/${product.slug}`} className={styles.footerProductLink}>
                   <strong>{productName(product)}</strong>
-                  <small dir="ltr">{productSecondary(product)}</small>
+                  <small dir={secondaryDirection}>{productSecondary(product)}</small>
                 </Link>
               ))}
             </div>
