@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { getLegacyPosts } from "@/lib/legacy-wordpress";
+import { getLegacyPosts, normalizeLegacySlug } from "@/lib/legacy-wordpress";
 import { formatSiteDate, formatSiteNumber } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
 import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
@@ -98,7 +98,7 @@ export default async function Page({
       itemListElement: visible.map((post, index) => ({
         "@type": "ListItem",
         position: start + index + 1,
-        url: `${base}/${locale}/news/${encodeURIComponent(post.slug)}`,
+        url: `${base}/${locale}/news/${encodeURIComponent(normalizeLegacySlug(post.slug))}`,
         name: post.title,
       })),
     },
@@ -150,7 +150,7 @@ export default async function Page({
 
           <div className="legacy-news-grid">
             {visible.map((post) => (
-              <Link key={post.id} href={`/${locale}/news/${encodeURIComponent(post.slug)}`} className="news-card">
+              <Link key={post.id} href={`/${locale}/news/${normalizeLegacySlug(post.slug)}`} className="news-card">
                 <div className="news-cover">
                   {post.featured_image ? (
                     <Image src={post.featured_image} alt={post.title} width={960} height={540} unoptimized />
