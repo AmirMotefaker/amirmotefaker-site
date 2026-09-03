@@ -100,7 +100,7 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
           </div>
 
           <details className={styles.mobile}>
-            <summary><span className={styles.menuIcon}><i/><i/><i/></span></summary>
+            <summary aria-label={l.menu}><span className={styles.menuIcon}><i/><i/><i/></span></summary>
             <div className={styles.mobilePanel}>
               <nav>
                 <Link href={`/${locale}`}>{l.home}</Link>
