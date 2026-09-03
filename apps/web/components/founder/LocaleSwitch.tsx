@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import type { Locale } from "@/content/founder-site";
 
 export default function LocaleSwitch({
@@ -17,8 +17,13 @@ export default function LocaleSwitch({
   children: ReactNode;
 }) {
   const pathname = usePathname() || `/${locale}`;
+  const [search, setSearch] = useState("");
   const targetLocale: Locale = locale === "fa" ? "en" : "fa";
   const segments = pathname.split("/");
+
+  useEffect(() => {
+    setSearch(window.location.search);
+  }, [pathname]);
 
   if (segments[1] === "fa" || segments[1] === "en") {
     segments[1] = targetLocale;
@@ -26,7 +31,8 @@ export default function LocaleSwitch({
     segments.splice(1, 0, targetLocale);
   }
 
-  const href = segments.join("/") || `/${targetLocale}`;
+  const localizedPath = segments.join("/") || `/${targetLocale}`;
+  const href = `${localizedPath}${search}`;
 
   return (
     <Link
