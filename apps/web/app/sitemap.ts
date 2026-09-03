@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { finalPublicProductPortfolio } from "@/content/final-public-product-portfolio";
-import { getLegacyPosts } from "@/lib/legacy-wordpress";
+import { getLegacyPosts, normalizeLegacySlug } from "@/lib/legacy-wordpress";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 const locales = ["fa", "en"] as const;
@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
 
     for (const post of getLegacyPosts()) {
-      const path = `/news/${encodeURIComponent(post.slug)}`;
+      const path = `/news/${encodeURIComponent(normalizeLegacySlug(post.slug))}`;
       routes.push({
         url: `${base}/${locale}${path}`,
         lastModified: new Date(post.modified || post.date),
