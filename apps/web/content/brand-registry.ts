@@ -20,7 +20,7 @@ export const brandRegistry = [
   {
     slug: "restyar",
     name: "RestYar",
-    nameFa: "رِستیار",
+    nameFa: "رستیار",
     domain: "restyar.ir",
     classification: "active",
     claimStatus: "founder-confirmed",
@@ -29,7 +29,7 @@ export const brandRegistry = [
   {
     slug: "primesys",
     name: "PrimeSYS",
-    nameFa: "پرایم سیستم",
+    nameFa: "پرایم‌سیستم",
     domain: "primesys.ir",
     classification: "active",
     claimStatus: "founder-confirmed",
