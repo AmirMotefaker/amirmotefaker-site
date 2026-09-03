@@ -4,6 +4,7 @@ import { founder, type Locale } from "@/content/founder-site";
 import { brandRegistry } from "@/content/brand-registry";
 import ThemeToggle from "@/components/founder/ThemeToggle";
 import AuthAction from "@/components/founder/AuthAction";
+import LocaleSwitch from "@/components/founder/LocaleSwitch";
 import { formatSiteYear, localeDigits } from "@/lib/locale-format";
 import styles from "./FounderShell.module.css";
 import mobile from "./MobileFinal.module.css";
@@ -36,7 +37,6 @@ const ArrowIcon = () => <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 
 export default function FounderShell({ locale, children }: { locale: Locale; children: React.ReactNode }) {
   const l = labels[locale];
   const fa = locale === "fa";
-  const other = fa ? "en" : "fa";
   const title = fa ? founder.titleFa : founder.titleEn;
   const navigation = [
     { href: `/${locale}`, label: l.home },
@@ -94,7 +94,7 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
 
           <div className={styles.actions}>
             <span className={styles.themeAction}><ThemeToggle locale={locale}/></span>
-            <Link href={`/${other}`} className={styles.iconAction} aria-label={l.languageSwitch}><GlobeIcon/></Link>
+            <LocaleSwitch locale={locale} className={styles.iconAction} ariaLabel={l.languageSwitch}><GlobeIcon/></LocaleSwitch>
             <Link href={`/${locale}/contact`} className={styles.iconAction} aria-label={l.contact}><MailIcon/></Link>
             <AuthAction locale={locale} className={styles.iconAction} />
           </div>
@@ -110,7 +110,7 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
               </nav>
               <div className={styles.mobileProducts}>{brandRegistry.map(product => <Link key={product.slug} href={`/${locale}/products/${product.slug}`}><strong>{productName(product)}</strong><small dir={secondaryDirection}>{productSecondary(product)}</small></Link>)}</div>
               <div className={styles.mobileTheme}><ThemeToggle locale={locale}/></div>
-              <div className={styles.mobileUtilities}><Link href={`/${other}`}>{l.languageSwitch}</Link></div>
+              <div className={styles.mobileUtilities}><LocaleSwitch locale={locale} ariaLabel={l.languageSwitch}>{l.languageSwitch}</LocaleSwitch></div>
             </div>
           </details>
         </nav>
