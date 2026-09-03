@@ -70,7 +70,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const displayName = getProductDisplayName(product, locale);
   const cluster = getProductTopicCluster(product.slug, locale);
   const pageUrl = `${base}/${locale}/products/${product.slug}`;
-  const productUrl = product.domain ? `https://${product.domain.toLowerCase()}` : pageUrl;
+  const verifiedProductUrl = product.domain ? `https://${product.domain.toLowerCase()}` : undefined;
   const personId = `${base}/${locale}/#person`;
   const websiteId = `${base}/${locale}/#website`;
 
@@ -84,7 +84,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     applicationCategory: product.category,
     operatingSystem: "Web",
     url: pageUrl,
-    sameAs: product.domain ? [productUrl] : undefined,
+    sameAs: verifiedProductUrl ? [verifiedProductUrl] : undefined,
     mainEntityOfPage: { "@id": `${pageUrl}#webpage` },
     inLanguage: fa ? "fa-IR" : "en-US",
     creator: { "@id": personId },
