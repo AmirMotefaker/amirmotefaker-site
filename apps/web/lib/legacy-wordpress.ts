@@ -56,12 +56,34 @@ function readJson<T>(filePath: string, fallback: T): T {
   }
 }
 
+/**
+ * Legacy WordPress exports may contain slugs that are already percent-encoded.
+ * Decode defensively so routing compares semantic slugs instead of their wire
+ * representation and never creates `%25...` double-encoded article URLs.
+ */
+export function normalizeLegacySlug(value: string) {
+  let normalized = value;
+
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    try {
+      const decoded = decodeURIComponent(normalized);
+      if (decoded === normalized) break;
+      normalized = decoded;
+    } catch {
+      break;
+    }
+  }
+
+  return normalized.normalize("NFC");
+}
+
 export function getLegacyPosts() {
   return readJson<LegacyPostIndexItem[]>(path.join(root, "post-index.json"), []);
 }
 
 export function getLegacyPostBySlug(slug: string) {
-  const item = getLegacyPosts().find((post) => post.slug === slug);
+  const normalizedSlug = normalizeLegacySlug(slug);
+  const item = getLegacyPosts().find((post) => normalizeLegacySlug(post.slug) === normalizedSlug);
   if (!item) return null;
   return readJson<LegacyPost | null>(path.join(root, "posts", `${item.id}.json`), null);
 }
@@ -71,7 +93,8 @@ export function getLegacyPages() {
 }
 
 export function getLegacyPageBySlug(slug: string) {
-  const item = getLegacyPages().find((page) => page.slug === slug);
+  const normalizedSlug = normalizeLegacySlug(slug);
+  const item = getLegacyPages().find((page) => normalizeLegacySlug(page.slug) === normalizedSlug);
   if (!item) return null;
   return readJson<LegacyPage | null>(path.join(root, "pages", `${item.id}.json`), null);
 }
