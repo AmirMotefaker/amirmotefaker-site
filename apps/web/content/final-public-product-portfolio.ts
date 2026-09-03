@@ -1,4 +1,4 @@
-import { canonicalProductPortfolio, getCanonicalProduct } from "@/content/canonical-product-portfolio";
+import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
 import type { Product } from "@/content/product-portfolio";
 import { brandRegistry } from "@/content/brand-registry";
 
@@ -33,11 +33,7 @@ function syntheticProduct(input: {
   if (!template) throw new Error("Canonical product template is unavailable");
 
   const filterGroup: Product["filterGroup"] =
-    input.slug === "tasvin"
-      ? "FinTech"
-      : input.slug === "darmic"
-        ? "AI & Intelligent Products"
-        : "Digital Platforms";
+    input.slug === "darmic" ? "AI & Intelligent Products" : "Digital Platforms";
 
   return clone(template, {
     slug: input.slug,
@@ -96,36 +92,6 @@ function syntheticProduct(input: {
   });
 }
 
-const tasvia = getCanonicalProduct("tasvia");
-const tasvin = tasvia
-  ? clone(tasvia, {
-      slug: "tasvin",
-      name: "Tasvin",
-      domain: "tasvin.ir",
-      status: "development",
-      shortDescriptionFa: "تسوین یک پلتفرم فین‌تک برای مدیریت شفاف، ساختاریافته و قابل پیگیری پرداخت و تسویه مالی کسب‌وکارها است.",
-      shortDescriptionEn: "Tasvin is a FinTech platform for transparent, structured and traceable business payments and settlements.",
-    })
-  : syntheticProduct({
-      slug: "tasvin",
-      name: "Tasvin",
-      domain: "tasvin.ir",
-      industryFa: "فناوری مالی",
-      industryEn: "FinTech",
-      category: "Business Settlement Platform",
-      positioning: "Business Settlement & Financial Infrastructure",
-      shortDescriptionFa: "تسوین یک پلتفرم فین‌تک برای مدیریت شفاف، ساختاریافته و قابل پیگیری پرداخت و تسویه مالی کسب‌وکارها است.",
-      shortDescriptionEn: "Tasvin is a FinTech platform for transparent, structured and traceable business payments and settlements.",
-      titleFa: "تسویه مالی شفاف برای کسب‌وکارها.",
-      titleEn: "Transparent business settlement infrastructure.",
-      problemFa: ["فرایندهای پرداخت و تسویه میان کسب‌وکارها و تأمین‌کنندگان می‌تواند پراکنده و کم‌شفاف باشد."],
-      problemEn: ["Business payment and supplier settlement workflows can be fragmented and difficult to track."],
-      solutionFa: "تسوین جریان پرداخت و تسویه را در یک فرایند دیجیتال شفاف و قابل پیگیری یکپارچه می‌کند.",
-      solutionEn: "Tasvin unifies payments and settlements into a transparent, traceable digital workflow.",
-      capabilitiesFa: ["تسویه کسب‌وکار", "ثبت و پیگیری پرداخت", "گزارش مالی", "جریان مالی شفاف"],
-      capabilitiesEn: ["Business settlement", "Payment tracking", "Financial reporting", "Transparent money flows"],
-    });
-
 const vayran = syntheticProduct({
   slug: "vayran",
   name: "Vayran",
@@ -169,7 +135,6 @@ const darmic = syntheticProduct({
 const canonicalBySlug = new Map(canonicalProductPortfolio.map((product) => [product.slug, product]));
 
 export const finalPublicProductPortfolio: Product[] = brandRegistry.map((brand) => {
-  if (brand.slug === "tasvin") return tasvin;
   if (brand.slug === "vayran") return vayran;
   if (brand.slug === "darmic") return darmic;
 
