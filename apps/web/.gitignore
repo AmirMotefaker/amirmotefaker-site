@@ -3,3 +3,14 @@ next-env.d.ts
 *.bak
 *.backup
 *.bak-*
+
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+
+.env*
+!.env.example
