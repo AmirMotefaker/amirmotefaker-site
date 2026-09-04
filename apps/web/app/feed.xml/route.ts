@@ -1,4 +1,4 @@
-import { getLegacyPosts } from "@/lib/legacy-wordpress";
+import { getLegacyPosts, normalizeLegacySlug } from "@/lib/legacy-wordpress";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
@@ -19,7 +19,7 @@ export async function GET() {
 
   const items = posts
     .map((post) => {
-      const link = `${base}/fa/news/${encodeURIComponent(post.slug)}`;
+      const link = `${base}/fa/news/${encodeURIComponent(normalizeLegacySlug(post.slug))}`;
       const categories = post.categories
         .map((category) => `<category>${escapeXml(category.name)}</category>`)
         .join("");

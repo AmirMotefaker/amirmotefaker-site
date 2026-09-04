@@ -75,6 +75,24 @@
   font-family:var(--font-mono);
   font-size:10px;
 }
+.cardIndex{
+  width:max-content;
+  min-width:42px;
+  margin-bottom:22px!important;
+  padding-bottom:7px;
+  border-bottom:2px solid color-mix(in srgb,var(--text) 72%,transparent);
+  color:var(--text)!important;
+  font-family:var(--font-fa)!important;
+  font-size:clamp(1.05rem,1.65vw,1.35rem)!important;
+  font-weight:850!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  font-variant-numeric:tabular-nums;
+}
+:global(.founder-site[dir="ltr"]) .cardIndex{
+  font-family:var(--font-en)!important;
+  font-weight:800!important;
+}
 .card h3{
   margin:0 0 14px;
   font-size:1.12rem;
@@ -123,4 +141,5 @@
 @media (max-width:900px){
   .sectionIntro{grid-template-columns:1fr;gap:18px}
   .grid{grid-template-columns:1fr}
+  .cardIndex{font-size:1.2rem!important;min-width:44px}
 }

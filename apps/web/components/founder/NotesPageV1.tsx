@@ -44,7 +44,7 @@ export default function NotesPageV1({ locale }: { locale: Locale }) {
           <div className={styles.grid}>
             {noteTypes[locale].map(([index, title, body]) => (
               <article className={styles.card} key={title}>
-                <span>{fa ? localeDigits(index, locale) : index}</span><h3>{title}</h3><p>{body}</p>
+                <span className={styles.cardIndex}>{fa ? localeDigits(index, locale) : index}</span><h3>{title}</h3><p>{body}</p>
               </article>
             ))}
           </div>

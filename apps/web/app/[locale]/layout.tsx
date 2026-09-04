@@ -19,15 +19,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const fa = locale === "fa";
   const title = fa ? "امیر متفکر | کارآفرین و سازنده محصولات فناوری" : "Amir Motefaker | Entrepreneur & Technology Product Builder";
   const description = fa
-    ? "وب‌سایت رسمی امیر متفکر؛ کارآفرین و سازنده محصولات فناوری با بیش از ۳۰ سال حضور در فناوری و پرتفویی شامل رستیار، پرایم سیستم، لینک‌رسان، فارسیو، فهمیو، زبدینو، ایده‌جو، تسوین، وایران، دارمیک و فیلم‌ترک."
+    ? "وب‌سایت رسمی امیر متفکر؛ کارآفرین و سازنده محصولات فناوری با بیش از ۳۰ سال حضور در فناوری و پرتفویی شامل رستیار، پرایم‌سیستم، لینک‌رسان، فارسیو، فهمیو، زبدینو، ایده‌جو، تسویا، وایران، دارمیک و فیلم‌ترک."
     : "Official website of Amir Motefaker, an entrepreneur and technology product builder with 30+ years in technology and an 11-product portfolio spanning AI, FinTech, education, health, tourism, media and digital infrastructure.";
 
   return {
     title,
     description,
     keywords: fa
-      ? ["امیر متفکر", "کارآفرین فناوری", "محصولات فناوری", "هوش مصنوعی", "فناوری مالی", "فناوری سلامت", "فناوری گردشگری", "فناوری آموزشی", "رستیار", "پرایم سیستم", "لینک‌رسان", "فارسیو", "فهمیو", "زبدینو", "ایده‌جو", "تسوین", "وایران", "دارمیک", "فیلم‌ترک"]
-      : ["Amir Motefaker", "technology entrepreneur", "technology products", "artificial intelligence", "FinTech", "digital health", "travel technology", "education technology", "RestYar", "PrimeSYS", "LinkResan", "Farsio", "Fahmio", "Zobdino", "IdehJo", "Tasvin", "Vayran", "Darmic", "FilmTrack"],
+      ? ["امیر متفکر", "کارآفرین فناوری", "محصولات فناوری", "هوش مصنوعی", "فناوری مالی", "فناوری سلامت", "فناوری گردشگری", "فناوری آموزشی", "رستیار", "پرایم‌سیستم", "لینک‌رسان", "فارسیو", "فهمیو", "زبدینو", "ایده‌جو", "تسویا", "وایران", "دارمیک", "فیلم‌ترک"]
+      : ["Amir Motefaker", "technology entrepreneur", "technology products", "artificial intelligence", "FinTech", "digital health", "travel technology", "education technology", "RestYar", "PrimeSYS", "LinkResan", "Farsio", "Fahmio", "Zobdino", "IdehJo", "Tasvia", "Vayran", "Darmic", "FilmTrack"],
     alternates: {
       canonical: `/${locale}`,
       languages: { "fa-IR": "/fa", "en-US": "/en", "x-default": "/en" },

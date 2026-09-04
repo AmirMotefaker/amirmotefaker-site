@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getLegacyPostBySlug } from "@/lib/legacy-wordpress";
+import { getLegacyPostBySlug, normalizeLegacySlug } from "@/lib/legacy-wordpress";
 import { formatSiteDate } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
 import { getProductDisplayName } from "@/content/product-portfolio";
@@ -13,11 +13,12 @@ const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
-  const post = getLegacyPostBySlug(decodeURIComponent(slug));
+  const post = getLegacyPostBySlug(slug);
   if (!post) return {};
 
   const fa = locale === "fa";
-  const url = `${base}/${locale}/news/${encodeURIComponent(post.slug)}`;
+  const canonicalSlug = encodeURIComponent(normalizeLegacySlug(post.slug));
+  const url = `${base}/${locale}/news/${canonicalSlug}`;
   const description = post.excerpt_text || (fa ? "خبر و نوشته فناوری در AmirMotefaker.ir" : "Technology article on AmirMotefaker.ir");
 
   return {
@@ -26,9 +27,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: {
       canonical: url,
       languages: {
-        "fa-IR": `${base}/fa/news/${encodeURIComponent(post.slug)}`,
-        "en-US": `${base}/en/news/${encodeURIComponent(post.slug)}`,
-        "x-default": `${base}/en/news/${encodeURIComponent(post.slug)}`,
+        "fa-IR": `${base}/fa/news/${canonicalSlug}`,
+        "en-US": `${base}/en/news/${canonicalSlug}`,
+        "x-default": `${base}/en/news/${canonicalSlug}`,
       },
     },
     openGraph: {
@@ -54,11 +55,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function Page({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale: raw, slug } = await params;
   const locale: Locale = raw === "en" ? "en" : "fa";
-  const post = getLegacyPostBySlug(decodeURIComponent(slug));
+  const post = getLegacyPostBySlug(slug);
   if (!post) notFound();
 
   const fa = locale === "fa";
-  const articleUrl = `${base}/${locale}/news/${encodeURIComponent(post.slug)}`;
+  const articleUrl = `${base}/${locale}/news/${encodeURIComponent(normalizeLegacySlug(post.slug))}`;
   const personId = `${base}/${locale}/#person`;
   const relatedProducts = getRelatedNewsProducts({
     title: post.title,
