@@ -73,6 +73,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const verifiedProductUrl = product.domain ? `https://${product.domain.toLowerCase()}` : undefined;
   const personId = `${base}/${locale}/#person`;
   const websiteId = `${base}/${locale}/#website`;
+  const description = fa ? product.shortDescriptionFa : product.shortDescriptionEn;
+  const problem = (fa ? product.problemFa : product.problemEn)?.find((item) => item?.trim()) || (fa ? product.solutionFa : product.solutionEn) || description;
 
   const productSchema = {
     "@context": "https://schema.org",
@@ -80,7 +82,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     "@id": `${pageUrl}#product`,
     name: displayName,
     alternateName: product.name,
-    description: fa ? product.shortDescriptionFa : product.shortDescriptionEn,
+    description,
     applicationCategory: product.category,
     operatingSystem: "Web",
     url: pageUrl,
@@ -100,7 +102,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     "@id": `${pageUrl}#webpage`,
     url: pageUrl,
     name: fa ? `${displayName} چیست؟` : `${displayName} product profile`,
-    description: fa ? product.shortDescriptionFa : product.shortDescriptionEn,
+    description,
     inLanguage: fa ? "fa-IR" : "en-US",
     isPartOf: { "@id": websiteId },
     about: { "@id": `${pageUrl}#product` },
@@ -118,11 +120,35 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ],
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${pageUrl}#faq`,
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: fa ? `${displayName} چیست؟` : `What is ${displayName}?`,
+        acceptedAnswer: { "@type": "Answer", text: description },
+      },
+      {
+        "@type": "Question",
+        name: fa ? `${displayName} چه مسئله‌ای را حل می‌کند؟` : `What problem does ${displayName} solve?`,
+        acceptedAnswer: { "@type": "Answer", text: problem },
+      },
+      ...(product.domain ? [{
+        "@type": "Question",
+        name: fa ? `وب‌سایت رسمی ${displayName} چیست؟` : `What is the official ${displayName} website?`,
+        acceptedAnswer: { "@type": "Answer", text: fa ? `وب‌سایت رسمی این محصول ${product.domain} است.` : `The official product website is ${product.domain}.` },
+      }] : []),
+    ],
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ProductDetailView locale={locale} product={product} />
     </>
   );
