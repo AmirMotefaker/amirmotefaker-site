@@ -42,17 +42,33 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
   const productPromise = clean(fa ? product.productPromiseFa : product.productPromiseEn);
   const amirRole = clean(fa ? product.amirRoleFa : product.amirRoleEn);
   const related = canonicalProductPortfolio.filter((item) => product.related?.includes(item.slug));
+  const description = fa ? product.shortDescriptionFa : product.shortDescriptionEn;
+  const problemAnswer = problems[0] || solution || description;
+  const faq = [
+    {
+      q: fa ? `${name} چیست؟` : `What is ${name}?`,
+      a: description,
+    },
+    {
+      q: fa ? `${name} چه مسئله‌ای را حل می‌کند؟` : `What problem does ${name} solve?`,
+      a: problemAnswer,
+    },
+    ...(product.domain ? [{
+      q: fa ? `وب‌سایت رسمی ${name} چیست؟` : `What is the official ${name} website?`,
+      a: fa ? `وب‌سایت رسمی این محصول ${product.domain} است.` : `The official product website is ${product.domain}.`,
+    }] : []),
+  ];
 
   return (
     <main className={styles.detailPage} data-product-theme={product.slug}>
       <section className={`wrap ${styles.productHero}`}>
         <div className={styles.heroCopy}>
           <span className="sec-tag">{getProductIndustry(product, locale)}</span>
-          {!fa && product.domain ? <div className={`ltr ${styles.heroDomain}`}>{product.domain}</div> : null}
+          {product.domain ? <div className={`ltr ${styles.heroDomain}`}>{product.domain}</div> : null}
           <h1>{name}</h1>
           {!fa && product.positioning ? <p className={styles.heroPositioning}>{product.positioning}</p> : null}
           {heroTitle ? <h2>{heroTitle}</h2> : null}
-          <p>{heroDescription || (fa ? product.shortDescriptionFa : product.shortDescriptionEn)}</p>
+          <p>{heroDescription || description}</p>
           <div className={styles.heroActions}>
             {product.domain ? (
               <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">{fa ? "وب‌سایت رسمی محصول" : `Visit ${name}`} ↗</a>
@@ -149,6 +165,15 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
         </section>
       ) : null}
 
+      <section className={`wrap ${styles.sectionShell}`} aria-labelledby={`${product.slug}-faq`}>
+        <div className={styles.sectionHeading}>
+          <span className="sec-tag">{fa ? "پاسخ سریع" : "QUICK ANSWERS"}</span>
+          <h2 id={`${product.slug}-faq`}>{fa ? `پرسش‌های متداول درباره ${name}` : `Frequently asked questions about ${name}`}</h2>
+          <p>{fa ? "پاسخ‌های کوتاه و مستقیم بر اساس اطلاعات تأییدشده همین صفحه." : "Short, direct answers based on the verified information on this page."}</p>
+        </div>
+        <div className={styles.capabilityGrid}>{faq.map((item, index) => <article key={item.q}><span>{localeDigits(String(index + 1).padStart(2, "0"), locale)}</span><h3>{item.q}</h3><p>{item.a}</p>{index === 2 && product.domain ? <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer">{product.domain} ↗</a> : null}</article>)}</div>
+      </section>
+
       {related.length ? (
         <section className={`wrap ${styles.sectionShell}`}>
           <div className={styles.sectionHeading}><span className="sec-tag">{fa ? "محصولات مرتبط" : "RELATED PRODUCTS"}</span><h2>{fa ? "ادامه در اکوسیستم" : "Continue through the ecosystem"}</h2></div>
@@ -157,8 +182,8 @@ export default function ProductDetailView({ locale, product }: { locale: Locale;
       ) : null}
 
       <section className={`wrap ${styles.productClosing}`}>
-        <div><span className="sec-tag">{fa ? "پرتفوی" : "PORTFOLIO"}</span><h2>{fa ? "این محصول بخشی از یک اکوسیستم چندمحصولی است." : "This product is part of a multi-product ecosystem."}</h2></div>
-        <div className={styles.heroActions}><Link href={`/${locale}/products`} className="btn btn-ghost">{fa ? "همه محصولات" : "All products"}</Link><Link href={`/${locale}/contact`} className="btn btn-primary">{fa ? "تماس و همکاری" : "Contact & collaborate"}</Link></div>
+        <div><span className="sec-tag">{fa ? "پرتفوی" : "PORTFOLIO"}</span><h2>{fa ? "این محصول بخشی از یک اکوسیستم یازده‌محصولی است." : "This product is part of an eleven-product ecosystem."}</h2></div>
+        <div className={styles.heroActions}><Link href={`/${locale}/products`} className="btn btn-ghost">{fa ? "همه محصولات" : "All products"}</Link>{product.domain ? <a href={`https://${product.domain.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">{fa ? "ورود به سایت محصول" : `Visit ${name}`} ↗</a> : <Link href={`/${locale}/contact`} className="btn btn-primary">{fa ? "تماس و همکاری" : "Contact & collaborate"}</Link>}</div>
       </section>
     </main>
   );
