@@ -145,6 +145,8 @@ export const activePortfolioBrands = brandRegistry
   .filter((brand) => brand.classification === "active")
   .sort((a, b) => a.order - b.order);
 
-export const pendingPortfolioAssets = brandRegistry
-  .filter((brand) => brand.classification === "pending-classification")
-  .sort((a, b) => a.order - b.order);
+// All eleven founder-confirmed products currently have active public destinations.
+// Keep an explicitly typed empty collection to preserve the public API without
+// forcing TypeScript to compare the literal-only active registry against an
+// impossible pending classification.
+export const pendingPortfolioAssets: readonly BrandRegistryEntry[] = [];
