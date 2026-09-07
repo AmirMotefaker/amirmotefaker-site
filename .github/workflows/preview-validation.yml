@@ -36,6 +36,7 @@ jobs:
 
       - name: Runtime news routing smoke
         env:
+          OPENNEXT_DEV: "0"
           NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_test_ZXhhbXBsZS5jbGVyay5hY2NvdW50cy5kZXYk
           CLERK_SECRET_KEY: sk_test_ci_smoke_only_not_a_real_secret
         run: |
@@ -45,7 +46,7 @@ jobs:
 
           ready=0
           for attempt in $(seq 1 30); do
-            if curl --fail --silent --show-error http://127.0.0.1:3000/fa/news > /tmp/am-news-index.html; then
+            if curl --max-time 2 --fail --silent --show-error http://127.0.0.1:3000/fa/news > /tmp/am-news-index.html; then
               ready=1
               break
             fi
@@ -65,7 +66,7 @@ jobs:
           fi
 
           article_url='http://127.0.0.1:3000/fa/news/%D8%A8%D9%88%D9%85-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C-%D8%AF%D8%B1-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D8%AD%D8%A8%D8%A7%D8%A8-%D8%A7%D8%B3%D8%AA'
-          curl --fail --silent --show-error "$article_url" > /tmp/am-news-detail.html
+          curl --max-time 5 --fail --silent --show-error "$article_url" > /tmp/am-news-detail.html
 
           grep -q 'بوم هوش مصنوعی در مرحله اولیه حباب است' /tmp/am-news-detail.html
 
