@@ -2,6 +2,12 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  outputFileTracingIncludes: {
+    '/*': [
+      './content/legacy/wordpress/post-index.json',
+      './content/legacy/wordpress/posts/**/*.json',
+    ],
+  },
   async redirects() {
     return [
       {
