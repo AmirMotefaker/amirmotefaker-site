@@ -2,13 +2,30 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getLegacyPostBySlug, normalizeLegacySlug } from "@/lib/legacy-wordpress";
+import { getLegacyPostBySlug, getLegacyPosts, normalizeLegacySlug } from "@/lib/legacy-wordpress";
 import { formatSiteDate } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
 import { getProductDisplayName } from "@/content/product-portfolio";
 import { getRelatedNewsProducts } from "@/content/news-authority";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
+
+/**
+ * Legacy WordPress article JSON files are filesystem content. Pre-render every
+ * indexed article at build time so Cloudflare/OpenNext never needs to discover
+ * a computed posts/<id>.json path at runtime.
+ */
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getLegacyPosts().flatMap((post) => {
+    const slug = normalizeLegacySlug(post.slug);
+    return [
+      { locale: "fa", slug },
+      { locale: "en", slug },
+    ];
+  });
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale: raw, slug } = await params;

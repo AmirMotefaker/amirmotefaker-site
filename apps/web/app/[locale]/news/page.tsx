@@ -9,6 +9,7 @@ import { getProductDisplayName } from "@/content/product-portfolio";
 
 const PAGE_SIZE = 12;
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
+const newsSlug = (slug: string) => encodeURIComponent(normalizeLegacySlug(slug));
 
 export async function generateMetadata({
   params,
@@ -98,7 +99,7 @@ export default async function Page({
       itemListElement: visible.map((post, index) => ({
         "@type": "ListItem",
         position: start + index + 1,
-        url: `${base}/${locale}/news/${encodeURIComponent(normalizeLegacySlug(post.slug))}`,
+        url: `${base}/${locale}/news/${newsSlug(post.slug)}`,
         name: post.title,
       })),
     },
@@ -150,7 +151,7 @@ export default async function Page({
 
           <div className="legacy-news-grid">
             {visible.map((post) => (
-              <Link key={post.id} href={`/${locale}/news/${normalizeLegacySlug(post.slug)}`} className="news-card">
+              <Link key={post.id} href={`/${locale}/news/${newsSlug(post.slug)}`} className="news-card">
                 <div className="news-cover">
                   {post.featured_image ? (
                     <Image src={post.featured_image} alt={post.title} width={960} height={540} unoptimized />
