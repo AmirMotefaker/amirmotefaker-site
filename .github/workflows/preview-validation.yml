@@ -35,6 +35,9 @@ jobs:
         run: npm run build
 
       - name: Runtime news routing smoke
+        env:
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_test_ZXhhbXBsZS5jbGVyay5hY2NvdW50cy5kZXYk
+          CLERK_SECRET_KEY: sk_test_ci_smoke_only_not_a_real_secret
         run: |
           npm run start -- --hostname 127.0.0.1 --port 3000 > /tmp/am-news-next.log 2>&1 &
           server_pid=$!
