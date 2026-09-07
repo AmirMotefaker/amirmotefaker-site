@@ -11,11 +11,11 @@ import { getRelatedNewsProducts } from "@/content/news-authority";
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
 
 /**
- * Legacy WordPress article JSON files are filesystem content. Pre-render every
- * indexed article at build time so Cloudflare/OpenNext never needs to discover
- * a computed posts/<id>.json path at runtime.
+ * Pre-render every indexed legacy article for the fast path, while still
+ * accepting equivalent percent-encoded legacy URLs at runtime. The runtime
+ * bundle explicitly traces the WordPress JSON corpus in next.config.ts.
  */
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return getLegacyPosts().flatMap((post) => {
