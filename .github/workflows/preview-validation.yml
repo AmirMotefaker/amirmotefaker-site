@@ -34,6 +34,48 @@ jobs:
       - name: Production build
         run: npm run build
 
+      - name: Runtime news routing smoke
+        env:
+          OPENNEXT_DEV: "0"
+          NEWS_ROUTING_SMOKE: "1"
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_test_ZXhhbXBsZS5jbGVyay5hY2NvdW50cy5kZXYk
+          CLERK_SECRET_KEY: sk_test_ci_smoke_only_not_a_real_secret
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3000 > /tmp/am-news-next.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+
+          ready=0
+          for attempt in $(seq 1 30); do
+            if curl --max-time 2 --fail --silent --show-error http://127.0.0.1:3000/fa/news > /tmp/am-news-index.html; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+
+          if [ "$ready" -ne 1 ]; then
+            cat /tmp/am-news-next.log
+            exit 1
+          fi
+
+          grep -q 'اخبار فناوری و هوش مصنوعی' /tmp/am-news-index.html
+
+          if grep -Eqi 'href="/fa/news/%25[0-9a-f]{2}' /tmp/am-news-index.html; then
+            echo 'Double-encoded legacy news href detected.'
+            exit 1
+          fi
+
+          article_url='http://127.0.0.1:3000/fa/news/%D8%A8%D9%88%D9%85-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C-%D8%AF%D8%B1-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D8%AD%D8%A8%D8%A7%D8%A8-%D8%A7%D8%B3%D8%AA'
+          curl --max-time 5 --fail --silent --show-error "$article_url" > /tmp/am-news-detail.html
+
+          grep -q 'بوم هوش مصنوعی در مرحله اولیه حباب است' /tmp/am-news-detail.html
+
+          if grep -q 'NEXT_HTTP_ERROR_FALLBACK;404' /tmp/am-news-detail.html; then
+            echo 'Legacy news detail resolved to the Next.js 404 boundary.'
+            exit 1
+          fi
+
       - name: Repository diff hygiene
         working-directory: .
         run: git diff --check
