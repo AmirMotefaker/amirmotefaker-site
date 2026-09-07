@@ -9,7 +9,7 @@ import { getProductDisplayName } from "@/content/product-portfolio";
 
 const PAGE_SIZE = 12;
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
-const newsSlug = (slug: string) => encodeURIComponent(normalizeLegacySlug(slug));
+const newsSlug = (slug: string) => normalizeLegacySlug(slug);
 
 export async function generateMetadata({
   params,
