@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
-import ProductDetailView from "@/components/products/ProductDetailView";
+import ProductDetailExperience from "@/components/products/ProductDetailExperience";
 import { getProductDisplayName } from "@/content/product-portfolio";
 import { finalPublicProductPortfolio, getFinalPublicProduct } from "@/content/final-public-product-portfolio";
 import { getProductTopicCluster } from "@/content/seo-topic-clusters";
@@ -149,7 +149,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <ProductDetailView locale={locale} product={product} />
+      <ProductDetailExperience locale={locale} product={product} />
     </>
   );
 }
