@@ -7,6 +7,7 @@ import AuthAction from "@/components/founder/AuthAction";
 import LocaleSwitch from "@/components/founder/LocaleSwitch";
 import { formatSiteYear, localeDigits } from "@/lib/locale-format";
 import styles from "./FounderShell.module.css";
+import megaFix from "./FounderMegaMenuFix.module.css";
 import mobile from "./MobileFinal.module.css";
 
 const labels = {
@@ -62,7 +63,7 @@ export default function FounderShell({ locale, children }: { locale: Locale; chi
           </Link>
 
           <div className={styles.links}>
-            <div className={styles.productsMenu}>
+            <div className={`${styles.productsMenu} ${megaFix.menu}`}>
               <Link href={`/${locale}/products`} className={styles.productsTrigger} aria-haspopup="true">
                 {l.products}<span className={styles.chevron}/>
               </Link>
