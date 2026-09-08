@@ -1,0 +1,1 @@
+.menu{position:relative}.menu::after{content:"";position:absolute;z-index:0;top:100%;left:50%;width:min(800px,84vw);height:42px;transform:translateX(-50%);pointer-events:auto}.menu:hover :global(.FounderShell_megaMenu__placeholder),.menu:focus-within :global(.FounderShell_megaMenu__placeholder){pointer-events:auto}@media(max-width:900px){.menu::after{display:none}}
