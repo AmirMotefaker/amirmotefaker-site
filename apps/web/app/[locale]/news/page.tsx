@@ -6,6 +6,7 @@ import { formatSiteDate, formatSiteNumber } from "@/lib/locale-format";
 import type { Locale } from "@/content/founder-site";
 import { canonicalProductPortfolio } from "@/content/canonical-product-portfolio";
 import { getProductDisplayName } from "@/content/product-portfolio";
+import styles from "./NewsExperience.module.css";
 
 const PAGE_SIZE = 12;
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://amirmotefaker.ir";
@@ -43,9 +44,7 @@ export async function generateMetadata({
         "en-US": `${base}/en/news${suffix}`,
         "x-default": `${base}/en/news${suffix}`,
       },
-      types: {
-        "application/rss+xml": `${base}/feed.xml`,
-      },
+      types: { "application/rss+xml": `${base}/feed.xml` },
     },
     openGraph: {
       type: "website",
@@ -71,11 +70,7 @@ export default async function Page({
   const query = await searchParams;
   const locale: Locale = raw === "en" ? "en" : "fa";
   const fa = locale === "fa";
-
-  const posts = [...getLegacyPosts()].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
-
+  const posts = [...getLegacyPosts()].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   const requestedPage = Math.max(1, Number(query.page || "1") || 1);
   const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
   const currentPage = Math.min(requestedPage, totalPages);
@@ -83,6 +78,9 @@ export default async function Page({
   const visible = posts.slice(start, start + PAGE_SIZE);
   const canonicalSuffix = currentPage > 1 ? `?page=${currentPage}` : "";
   const personId = `${base}/${locale}/#person`;
+  const [lead, ...rest] = visible;
+  const side = rest.slice(0, 2);
+  const cards = rest.slice(2);
 
   const collectionJsonLd = {
     "@context": "https://schema.org",
@@ -108,76 +106,77 @@ export default async function Page({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }} />
-      <main className="inner-page">
-        <section className="wrap inner-hero">
-          <span className="sec-tag">{fa ? "اخبار فناوری" : "TECHNOLOGY NEWS"}</span>
-          <h1>{fa ? "اخبار فناوری و هوش مصنوعی" : "Technology & AI News"}</h1>
-          <p>
-            {fa
-              ? "آرشیو نوشته‌ها و خبرهای فناوری AmirMotefaker.ir؛ از هوش مصنوعی و نرم‌افزار تا محصولات، ابزارها و روندهای دنیای دیجیتال."
-              : "The AmirMotefaker.ir technology archive, covering AI, software, products, tools and digital-industry trends. Original articles are preserved in their source language."}
-          </p>
-          <div className="footer-links">
-            <Link href={`/${locale}/products`}>{fa ? "پرتفوی محصولات" : "Product portfolio"} ↗</Link>
-            <Link href={`/${locale}/about`}>{fa ? "درباره امیر متفکر" : "About Amir Motefaker"} ↗</Link>
-            <Link href={`/${locale}/notes`}>{fa ? "یادداشت‌ها" : "Notes"} ↗</Link>
+      <main className={styles.page}>
+        <section className={`wrap ${styles.hero}`}>
+          <div className={styles.heroCopy}>
+            <span>{fa ? "تحریریه فناوری" : "TECHNOLOGY EDITORIAL"}</span>
+            <h1>{fa ? "اخبار فناوری، هوش مصنوعی و دنیای محصول" : "Technology, AI & Product News"}</h1>
+            <p>{fa ? "آرشیو زنده‌ای از خبرها و نوشته‌های فناوری؛ از هوش مصنوعی و نرم‌افزار تا محصولات دیجیتال، ابزارها و روندهایی که آینده ساخت محصول را شکل می‌دهند." : "A living archive of technology coverage spanning AI, software, digital products, tools and the trends shaping how products are built."}</p>
+          </div>
+          <div className={styles.heroMeta}>
+            <article><span>{fa ? "تعداد مطالب" : "Articles"}</span><strong>{formatSiteNumber(posts.length, locale)}</strong></article>
+            <article><span>{fa ? "صفحه فعلی" : "Current page"}</span><strong>{formatSiteNumber(currentPage, locale)} / {formatSiteNumber(totalPages, locale)}</strong></article>
           </div>
         </section>
 
+        {lead ? (
+          <section className={`wrap ${styles.featured}`}>
+            <Link href={`/${locale}/news/${newsSlug(lead.slug)}`} className={styles.lead}>
+              {lead.featured_image ? <Image src={lead.featured_image} alt={lead.title} width={1440} height={810} unoptimized /> : null}
+              <div className={styles.leadCopy}>
+                <time dateTime={lead.date}>{formatSiteDate(lead.date, locale)}</time>
+                <h2>{lead.title}</h2>
+                <p>{lead.excerpt_text}</p>
+              </div>
+            </Link>
+            <div className={styles.side}>
+              {side.map((post) => (
+                <Link key={post.id} href={`/${locale}/news/${newsSlug(post.slug)}`} className={styles.sideCard}>
+                  <time dateTime={post.date}>{formatSiteDate(post.date, locale)}</time>
+                  <h3>{post.title}</h3>
+                  <p>{post.excerpt_text}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
         <section className="wrap">
-          <div className="legacy-news-toolbar">
-            <span>{fa ? "تعداد مطالب:" : "Articles:"} {formatSiteNumber(posts.length, locale)}</span>
-            <span>{fa ? "صفحه" : "Page"} {formatSiteNumber(currentPage, locale)} / {formatSiteNumber(totalPages, locale)}</span>
+          <div className={styles.toolbar}>
+            <h2>{fa ? "تازه‌ترین مطالب" : "Latest stories"}</h2>
+            <div><span>{fa ? "صفحه" : "Page"} {formatSiteNumber(currentPage, locale)}</span><span>•</span><span>{formatSiteNumber(posts.length, locale)} {fa ? "مطلب" : "articles"}</span></div>
           </div>
 
-          {currentPage === 1 ? (
-            <aside className="prose-card" aria-labelledby="portfolio-topics-heading">
-              <span className="sec-tag">{fa ? "موضوعات پرتفوی" : "PORTFOLIO TOPICS"}</span>
-              <h2 id="portfolio-topics-heading">{fa ? "فناوری در امتداد محصول" : "Technology through the product portfolio"}</h2>
-              <p>
-                {fa
-                  ? "از خبرها می‌توانید مستقیماً به محصولاتی بروید که در همان حوزه فناوری ساخته یا توسعه داده می‌شوند."
-                  : "Move from technology coverage to the products being built or developed in the same domains."}
-              </p>
-              <div className="footer-links">
-                {canonicalProductPortfolio.map((product) => (
-                  <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>
-                    {getProductDisplayName(product, locale)}
-                  </Link>
-                ))}
-              </div>
-            </aside>
-          ) : null}
-
-          <div className="legacy-news-grid">
-            {visible.map((post) => (
-              <Link key={post.id} href={`/${locale}/news/${newsSlug(post.slug)}`} className="news-card">
-                <div className="news-cover">
-                  {post.featured_image ? (
-                    <Image src={post.featured_image} alt={post.title} width={960} height={540} unoptimized />
-                  ) : null}
+          <div className={styles.grid}>
+            {cards.map((post) => (
+              <Link key={post.id} href={`/${locale}/news/${newsSlug(post.slug)}`} className={styles.card}>
+                <div className={styles.cover}>
+                  {post.featured_image ? <Image src={post.featured_image} alt={post.title} width={960} height={540} unoptimized /> : null}
                 </div>
-                <div className="news-card-body">
-                  <time className="news-date" dateTime={post.date}>{formatSiteDate(post.date, locale)}</time>
-                  <h2>{post.title}</h2>
+                <div className={styles.body}>
+                  <time dateTime={post.date}>{formatSiteDate(post.date, locale)}</time>
+                  <h3>{post.title}</h3>
                   <p>{post.excerpt_text}</p>
-                  <div className="news-taxonomies">
-                    {post.categories.slice(0, 3).map((category) => <span key={category.id}>{category.name}</span>)}
-                  </div>
+                  <div className={styles.tax}>{post.categories.slice(0, 3).map((category) => <span key={category.id}>{category.name}</span>)}</div>
                 </div>
               </Link>
             ))}
           </div>
 
+          {currentPage === 1 ? (
+            <aside className={styles.portfolio} aria-labelledby="portfolio-topics-heading">
+              <span>{fa ? "موضوعات پرتفوی" : "PORTFOLIO TOPICS"}</span>
+              <h2 id="portfolio-topics-heading">{fa ? "از خبر به محصول" : "From coverage to product"}</h2>
+              <p>{fa ? "خبرهای فناوری را می‌توان در امتداد محصولاتی دید که در همان حوزه ساخته و توسعه داده می‌شوند." : "Technology coverage connects directly to products being built in the same domains."}</p>
+              <div className={styles.portfolioLinks}>
+                {canonicalProductPortfolio.map((product) => <Link key={product.slug} href={`/${locale}/products/${product.slug}`}>{getProductDisplayName(product, locale)}</Link>)}
+              </div>
+            </aside>
+          ) : null}
+
           {totalPages > 1 ? (
-            <nav className="news-pagination" aria-label={fa ? "صفحه‌بندی اخبار فناوری" : "Technology news pagination"}>
-              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) =>
-                page === currentPage ? (
-                  <span key={page} className="active" aria-current="page">{formatSiteNumber(page, locale)}</span>
-                ) : (
-                  <Link key={page} href={`/${locale}/news?page=${page}`}>{formatSiteNumber(page, locale)}</Link>
-                ),
-              )}
+            <nav className={styles.pagination} aria-label={fa ? "صفحه‌بندی اخبار فناوری" : "Technology news pagination"}>
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => page === currentPage ? <span key={page} aria-current="page">{formatSiteNumber(page, locale)}</span> : <Link key={page} href={`/${locale}/news?page=${page}`}>{formatSiteNumber(page, locale)}</Link>)}
             </nav>
           ) : null}
         </section>
