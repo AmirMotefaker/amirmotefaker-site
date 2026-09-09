@@ -70,6 +70,10 @@ jobs:
           curl --max-time 5 --fail --silent --show-error "$article_url" > /tmp/am-news-detail.html
 
           grep -q 'بوم هوش مصنوعی در مرحله اولیه حباب است' /tmp/am-news-detail.html
+          grep -q 'NewsArticle' /tmp/am-news-detail.html
+          grep -q 'datePublished' /tmp/am-news-detail.html
+          grep -q 'dateModified' /tmp/am-news-detail.html
+          grep -q 'BreadcrumbList' /tmp/am-news-detail.html
 
           if grep -q 'NEXT_HTTP_ERROR_FALLBACK;404' /tmp/am-news-detail.html; then
             echo 'Legacy news detail resolved to the Next.js 404 boundary.'
@@ -98,6 +102,8 @@ jobs:
           grep -q 'application/ld+json' /tmp/am-product.html
           grep -q 'SoftwareApplication' /tmp/am-product.html
           grep -q 'FAQPage' /tmp/am-product.html
+          grep -q 'https://linkresan.ir' /tmp/am-product.html
+          grep -q 'citation' /tmp/am-product.html
 
       - name: Repository diff hygiene
         working-directory: .
