@@ -40,7 +40,10 @@ jobs:
           NEWS_ROUTING_SMOKE: "1"
           NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_test_ZXhhbXBsZS5jbGVyay5hY2NvdW50cy5kZXYk
           CLERK_SECRET_KEY: sk_test_ci_smoke_only_not_a_real_secret
+          INDEXNOW_KEY: d292034187738bc1bd6f36a8405bc819
         run: |
+          set -euo pipefail
+
           npm run start -- --hostname 127.0.0.1 --port 3000 > /tmp/am-news-next.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
@@ -95,15 +98,39 @@ jobs:
           grep -q 'https://amirmotefaker.ir/fa/products/linkresan' /tmp/am-llms.txt
           grep -q 'https://linkresan.ir' /tmp/am-llms.txt
 
-          curl --max-time 5 --fail --silent --show-error http://127.0.0.1:3000/fa/products/linkresan > /tmp/am-product.html
-          grep -q 'rel="canonical"' /tmp/am-product.html
-          grep -q 'https://amirmotefaker.ir/fa/products/linkresan' /tmp/am-product.html
-          grep -q 'https://amirmotefaker.ir/en/products/linkresan' /tmp/am-product.html
-          grep -q 'application/ld+json' /tmp/am-product.html
-          grep -q 'SoftwareApplication' /tmp/am-product.html
-          grep -q 'FAQPage' /tmp/am-product.html
-          grep -q 'https://linkresan.ir' /tmp/am-product.html
-          grep -q 'citation' /tmp/am-product.html
+          curl --max-time 5 --fail --silent --show-error "http://127.0.0.1:3000/$INDEXNOW_KEY.txt" > /tmp/am-indexnow-key.txt
+          test "$(cat /tmp/am-indexnow-key.txt)" = "$INDEXNOW_KEY"
+
+          products='primesys restyar linkresan farsio fahmio zobdino idehjo filmtrack tasvia darmic vayran'
+
+          for locale in fa en; do
+            for product in $products; do
+              url="http://127.0.0.1:3000/$locale/products/$product"
+              file="/tmp/am-product-$locale-$product.html"
+
+              curl --max-time 8 --fail --silent --show-error "$url" > "$file"
+
+              if grep -q 'NEXT_HTTP_ERROR_FALLBACK;404' "$file"; then
+                echo "Product route resolved to 404: /$locale/products/$product"
+                exit 1
+              fi
+
+              grep -q 'rel="canonical"' "$file"
+              grep -q "https://amirmotefaker.ir/$locale/products/$product" "$file"
+              grep -q "https://amirmotefaker.ir/fa/products/$product" "$file"
+              grep -q "https://amirmotefaker.ir/en/products/$product" "$file"
+              grep -q 'application/ld+json' "$file"
+              grep -q 'SoftwareApplication' "$file"
+              grep -q 'WebPage' "$file"
+              grep -q 'BreadcrumbList' "$file"
+              grep -q 'FAQPage' "$file"
+            done
+          done
+
+          grep -q 'https://linkresan.ir' /tmp/am-product-fa-linkresan.html
+          grep -q 'citation' /tmp/am-product-fa-linkresan.html
+
+          echo 'SEO_GEO_ROUTE_MATRIX_PASS: 22 bilingual product pages + news + discovery endpoints'
 
       - name: Repository diff hygiene
         working-directory: .
