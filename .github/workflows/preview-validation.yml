@@ -34,7 +34,7 @@ jobs:
       - name: Production build
         run: npm run build
 
-      - name: Runtime news routing smoke
+      - name: Runtime news, SEO and GEO smoke
         env:
           OPENNEXT_DEV: "0"
           NEWS_ROUTING_SMOKE: "1"
@@ -75,6 +75,29 @@ jobs:
             echo 'Legacy news detail resolved to the Next.js 404 boundary.'
             exit 1
           fi
+
+          curl --max-time 5 --fail --silent --show-error http://127.0.0.1:3000/robots.txt > /tmp/am-robots.txt
+          grep -q 'User-Agent: OAI-SearchBot' /tmp/am-robots.txt
+          grep -q 'User-Agent: Claude-SearchBot' /tmp/am-robots.txt
+          grep -q 'User-Agent: PerplexityBot' /tmp/am-robots.txt
+          grep -q 'Sitemap: https://amirmotefaker.ir/sitemap.xml' /tmp/am-robots.txt
+
+          curl --max-time 5 --fail --silent --show-error http://127.0.0.1:3000/sitemap.xml > /tmp/am-sitemap.xml
+          grep -q 'https://amirmotefaker.ir/fa/products/linkresan' /tmp/am-sitemap.xml
+          grep -q 'https://amirmotefaker.ir/en/products/linkresan' /tmp/am-sitemap.xml
+
+          curl --max-time 5 --fail --silent --show-error http://127.0.0.1:3000/llms.txt > /tmp/am-llms.txt
+          grep -q '^# Amir Motefaker' /tmp/am-llms.txt
+          grep -q 'https://amirmotefaker.ir/fa/products/linkresan' /tmp/am-llms.txt
+          grep -q 'https://linkresan.ir' /tmp/am-llms.txt
+
+          curl --max-time 5 --fail --silent --show-error http://127.0.0.1:3000/fa/products/linkresan > /tmp/am-product.html
+          grep -q 'rel="canonical"' /tmp/am-product.html
+          grep -q 'https://amirmotefaker.ir/fa/products/linkresan' /tmp/am-product.html
+          grep -q 'https://amirmotefaker.ir/en/products/linkresan' /tmp/am-product.html
+          grep -q 'application/ld+json' /tmp/am-product.html
+          grep -q 'SoftwareApplication' /tmp/am-product.html
+          grep -q 'FAQPage' /tmp/am-product.html
 
       - name: Repository diff hygiene
         working-directory: .
