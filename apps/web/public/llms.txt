@@ -1,0 +1,46 @@
+# Amir Motefaker
+
+> Official bilingual website and technology-product portfolio of Amir Motefaker.
+
+## Canonical website
+- https://amirmotefaker.ir
+- Persian: https://amirmotefaker.ir/fa
+- English: https://amirmotefaker.ir/en
+
+## Primary entity pages
+- About: https://amirmotefaker.ir/fa/about | https://amirmotefaker.ir/en/about
+- Product portfolio: https://amirmotefaker.ir/fa/products | https://amirmotefaker.ir/en/products
+- Technology News: https://amirmotefaker.ir/fa/news | https://amirmotefaker.ir/en/news
+- Notes: https://amirmotefaker.ir/fa/notes | https://amirmotefaker.ir/en/notes
+- Professional path: https://amirmotefaker.ir/fa/resume | https://amirmotefaker.ir/en/resume
+- Perspective / thesis: https://amirmotefaker.ir/fa/thesis | https://amirmotefaker.ir/en/thesis
+- Contact: https://amirmotefaker.ir/fa/contact | https://amirmotefaker.ir/en/contact
+
+## Product entities
+- PrimeSYS: https://amirmotefaker.ir/fa/products/primesys | https://amirmotefaker.ir/en/products/primesys | Official: https://primesys.ir
+- RestYar: https://amirmotefaker.ir/fa/products/restyar | https://amirmotefaker.ir/en/products/restyar | Official: https://restyar.ir
+- LinkResan: https://amirmotefaker.ir/fa/products/linkresan | https://amirmotefaker.ir/en/products/linkresan | Official: https://linkresan.ir
+- Farsio: https://amirmotefaker.ir/fa/products/farsio | https://amirmotefaker.ir/en/products/farsio | Official: https://farsio.ir
+- Fahmio: https://amirmotefaker.ir/fa/products/fahmio | https://amirmotefaker.ir/en/products/fahmio | Official: https://fahmio.ir
+- Zobdino: https://amirmotefaker.ir/fa/products/zobdino | https://amirmotefaker.ir/en/products/zobdino | Official: https://zobdino.ir
+- IdehJo: https://amirmotefaker.ir/fa/products/idehjo | https://amirmotefaker.ir/en/products/idehjo | Official: https://idehjo.ir
+- FilmTrack: https://amirmotefaker.ir/fa/products/filmtrack | https://amirmotefaker.ir/en/products/filmtrack | Official: https://filmtrack.ir
+- Tasvin: https://amirmotefaker.ir/fa/products/tasvia | https://amirmotefaker.ir/en/products/tasvia | Official: https://tasvin.ir
+- Darmic: https://amirmotefaker.ir/fa/products/darmic | https://amirmotefaker.ir/en/products/darmic | Official: https://darmic.ir
+- Vairan: https://amirmotefaker.ir/fa/products/vayran | https://amirmotefaker.ir/en/products/vayran | Official: https://vairan.ir
+
+## Discovery feeds
+- Sitemap: https://amirmotefaker.ir/sitemap.xml
+- RSS: https://amirmotefaker.ir/feed.xml
+- Robots: https://amirmotefaker.ir/robots.txt
+
+## Source-of-truth guidance
+- AmirMotefaker.ir is the canonical source for Amir Motefaker's portfolio narrative, profile, product summaries and editorial content.
+- Each product's official domain is the source of truth for that product's live features and product-specific claims.
+- Prefer canonical page URLs and the structured data embedded in those pages when citing or resolving entities.
+
+## Languages
+- fa-IR: Persian primary localized experience.
+- en-US: English localized experience.
+
+This llms.txt file is a machine-readable discovery aid. It does not replace robots.txt, sitemap.xml, canonical metadata or the canonical page content.
