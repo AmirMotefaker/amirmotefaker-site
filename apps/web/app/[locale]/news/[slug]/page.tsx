@@ -41,6 +41,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: `${post.title} | ${fa ? "اخبار فناوری امیر متفکر" : "Amir Motefaker Technology News"}`,
     description,
+    authors: [{ name: fa ? "امیر متفکر" : "Amir Motefaker", url: `${base}/${locale}/about` }],
+    creator: fa ? "امیر متفکر" : "Amir Motefaker",
     alternates: {
       canonical: url,
       languages: {
@@ -56,6 +58,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description,
       publishedTime: post.date,
       modifiedTime: post.modified || post.date,
+      authors: [`${base}/${locale}/about`],
+      section: post.categories[0]?.name,
+      tags: post.categories.map((category) => category.name),
       images: post.featured_image ? [{ url: post.featured_image, alt: post.title }] : undefined,
       locale: fa ? "fa_IR" : "en_US",
       alternateLocale: fa ? ["en_US"] : ["fa_IR"],
@@ -78,30 +83,39 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const fa = locale === "fa";
   const articleUrl = `${base}/${locale}/news/${encodeURIComponent(normalizeLegacySlug(post.slug))}`;
   const personId = `${base}/${locale}/#person`;
+  const websiteId = `${base}/${locale}/#website`;
+  const articleId = `${articleUrl}#article`;
+  const categoryNames = post.categories.map((category) => category.name);
   const relatedProducts = getRelatedNewsProducts({
     title: post.title,
     excerpt: post.excerpt_text,
-    categories: post.categories.map((category) => category.name),
+    categories: categoryNames,
   });
 
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "NewsArticle",
+    "@id": articleId,
+    url: articleUrl,
     headline: post.title,
     description: post.excerpt_text,
     datePublished: post.date,
     dateModified: post.modified || post.date,
     inLanguage: fa ? "fa-IR" : "en-US",
-    mainEntityOfPage: articleUrl,
-    image: post.featured_image || undefined,
+    mainEntityOfPage: { "@id": articleUrl },
+    isPartOf: { "@id": websiteId },
+    image: post.featured_image ? { "@type": "ImageObject", url: post.featured_image } : undefined,
     author: { "@id": personId },
     publisher: { "@id": personId },
+    articleSection: categoryNames,
+    keywords: categoryNames,
     about: relatedProducts.map((product) => ({
       "@type": "SoftwareApplication",
       "@id": `${base}/${locale}/products/${product.slug}#product`,
       name: getProductDisplayName(product, locale),
       url: `${base}/${locale}/products/${product.slug}`,
       applicationCategory: product.category,
+      sameAs: product.domain ? [`https://${product.domain.toLowerCase()}`] : undefined,
     })),
   };
 

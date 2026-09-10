@@ -108,6 +108,9 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     about: { "@id": `${pageUrl}#product` },
     mainEntity: { "@id": `${pageUrl}#product` },
     author: { "@id": personId },
+    citation: verifiedProductUrl ? [verifiedProductUrl] : undefined,
+    relatedLink: verifiedProductUrl ? [verifiedProductUrl] : undefined,
+    keywords: cluster,
   };
 
   const breadcrumbSchema = {

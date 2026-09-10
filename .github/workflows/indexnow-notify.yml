@@ -1,0 +1,99 @@
+name: IndexNow Notify
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/web/**"
+      - ".github/workflows/indexnow-notify.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Wait for production release and submit sitemap URLs
+        env:
+          SITE: https://amirmotefaker.ir
+          INDEXNOW_KEY: d292034187738bc1bd6f36a8405bc819
+        run: |
+          set -euo pipefail
+
+          key_url="$SITE/$INDEXNOW_KEY.txt"
+
+          ready=0
+          for attempt in $(seq 1 60); do
+            if body="$(curl --fail --silent --show-error --max-time 10 "$key_url" 2>/dev/null)" && [ "$body" = "$INDEXNOW_KEY" ]; then
+              ready=1
+              break
+            fi
+            sleep 10
+          done
+
+          if [ "$ready" -ne 1 ]; then
+            echo "Production never exposed the expected IndexNow verification key."
+            exit 1
+          fi
+
+          curl --fail --silent --show-error --max-time 20 "$SITE/sitemap.xml" -o /tmp/sitemap.xml
+
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
+          site = os.environ["SITE"].rstrip("/")
+          key = os.environ["INDEXNOW_KEY"]
+          key_location = f"{site}/{key}.txt"
+
+          root = ET.parse('/tmp/sitemap.xml').getroot()
+          ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          urls = []
+          for loc in root.findall('.//sm:loc', ns):
+              value = (loc.text or '').strip()
+              if value.startswith(site + '/') or value == site:
+                  urls.append(value)
+
+          urls = list(dict.fromkeys(urls))
+          if not urls:
+              raise SystemExit('No canonical site URLs found in sitemap.xml')
+          if len(urls) > 10000:
+              raise SystemExit(f'IndexNow URL batch too large: {len(urls)}')
+
+          payload = {
+              'host': 'amirmotefaker.ir',
+              'key': key,
+              'keyLocation': key_location,
+              'urlList': urls,
+          }
+
+          data = json.dumps(payload).encode('utf-8')
+          req = urllib.request.Request(
+              'https://api.indexnow.org/indexnow',
+              data=data,
+              method='POST',
+              headers={'Content-Type': 'application/json; charset=utf-8'},
+          )
+
+          try:
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  status = response.status
+                  response.read()
+          except urllib.error.HTTPError as exc:
+              status = exc.code
+              body = exc.read().decode('utf-8', errors='replace')
+              if status not in (200, 202):
+                  raise SystemExit(f'IndexNow rejected payload: HTTP {status}: {body[:500]}')
+          except Exception as exc:
+              raise SystemExit(f'IndexNow request failed: {exc}')
+
+          if status not in (200, 202):
+              raise SystemExit(f'Unexpected IndexNow status: {status}')
+
+          print(f'INDEXNOW_PASS: submitted {len(urls)} canonical URLs, HTTP {status}')
+          PY
