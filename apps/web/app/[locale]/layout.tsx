@@ -79,6 +79,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         sameAs: [founder.github, founder.linkedin, founder.x, founder.kaggle].filter(Boolean),
         knowsAbout,
         owns: productRefs,
+        subjectOf: productRefs,
       },
       {
         "@type": "WebSite",

@@ -234,7 +234,7 @@ const tasviaProduct: Product | undefined = legacySettlementProduct
   ? ({
       ...legacySettlementProduct,
       slug: "tasvia",
-      name: "Tasvia",
+      name: "Tasvin",
       domain: "",
       industry: "FinTech",
       category: "Business Settlement Platform",
@@ -244,7 +244,7 @@ const tasviaProduct: Product | undefined = legacySettlementProduct
       shortDescriptionFa:
         "تسویا یک پلتفرم فین‌تک برای مدیریت شفاف و ساختاریافته پرداخت، تسویه و جریان‌های مالی کسب‌وکارهای کوچک و متوسط است.",
       shortDescriptionEn:
-        "Tasvia is a FinTech platform for structured business payments, settlement and money workflows for SMEs.",
+        "Tasvin is a FinTech platform for structured business payments, settlement and money workflows for SMEs.",
       hero: {
         ...legacySettlementProduct.hero,
         eyebrow: "FINTECH / BUSINESS SETTLEMENT",
@@ -253,9 +253,9 @@ const tasviaProduct: Product | undefined = legacySettlementProduct
         descriptionFa:
           "تسویا روی جریان‌های پرداخت و تسویه کسب‌وکار تمرکز دارد و برای ساخت زیرساخت مالی شفاف، قابل پیگیری و قابل توسعه طراحی می‌شود.",
         descriptionEn:
-          "Tasvia focuses on business payment and settlement workflows, designed as transparent, traceable and extensible financial infrastructure.",
+          "Tasvin focuses on business payment and settlement workflows, designed as transparent, traceable and extensible financial infrastructure.",
         primaryCtaFa: "شناخت تسویا",
-        primaryCtaEn: "Explore Tasvia",
+        primaryCtaEn: "Explore Tasvin",
         secondaryCtaFa: "مسیر ساخت",
         secondaryCtaEn: "Build journey",
       },
@@ -270,7 +270,7 @@ const tasviaProduct: Product | undefined = legacySettlementProduct
       solutionFa:
         "تسویا پرداخت و تسویه را در یک جریان مالی ساختاریافته قرار می‌دهد تا کسب‌وکار بتواند انتقال‌ها، ذی‌نفعان و وضعیت تسویه را با دید روشن‌تری مدیریت کند.",
       solutionEn:
-        "Tasvia organizes payments and settlement into a structured financial workflow so businesses can manage transfers, beneficiaries and settlement status with clearer operational visibility.",
+        "Tasvin organizes payments and settlement into a structured financial workflow so businesses can manage transfers, beneficiaries and settlement status with clearer operational visibility.",
       visionFa:
         "ساخت زیرساخت تسویه دیجیتال قابل اتکا برای کسب‌وکارهای کوچک و متوسط و ساده‌کردن جریان پول میان کسب‌وکار و ذی‌نفعان آن.",
       visionEn:
@@ -294,7 +294,7 @@ const tasviaProduct: Product | undefined = legacySettlementProduct
       criticalPositioningFa:
         "تسویا یک زیرساخت تسویه و جریان مالی برای کسب‌وکارهاست و نباید به یک صنعت خاص یا یک ابزار ساده انتقال پول محدود شود.",
       criticalPositioningEn:
-        "Tasvia is business settlement infrastructure and should not be positioned as an industry-specific product or a simple money-transfer utility.",
+        "Tasvin is business settlement infrastructure and should not be positioned as an industry-specific product or a simple money-transfer utility.",
       related: ["linkresan"],
     } as Product)
   : undefined;
